@@ -70,22 +70,22 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, handle
 										</Link>
 									</div>
 								</div>
-								<div className="header-center">
-									<nav className="main-nav">
+								<div className="header-center d-none d-xl-flex">
+									<nav className="main-nav d-none d-xl-block">
 										<Menu />
 									</nav>
 								</div>
 								<div className="header-right">
-									<Link href="/#consultation" className="tf-btn small">
-										Free Consultation
+									<Link href="/#consultation" className="tf-btn small header-consult-btn">
+										<span>Free Consultation</span>
 										<i className="icon-chevron-right" />
 									</Link>
-									<div className="union mobile-button" onClick={handleMobileMenu}>
+									<div className="union mobile-button d-inline-flex d-xl-none" onClick={handleMobileMenu} aria-label="Open Mobile Menu">
 										<span className="dot" />
 										<span className="dot" />
 										<span className="dot" />
 									</div>
-									<div className="union btn-open-welcome" onClick={handleWelcomeBox}>
+									<div className="union btn-open-welcome d-none d-xl-flex" onClick={handleWelcomeBox}>
 										<span className="dot" />
 										<span className="dot" />
 										<span className="dot" />

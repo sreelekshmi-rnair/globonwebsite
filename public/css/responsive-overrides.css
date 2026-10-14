@@ -124,7 +124,23 @@ img, svg, video, canvas, audio, iframe, embed, object {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    padding: 12px 0 !important;
+    width: 100% !important;
+    padding: 10px 0 !important;
+    position: relative !important;
+  }
+
+  .tf-header .header-left {
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .tf-header .header-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
   }
 
   .tf-header .mobile-button {
@@ -132,9 +148,9 @@ img, svg, video, canvas, audio, iframe, embed, object {
     align-items: center !important;
     justify-content: center !important;
     gap: 5px !important;
-    width: 44px !important;
-    height: 44px !important;
-    padding: 10px !important;
+    width: 42px !important;
+    height: 42px !important;
+    padding: 8px !important;
     background: #f1f5f9 !important;
     border-radius: 8px !important;
     cursor: pointer !important;
@@ -156,37 +172,53 @@ img, svg, video, canvas, audio, iframe, embed, object {
   .tf-header .btn-open-welcome {
     display: none !important;
   }
-
-  .header-right {
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-  }
 }
 
 @media (max-width: 767px) {
   .tf-header .logo-site img {
-    height: 46px !important;
-    max-height: 46px !important;
+    height: 44px !important;
+    max-height: 44px !important;
     width: auto !important;
   }
 
-  .header-right .tf-btn {
-    padding: 8px 14px !important;
+  .header-consult-btn {
+    padding: 8px 12px !important;
     font-size: 12px !important;
     border-radius: 6px !important;
   }
 }
 
-@media (max-width: 480px) {
-  .header-right .tf-btn {
+@media (max-width: 576px) {
+  .tf-header {
+    padding: 6px 0 !important;
+  }
+
+  .tf-header .logo-site img {
+    height: 38px !important;
+    max-height: 38px !important;
+    width: auto !important;
+  }
+
+  .header-consult-btn {
     padding: 7px 10px !important;
     font-size: 11px !important;
   }
 
-  .tf-header .logo-site img {
-    height: 40px !important;
-    max-height: 40px !important;
+  .tf-header .mobile-button {
+    width: 38px !important;
+    height: 38px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-consult-btn span {
+    display: none !important;
+  }
+  .header-consult-btn {
+    padding: 7px 9px !important;
+  }
+  .header-consult-btn i {
+    margin: 0 !important;
   }
 }
 
