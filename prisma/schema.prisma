@@ -1,0 +1,85 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model AdminUser {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  name      String   @default("Admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Service {
+  id               Int      @id @default(autoincrement())
+  title            String
+  slug             String   @unique
+  category         String   @default("General")
+  icon             String   @default("flaticon-business")
+  shortDescription String   @db.Text
+  description      String   @db.Text
+  features         String   @default("") @db.Text
+  image            String?
+  isFeatured       Boolean  @default(false)
+  order            Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Loan {
+  id                Int      @id @default(autoincrement())
+  title             String
+  slug              String   @unique
+  category          String   @default("General Loan")
+  interestRate      String   @default("8.5% p.a.")
+  maxAmount         String   @default("Up to ₹50 Lakhs")
+  tenure            String   @default("1 to 5 Years")
+  processingFee     String?  @default("0.5%")
+  shortDescription  String   @db.Text
+  description       String   @db.Text
+  eligibility       String   @default("") @db.Text
+  documentsRequired String   @default("") @db.Text
+  benefits          String   @default("") @db.Text
+  icon              String?
+  image             String?
+  isPopular         Boolean  @default(false)
+  order             Int      @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model Blog {
+  id          Int      @id @default(autoincrement())
+  title       String
+  slug        String   @unique
+  category    String   @default("Business")
+  author      String   @default("Globon Team")
+  excerpt     String   @db.Text
+  content     String   @db.Text
+  image       String?
+  date        String?  @default("")
+  published   Boolean  @default(true)
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Inquiry {
+  id             Int      @id @default(autoincrement())
+  fullName       String
+  email          String
+  phoneNumber    String
+  businessName   String
+  industry       String
+  businessAge    String
+  monthlyRevenue String
+  serviceNeeded  String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
