@@ -12,6 +12,8 @@ function slugify(text) {
     .replace(/\-\-+/g, '-');
 }
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const loans = await prisma.loan.findMany({

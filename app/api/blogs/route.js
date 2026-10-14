@@ -12,6 +12,8 @@ function slugify(text) {
     .replace(/\-\-+/g, '-');
 }
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
