@@ -58,13 +58,21 @@ export default function MobileMenu() {
 				const isOpen = activeAccordion === index || isSubmenuActive
 
 				return (
-					<li key={index} className={`menu-item menu-item-has-children-mobile  ${item.subMenu ? "menu-item-has-children-mobile" : ""} ${parentActiveClass}`}>
-						<Link className={`item-menu-mobile ${isActive(item.path)}`} href={item.path || "#"}>
-							{item.title}
-							{item.subMenu && (
-								<i className={`icon-chevron-down ${isOpen ? "open" : ""}`} onClick={() => toggleAccordion(index)} />
-							)}
-						</Link>
+					<li key={index} className={`menu-item menu-item-has-children-mobile ${item.subMenu ? "has-child" : ""} ${parentActiveClass}`}>
+						{item.subMenu ? (
+							<div
+								className={`item-menu-mobile ${isActive(item.path)}`}
+								onClick={() => toggleAccordion(index)}
+								style={{ cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}
+							>
+								<span>{item.title}</span>
+								<i className={`icon-chevron-down ${isOpen ? "open" : ""}`} style={{ transition: "transform 0.2s ease", transform: isOpen ? "rotate(180deg)" : "rotate(0)" }} />
+							</div>
+						) : (
+							<Link className={`item-menu-mobile ${isActive(item.path)}`} href={item.path || "#"}>
+								{item.title}
+							</Link>
+						)}
 						{item.subMenu && (
 							<ul className="sub-menu-mobile" style={{ display: isOpen ? "block" : "none" }}>
 								{item.subMenu.map((sub, subIndex) => (

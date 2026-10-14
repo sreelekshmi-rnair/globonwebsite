@@ -1,7 +1,3 @@
-// import 'swiper/css';
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-// import "swiper/css/effect-fade";
 import "@/node_modules/react-modal-video/css/modal-video.css"
 import "/public/css/bootstrap.css"
 import "/public/css/swiper-bundle.min.css"
@@ -15,6 +11,7 @@ import "/public/icons/icomoon/style.css"
 import "/public/icons/flaticon/font/flaticon_saylo.css"
 import "/public/css/styles.css"
 import "/public/css/light-theme.css"
+import "/public/css/responsive-overrides.css"
 import { Public_Sans } from 'next/font/google'
 
 const publicSans = Public_Sans({
@@ -22,6 +19,14 @@ const publicSans = Public_Sans({
     subsets: ['latin'],
     display: 'swap',
 })
+
+export const viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    themeColor: '#1f4e7a',
+}
+
 export const metadata = {
     title: 'Globon Business Solutions - Loan Assistance, Financial Solutions & Business Support',
     description: 'Globon Business Solutions specializes in loan assistance, business consulting, registrations, compliance, insurance, real estate, and digital solutions.',
@@ -39,6 +44,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
                 <link rel="icon" type="image/png" href="/images/logo/logo.png?v=globon3" sizes="any" />
                 <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/logo.png?v=globon3" />
                 <link rel="icon" type="image/png" sizes="192x192" href="/images/logo/logo.png?v=globon3" />
