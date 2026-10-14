@@ -222,6 +222,7 @@ export default function Footer1() {
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label="Chat on WhatsApp"
+					className="globon-whatsapp-float"
 					style={{
 						position: 'fixed',
 						bottom: '30px',

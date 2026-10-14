@@ -67,8 +67,8 @@ export default function Section2() {
 											className="lazyload tf-animate-2"
 										/>
 									</div>
-									<span className="half-circle item-1 wow rollInRight" />
-									<span className="half-circle item-2 wow rollInRight" data-wow-delay="0.5s" />
+									<span className="half-circle item-1 wow rollInRight d-none d-lg-block" />
+									<span className="half-circle item-2 wow rollInRight d-none d-lg-block" data-wow-delay="0.5s" />
 								</div>
 							</div>
 					</div>

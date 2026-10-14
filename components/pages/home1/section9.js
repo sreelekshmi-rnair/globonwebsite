@@ -84,7 +84,7 @@ export default function Section9() {
 								</div>
 
 								<div className="content-right">
-									<div style={{
+									<div className="consultation-form-card" style={{
 										background: '#ffffff',
 										borderRadius: '16px',
 										padding: '36px 32px',

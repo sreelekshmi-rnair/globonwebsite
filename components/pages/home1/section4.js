@@ -70,15 +70,15 @@ export default function Section4() {
 									» THE GLOBON METHODOLOGY
 								</p>
 								<h2 style={{
-									fontSize: '52px',
+									fontSize: 'clamp(28px, 4.5vw, 50px)',
 									fontWeight: 800,
-									lineHeight: '1.2',
+									lineHeight: '1.25',
 									color: '#0f172a',
 									margin: '0 auto',
 									maxWidth: '850px'
 								}}>
 									From Strategy to Disbursement <br />
-									Our Financial<span style={{ fontWeight: 300, fontStyle: 'normal' }}>Process</span>
+									Our Financial <span style={{ fontWeight: 300, fontStyle: 'normal' }}>Process</span>
 								</h2>
 							</div>
 
@@ -92,16 +92,17 @@ export default function Section4() {
 										return (
 											<div
 												key={item.id}
+												className="methodology-card methodology-expanded-card"
 												style={{
 													borderRadius: '20px',
 													border: '1px solid #e5e7eb',
 													background: '#f7f7f8',
 													marginBottom: '20px',
-													padding: '38px',
+													padding: 'clamp(20px, 3.5vw, 38px)',
 													display: 'flex',
 													flexWrap: 'wrap',
 													alignItems: 'stretch',
-													gap: '30px',
+													gap: '24px',
 													transition: 'all 0.3s ease'
 												}}
 											>
@@ -224,24 +225,27 @@ export default function Section4() {
 										)
 									}
 
-									// Collapsed Card Style (Matches user requested style)
+									// Collapsed Step Bar Style - Fully Responsive Auto-Height
 									return (
 										<div
 											key={item.id}
 											onClick={() => setActiveStep(item.id)}
+											className="methodology-card methodology-collapsed-card"
 											style={{
-												borderRadius: '20px',
+												borderRadius: '16px',
 												border: '1px solid #e5e7eb',
 												background: '#ffffff',
-												marginBottom: '20px',
-												height: '76px',
-												padding: '0 35px',
+												marginBottom: '16px',
+												minHeight: '68px',
+												height: 'auto',
+												padding: '16px 20px',
 												display: 'flex',
 												alignItems: 'center',
 												justifyContent: 'space-between',
+												gap: '12px',
 												cursor: 'pointer',
 												userSelect: 'none',
-												transition: 'border-color 0.2s ease, box-shadow 0.2s ease'
+												transition: 'all 0.2s ease'
 											}}
 											onMouseEnter={(e) => {
 												e.currentTarget.style.borderColor = '#cbd5e1'
@@ -252,24 +256,28 @@ export default function Section4() {
 												e.currentTarget.style.boxShadow = 'none'
 											}}
 										>
-											<div style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
+											<div style={{ display: 'flex', alignItems: 'center', gap: '14px', flex: 1, minWidth: 0 }}>
 												<span style={{
 													background: '#f3f4f6',
 													border: '1px solid #e5e7eb',
 													borderRadius: '6px',
-													padding: '6px 14px',
-													fontSize: '12px',
+													padding: '5px 10px',
+													fontSize: '11px',
 													fontWeight: 800,
-													letterSpacing: '2.5px',
+													letterSpacing: '1.5px',
 													textTransform: 'uppercase',
-													color: '#1f2937'
+													color: '#1f2937',
+													flexShrink: 0,
+													whiteSpace: 'nowrap'
 												}}>
 													{item.step}
 												</span>
 												<span style={{
-													fontSize: '22px',
+													fontSize: 'clamp(14px, 2.2vw, 19px)',
 													fontWeight: 700,
-													color: '#0f172a'
+													color: '#0f172a',
+													lineHeight: '1.35',
+													wordBreak: 'break-word'
 												}}>
 													{item.title}
 												</span>
@@ -278,7 +286,9 @@ export default function Section4() {
 											<div style={{
 												color: '#0f172a',
 												fontSize: '22px',
-												fontWeight: 700
+												fontWeight: 700,
+												flexShrink: 0,
+												marginLeft: '6px'
 											}}>
 												›
 											</div>

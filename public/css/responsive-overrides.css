@@ -447,11 +447,27 @@ img, svg, video, canvas, audio, iframe, embed, object {
   }
 }
 
-/* 9. Section 4 - 3-Step Methodology / Roadmap */
+/* Decorative shapes on mobile */
 @media (max-width: 991px) {
-  .process-item,
-  .step-card {
-    margin-bottom: 24px !important;
+  .s-about-company .half-circle,
+  .half-circle {
+    display: none !important;
+  }
+}
+
+/* 9. Section 4 - Methodology Process Step Cards */
+.methodology-card {
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 767px) {
+  .methodology-collapsed-card {
+    padding: 14px 16px !important;
+    min-height: auto !important;
+    gap: 10px !important;
+  }
+  .methodology-expanded-card {
+    padding: 22px 16px !important;
   }
 }
 
@@ -477,27 +493,85 @@ img, svg, video, canvas, audio, iframe, embed, object {
 }
 
 /* 12. Section 9 - Direct Consultation Form */
-@media (max-width: 767px) {
-  .consultation-form-wrap {
+@media (max-width: 991px) {
+  .s-contact .content-wrap {
+    flex-direction: column !important;
+    background: transparent !important;
+    gap: 20px !important;
+  }
+  .s-contact .content-wrap > * {
+    width: 100% !important;
+  }
+  .s-contact .content-left {
+    padding: 30px 15px 0 !important;
+  }
+  .s-contact .content-right {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    background: transparent !important;
+  }
+  .consultation-form-card {
     padding: 28px 20px !important;
-    border-radius: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .consultation-form-card {
+    padding: 22px 15px !important;
+  }
+  .consultation-form-card .consultation-heading {
+    font-size: 22px !important;
+    margin-bottom: 20px !important;
   }
   
   /* Critical iOS auto-zoom prevention: inputs must have min font-size 16px */
-  .consultation-form-wrap input,
-  .consultation-form-wrap select,
-  .consultation-form-wrap textarea {
+  .consultation-form-card input,
+  .consultation-form-card select,
+  .consultation-form-card textarea {
     font-size: 16px !important;
     padding: 12px 14px !important;
     width: 100% !important;
   }
 
-  .consultation-form-wrap button,
-  .consultation-form-wrap .tf-btn {
+  .consultation-form-card button,
+  .consultation-form-card .tf-btn {
     width: 100% !important;
     justify-content: center !important;
     padding: 14px !important;
     font-size: 15px !important;
+  }
+}
+
+/* Floating Action Buttons Responsiveness */
+.globon-whatsapp-float {
+  z-index: 9999 !important;
+}
+
+.progress-wrap {
+  z-index: 9998 !important;
+}
+
+@media (max-width: 767px) {
+  .globon-whatsapp-float {
+    bottom: 20px !important;
+    right: 16px !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .globon-whatsapp-float svg,
+  .globon-whatsapp-float i {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .progress-wrap {
+    bottom: 76px !important;
+    right: 18px !important;
+    width: 42px !important;
+    height: 42px !important;
   }
 }
 
