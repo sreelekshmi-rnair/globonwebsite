@@ -1,101 +1,167 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
-import ModalVideo from 'react-modal-video'
-import { TypeAnimation } from "react-type-animation"
-import { useCircularTextEffect } from "@/utils/applyCircularText "
+import { useState, useEffect, useRef } from 'react'
+
+const heroSlides = [
+	{
+		id: 1,
+		image: '/images/page-title/globon-empowering-building.jpg',
+		line1: 'ACCELERATE YOUR BUSINESS',
+		line2: 'GROWTH WITH EXPERT STRATEGY',
+		cta1Text: 'Schedule Free Consultation',
+		cta1Link: '/#consultation',
+		cta2Text: 'View Success Stories',
+		cta2Link: '/#testimonials'
+	},
+	{
+		id: 2,
+		image: '/images/section/globon-multibank-trust-banner.jpg',
+		line1: 'SCALE YOUR BUSINESS WITH',
+		line2: 'FLEXIBLE BUSINESS LOANS',
+		cta1Text: 'Apply for Business Loan',
+		cta1Link: '/#consultation',
+		cta2Text: 'Talk to Expert',
+		cta2Link: '/#consultation'
+	},
+	{
+		id: 3,
+		image: '/images/section/globon-hero-advisory.jpg',
+		line1: 'ACCESS SUBSIDIZED FUNDING',
+		line2: 'THROUGH GOVERNMENT SCHEMES',
+		cta1Text: 'Explore Schemes',
+		cta1Link: '/our-service',
+		cta2Text: 'Check Eligibility',
+		cta2Link: '/#consultation'
+	}
+]
 
 export default function Hero1() {
-	const [isOpen, setOpen] = useState(false)
-	useCircularTextEffect()
+	const [current, setCurrent] = useState(0)
+	const [isPaused, setIsPaused] = useState(false)
+	const touchStartX = useRef(0)
+	const touchEndX = useRef(0)
+
+	useEffect(() => {
+		if (isPaused) return
+		const interval = setInterval(() => {
+			setCurrent((prev) => (prev + 1) % heroSlides.length)
+		}, 5500)
+		return () => clearInterval(interval)
+	}, [isPaused])
+
+	const nextSlide = () => {
+		setCurrent((prev) => (prev + 1) % heroSlides.length)
+	}
+
+	const prevSlide = () => {
+		setCurrent((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+	}
+
+	const handleTouchStart = (e) => {
+		touchStartX.current = e.touches[0].clientX
+	}
+
+	const handleTouchMove = (e) => {
+		touchEndX.current = e.touches[0].clientX
+	}
+
+	const handleTouchEnd = () => {
+		const diff = touchStartX.current - touchEndX.current
+		if (Math.abs(diff) > 50) {
+			if (diff > 0) nextSlide()
+			else prevSlide()
+		}
+	}
+
 	return (
-		<>
-			<div className="page-title-home-1">
-				<div className="mb-50">
-					<div className="tf-container w-1780">
-						<div className="row">
-							<div className="col-lg-6">
-								<div className="content">
-									<p className="s-sub-title">
-										<i className="icon-angles-right moveLeftToRight" />
-										Loan Assistance • Financial Solutions • Business Support
-									</p>
-									<h1 className="s-title mb-70 text-fs-70" style={{ lineHeight: '1.15' }}>
-										Accelerate Your Business <br />
-										Growth With
-										<span className="animationtext clip d-block mt-2">
-											<TypeAnimation
-												sequence={[
-													' Expert Strategy',
-													1500,
-													' MSME & Business Loans',
-													1500,
-													' 48-Hour Approvals',
-													1500,
-													' Govt Scheme Subsidies',
-													1500,
-												]}
-												wrapper="span"
-												speed={50}
-												style={{ display: 'inline-block', marginLeft: "15px", color: '#f4b52d' }}
-												repeat={Infinity}
-												className="cd-words-wrapper ms-2">
-											</TypeAnimation>
-										</span>
+		<section
+			className="globon-ksfe-hero-wrapper"
+			onMouseEnter={() => setIsPaused(true)}
+			onMouseLeave={() => setIsPaused(false)}
+			onTouchStart={handleTouchStart}
+			onTouchMove={handleTouchMove}
+			onTouchEnd={handleTouchEnd}
+			aria-label="Globon Hero Slider"
+		>
+			{heroSlides.map((slide, idx) => {
+				const isActive = idx === current
+				return (
+					<div
+						key={slide.id}
+						className={`globon-ksfe-slide ${isActive ? 'active' : ''}`}
+						aria-hidden={!isActive}
+					>
+						<Image
+							src={slide.image}
+							alt={slide.line1 + ' ' + slide.line2}
+							fill
+							priority={idx === 0}
+							sizes="100vw"
+							className="globon-ksfe-slide-bg"
+						/>
+						<div className="globon-ksfe-overlay" />
+
+						<div className="tf-container w-1780 globon-ksfe-content-container">
+							<div className="row">
+								<div className="col-xl-10 col-lg-11 col-md-12">
+									<h1 className="globon-ksfe-heading">
+										<span>{slide.line1}</span>
+										<br />
+										<span>{slide.line2}</span>
 									</h1>
-									<span className="line mb-75" />
-									<p className="text font-main-2 fw-5 mb-40">
-										From market analysis to financial optimization, our consultants deliver actionable insights that drive measurable results. Scale smarter. Grow faster.
-									</p>
-									<div className="bot">
-										<Link href="/our-service" className="tf-btn">
-											Explore Services
-											<i className="icon-chevron-right" />
+
+									<div className="globon-ksfe-btn-group">
+										<Link href={slide.cta1Link} className="globon-ksfe-btn">
+											<span>{slide.cta1Text}</span>
+											<span className="arrow-icon">↗</span>
 										</Link>
-										 {/* <div className="video-wrap">
-											<a onClick={() => setOpen(true)} className="popup-youtube fs-14 fw-7" style={{ cursor: "pointer" }}>
-												<span className="icon style-circle">
-													<span className="bg" />
-													<span className="wave-3" />
-													<i className="icon-play fs-12" />
-												</span>
-												Watch Video
-											</a>
-										</div>  */}
-									</div>
-								</div>
-							</div>
-							<div className="col-lg-6">
-								<div className="image-wrap">
-									<div className="image">
-										<Image
-											width={1200}
-											height={896}
-											priority
-											sizes="(max-width: 991px) 100vw, 50vw"
-											style={{ width: "100%", height: "460px", objectFit: "cover", display: "block" }}
-											src="/images/section/globon-vision-team.jpg"
-											alt="Globon Business Solutions - Financial Advisory and Loan Consultation"
-										/>
-									</div>
-									<div className="wg-curve-text tf-animate__box animate__slow">
-										<div className="icon">
-											<i className="flaticon-rocket" />
-										</div>
-										<div className="text-rotate">
-											<div className="circle">
-												<div id="circularText" className="text" />
-											</div>
-										</div>
+										{slide.cta2Text && (
+											<Link href={slide.cta2Link} className="globon-ksfe-btn-secondary">
+												<span>{slide.cta2Text}</span>
+												<span className="arrow-icon">↗</span>
+											</Link>
+										)}
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				)
+			})}
+
+			{/* Left & Right Circular Navigation Arrows */}
+			<button
+				type="button"
+				className="globon-ksfe-arrow prev"
+				onClick={prevSlide}
+				aria-label="Previous slide"
+			>
+				‹
+			</button>
+			<button
+				type="button"
+				className="globon-ksfe-arrow next"
+				onClick={nextSlide}
+				aria-label="Next slide"
+			>
+				›
+			</button>
+
+			{/* Bottom Dots Indicator */}
+			<div className="globon-ksfe-dots" role="tablist">
+				{heroSlides.map((_, idx) => (
+					<button
+						key={idx}
+						type="button"
+						className={`globon-ksfe-dot ${idx === current ? 'active' : ''}`}
+						onClick={() => setCurrent(idx)}
+						aria-label={`Go to slide ${idx + 1}`}
+						role="tab"
+						aria-selected={idx === current}
+					/>
+				))}
 			</div>
-			<ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="JXMWOmuR1hU" onClose={() => setOpen(false)} />
-		</>
+		</section>
 	)
 }

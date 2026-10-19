@@ -67,8 +67,8 @@ export default async function LoansListingPage() {
                           position: "absolute",
                           top: "20px",
                           right: "20px",
-                          background: "#dcfce7",
-                          color: "#15803d",
+                          background: "#e0f2fe",
+                          color: "#0366a2",
                           padding: "4px 12px",
                           borderRadius: "999px",
                           fontSize: "11px",
@@ -115,7 +115,7 @@ export default async function LoansListingPage() {
                     >
                       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
                         <span style={{ fontSize: "13px", color: "#64748b" }}>Interest Rate:</span>
-                        <span style={{ fontSize: "14px", fontWeight: "700", color: "#16a34a" }}>
+                        <span style={{ fontSize: "14px", fontWeight: "700", color: "#0366a2" }}>
                           {loan.interestRate}
                         </span>
                       </div>

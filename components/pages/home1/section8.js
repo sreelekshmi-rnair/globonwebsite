@@ -61,8 +61,15 @@ export default function Section8() {
 								<i className="icon-angles-right moveLeftToRight" />
 								Client Success Stories &amp; Reviews
 							</p>
-							<h2 className="s-title mb-15">
-								What Our Clients Say About <span>Globon</span>
+							<h2 className="s-title mb-15 testimonials-main-title" style={{
+								fontFamily: "'Public Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif",
+								fontSize: 'clamp(40px, 4.2vw, 52px)',
+								fontWeight: 400,
+								color: '#000000',
+								letterSpacing: '0.2px',
+								lineHeight: 1.2
+							}}>
+								What Our Clients Say About <span style={{ fontWeight: 400 }}>Globon</span>
 							</h2>
 							<p className="text font-main-2" style={{ maxWidth: '640px', fontSize: '16px', lineHeight: '1.6', color: '#64748b' }}>
 								Real experiences from entrepreneurs, retailers, and growing enterprises across Kerala who achieved fast funding and strategic support with Globon.
@@ -233,7 +240,7 @@ export default function Section8() {
 											<p style={{ fontSize: '13px', color: '#64748b', margin: '0 0 3px 0', fontWeight: '500' }}>
 												{item.role}
 											</p>
-											<span style={{ fontSize: '12px', color: '#059669', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '4px' }}>
+											<span style={{ fontSize: '12px', color: '#0366a2', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '4px' }}>
 												<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
 													<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
 												</svg>

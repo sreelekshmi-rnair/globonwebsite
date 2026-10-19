@@ -87,9 +87,9 @@ export default function InquiryForm({
             marginBottom: '20px',
             fontSize: '14px',
             lineHeight: '1.5',
-            backgroundColor: status.success ? '#dcfce7' : '#fee2e2',
-            color: status.success ? '#15803d' : '#b91c1c',
-            border: `1px solid ${status.success ? '#bbf7d0' : '#fecaca'}`,
+            backgroundColor: status.success ? '#eff6ff' : '#fee2e2',
+            color: status.success ? '#0366a2' : '#b91c1c',
+            border: `1px solid ${status.success ? '#bfdbfe' : '#fecaca'}`,
           }}
         >
           {status.message}

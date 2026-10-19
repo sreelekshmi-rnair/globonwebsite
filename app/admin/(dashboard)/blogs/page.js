@@ -40,6 +40,15 @@ export default function AdminBlogsPage() {
     fetchBlogs();
   }, []);
 
+  // Automatically dismiss message after 4 seconds
+  useEffect(() => {
+    if (!message.text) return;
+    const timer = setTimeout(() => {
+      setMessage({ text: '', type: '' });
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, [message.text]);
+
   const openCreateModal = () => {
     setEditingBlog(null);
     setForm({
@@ -238,7 +247,7 @@ export default function AdminBlogsPage() {
         <div className="admin-modal-backdrop">
           <div className="admin-modal-dialog" style={{ maxWidth: '750px' }}>
             <div className="admin-modal-header">
-              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: '700' }}>
+              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 'normal' }}>
                 {editingBlog ? `Edit Post: ${editingBlog.title}` : 'Write New Blog Post'}
               </h3>
               <button

@@ -11,17 +11,24 @@ export async function GET() {
   }
 
   try {
-    const [servicesCount, loansCount, blogsCount, inquiriesCount] = await Promise.all([
+    const [servicesCount, loansCount, blogsCount, inquiriesCount, contactsCount] = await Promise.all([
       prisma.service.count(),
       prisma.loan.count(),
       prisma.blog.count(),
       prisma.inquiry.count(),
+      prisma.contactMessage.count(),
     ]);
 
-    const recentInquiries = await prisma.inquiry.findMany({
-      orderBy: { createdAt: 'desc' },
-      take: 5,
-    });
+    const [recentInquiries, recentContacts] = await Promise.all([
+      prisma.inquiry.findMany({
+        orderBy: { createdAt: 'desc' },
+        take: 5,
+      }),
+      prisma.contactMessage.findMany({
+        orderBy: { createdAt: 'desc' },
+        take: 5,
+      }),
+    ]);
 
     return NextResponse.json({
       counts: {
@@ -30,8 +37,10 @@ export async function GET() {
         blogs: blogsCount,
         inquiries: inquiriesCount,
         newInquiries: inquiriesCount,
+        contacts: contactsCount,
       },
       recentInquiries,
+      recentContacts,
     });
   } catch (error) {
     console.error('Stats error:', error);

@@ -48,105 +48,130 @@ export default function Section3() {
 
 	return (
 		<>
-			<section className="s-team" style={{ background: "#ffffff", padding: "80px 0" }}>
+			<section className="s-team" style={{ background: "#ffffff", padding: "105px 0 115px 0" }}>
 				<div className="tf-container about-page-container">
-					<div className="row">
-						<div className="col-lg-12">
-							<div className="text-center mb-50">
-								<p className="s-sub-title mb-10" style={{ color: "#0366a2", fontWeight: 700, textTransform: "uppercase", fontSize: "13px", letterSpacing: "1px" }}>
-									<i className="icon-angles-right moveLeftToRight" style={{ marginRight: "6px" }} />
-									The Globon Difference
-								</p>
-								<h2 className="s-title letter-space-0 text-anime-wave" style={{ fontSize: "36px", color: "#0f172a", fontWeight: 800 }}>
-									Why Businesses Choose <span style={{ color: "#0366a2" }}>Globon</span>
-								</h2>
-								<p className="text mx-auto mt-16" style={{ maxWidth: "820px", fontSize: "16px", lineHeight: "1.75", color: "#475569" }}>
-									Globon Business Solutions isn't just another financial services provider. We are a comprehensive 
-									growth partner that combines expert consulting, flexible financing, and cutting-edge technology to help 
-									businesses at every stage scale efficiently and sustainably. With <strong style={{ color: "#0f172a" }}>50+ satisfied clients</strong>, 
-									<strong style={{ color: "#0f172a" }}> ₹200+ Crores in funding facilitated</strong>, and a proven 3-step strategic process, we've established 
-									ourselves as the preferred choice for businesses that demand more than just capital — they demand expertise, 
-									transparency, and genuine partnership.
-								</p>
+					{/* Header Block */}
+					<div className="text-center mb-5">
+						<p style={{ color: "#0366a2", fontWeight: 700, textTransform: "uppercase", fontSize: "13px", letterSpacing: "1.5px", marginBottom: "14px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+							<i className="icon-angles-right" />
+							The Globon Difference
+						</p>
+						<h2 style={{
+							fontSize: "clamp(30px, 3.4vw, 42px)",
+							fontWeight: 500,
+							color: "#000000",
+							textTransform: "uppercase",
+							letterSpacing: "0.4px",
+							lineHeight: "1.2",
+							marginBottom: "20px",
+							fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
+						}}>
+							Why Businesses Choose Globon
+						</h2>
+						<p style={{ maxWidth: "880px", margin: "0 auto", fontSize: "18px", lineHeight: "1.75", color: "#334155", fontFamily: "'Public Sans', 'Manrope', 'Inter', sans-serif" }}>
+							Globon Business Solutions isn't just another financial services provider. We are a comprehensive 
+							growth partner combining expert advisory, flexible credit options, and direct banking access.
+						</p>
 
-								{/* Stat bar */}
-								<div className="mt-35" style={{
-									display: "flex",
-									justifyContent: "center",
-									flexWrap: "wrap",
-									gap: "24px",
-									background: "#ffffff",
-									padding: "24px",
-									borderRadius: "14px",
-									border: "1px solid #e2e8f0",
-									boxShadow: "0 6px 25px rgba(0,0,0,0.04)",
-									maxWidth: "960px",
-									marginLeft: "auto",
-									marginRight: "auto"
-								}}>
-									<div style={{ textAlign: "center", padding: "0 18px" }}>
-										<div style={{ fontSize: "32px", fontWeight: 900, color: "#0366a2" }}>₹200+ Cr</div>
-										<div style={{ color: "#64748b", fontSize: "13px", fontWeight: 600 }}>Funding Facilitated</div>
-									</div>
-									<div style={{ textAlign: "center", padding: "0 18px", borderLeft: "1px solid #e2e8f0" }}>
-										<div style={{ fontSize: "32px", fontWeight: 900, color: "#0366a2" }}>48 Hours</div>
-										<div style={{ color: "#64748b", fontSize: "13px", fontWeight: 600 }}>Fast Approval Turnaround</div>
-									</div>
-									<div style={{ textAlign: "center", padding: "0 18px", borderLeft: "1px solid #e2e8f0" }}>
-										<div style={{ fontSize: "32px", fontWeight: 900, color: "#0366a2" }}>194+</div>
-										<div style={{ color: "#64748b", fontSize: "13px", fontWeight: 600 }}>Support &amp; Collection Centers</div>
-									</div>
-									<div style={{ textAlign: "center", padding: "0 18px", borderLeft: "1px solid #e2e8f0" }}>
-										<div style={{ fontSize: "32px", fontWeight: 900, color: "#0366a2" }}>30+</div>
-										<div style={{ color: "#64748b", fontSize: "13px", fontWeight: 600 }}>Partner Banks &amp; NBFCs</div>
-									</div>
-								</div>
+						{/* Spacious Stat Bar */}
+						<div className="mt-5" style={{
+							display: "grid",
+							gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+							gap: "20px",
+							background: "#f8fafc",
+							padding: "36px 32px",
+							borderRadius: "20px",
+							border: "1px solid #e2e8f0",
+							boxShadow: "0 8px 30px rgba(0,0,0,0.03)",
+							maxWidth: "1200px",
+							marginLeft: "auto",
+							marginRight: "auto"
+						}}>
+							<div style={{ textAlign: "center", padding: "10px" }}>
+								<div style={{ fontSize: "clamp(32px, 3vw, 42px)", fontWeight: 800, color: "#0366a2", lineHeight: 1 }}>₹200+ Cr</div>
+								<div style={{ color: "#64748b", fontSize: "15px", fontWeight: 600, marginTop: "8px" }}>Funding Facilitated</div>
+							</div>
+							<div style={{ textAlign: "center", padding: "10px", borderLeft: "1px solid #e2e8f0" }}>
+								<div style={{ fontSize: "clamp(32px, 3vw, 42px)", fontWeight: 800, color: "#0366a2", lineHeight: 1 }}>48 Hours</div>
+								<div style={{ color: "#64748b", fontSize: "15px", fontWeight: 600, marginTop: "8px" }}>Fast Approval Turnaround</div>
+							</div>
+							<div style={{ textAlign: "center", padding: "10px", borderLeft: "1px solid #e2e8f0" }}>
+								<div style={{ fontSize: "clamp(32px, 3vw, 42px)", fontWeight: 800, color: "#0366a2", lineHeight: 1 }}>194+</div>
+								<div style={{ color: "#64748b", fontSize: "15px", fontWeight: 600, marginTop: "8px" }}>Support &amp; Collection Centers</div>
+							</div>
+							<div style={{ textAlign: "center", padding: "10px", borderLeft: "1px solid #e2e8f0" }}>
+								<div style={{ fontSize: "clamp(32px, 3vw, 42px)", fontWeight: 800, color: "#0366a2", lineHeight: 1 }}>30+</div>
+								<div style={{ color: "#64748b", fontSize: "15px", fontWeight: 600, marginTop: "8px" }}>Partner Banks &amp; NBFCs</div>
 							</div>
 						</div>
 					</div>
 
-					{/* 6 Core Reasons Grid (Balanced 3x2) */}
-					<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px" }}>
+					{/* 6 Core Reasons Grid */}
+					<div style={{
+						display: "grid",
+						gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+						gap: "28px"
+					}}>
 						{reasons.map((reason) => (
 							<div key={reason.id} style={{
 								background: "#ffffff",
 								border: "1px solid #e2e8f0",
-								borderRadius: "14px",
-								padding: "30px",
+								borderRadius: "18px",
+								padding: "36px 32px",
 								display: "flex",
 								flexDirection: "column",
 								justifyContent: "space-between",
-								boxShadow: "0 4px 20px rgba(0, 0, 0, 0.04)",
-								transition: "transform 0.2s ease, box-shadow 0.2s ease"
+								boxShadow: "0 6px 24px rgba(0, 0, 0, 0.04)",
+								transition: "transform 0.25s ease, box-shadow 0.25s ease"
 							}}>
 								<div>
-									<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+									<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
 										<span style={{ 
 											background: "#fef9ee", 
 											color: "#b45309", 
 											fontWeight: 800, 
 											fontSize: "13px", 
-											padding: "4px 12px", 
+											padding: "5px 14px", 
 											borderRadius: "20px", 
 											border: "1px solid #fdeecb"
 										}}>
 											Reason #{reason.id}
 										</span>
-										<i className={reason.icon} style={{ fontSize: "28px", color: "#0366a2" }} />
+										<div style={{
+											width: "44px",
+											height: "44px",
+											borderRadius: "12px",
+											background: "#edf5fd",
+											color: "#0366a2",
+											display: "flex",
+											alignItems: "center",
+											justifyContent: "center",
+											fontSize: "20px"
+										}}>
+											<i className={reason.icon} />
+										</div>
 									</div>
-									<h3 style={{ fontSize: "19px", fontWeight: 800, color: "#0f172a", marginBottom: "12px" }}>
+									<h3 style={{
+										fontSize: "19px",
+										fontWeight: 600,
+										color: "#000000",
+										textTransform: "uppercase",
+										letterSpacing: "0.3px",
+										marginBottom: "14px",
+										fontFamily: "'Public Sans', 'Manrope', 'Inter', sans-serif"
+									}}>
 										{reason.title}
 									</h3>
-									<p style={{ color: "#475569", fontSize: "14px", lineHeight: "1.7", marginBottom: "20px" }}>
+									<p style={{ color: "#475569", fontSize: "16px", lineHeight: "1.7", marginBottom: "24px" }}>
 										{reason.desc}
 									</p>
 								</div>
 								<div>
-									<div style={{ borderTop: "1px solid #f1f5f9", paddingTop: "14px" }}>
+									<div style={{ borderTop: "1px solid #f1f5f9", paddingTop: "18px" }}>
 										{reason.tags.map((tag, idx) => (
-											<div key={idx} style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-												<span style={{ color: "#16a34a", fontWeight: "bold" }}>✓</span>
-												<span style={{ color: "#64748b", fontSize: "13px" }}>{tag}</span>
+											<div key={idx} style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
+												<span style={{ color: "#16a34a", fontWeight: "bold", fontSize: "16px" }}>✓</span>
+												<span style={{ color: "#334155", fontSize: "14.5px", fontWeight: 500 }}>{tag}</span>
 											</div>
 										))}
 									</div>
@@ -156,10 +181,26 @@ export default function Section3() {
 					</div>
 
 					{/* Centered Action Button */}
-					<div style={{ display: "flex", justifyContent: "center", marginTop: "45px", width: "100%" }}>
-						<Link href="/contact" className="tf-btn text-anime-style-1" style={{ margin: "0 auto" }}>
-							Experience The Globon Difference
-							<i className="icon-chevron-right" />
+					<div style={{ display: "flex", justifyContent: "center", marginTop: "55px", width: "100%" }}>
+						<Link
+							href="/contact"
+							style={{
+								display: "inline-flex",
+								alignItems: "center",
+								gap: "10px",
+								backgroundColor: "#0366a2",
+								color: "#ffffff",
+								fontWeight: 600,
+								fontSize: "16px",
+								padding: "15px 36px",
+								borderRadius: "6px",
+								textDecoration: "none",
+								transition: "all 0.25s ease",
+								boxShadow: "0 4px 16px rgba(3, 102, 162, 0.25)"
+							}}
+						>
+							<span>Experience The Globon Difference</span>
+							<span style={{ fontSize: "18px", fontWeight: 700 }}>↗</span>
 						</Link>
 					</div>
 				</div>

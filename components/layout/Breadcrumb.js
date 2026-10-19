@@ -57,17 +57,6 @@ export default function Breadcrumb({ breadcrumbTitle, breadcrumbAlt, breadcrumbB
 							</div>
 						</div>
 					</div>
-					<div className="tf-marquee slider-saylo">
-						<div className="wrap-marquee">
-							{Array(10)
-								.fill("Globon Business Solutions")
-								.map((text, index) => (
-									<div className="marquee-item" key={index}>
-										<p className="font-main-2 text">{text}</p>
-									</div>
-								))}
-						</div>
-					</div>
 				</div>
 			}
 
@@ -129,60 +118,6 @@ export default function Breadcrumb({ breadcrumbTitle, breadcrumbAlt, breadcrumbB
 							</div>
 						</div>
 					</div>
-					<div className="tf-marquee slider-saylo">
-						<div className="wrap-marquee">
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-						</div>
-					</div>
 				</div>
 
 			}
@@ -224,60 +159,6 @@ export default function Breadcrumb({ breadcrumbTitle, breadcrumbAlt, breadcrumbB
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-					<div className="tf-marquee slider-saylo">
-						<div className="wrap-marquee">
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
-							</div>
-							<div className="marquee-item">
-								<p className="font-main-2 text">
-									Saylo Consulting
-								</p>
 							</div>
 						</div>
 					</div>

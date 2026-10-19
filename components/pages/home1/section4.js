@@ -15,7 +15,7 @@ export default function Section4() {
 				"Financial Health & Credit Profile Evaluation",
 				"PMEGP & Govt Subsidy Eligibility Matching"
 			],
-			image: "/images/methodology/indian_meeting_3.jpg"
+			image: "/images/methodology/step1.png"
 		},
 		{
 			id: 2,
@@ -26,7 +26,7 @@ export default function Section4() {
 				"Detailed Project Report (DPR) & CMA Data Preparation",
 				"Legal Title, Valuation & Document Optimization"
 			],
-			image: "/images/methodology/step2_docs.jpg"
+			image: "/images/methodology/step2.png"
 		},
 		{
 			id: 3,
@@ -37,7 +37,7 @@ export default function Section4() {
 				"Direct Banking Underwriter Coordination",
 				"Rapid 48-Hour Approval Turnaround"
 			],
-			image: "/images/methodology/methodology_step3.jpg"
+			image: "/images/methodology/step3.png"
 		},
 		{
 			id: 4,
@@ -48,7 +48,7 @@ export default function Section4() {
 				"Zero Hidden Charges & Transparent Fund Disbursement",
 				"Post-Sanction Advisory & Government Subsidy Recovery"
 			],
-			image: "/images/methodology/step4_disbursement.jpg"
+			image: "/images/methodology/step4.png"
 		}
 	]
 
@@ -59,26 +59,19 @@ export default function Section4() {
 					<div className="row">
 						<div className="col-lg-12">
 							<div className="text-center mb-50">
-								<p style={{
-									fontSize: '13px',
-									fontWeight: 800,
-									textTransform: 'uppercase',
-									letterSpacing: '3px',
-									color: '#111827',
-									marginBottom: '14px'
-								}}>
-									» THE GLOBON METHODOLOGY
-								</p>
 								<h2 style={{
-									fontSize: 'clamp(28px, 4.5vw, 50px)',
-									fontWeight: 800,
-									lineHeight: '1.25',
-									color: '#0f172a',
+									fontSize: 'clamp(28px, 3.2vw, 42px)',
+									fontWeight: 500,
+									color: '#000000',
+									textTransform: 'uppercase',
+									lineHeight: '1.2',
+									letterSpacing: '0.5px',
 									margin: '0 auto',
-									maxWidth: '850px'
+									maxWidth: '850px',
+									fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 								}}>
-									From Strategy to Disbursement <br />
-									Our Financial <span style={{ fontWeight: 300, fontStyle: 'normal' }}>Process</span>
+									FROM STRATEGY TO DISBURSEMENT<br />
+									OUR FINANCIAL PROCESS
 								</h2>
 							</div>
 
@@ -115,13 +108,13 @@ export default function Section4() {
 													justifyContent: 'center'
 												}}>
 													{/* Step Pill Badge */}
-													<div style={{ marginBottom: '28px' }}>
+													<div style={{ marginBottom: '24px' }}>
 														<span style={{
 															background: '#FFB800',
 															border: '1px solid #111111',
 															borderRadius: '6px',
 															padding: '6px 14px',
-															fontSize: '12px',
+															fontSize: '13px',
 															fontWeight: 800,
 															letterSpacing: '2.5px',
 															textTransform: 'uppercase',
@@ -134,20 +127,23 @@ export default function Section4() {
 
 													{/* Title */}
 													<h3 style={{
-														fontSize: '26px',
-														fontWeight: 800,
-														color: '#0f172a',
-														marginBottom: '14px',
-														lineHeight: '1.3'
+														fontSize: 'clamp(21px, 2vw, 25px)',
+														fontWeight: 500,
+														color: '#000000',
+														textTransform: 'uppercase',
+														letterSpacing: '0.4px',
+														marginBottom: '16px',
+														lineHeight: '1.25',
+														fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 													}}>
 														{item.title}
 													</h3>
 
 													{/* Description */}
 													<p style={{
-														fontSize: '15px',
+														fontSize: '17.5px',
 														lineHeight: '1.7',
-														color: '#475569',
+														color: '#334155',
 														marginBottom: '26px'
 													}}>
 														{item.desc}
@@ -160,7 +156,7 @@ export default function Section4() {
 														margin: 0,
 														display: 'flex',
 														flexDirection: 'column',
-														gap: '12px'
+														gap: '14px'
 													}}>
 														{item.benefits.map((b, bIdx) => (
 															<li
@@ -168,12 +164,12 @@ export default function Section4() {
 																style={{
 																	display: 'flex',
 																	alignItems: 'center',
-																	gap: '10px'
+																	gap: '12px'
 																}}
 															>
 																<svg
-																	width="18"
-																	height="18"
+																	width="20"
+																	height="20"
 																	viewBox="0 0 24 24"
 																	fill="none"
 																	stroke="#0f172a"
@@ -185,7 +181,7 @@ export default function Section4() {
 																	<polyline points="20 6 9 17 4 12" />
 																</svg>
 																<span style={{
-																	fontSize: '15px',
+																	fontSize: '17px',
 																	fontWeight: 600,
 																	color: '#0f172a'
 																}}>
@@ -261,8 +257,8 @@ export default function Section4() {
 													background: '#f3f4f6',
 													border: '1px solid #e5e7eb',
 													borderRadius: '6px',
-													padding: '5px 10px',
-													fontSize: '11px',
+													padding: '5px 12px',
+													fontSize: '12px',
 													fontWeight: 800,
 													letterSpacing: '1.5px',
 													textTransform: 'uppercase',
@@ -273,11 +269,14 @@ export default function Section4() {
 													{item.step}
 												</span>
 												<span style={{
-													fontSize: 'clamp(14px, 2.2vw, 19px)',
-													fontWeight: 700,
-													color: '#0f172a',
+													fontSize: 'clamp(15px, 1.6vw, 19px)',
+													fontWeight: 500,
+													color: '#000000',
+													textTransform: 'uppercase',
+													letterSpacing: '0.4px',
 													lineHeight: '1.35',
-													wordBreak: 'break-word'
+													wordBreak: 'break-word',
+													fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 												}}>
 													{item.title}
 												</span>

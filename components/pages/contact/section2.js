@@ -3,127 +3,179 @@ import { useState } from 'react'
 
 export default function Section2() {
 	const [formSubmitted, setFormSubmitted] = useState(false)
+	const [submitting, setSubmitting] = useState(false)
+	const [submitError, setSubmitError] = useState('')
 	const [formData, setFormData] = useState({
 		name: '',
 		phone: '',
 		email: '',
-		service: '',
+		subject: '',
 		message: ''
 	})
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault()
-		setFormSubmitted(true)
+		setSubmitting(true)
+		setSubmitError('')
+
+		try {
+			const res = await fetch('/api/contacts', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					fullName: formData.name,
+					phoneNumber: formData.phone,
+					email: formData.email,
+					subject: formData.subject,
+					message: formData.message
+				})
+			})
+
+			const data = await res.json()
+			if (!res.ok) {
+				throw new Error(data.error || 'Failed to submit contact message')
+			}
+
+			setFormSubmitted(true)
+			setFormData({
+				name: '',
+				phone: '',
+				email: '',
+				subject: '',
+				message: ''
+			})
+
+			// Automatically dismiss the thank you message after 5 seconds and restore the form
+			setTimeout(() => {
+				setFormSubmitted(false)
+			}, 5000)
+		} catch (err) {
+			setSubmitError(err.message || 'Something went wrong. Please try again.')
+		} finally {
+			setSubmitting(false)
+		}
 	}
 
 	return (
-		<section className="tf-spacing-1" id="contact-form" style={{ background: '#ffffff', padding: '90px 0' }}>
-			<div className="tf-container">
+		<section id="contact-form" style={{ background: '#ffffff', padding: '105px 0 115px 0' }}>
+			<div className="tf-container about-page-container">
 				<div className="row align-items-center g-5">
-					{/* Left Column: Get in touch form */}
+					{/* Left Column: Get in touch consultation form */}
 					<div className="col-lg-7">
 						<div style={{
 							background: '#ffffff',
-							borderRadius: '20px',
+							borderRadius: '24px',
 							border: '1px solid #e2e8f0',
-							padding: '45px 40px',
-							boxShadow: '0 10px 40px rgba(0, 0, 0, 0.04)'
+							padding: 'clamp(36px, 4vw, 54px)',
+							boxShadow: '0 12px 40px rgba(0, 0, 0, 0.04)'
 						}}>
-							<span style={{
-								background: '#edf5fd',
+							<p style={{
 								color: '#0366a2',
-								fontWeight: 800,
-								fontSize: '12px',
-								letterSpacing: '1px',
+								fontWeight: 700,
+								fontSize: '13px',
+								letterSpacing: '1.5px',
 								textTransform: 'uppercase',
-								padding: '6px 14px',
-								borderRadius: '20px',
-								border: '1px solid #dce8f5',
-								display: 'inline-block',
-								marginBottom: '14px'
+								marginBottom: '14px',
+								display: 'inline-flex',
+								alignItems: 'center',
+								gap: '8px'
 							}}>
-								Direct Consultation
-							</span>
-							<h2 style={{ fontSize: '38px', fontWeight: 800, color: '#0f172a', marginBottom: '14px' }}>
-								Get in touch
+								<i className="icon-angles-right" />
+								Direct Consultation · 2-Hour Response
+							</p>
+							
+							<h2 style={{
+								fontSize: 'clamp(28px, 3.2vw, 40px)',
+								fontWeight: 500,
+								color: '#000000',
+								textTransform: 'uppercase',
+								letterSpacing: '0.4px',
+								lineHeight: '1.2',
+								marginBottom: '16px',
+								fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
+							}}>
+								Get In Touch With Us
 							</h2>
-							<p style={{ color: '#475569', fontSize: '16px', lineHeight: '1.7', marginBottom: '32px' }}>
-								Have questions about loans, insurance, or business support services? Reach out to us and we'll help you get started.
+
+							<p style={{ color: '#475569', fontSize: '17px', lineHeight: '1.75', marginBottom: '34px', fontFamily: "'Public Sans', 'Manrope', 'Inter', sans-serif" }}>
+								Have questions about loans, government subsidies, or business compliance? Fill out the form below and an advisor will connect with you.
 							</p>
 
 							{formSubmitted ? (
 								<div style={{
-									background: '#f0fdf4',
-									border: '1px solid #bbf7d0',
-									borderRadius: '12px',
-									padding: '28px',
+									background: '#eff6ff',
+									border: '1px solid #bfdbfe',
+									borderRadius: '16px',
+									padding: '36px',
 									textAlign: 'center'
 								}}>
 									<div style={{
-										width: '56px',
-										height: '56px',
+										width: '60px',
+										height: '60px',
 										borderRadius: '50%',
-										background: '#22c55e',
+										background: '#0366a2',
 										color: '#ffffff',
 										display: 'flex',
 										alignItems: 'center',
 										justifyContent: 'center',
-										fontSize: '24px',
-										margin: '0 auto 16px'
+										fontSize: '28px',
+										fontWeight: 800,
+										margin: '0 auto 18px'
 									}}>
 										✓
 									</div>
-									<h4 style={{ color: '#15803d', fontSize: '20px', fontWeight: 800, marginBottom: '8px' }}>
+									<h4 style={{ color: '#0366a2', fontSize: '22px', fontWeight: 700, marginBottom: '10px' }}>
 										Thank You! Your Request Has Been Received.
 									</h4>
-									<p style={{ color: '#166534', margin: 0, fontSize: '15px' }}>
-										Our financial and business advisor will contact you within 2 business hours.
+									<p style={{ color: '#1e3a8a', margin: 0, fontSize: '16px', lineHeight: '1.6' }}>
+										Our senior financial and business advisor in Kodungallur will contact you within 2 business hours.
 									</p>
 								</div>
 							) : (
-								<form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-									<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '18px' }}>
+								<form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
+									<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
 										<div>
-											<label style={{ display: 'block', fontSize: '14px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+											<label style={{ display: 'block', fontSize: '15px', fontWeight: 600, color: '#000000', marginBottom: '8px', fontFamily: "'Public Sans', sans-serif" }}>
 												Full Name *
 											</label>
 											<input
 												type="text"
-												placeholder="Enter your name"
+												placeholder="Enter your full name"
 												required
 												value={formData.name}
 												onChange={(e) => setFormData({ ...formData, name: e.target.value })}
 												style={{
 													width: '100%',
-													height: '52px',
-													padding: '0 16px',
+													height: '54px',
+													padding: '0 18px',
 													borderRadius: '10px',
 													border: '1px solid #dce8f5',
 													background: '#ffffff',
-													fontSize: '15px',
+													fontSize: '16px',
 													color: '#0f172a',
-													outline: 'none'
+													outline: 'none',
+													transition: 'border-color 0.2s ease'
 												}}
 											/>
 										</div>
 										<div>
-											<label style={{ display: 'block', fontSize: '14px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+											<label style={{ display: 'block', fontSize: '15px', fontWeight: 600, color: '#000000', marginBottom: '8px', fontFamily: "'Public Sans', sans-serif" }}>
 												Phone Number *
 											</label>
 											<input
 												type="tel"
-												placeholder="+91 Phone number"
+												placeholder="+91 Mobile number"
 												required
 												value={formData.phone}
 												onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
 												style={{
 													width: '100%',
-													height: '52px',
-													padding: '0 16px',
+													height: '54px',
+													padding: '0 18px',
 													borderRadius: '10px',
 													border: '1px solid #dce8f5',
 													background: '#ffffff',
-													fontSize: '15px',
+													fontSize: '16px',
 													color: '#0f172a',
 													outline: 'none'
 												}}
@@ -131,9 +183,9 @@ export default function Section2() {
 										</div>
 									</div>
 
-									<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '18px' }}>
+									<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
 										<div>
-											<label style={{ display: 'block', fontSize: '14px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+											<label style={{ display: 'block', fontSize: '15px', fontWeight: 600, color: '#000000', marginBottom: '8px', fontFamily: "'Public Sans', sans-serif" }}>
 												Email Address *
 											</label>
 											<input
@@ -144,94 +196,103 @@ export default function Section2() {
 												onChange={(e) => setFormData({ ...formData, email: e.target.value })}
 												style={{
 													width: '100%',
-													height: '52px',
-													padding: '0 16px',
+													height: '54px',
+													padding: '0 18px',
 													borderRadius: '10px',
 													border: '1px solid #dce8f5',
 													background: '#ffffff',
-													fontSize: '15px',
+													fontSize: '16px',
 													color: '#0f172a',
 													outline: 'none'
 												}}
 											/>
 										</div>
 										<div>
-											<label style={{ display: 'block', fontSize: '14px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-												Service Needed
+											<label style={{ display: 'block', fontSize: '15px', fontWeight: 600, color: '#000000', marginBottom: '8px', fontFamily: "'Public Sans', sans-serif" }}>
+												Subject *
 											</label>
-											<select
-												value={formData.service}
-												onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+											<input
+												type="text"
+												placeholder="Enter Subject (e.g. Loan Assistance, Business Consulting)"
+												required
+												value={formData.subject}
+												onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
 												style={{
 													width: '100%',
-													height: '52px',
-													padding: '0 16px',
+													height: '54px',
+													padding: '0 18px',
 													borderRadius: '10px',
 													border: '1px solid #dce8f5',
 													background: '#ffffff',
-													fontSize: '15px',
+													fontSize: '16px',
 													color: '#0f172a',
 													outline: 'none'
 												}}
-											>
-												<option value="">Select Service</option>
-												<option value="Loans & Advances">1. Loans & Advances</option>
-												<option value="Business & Financial Solutions">2. Business & Financial Solutions</option>
-												<option value="Insurance Solutions">3. Insurance</option>
-												<option value="Real Estate Services">4. Real Estate</option>
-												<option value="Digital & Marketing">5. Digital & Marketing</option>
-												<option value="Other Assistance">Other Assistance</option>
-											</select>
+											/>
 										</div>
 									</div>
 
 									<div>
-										<label style={{ display: 'block', fontSize: '14px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+										<label style={{ display: 'block', fontSize: '15px', fontWeight: 600, color: '#000000', marginBottom: '8px', fontFamily: "'Public Sans', sans-serif" }}>
 											How Can We Help You?
 										</label>
 										<textarea
 											rows={4}
-											placeholder="Briefly describe your requirements..."
+											placeholder="Briefly describe your requirements or loan amount needed..."
 											value={formData.message}
 											onChange={(e) => setFormData({ ...formData, message: e.target.value })}
 											style={{
 												width: '100%',
-												padding: '14px 16px',
+												padding: '16px 18px',
 												borderRadius: '10px',
 												border: '1px solid #dce8f5',
 												background: '#ffffff',
-												fontSize: '15px',
+												fontSize: '16px',
 												color: '#0f172a',
 												outline: 'none',
-												resize: 'vertical'
+												resize: 'vertical',
+												lineHeight: '1.6'
 											}}
 										/>
 									</div>
 
+									{submitError && (
+										<div style={{
+											background: '#fef2f2',
+											border: '1px solid #fecaca',
+											color: '#dc2626',
+											borderRadius: '8px',
+											padding: '12px 16px',
+											fontSize: '14px'
+										}}>
+											{submitError}
+										</div>
+									)}
+
 									<div style={{ marginTop: '8px' }}>
 										<button
 											type="submit"
+											disabled={submitting}
 											style={{
-												background: '#0366a2',
+												backgroundColor: '#0366a2',
 												color: '#ffffff',
 												border: 'none',
-												borderRadius: '10px',
-												padding: '16px 36px',
+												borderRadius: '8px',
+												padding: '16px 42px',
 												fontSize: '16px',
-												fontWeight: 800,
-												letterSpacing: '1px',
-												cursor: 'pointer',
+												fontWeight: 600,
+												letterSpacing: '0.5px',
+												cursor: submitting ? 'not-allowed' : 'pointer',
+												opacity: submitting ? 0.75 : 1,
 												display: 'inline-flex',
 												alignItems: 'center',
 												gap: '10px',
-												boxShadow: '0 6px 20px rgba(3, 102, 162, 0.25)',
-												transition: 'transform 0.2s ease, background 0.2s ease'
+												boxShadow: '0 4px 16px rgba(3, 102, 162, 0.25)',
+												transition: 'all 0.25s ease'
 											}}
-											onMouseEnter={(e) => (e.currentTarget.style.background = '#025283')}
-											onMouseLeave={(e) => (e.currentTarget.style.background = '#0366a2')}
 										>
-											SUBMIT
-											<i className="icon-chevron-right" style={{ fontSize: '13px' }} />
+											<span>{submitting ? 'Submitting...' : 'Submit Inquiry'}</span>
+											<span style={{ fontSize: '18px', fontWeight: 700 }}>↗</span>
 										</button>
 									</div>
 								</form>
@@ -239,43 +300,52 @@ export default function Section2() {
 						</div>
 					</div>
 
-					{/* Right Column: Office Location & Map */}
+					{/* Right Column: Office Location & Google Map */}
 					<div className="col-lg-5">
 						<div style={{
-							background: '#edf5fd',
-							borderRadius: '20px',
-							border: '1px solid #dce8f5',
-							padding: '36px',
+							background: '#f8fafc',
+							borderRadius: '24px',
+							border: '1px solid #e2e8f0',
+							padding: 'clamp(32px, 3.5vw, 44px)',
 							display: 'flex',
 							flexDirection: 'column',
-							gap: '24px'
+							gap: '24px',
+							boxShadow: '0 8px 30px rgba(0, 0, 0, 0.03)'
 						}}>
 							<div>
 								<span style={{
 									background: '#ffffff',
 									color: '#0366a2',
-									fontWeight: 800,
-									fontSize: '11px',
+									fontWeight: 700,
+									fontSize: '12px',
 									letterSpacing: '1px',
 									textTransform: 'uppercase',
-									padding: '4px 12px',
+									padding: '4px 14px',
 									borderRadius: '20px',
 									border: '1px solid #dce8f5',
 									display: 'inline-block',
-									marginBottom: '10px'
+									marginBottom: '12px'
 								}}>
-									Head Office
+									Head Office · Kodungallur
 								</span>
-								<h3 style={{ fontSize: '24px', fontWeight: 800, color: '#0f172a', marginBottom: '10px' }}>
+								<h3 style={{
+									fontSize: '22px',
+									fontWeight: 600,
+									color: '#000000',
+									textTransform: 'uppercase',
+									letterSpacing: '0.4px',
+									marginBottom: '10px',
+									fontFamily: "'Public Sans', 'Manrope', 'Inter', sans-serif"
+								}}>
 									Globon Business Solutions
 								</h3>
-								<p style={{ color: '#475569', fontSize: '15px', lineHeight: '1.6', margin: 0 }}>
-									18/520 1st floor, Dharmaraja building, Opp. Siva temple, Sringapuram, Kodungallur, Thrissur, 680664
+								<p style={{ color: '#475569', fontSize: '16px', lineHeight: '1.7', margin: 0 }}>
+									18/520 1st floor, Dharmaraja building, Opp. Siva temple, Sringapuram, Kodungallur, Thrissur, Kerala — 680664
 								</p>
 							</div>
 
 							{/* Google Maps Embed */}
-							<div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #dce8f5', height: '260px' }}>
+							<div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid #e2e8f0', height: '290px', boxShadow: '0 4px 20px rgba(0,0,0,0.04)' }}>
 								<iframe
 									src="https://maps.google.com/maps?q=18/520+1st+floor,+Dharmaraja+building,+Opp.+Siva+temple,+Sringapuram,+Kodungallur,+Thrissur,+680664&t=&z=15&ie=UTF8&iwloc=&output=embed"
 									width="100%"
@@ -288,18 +358,20 @@ export default function Section2() {
 								/>
 							</div>
 
+							{/* Quick WhatsApp Support Bar */}
 							<div style={{
 								background: '#ffffff',
-								borderRadius: '12px',
-								border: '1px solid #dce8f5',
-								padding: '18px 20px',
+								borderRadius: '16px',
+								border: '1px solid #e2e8f0',
+								padding: '20px 24px',
 								display: 'flex',
 								justifyContent: 'space-between',
-								alignItems: 'center'
+								alignItems: 'center',
+								boxShadow: '0 2px 10px rgba(0,0,0,0.02)'
 							}}>
 								<div>
-									<div style={{ fontSize: '13px', color: '#64748b', fontWeight: 600 }}>Quick WhatsApp Support</div>
-									<div style={{ fontSize: '15px', color: '#16a34a', fontWeight: 800 }}>+91 98460 53539</div>
+									<div style={{ fontSize: '13px', color: '#64748b', fontWeight: 600 }}>Direct WhatsApp Helpdesk</div>
+									<div style={{ fontSize: '17px', color: '#0366a2', fontWeight: 800, marginTop: '2px' }}>+91 98460 53539</div>
 								</div>
 								<a
 									href="https://wa.me/919846053539?text=Hello%20Globon,%20I%20have%20an%20inquiry"
@@ -308,11 +380,12 @@ export default function Section2() {
 									style={{
 										background: '#22c55e',
 										color: '#ffffff',
-										padding: '10px 18px',
+										padding: '12px 22px',
 										borderRadius: '8px',
 										fontWeight: 700,
-										fontSize: '13px',
-										textDecoration: 'none'
+										fontSize: '14px',
+										textDecoration: 'none',
+										boxShadow: '0 2px 8px rgba(34, 197, 94, 0.3)'
 									}}
 								>
 									Chat Now

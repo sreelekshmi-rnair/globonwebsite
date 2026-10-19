@@ -17,36 +17,39 @@ export default function Section7() {
 
 	return (
 		<>
-			<section className="tp-brand-area tp-brand-background s-partner" style={{ background: "#ffffff", padding: "80px 0 100px", borderTop: "1px solid #e2e8f0" }}>
+			<section className="tp-brand-area tp-brand-background s-partner" style={{ background: "#ffffff", padding: "105px 0 115px 0", borderTop: "1px solid #e2e8f0" }}>
 				<div className="tf-container about-page-container">
-					<div className="row justify-content-center">
-						<div className="col-lg-8">
-							<div className="tp-section-title-wrapper text-center mb-50">
-								<p className="tp-section-title-pre s-sub-title mb-10" style={{ color: "#0366a2", fontWeight: 700, textTransform: "uppercase", fontSize: "13px", letterSpacing: "1px" }}>
-									<i className="icon-angles-right moveLeftToRight" style={{ marginRight: "6px" }} />
-									Our Network
-								</p>
-								<h2 className="tp-section-title s-title text-anime-wave" style={{ fontSize: "36px", color: "#0f172a", fontWeight: 800 }}>
-									Associated Banks &amp; <span style={{ color: "#0366a2" }}>NBFCs</span>
-								</h2>
-								<p style={{ color: "#475569", maxWidth: "680px", margin: "14px auto 0", fontSize: "15px", lineHeight: "1.7" }}>
-									We partner with India's most reputable financial institutions to negotiate the lowest interest rates, highest loan eligibility, and seamless disbursements for our clients.
-								</p>
-							</div>
-						</div>
+					{/* Header Block */}
+					<div className="text-center mb-5">
+						<p style={{ color: "#0366a2", fontWeight: 700, textTransform: "uppercase", fontSize: "13px", letterSpacing: "1.5px", marginBottom: "14px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+							<i className="icon-angles-right" />
+							Our Banking Network
+						</p>
+						<h2 style={{
+							fontSize: "clamp(30px, 3.4vw, 42px)",
+							fontWeight: 500,
+							color: "#000000",
+							textTransform: "uppercase",
+							letterSpacing: "0.4px",
+							lineHeight: "1.2",
+							marginBottom: "20px",
+							fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
+						}}>
+							Associated Banks &amp; NBFCs
+						</h2>
+						<p style={{ color: "#334155", maxWidth: "760px", margin: "0 auto", fontSize: "18px", lineHeight: "1.75", fontFamily: "'Public Sans', 'Manrope', 'Inter', sans-serif" }}>
+							We partner with India's most reputable financial institutions to negotiate the lowest interest rates, highest loan eligibility, and seamless disbursements for our clients.
+						</p>
 					</div>
 
 					{/* Marquee Wrapper */}
 					<div 
-						className="tp-brand-wrapper p-relative wow fadeInUp" 
-						data-wow-duration="1s" 
-						data-wow-delay=".3s"
 						style={{
 							background: "#f8fafc",
-							borderRadius: "20px",
-							padding: "45px 30px",
+							borderRadius: "24px",
+							padding: "45px 36px",
 							border: "1px solid #e2e8f0",
-							boxShadow: "0 4px 25px rgba(0,0,0,0.03)",
+							boxShadow: "0 6px 30px rgba(0,0,0,0.03)",
 							overflow: "hidden"
 						}}
 					>
@@ -56,7 +59,7 @@ export default function Section7() {
 								style={{ 
 									display: "flex", 
 									alignItems: "center", 
-									gap: "60px", 
+									gap: "40px", 
 									animation: "marquee 22s linear infinite", 
 									width: "max-content" 
 								}}
@@ -70,12 +73,12 @@ export default function Section7() {
 											alignItems: "center",
 											justifyContent: "center",
 											background: "#ffffff",
-											padding: "16px 28px",
-											borderRadius: "12px",
+											padding: "16px 30px",
+											borderRadius: "14px",
 											border: "1px solid #e2e8f0",
-											boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
-											minWidth: "160px",
-											height: "75px"
+											boxShadow: "0 2px 10px rgba(0,0,0,0.03)",
+											minWidth: "175px",
+											height: "80px"
 										}}
 									>
 										<img 
@@ -83,7 +86,7 @@ export default function Section7() {
 											alt={bank.name} 
 											title={bank.name}
 											className="bank-logo-item"
-											style={{ maxHeight: "42px", maxWidth: "140px", width: "auto", height: "auto", objectFit: "contain" }}
+											style={{ maxHeight: "44px", maxWidth: "145px", width: "auto", height: "auto", objectFit: "contain" }}
 										/>
 									</div>
 								))}
@@ -97,12 +100,12 @@ export default function Section7() {
 											alignItems: "center",
 											justifyContent: "center",
 											background: "#ffffff",
-											padding: "16px 28px",
-											borderRadius: "12px",
+											padding: "16px 30px",
+											borderRadius: "14px",
 											border: "1px solid #e2e8f0",
-											boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
-											minWidth: "160px",
-											height: "75px"
+											boxShadow: "0 2px 10px rgba(0,0,0,0.03)",
+											minWidth: "175px",
+											height: "80px"
 										}}
 									>
 										<img 
@@ -110,7 +113,7 @@ export default function Section7() {
 											alt={bank.name} 
 											title={bank.name}
 											className="bank-logo-item"
-											style={{ maxHeight: "42px", maxWidth: "140px", width: "auto", height: "auto", objectFit: "contain" }}
+											style={{ maxHeight: "44px", maxWidth: "145px", width: "auto", height: "auto", objectFit: "contain" }}
 										/>
 									</div>
 								))}
@@ -118,16 +121,6 @@ export default function Section7() {
 						</div>
 					</div>
 
-					{/* Bottom Call to Action */}
-					<div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "40px" }}>
-						<p style={{ fontSize: "15px", color: "#64748b", marginBottom: "14px" }}>
-							Looking for the best loan rates from these partner banks?
-						</p>
-						<Link href="/contact" className="tf-btn style-3 small">
-							Compare Rates with Our Advisors
-							<i className="icon-chevron-right" />
-						</Link>
-					</div>
 				</div>
 			</section>
 		</>

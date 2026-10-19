@@ -14,8 +14,7 @@ export default function Section6() {
 		businessName: '',
 		industry: '',
 		businessAge: '',
-		monthlyRevenue: '',
-		serviceNeeded: ''
+		monthlyRevenue: ''
 	})
 
 	const handleChange = (e) => {
@@ -41,6 +40,9 @@ export default function Section6() {
 			}
 
 			setFormSubmitted(true)
+			setTimeout(() => {
+				setFormSubmitted(false)
+			}, 5000)
 		} catch (err) {
 			setSubmitError(err.message || 'Something went wrong. Please try again.')
 		} finally {
@@ -293,25 +295,6 @@ export default function Section6() {
 													<option value="10 Lakh">10 Lakh</option>
 													<option value="10-50 Lakh">10-50 Lakh</option>
 													<option value="50 Lakh+">50 Lakh+</option>
-												</select>
-											</div>
-										</div>
-
-										{/* 6. Service Needed */}
-										<div className="consultation-row">
-											<div className="consultation-col-full">
-												<select
-													name="serviceNeeded"
-													className="consultation-form-select"
-													value={formData.serviceNeeded}
-													onChange={handleChange}
-													required
-												>
-													<option value="" disabled>Service Needed</option>
-													<option value="Loans and advances">Loans and advances</option>
-													<option value="Consulting">Consulting</option>
-													<option value="ERP/CRM Automation">ERP/CRM Automation</option>
-													<option value="Other">Other</option>
 												</select>
 											</div>
 										</div>

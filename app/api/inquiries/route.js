@@ -14,10 +14,9 @@ export async function POST(request) {
     const industry = (body.industry || '').trim();
     const businessAge = (body.businessAge || '').trim();
     const monthlyRevenue = (body.monthlyRevenue || '').trim();
-    const serviceNeeded = (body.serviceNeeded || body.service || body.subject || '').trim();
-    const type = body.type || 'Consultation Request';
-    const loanAmount = body.loanAmount || '';
-    const message = body.message || '';
+    const serviceNeeded = (body.serviceNeeded || body.service || '').trim();
+    const subject = (body.subject || '').trim();
+    const message = (body.message || '').trim();
 
     if (!fullName || !phoneNumber) {
       return NextResponse.json({ error: 'Full Name and Phone Number are required' }, { status: 400 });
@@ -28,6 +27,8 @@ export async function POST(request) {
         fullName,
         email,
         phoneNumber,
+        subject,
+        message,
         businessName,
         industry,
         businessAge,

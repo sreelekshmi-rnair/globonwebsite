@@ -1,25 +1,27 @@
 import { NextResponse } from 'next/server';
-import prisma from '@/lib/prisma';
+import { getAllServices, saveService, getAllCategories, syncDatabaseWithServices } from '@/lib/servicesStore';
 import { getCurrentAdmin } from '@/lib/auth';
-
-function slugify(text) {
-  return text
-    .toString()
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w\-]+/g, '')
-    .replace(/\-\-+/g, '-');
-}
 
 export const dynamic = 'force-dynamic';
 
-export async function GET() {
+export async function GET(request) {
   try {
-    const services = await prisma.service.findMany({
-      orderBy: [{ order: 'asc' }, { createdAt: 'desc' }],
+    await syncDatabaseWithServices();
+    const { searchParams } = new URL(request.url);
+    const categoryFilter = searchParams.get('category');
+    const services = getAllServices(categoryFilter);
+    const categories = getAllCategories();
+
+    return NextResponse.json({
+      services,
+      categories: categories.map((c) => ({
+        id: c.id,
+        slug: c.slug,
+        title: c.title,
+        serviceCount: (c.services || []).length,
+      })),
+      total: services.length,
     });
-    return NextResponse.json(services);
   } catch (error) {
     console.error('Error fetching services:', error);
     return NextResponse.json({ error: 'Failed to fetch services' }, { status: 500 });
@@ -34,36 +36,19 @@ export async function POST(request) {
 
   try {
     const body = await request.json();
-    const { title, category, icon, shortDescription, description, features, image, isFeatured, order } = body;
+    const { title, category } = body;
 
-    if (!title || !shortDescription || !description) {
-      return NextResponse.json({ error: 'Title, short description, and description are required' }, { status: 400 });
+    if (!title || !category) {
+      return NextResponse.json(
+        { error: 'Service title and category are required' },
+        { status: 400 }
+      );
     }
 
-    const slug = body.slug ? slugify(body.slug) : slugify(title);
-
-    // Ensure slug uniqueness
-    const existing = await prisma.service.findUnique({ where: { slug } });
-    const finalSlug = existing ? `${slug}-${Date.now()}` : slug;
-
-    const newService = await prisma.service.create({
-      data: {
-        title,
-        slug: finalSlug,
-        category: category || 'General',
-        icon: icon || 'flaticon-business',
-        shortDescription,
-        description,
-        features: features || '',
-        image: image || '/assets/images/service/service-01.jpg',
-        isFeatured: Boolean(isFeatured),
-        order: Number(order) || 0,
-      },
-    });
-
-    return NextResponse.json(newService, { status: 201 });
+    const saved = await saveService(body);
+    return NextResponse.json(saved, { status: 201 });
   } catch (error) {
     console.error('Error creating service:', error);
-    return NextResponse.json({ error: 'Failed to create service' }, { status: 500 });
+    return NextResponse.json({ error: error.message || 'Failed to create service' }, { status: 500 });
   }
 }

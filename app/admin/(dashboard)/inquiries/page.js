@@ -86,11 +86,11 @@ export default function AdminInquiriesPage() {
       'Full Name',
       'Email Address',
       'Phone Number',
+      'Service Needed',
       'Business Name',
       'Industry',
       'Business Age',
       'Monthly Revenue',
-      'Service Needed',
       'Created At',
     ];
 
@@ -99,11 +99,11 @@ export default function AdminInquiriesPage() {
       `"${(inq.fullName || '').replace(/"/g, '""')}"`,
       `"${(inq.email || '').replace(/"/g, '""')}"`,
       `"${(inq.phoneNumber || '').replace(/"/g, '""')}"`,
+      `"${(inq.serviceNeeded || '').replace(/"/g, '""')}"`,
       `"${(inq.businessName || '').replace(/"/g, '""')}"`,
       `"${(inq.industry || '').replace(/"/g, '""')}"`,
       `"${(inq.businessAge || '').replace(/"/g, '""')}"`,
       `"${(inq.monthlyRevenue || '').replace(/"/g, '""')}"`,
-      `"${(inq.serviceNeeded || '').replace(/"/g, '""')}"`,
       `"${new Date(inq.createdAt).toLocaleString()}"`,
     ]);
 
@@ -122,17 +122,21 @@ export default function AdminInquiriesPage() {
     const fullName = (inq.fullName || '').toLowerCase();
     const email = (inq.email || '').toLowerCase();
     const phone = (inq.phoneNumber || '').toLowerCase();
+    const srv = (inq.serviceNeeded || '').toLowerCase();
+    const subj = (inq.subject || '').toLowerCase();
+    const msg = (inq.message || '').toLowerCase();
     const bName = (inq.businessName || '').toLowerCase();
     const ind = (inq.industry || '').toLowerCase();
-    const srv = (inq.serviceNeeded || '').toLowerCase();
 
     return (
       fullName.includes(q) ||
       email.includes(q) ||
       phone.includes(q) ||
+      srv.includes(q) ||
+      subj.includes(q) ||
+      msg.includes(q) ||
       bName.includes(q) ||
-      ind.includes(q) ||
-      srv.includes(q)
+      ind.includes(q)
     );
   });
 
@@ -203,11 +207,11 @@ export default function AdminInquiriesPage() {
                     <th style={{ minWidth: '120px' }}>Full Name</th>
                     <th style={{ minWidth: '150px' }}>Email Address</th>
                     <th style={{ minWidth: '110px' }}>Phone Number</th>
+                    <th style={{ minWidth: '140px' }}>Service Needed</th>
                     <th style={{ minWidth: '120px' }}>Business Name</th>
                     <th style={{ minWidth: '100px' }}>Industry</th>
                     <th style={{ minWidth: '80px' }}>Age</th>
                     <th style={{ minWidth: '95px' }}>Revenue</th>
-                    <th style={{ minWidth: '115px' }}>Service</th>
                     <th style={{ minWidth: '90px' }}>Date</th>
                     <th style={{ minWidth: '180px', textAlign: 'center', paddingRight: '18px' }}>Actions</th>
                   </tr>
@@ -243,6 +247,21 @@ export default function AdminInquiriesPage() {
                           </a>
                         </td>
 
+                        {/* Service Needed */}
+                        <td>
+                          <span style={{
+                            fontSize: '11.5px',
+                            padding: '3px 8px',
+                            borderRadius: '5px',
+                            background: '#eff6ff',
+                            color: '#1d4ed8',
+                            fontWeight: '600',
+                            whiteSpace: 'nowrap'
+                          }}>
+                            {inq.serviceNeeded || '—'}
+                          </span>
+                        </td>
+
                         {/* 4. Business Name */}
                         <td style={{ fontWeight: '600', color: '#334155', maxWidth: '140px', overflow: 'hidden', textOverflow: 'ellipsis' }} title={inq.businessName || ''}>
                           {inq.businessName || '—'}
@@ -271,25 +290,6 @@ export default function AdminInquiriesPage() {
                         {/* 7. Monthly Revenue */}
                         <td style={{ fontWeight: '700', color: '#16a34a', fontSize: '12.5px', whiteSpace: 'nowrap' }}>
                           {inq.monthlyRevenue || '—'}
-                        </td>
-
-                        {/* 8. Service Needed */}
-                        <td>
-                          <span style={{
-                            fontSize: '11px',
-                            padding: '3px 8px',
-                            borderRadius: '10px',
-                            background: '#e0f2fe',
-                            color: '#0369a1',
-                            fontWeight: '700',
-                            display: 'inline-block',
-                            maxWidth: '130px',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                            whiteSpace: 'nowrap'
-                          }} title={inq.serviceNeeded || inq.subject || ''}>
-                            {inq.serviceNeeded || inq.subject || 'Consultation'}
-                          </span>
                         </td>
 
                         {/* Date */}
@@ -394,6 +394,13 @@ export default function AdminInquiriesPage() {
                 </div>
 
                 <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '700', textTransform: 'uppercase' }}>Service Needed</div>
+                  <div style={{ fontSize: '14.5px', fontWeight: '700', color: '#1d4ed8', marginTop: '3px' }}>
+                    {selectedInquiry.serviceNeeded || '—'}
+                  </div>
+                </div>
+
+                <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
                   <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '700', textTransform: 'uppercase' }}>Business Name</div>
                   <div style={{ fontSize: '14.5px', fontWeight: '700', color: '#0f172a', marginTop: '3px' }}>
                     {selectedInquiry.businessName || '—'}
@@ -425,13 +432,6 @@ export default function AdminInquiriesPage() {
                   <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '700', textTransform: 'uppercase' }}>Submission Date</div>
                   <div style={{ fontSize: '13.5px', fontWeight: '600', color: '#475569', marginTop: '3px' }}>
                     {new Date(selectedInquiry.createdAt).toLocaleString()}
-                  </div>
-                </div>
-
-                <div style={{ gridColumn: 'span 2', background: '#f0f9ff', padding: '14px 16px', borderRadius: '8px', border: '1px solid #bae6fd' }}>
-                  <div style={{ fontSize: '11px', color: '#0284c7', fontWeight: '700', textTransform: 'uppercase' }}>Service Needed</div>
-                  <div style={{ fontSize: '15px', fontWeight: '800', color: '#0369a1', marginTop: '3px' }}>
-                    {selectedInquiry.serviceNeeded || selectedInquiry.subject || 'Consultation Request'}
                   </div>
                 </div>
               </div>

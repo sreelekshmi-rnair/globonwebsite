@@ -46,6 +46,15 @@ export default function AdminLoansPage() {
     fetchLoans();
   }, []);
 
+  // Automatically dismiss message after 4 seconds
+  useEffect(() => {
+    if (!message.text) return;
+    const timer = setTimeout(() => {
+      setMessage({ text: '', type: '' });
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, [message.text]);
+
   const openCreateModal = () => {
     setEditingLoan(null);
     setForm({
@@ -264,7 +273,7 @@ export default function AdminLoansPage() {
         <div className="admin-modal-backdrop">
           <div className="admin-modal-dialog">
             <div className="admin-modal-header">
-              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: '700' }}>
+              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 'normal' }}>
                 {editingLoan ? `Edit Loan: ${editingLoan.title}` : 'Add New Loan Product'}
               </h3>
               <button

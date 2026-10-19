@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Section7() {
-	const [openIdx, setOpenIdx] = useState(0)
+	const [openIdx, setOpenIdx] = useState(null)
 
 	const whyItems = [
 		{
@@ -21,32 +21,25 @@ export default function Section7() {
 		{
 			title: "Extensive Network of Branches across Kerala",
 			desc: "With 194+ collection and client support centers throughout Thrissur, Ernakulam, Malappuram, and all 14 districts, local doorstep documentation assistance is always within your reach."
-		},
-		{
-			title: "Industry-Leading 48-Hour Loan Approvals",
-			desc: "Our pre-qualification framework and direct credit liaison ensure rapid file processing, delivering sanction approvals in as fast as 48 hours with minimal hassle."
-		},
-		{
-			title: "Complete Transparency & Zero Hidden Charges",
-			desc: "We believe in honest, long-term partnerships. Every fee, interest schedule, and loan term is communicated with complete clarity from day one—zero surprises, zero hidden clauses."
 		}
 	]
 
 	return (
-		<section className="tf-spacing-1" id="why-choose-us" style={{ backgroundColor: '#edf5fd', padding: '95px 0' }}>
-			<div className="tf-container">
+		<section className="ksfe-why-exact-section" id="why-choose-us" style={{ backgroundColor: '#ffffff', padding: '95px 0 100px 0' }}>
+			<div className="tf-container w-1780">
 				<div className="row align-items-center g-5">
 					{/* Left Column: Heading and Accordion List */}
 					<div className="col-lg-6">
-						<div style={{ paddingRight: '20px' }}>
-							<h2 style={{
-								fontSize: '44px',
-								fontWeight: 800,
-								color: '#0f172a',
-								letterSpacing: '-0.5px',
+						<div style={{ paddingRight: '28px' }}>
+							<h2 className="why-globon-heading" style={{
+								fontSize: 'clamp(28px, 3.2vw, 38px)',
+								fontWeight: 500,
+								color: '#000000',
+								letterSpacing: '0.4px',
 								textTransform: 'uppercase',
-								marginBottom: '32px',
-								lineHeight: 1.15
+								marginBottom: '30px',
+								lineHeight: 1.2,
+								fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 							}}>
 								WHY GLOBON?
 							</h2>
@@ -57,9 +50,10 @@ export default function Section7() {
 									return (
 										<div
 											key={idx}
+											className="why-globon-item"
 											style={{
-												borderBottom: '1px solid #eef2f6',
-												padding: '22px 0',
+												borderBottom: '1px solid #e5e7eb',
+												padding: '26px 0',
 												transition: 'all 0.2s ease'
 											}}
 										>
@@ -79,26 +73,27 @@ export default function Section7() {
 													textAlign: 'left'
 												}}
 											>
-												<span style={{
-													fontSize: '19px',
+												<span className="why-globon-question" style={{
+													fontSize: 'clamp(22px, 2.2vw, 30px)',
 													fontWeight: 500,
-													color: isOpen ? '#0f172a' : '#1e293b',
+													color: '#000000',
 													letterSpacing: '-0.2px',
 													lineHeight: 1.35,
-													paddingRight: '16px'
+													paddingRight: '16px',
+													fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 												}}>
 													{item.title}
 												</span>
-												<span style={{
-													fontSize: '26px',
-													fontWeight: 400,
-													color: '#0366a2',
+												<span className="why-globon-toggle-btn" style={{
+													fontSize: '34px',
+													fontWeight: 300,
+													color: '#16a34a',
 													lineHeight: 1,
 													display: 'inline-flex',
 													alignItems: 'center',
 													justifyContent: 'center',
-													width: '32px',
-													height: '32px',
+													width: '38px',
+													height: '38px',
 													flexShrink: 0,
 													transition: 'transform 0.2s ease',
 													userSelect: 'none'
@@ -107,12 +102,14 @@ export default function Section7() {
 												</span>
 											</button>
 											{isOpen && (
-												<div style={{
-													marginTop: '14px',
-													paddingRight: '36px',
-													color: '#64748b',
-													fontSize: '15px',
+												<div className="why-globon-answer" style={{
+													marginTop: '16px',
+													paddingRight: '32px',
+													color: '#374151',
+													fontSize: '19px',
 													lineHeight: 1.65,
+													fontWeight: 400,
+													fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif",
 													animation: 'fadeIn 0.25s ease'
 												}}>
 													{item.desc}
@@ -125,27 +122,28 @@ export default function Section7() {
 						</div>
 					</div>
 
-					{/* Right Column: Hero Visual with Dot Grid & Floating Shield Badge */}
+					{/* Right Column: Hero Visual with Green Dots & Floating Badges matching Image 2 */}
 					<div className="col-lg-6">
-						<div style={{ position: 'relative', width: '100%', maxWidth: '560px', margin: '0 auto' }}>
-							{/* Dot matrix pattern accent above image */}
+						<div style={{ position: 'relative', width: '100%', maxWidth: '580px', margin: '0 auto' }}>
+							
+							{/* Top Accent: Green Dot Matrix Pattern (Image 2 style) */}
 							<div style={{
 								position: 'absolute',
-								top: '-24px',
-								left: '40px',
+								top: '-26px',
+								left: '60px',
 								zIndex: 1,
 								pointerEvents: 'none'
 							}}>
-								<svg width="120" height="24" viewBox="0 0 120 24" fill="none">
+								<svg width="140" height="26" viewBox="0 0 140 26" fill="none">
 									{[...Array(6)].map((_, c) => (
 										[...Array(2)].map((_, r) => (
-											<circle key={`${c}-${r}`} cx={10 + c * 20} cy={6 + r * 12} r="2.5" fill="#fbb411" opacity="0.75" />
+											<circle key={`top-${c}-${r}`} cx={12 + c * 22} cy={6 + r * 13} r="2.8" fill="#fbb411" />
 										))
 									))}
 								</svg>
 							</div>
 
-							{/* Main Image Frame */}
+							{/* Main Image Frame (Couple looking at laptop matching Image 2) */}
 							<div style={{
 								borderRadius: '20px',
 								overflow: 'hidden',
@@ -154,10 +152,10 @@ export default function Section7() {
 								backgroundColor: '#f8fafc'
 							}}>
 								<Image
-									src="/images/section/why-globon.jpg"
-									alt="Why Globon Business Solutions - Loan Assistance & Financial Strategy"
+									src="/images/section/why-ksfe-couple.jpg"
+									alt="Why Globon Business Solutions - Trusted Financial Partner"
 									width={700}
-									height={560}
+									height={530}
 									style={{
 										width: '100%',
 										height: 'auto',
@@ -168,27 +166,97 @@ export default function Section7() {
 								/>
 							</div>
 
-							{/* Floating Verified Trust Shield Badge */}
+							{/* Top-Right Floating Shield Badge (Image 2 style) */}
 							<div style={{
 								position: 'absolute',
-								top: '-20px',
+								top: '-24px',
 								right: '-16px',
-								width: '74px',
-								height: '74px',
+								width: '76px',
+								height: '76px',
 								backgroundColor: '#ffffff',
 								borderRadius: '18px',
-								boxShadow: '0 12px 32px rgba(0, 0, 0, 0.12)',
+								boxShadow: '0 14px 34px rgba(0, 0, 0, 0.12)',
 								border: '1px solid #f1f5f9',
 								display: 'flex',
 								alignItems: 'center',
 								justifyContent: 'center',
 								zIndex: 10
 							}}>
-								<svg width="42" height="42" viewBox="0 0 24 24" fill="none">
-									<path d="M12 2L4 5.5V11.7C4 16.75 7.41 21.46 12 22.6C16.59 21.46 20 16.75 20 11.7V5.5L12 2Z" fill="#0366a2" />
-									<path d="M10 15.5L6.5 12L7.9 10.6L10 12.7L15.6 7.1L17 8.5L10 15.5Z" fill="#ffffff" />
+								<div style={{
+									width: '46px',
+									height: '46px',
+									borderRadius: '13px',
+									backgroundColor: '#0284c7',
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									boxShadow: '0 4px 12px rgba(2, 132, 199, 0.3)'
+								}}>
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+										<polyline points="20 6 9 17 4 12"></polyline>
+									</svg>
+								</div>
+							</div>
+
+							{/* Bottom-Left Floating Capital Badge (Image 2 signature card!) */}
+							<div style={{
+								position: 'absolute',
+								bottom: '18px',
+								left: '-24px',
+								backgroundColor: '#ffffff',
+								borderRadius: '16px',
+								boxShadow: '0 16px 38px rgba(15, 23, 42, 0.13)',
+								border: '1px solid #f1f5f9',
+								padding: '16px 24px',
+								display: 'flex',
+								alignItems: 'center',
+								gap: '16px',
+								zIndex: 10
+							}}>
+								{/* Blue & Orange Split Pie Chart Icon */}
+								<svg width="38" height="38" viewBox="0 0 38 38">
+									{/* Blue 3/4 wedge */}
+									<path d="M 19 19 L 19 3 A 16 16 0 1 0 35 19 Z" fill="#0366a2" />
+									{/* Orange 1/4 wedge */}
+									<path d="M 21 17 L 35 17 A 16 16 0 0 0 21 3 Z" fill="#f59e0b" />
+								</svg>
+								<div>
+									<div style={{
+										fontSize: '17px',
+										fontWeight: 800,
+										color: '#0f172a',
+										lineHeight: 1.2
+									}}>
+										₹250Cr Authorized
+									</div>
+									<div style={{
+										fontSize: '17px',
+										fontWeight: 800,
+										color: '#0f172a',
+										lineHeight: 1.2
+									}}>
+										Capital
+									</div>
+								</div>
+							</div>
+
+							{/* Bottom-Right Accent: Green Dot Matrix Pattern (Image 2 style) */}
+							<div style={{
+								position: 'absolute',
+								bottom: '-28px',
+								right: '20px',
+								zIndex: 1,
+								pointerEvents: 'none'
+							}}>
+								<svg width="140" height="26" viewBox="0 0 140 26" fill="none">
+									{[...Array(6)].map((_, c) => (
+										[...Array(2)].map((_, r) => (
+											<circle key={`bottom-${c}-${r}`} cx={12 + c * 22} cy={6 + r * 13} r="2.8" fill="#fbb411" />
+										))
+									))}
 								</svg>
 							</div>
+
 						</div>
 					</div>
 				</div>

@@ -5,122 +5,224 @@ import Link from 'next/link'
 export default function Section1() {
 	return (
 		<>
-			<section className="s-about" style={{ background: "#ffffff", padding: "80px 0" }}>
+			<section className="s-about" style={{ background: "#ffffff", padding: "100px 0 110px 0" }}>
 				<div className="tf-container about-page-container">
-					<div className="row align-items-center" style={{ rowGap: "40px" }}>
-						{/* Left Column: Introduction & Visual Story */}
-						<div className="col-lg-6">
-							<div className="heading">
-								<p className="s-sub-title mb-16" style={{ color: "#0366a2", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px", fontSize: "13px" }}>
-									<i className="icon-angles-right moveLeftToRight" style={{ marginRight: "6px" }} />
-									Company Introduction · Est. 2017
-								</p>
-								<h1 className="s-title mb-24 text-anime-wave" style={{ fontSize: "38px", lineHeight: "1.25", color: "#0f172a", fontWeight: 800 }}>
-									One Roof for All Your <br />
-									<span style={{ color: "#0366a2" }}>Financial &amp; Business Needs</span>
-								</h1>
-								
-								<div className="mb-30" style={{
-									background: "linear-gradient(135deg, #fef9ee 0%, #fffdf7 100%)",
-									borderLeft: "4px solid #fbb411",
-									padding: "18px 22px",
-									borderRadius: "0 12px 12px 0",
-									border: "1px solid #fdeecb",
-									borderLeftWidth: "4px"
+					<div className="row align-items-center g-5">
+						{/* Left Column: Hero Showcase Visual with Floating Badges */}
+						<div className="col-lg-6 mb-4 mb-lg-0">
+							<div style={{ position: "relative", width: "100%", maxWidth: "640px", margin: "0 auto" }}>
+								{/* Main Photo Card */}
+								<div style={{
+									borderRadius: "24px",
+									overflow: "hidden",
+									boxShadow: "0 20px 48px rgba(0, 0, 0, 0.08)",
+									border: "1px solid #e2e8f0",
+									backgroundColor: "#f8fafc",
+									position: "relative",
+									aspectRatio: "4/3",
+									width: "100%"
 								}}>
-									<p style={{ color: "#b45309", fontWeight: 700, fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "4px" }}>
-										Our Tagline
-									</p>
-									<p style={{ color: "#0f172a", fontSize: "18px", fontWeight: 800, margin: 0, lineHeight: "1.4" }}>
-										"Make It" — Turning Your Financial &amp; Business Goals Into Reality
-									</p>
-								</div>
-
-								<div className="image" style={{ boxShadow: "0 16px 40px rgba(0,0,0,0.08)", borderRadius: "16px", overflow: "hidden", border: "1px solid #e2e8f0" }}>
 									<Image
-										width={740}
-										height={460}
+										fill
 										sizes="(max-width: 991px) 100vw, 50vw"
-										style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
-										src="/images/section/globon-about-consultation.jpg" 
+										style={{ objectFit: "cover", objectPosition: "center" }}
+										src="/images/section/globon-about-natural.jpg" 
 										alt="Globon Business Solutions Kodungallur - Financial & Loan Consultation" 
 										priority
 									/>
 								</div>
-							</div>
-						</div>
-						
-						{/* Right Column: Experience, Narrative & Strengths */}
-						<div className="col-lg-6">
-							<div className="content-right" style={{ paddingLeft: "clamp(0px, 3.5vw, 36px)" }}>
+
+								{/* Floating Experience Badge */}
 								<div style={{
-									display: "inline-flex",
+									position: "absolute",
+									bottom: "-24px",
+									right: "24px",
+									background: "#ffffff",
+									borderRadius: "18px",
+									padding: "16px 26px",
+									boxShadow: "0 16px 40px rgba(0, 0, 0, 0.12)",
+									border: "1px solid #f1f5f9",
+									display: "flex",
 									alignItems: "center",
-									gap: "18px",
-									background: "#edf5fd",
-									padding: "16px 24px",
-									borderRadius: "14px",
-									border: "1px solid #d0e3f7",
-									marginBottom: "24px"
+									gap: "16px",
+									zIndex: 10
 								}}>
-									<div style={{ display: "flex", alignItems: "baseline", gap: "2px" }}>
-										<div className="odometer" style={{ color: "#0366a2", fontSize: "50px", fontWeight: 900, lineHeight: 1 }}>
-											<CounterUp count={9} />
-										</div>
-										<span style={{ color: "#fbb411", fontSize: "36px", fontWeight: 900, lineHeight: 1 }}>+</span>
+									<div style={{
+										width: "48px",
+										height: "48px",
+										borderRadius: "50%",
+										background: "#0366a2",
+										color: "#ffffff",
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "center",
+										fontSize: "22px",
+										fontWeight: 800,
+										flexShrink: 0
+									}}>
+										✓
 									</div>
 									<div>
-										<div style={{ color: "#0f172a", fontWeight: 800, fontSize: "16px", lineHeight: "1.3" }}>
-											Years of Trusted Experience
+										<div style={{ display: "flex", alignItems: "baseline", gap: "2px" }}>
+											<span style={{ fontSize: "28px", fontWeight: 800, color: "#0366a2", lineHeight: 1 }}>9+</span>
+											<span style={{ fontSize: "15px", fontWeight: 700, color: "#0f172a", marginLeft: "4px" }}>Years Experience</span>
 										</div>
-										<div style={{ color: "#64748b", fontSize: "13px", fontWeight: 500, marginTop: "2px" }}>
-											Founded in 2017, Kodungallur, Kerala
+										<div style={{ fontSize: "13px", color: "#64748b", fontWeight: 500, marginTop: "3px" }}>
+											Founded 2017 · Kodungallur, Kerala
 										</div>
 									</div>
 								</div>
+							</div>
+						</div>
+						
+						{/* Right Column: Narrative, Tagline & Strengths */}
+						<div className="col-lg-6">
+							<div style={{ paddingLeft: "clamp(0px, 2.5vw, 28px)" }}>
+								<p style={{
+									color: "#0366a2",
+									fontWeight: 700,
+									textTransform: "uppercase",
+									letterSpacing: "1.5px",
+									fontSize: "13px",
+									marginBottom: "14px",
+									display: "inline-flex",
+									alignItems: "center",
+									gap: "8px"
+								}}>
+									<i className="icon-angles-right" />
+									Company Introduction · Est. 2017
+								</p>
+								
+								<h1 style={{
+									fontSize: "clamp(30px, 3.4vw, 44px)",
+									fontWeight: 500,
+									color: "#000000",
+									textTransform: "uppercase",
+									lineHeight: "1.2",
+									letterSpacing: "0.4px",
+									marginBottom: "24px",
+									fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
+								}}>
+									One Roof for All Your <br />
+									Financial &amp; Business Needs
+								</h1>
+								
+								{/* Tagline Box */}
+								<div style={{
+									background: "#f8fafc",
+									borderLeft: "4px solid #0366a2",
+									padding: "18px 24px",
+									borderRadius: "0 14px 14px 0",
+									border: "1px solid #e2e8f0",
+									borderLeftWidth: "4px",
+									marginBottom: "28px"
+								}}>
+									<p style={{ color: "#0366a2", fontWeight: 700, fontSize: "12px", textTransform: "uppercase", letterSpacing: "1.2px", marginBottom: "4px" }}>
+										Our Tagline
+									</p>
+									<p style={{ color: "#0f172a", fontSize: "18px", fontWeight: 700, margin: 0, lineHeight: "1.4" }}>
+										"Make It" — Turning Your Financial &amp; Business Goals Into Reality
+									</p>
+								</div>
 
-								<p className="text mb-24" style={{ fontSize: "16px", lineHeight: "1.75", color: "#475569" }}>
+								<p style={{
+									fontSize: "18px",
+									lineHeight: "1.75",
+									color: "#334155",
+									marginBottom: "30px",
+									fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
+								}}>
 									Globon Business Solutions was founded in 2017 in Kodungallur, Thrissur, with a simple purpose: 
 									bring loans, insurance, real estate, and business support services together under one roof, backed 
-									by a network of over 30 partner banks and NBFCs. True to our tagline, <strong style={{ color: "#0f172a" }}>"Make It,"</strong> we exist 
+									by a network of over 30 partner banks and NBFCs. True to our tagline, <strong style={{ color: "#000000" }}>"Make It,"</strong> we exist 
 									to turn a client's financial or business need into something done — handled with a relationship-first, 
 									locally-rooted approach.
 								</p>
 
-								<ul className="list mb-35" style={{ display: "grid", gridTemplateColumns: "1fr", gap: "12px" }}>
+								{/* 4 Key Strengths in 2-Column Grid */}
+								<div style={{
+									display: "grid",
+									gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+									gap: "14px",
+									marginBottom: "36px"
+								}}>
 									{[
-										"Multiple financial & business services under one roof",
-										"Strong relationship-based client advisory approach",
+										"All financial & business services under one roof",
+										"Relationship-based personal client advisory",
 										"Dedicated entrepreneur & MSME funding initiatives",
 										"Deep local market expertise & 30+ leading bank network"
 									].map((item, idx) => (
-										<li key={idx} style={{ 
+										<div key={idx} style={{ 
 											display: "flex", 
 											alignItems: "center", 
 											gap: "12px", 
 											background: "#f8fafc", 
-											padding: "12px 18px", 
-											borderRadius: "10px", 
+											padding: "14px 18px", 
+											borderRadius: "12px", 
 											border: "1px solid #e2e8f0" 
 										}}>
-											<div style={{ color: "#16a34a", minWidth: "20px", display: "flex" }}>
-												<i className="icon-check-2" style={{ fontSize: "16px" }} />
+											<div style={{
+												width: "24px",
+												height: "24px",
+												borderRadius: "50%",
+												background: "#edf5fd",
+												color: "#0366a2",
+												display: "flex",
+												alignItems: "center",
+												justifyContent: "center",
+												fontSize: "13px",
+												fontWeight: 800,
+												flexShrink: 0
+											}}>
+												✓
 											</div>
-											<p style={{ margin: 0, color: "#1e293b", fontWeight: 600, fontSize: "14px" }}>
+											<p style={{ margin: 0, color: "#1e293b", fontWeight: 600, fontSize: "15px", lineHeight: "1.4" }}>
 												{item}
 											</p>
-										</li>
+										</div>
 									))}
-								</ul>
+								</div>
 
-								<div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-									<Link href="/our-service" className="tf-btn text-anime-style-1">
-										Our Services
-										<i className="icon-chevron-right" />
+								<div style={{ display: "flex", gap: "18px", flexWrap: "wrap", alignItems: "center" }}>
+									<Link
+										href="/our-service"
+										style={{
+											display: "inline-flex",
+											alignItems: "center",
+											gap: "10px",
+											backgroundColor: "#0366a2",
+											color: "#ffffff",
+											fontWeight: 600,
+											fontSize: "16px",
+											padding: "14px 32px",
+											borderRadius: "6px",
+											textDecoration: "none",
+											transition: "all 0.25s ease",
+											boxShadow: "0 4px 16px rgba(3, 102, 162, 0.25)"
+										}}
+									>
+										<span>Our Services</span>
+										<span style={{ fontSize: "18px", fontWeight: 700 }}>↗</span>
 									</Link>
-									<Link href="/contact" className="tf-btn style-3 text-anime-style-1">
-										Talk to an Expert
-										<i className="icon-chevron-right" />
+									<Link
+										href="/contact"
+										style={{
+											display: "inline-flex",
+											alignItems: "center",
+											gap: "10px",
+											backgroundColor: "#ffffff",
+											color: "#0f172a",
+											fontWeight: 600,
+											fontSize: "16px",
+											padding: "14px 32px",
+											borderRadius: "6px",
+											textDecoration: "none",
+											border: "1px solid #cbd5e1",
+											transition: "all 0.25s ease"
+										}}
+									>
+										<span>Talk to an Expert</span>
+										<span style={{ fontSize: "18px", fontWeight: 700 }}>›</span>
 									</Link>
 								</div>
 							</div>

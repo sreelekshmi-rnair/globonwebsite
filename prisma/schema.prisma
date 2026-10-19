@@ -18,15 +18,26 @@ model AdminUser {
 
 model Service {
   id               Int      @id @default(autoincrement())
+  category         String   @default("loans-advances")
+  categoryTitle    String?  @default("")
   title            String
   slug             String   @unique
-  category         String   @default("General")
-  icon             String   @default("flaticon-business")
-  shortDescription String   @db.Text
-  description      String   @db.Text
-  features         String   @default("") @db.Text
-  image            String?
-  isFeatured       Boolean  @default(false)
+  subtitle         String?  @default("")
+  shortDesc        String?  @db.Text
+  heroImage        String?  @default("")
+  overviewTitle    String?  @default("")
+  overviewDesc     String?  @db.Text
+  overviewImage    String?  @default("")
+  overviewBullets  String?  @db.LongText
+  features         String?  @db.LongText
+  optionsBadge     String?  @default("")
+  optionsTitle     String?  @default("")
+  options          String?  @db.LongText
+  documentGroups   String?  @db.LongText
+  advisoryNote     String?  @db.Text
+  eligibilityDesc  String?  @db.Text
+  feesDesc         String?  @db.Text
+  faqs             String?  @db.LongText
   order            Int      @default(0)
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
@@ -73,13 +84,27 @@ model Blog {
 model Inquiry {
   id             Int      @id @default(autoincrement())
   fullName       String
-  email          String
+  email          String   @default("")
   phoneNumber    String
-  businessName   String
-  industry       String
-  businessAge    String
-  monthlyRevenue String
-  serviceNeeded  String
+  subject        String?  @default("")
+  message        String?  @default("") @db.Text
+  businessName   String?  @default("")
+  industry       String?  @default("")
+  businessAge    String?  @default("")
+  monthlyRevenue String?  @default("")
+  serviceNeeded  String?  @default("")
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }
+
+model ContactMessage {
+  id             Int      @id @default(autoincrement())
+  name           String   @default("")
+  phoneNumber    String   @default("")
+  email          String   @default("")
+  subject        String   @default("")
+  messageSnippet String   @default("") @db.Text
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+

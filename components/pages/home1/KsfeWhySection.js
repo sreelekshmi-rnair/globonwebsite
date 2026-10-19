@@ -61,7 +61,7 @@ export default function KsfeWhySection() {
 							{/* Floating Capital Badge (bottom-left, like KSFE) */}
 							<div className="ksfe-capital-badge">
 								<div className="badge-icon-box">
-									<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+									<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0366a2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
 										<path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
 									</svg>
 								</div>

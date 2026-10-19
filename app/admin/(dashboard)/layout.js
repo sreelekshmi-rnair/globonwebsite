@@ -12,6 +12,7 @@ export default function AdminDashboardLayout({ children }) {
   const [adminUser, setAdminUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [newLeadsCount, setNewLeadsCount] = useState(0);
+  const [newContactsCount, setNewContactsCount] = useState(0);
 
   useEffect(() => {
     if (typeof document !== 'undefined') {
@@ -21,6 +22,7 @@ export default function AdminDashboardLayout({ children }) {
         '/admin/loans': 'Globon Admin - Loan Products',
         '/admin/blogs': 'Globon Admin - Blogs',
         '/admin/inquiries': 'Globon Admin - Consultations & Leads',
+        '/admin/contacts': 'Globon Admin - Contact Messages',
       };
       document.title = titles[pathname] || 'Globon Admin Panel';
 
@@ -48,6 +50,7 @@ export default function AdminDashboardLayout({ children }) {
         if (statsRes.ok) {
           const statsData = await statsRes.json();
           setNewLeadsCount(statsData.counts?.newInquiries || 0);
+          setNewContactsCount(statsData.counts?.newContacts || statsData.counts?.contacts || 0);
         }
       } catch (err) {
         router.push('/admin/login');
@@ -141,6 +144,17 @@ export default function AdminDashboardLayout({ children }) {
               <span>Consultations &amp; Leads</span>
               {Boolean(newLeadsCount && newLeadsCount > 0) && (
                 <span className="admin-nav-badge">{newLeadsCount}</span>
+              )}
+            </Link>
+
+            <Link
+              href="/admin/contacts"
+              className={`admin-nav-item ${pathname === '/admin/contacts' ? 'active' : ''}`}
+            >
+              <span style={{ fontSize: '17px' }}>💬</span>
+              <span>Contact Messages</span>
+              {Boolean(newContactsCount && newContactsCount > 0) && (
+                <span className="admin-nav-badge" style={{ background: '#059669' }}>{newContactsCount}</span>
               )}
             </Link>
           </nav>

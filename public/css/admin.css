@@ -543,6 +543,14 @@
   flex-direction: column;
 }
 
+.admin-modal-dialog form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
 .admin-modal-header {
   padding: 20px 26px;
   border-bottom: 1px solid var(--admin-border);
@@ -589,13 +597,19 @@
   border-radius: 3px;
 }
 
+.admin-modal-header h2,
+.admin-modal-header h3,
+.admin-modal-header h4 {
+  font-weight: normal;
+}
+
 .admin-modal-footer {
   padding: 16px 26px;
   border-top: 1px solid var(--admin-border);
   display: flex;
   justify-content: flex-end;
   gap: 12px;
-  background: #f8fafc;
+  background: #ffffff;
   border-radius: 0 0 20px 20px;
   flex-shrink: 0;
 }
@@ -661,7 +675,7 @@
 .form-label {
   display: block;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: normal;
   margin-bottom: 6px;
   color: #334155;
 }

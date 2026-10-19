@@ -39,7 +39,9 @@ export async function PUT(request, { params }) {
       industry,
       businessAge,
       monthlyRevenue,
-      serviceNeeded
+      serviceNeeded,
+      subject,
+      message
     } = body;
 
     const data = {};
@@ -51,6 +53,8 @@ export async function PUT(request, { params }) {
     if (businessAge !== undefined) data.businessAge = businessAge;
     if (monthlyRevenue !== undefined) data.monthlyRevenue = monthlyRevenue;
     if (serviceNeeded !== undefined) data.serviceNeeded = serviceNeeded;
+    if (subject !== undefined) data.subject = subject;
+    if (message !== undefined) data.message = message;
 
     const updated = await prisma.inquiry.update({
       where: { id },

@@ -16,38 +16,24 @@ export default function MobileMenu() {
 
 	const menuItems = [
 		{ title: "Home", path: "/" },
-		{ title: "About / Why Globon", path: "/about-us" },
+		{ title: "About Us", path: "/about-us" },
 		{
 			title: "Services",
+			path: "/services",
 			subMenu: [
-				{ title: "1. Loans & Advances", path: "/our-service#loans" },
-				{ title: "2. Business & Financial Solutions", path: "/our-service#business" },
-				{ title: "3. Insurance", path: "/our-service#insurance" },
-				{ title: "4. Real Estate", path: "/our-service#real-estate" },
-				{ title: "5. Digital & Marketing", path: "/our-service#digital" }
+				{ title: "All Services Overview", path: "/services" },
+				{ title: "Loans & Advances", path: "/services/loans-advances" },
+				{ title: "Business & Financial Solutions", path: "/services/business-financial-solutions" },
+				{ title: "Business Planning & Advisory", path: "/services/business-planning-consultancy" },
+				{ title: "Company Registration & Compliance", path: "/services/business-registration-compliance" },
+				{ title: "Business Technology Solutions", path: "/services/business-technology-solutions" },
+				{ title: "Digital Marketing Services", path: "/services/digital-marketing-services" },
+				{ title: "Travel & Group Insurance", path: "/services/travel-group-insurance" },
+				{ title: "Real Estate Services", path: "/services/real-estate-services" }
 			]
 		},
-		{ title: "Loans", path: "/#loans-section" },
-		{
-			title: "Resources",
-			subMenu: [
-				{ title: "Blog", path: "/blog-standard" },
-				{ title: "Knowledge Base", path: "/blog-standard" },
-				{ title: "FAQs", path: "/faqs" },
-				{ title: "Case Studies", path: "/case-study-01" },
-				{ title: "Guides", path: "/#guides" }
-			]
-		},
-		{ title: "Contact", path: "/contact" },
-		{
-			title: "More",
-			subMenu: [
-				{ title: "EMI Calculator & Tools", path: "/#emi-calculator" },
-				{ title: "Government Schemes", path: "/#govt-schemes" },
-				{ title: "Career", path: "/career" },
-				{ title: "Awards", path: "/awards" }
-			]
-		}
+		{ title: "Schemes & Offers", path: "/#signature-schemes" },
+		{ title: "Contact Us", path: "/contact" }
 	]
 
 	return (

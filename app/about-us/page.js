@@ -9,7 +9,7 @@ export const metadata = {
 export default function AboutUsPage() {
 	return (
 		<>
-			<Layout breadcrumbTitle="About Globon Business Solutions" footerStyle={1} mainCls="padding-0">
+			<Layout breadcrumbTitle="About Globon Business Solutions" breadcrumbBg="/images/page-title/about-hero-natural.jpg" footerStyle={1} mainCls="padding-0">
 				<AboutUs />
 			</Layout>
 		</>

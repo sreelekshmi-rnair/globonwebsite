@@ -1,130 +1,217 @@
 import Layout from "@/components/layout/Layout";
+import Image from "next/image";
 import Link from "next/link";
-import prisma from "@/lib/prisma";
+import { getAllCategories } from "@/lib/servicesStore";
 
-export const revalidate = 0; // Always fresh from database
+export const revalidate = 0;
 
-export default async function ServicesListingPage() {
-  const services = await prisma.service.findMany({
-    orderBy: [{ order: "asc" }, { createdAt: "desc" }],
-  });
+export const metadata = {
+  title: "Service Categories - Globon Business Solutions",
+  description: "Browse all service categories from Globon Business Solutions including Loans & Advances, Business Registration, Tax & Accounting, Licenses, and Digital Services.",
+};
 
+export default function ServicesCategoriesPage() {
+  const categories = getAllCategories();
   return (
-    <Layout breadcrumbTitle="Our Services &amp; Solutions">
-      <section className="tf-spacing-10" style={{ padding: "80px 0" }}>
-        <div className="tf-container">
-          <div className="row" style={{ marginBottom: "50px" }}>
-            <div className="col-lg-8 mx-auto text-center">
-              <span className="sub-title text-primary" style={{ fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px" }}>
-                What We Offer
-              </span>
-              <h2 className="title" style={{ fontSize: "36px", fontWeight: "800", marginTop: "10px", color: "#0f172a" }}>
-                Tailored Financial &amp; Business Services
-              </h2>
-              <p style={{ color: "#64748b", fontSize: "16px", marginTop: "12px" }}>
-                From end-to-end loan assistance to compliance, project reports, and insurance, Globon delivers reliable financial solutions.
+    <Layout mainCls="padding-0">
+      <div className="ksfe-services-page">
+        {/* Subtle Breadcrumb Bar */}
+        <section className="ksfe-services-breadcrumb">
+          <div className="tf-container w-1780">
+            <div className="breadcrumb-inner">
+              <Link href="/">Home</Link>
+              <span className="separator">/</span>
+              <span className="current">Services</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Hero Banner (#CDF260 Chartreuse Lime) */}
+        <section className="ksfe-services-hero-banner">
+          <div className="tf-container w-1780">
+            <div className="banner-grid">
+              <div className="banner-text">
+                <h1 className="banner-title">SERVICES</h1>
+                <p className="banner-subtitle">
+                  Explore our comprehensive spectrum of specialized business, financial, 
+                  loan, compliance, and growth services designed to power enterprises and individuals.
+                </p>
+              </div>
+
+              <div className="banner-visual">
+                <Image
+                  src="/images/services/service.png"
+                  alt="Globon Products and Services Banner"
+                  width={460}
+                  height={280}
+                  style={{
+                    width: "100%",
+                    maxWidth: "460px",
+                    height: "260px",
+                    objectFit: "cover",
+                    borderRadius: "16px",
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
+                  }}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Introductory Overview */}
+        <section className="ksfe-services-intro-section">
+          <div className="tf-container w-1780">
+            <div className="ksfe-services-intro-text">
+              <p>
+                Globon Business Solutions offers tailored, end-to-end expertise across{" "}
+                <strong>{categories.length} core business categories</strong>.{" "}
+                <span style={{ color: "#475569" }}>
+                  Select any category below to browse specific services, review eligibility criteria, 
+                  and submit your application directly online.
+                </span>
               </p>
             </div>
           </div>
+        </section>
 
-          <div className="row" style={{ rowGap: "30px" }}>
-            {services.map((service) => {
-              const featuresList = service.features
-                ? service.features.split("\n").filter(Boolean).slice(0, 3)
-                : [];
-
-              return (
-                <div key={service.id} className="col-lg-4 col-md-6">
-                  <div
+        {/* Categories List Cards */}
+        <section className="ksfe-services-cards-container">
+          <div className="tf-container w-1780">
+            {categories.map((cat, index) => (
+              <div
+                key={cat.id}
+                id={cat.slug}
+                className={`ksfe-service-card-item ${cat.badgeClass || 'bg-loans'}`}
+              >
+                {/* Left Column: Full-height Image */}
+                <div className="card-media">
+                  <Image
+                    src={cat.image}
+                    alt={cat.imageAlt}
+                    fill
+                    sizes="(max-width: 991px) 100vw, 45vw"
                     style={{
-                      background: "#fff",
-                      borderRadius: "16px",
-                      padding: "36px 30px",
-                      border: "1px solid #e2e8f0",
-                      boxShadow: "0 4px 20px rgba(0,0,0,0.04)",
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between",
-                      transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                      objectFit: "cover",
+                      objectPosition: "center top",
                     }}
-                  >
-                    <div>
+                    priority={index < 2}
+                  />
+                </div>
+
+                {/* Right Column: Category Content */}
+                <div className="card-body-content">
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                    <span
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: "700",
+                        textTransform: "uppercase",
+                        letterSpacing: "1px",
+                        padding: "4px 12px",
+                        borderRadius: "20px",
+                        backgroundColor: "rgba(0, 0, 0, 0.08)",
+                        color: "#0f172a",
+                      }}
+                    >
+                      Category {index + 1} of {categories.length}
+                    </span>
+                    <span style={{ fontSize: "13px", color: "#64748b", fontWeight: "500" }}>
+                      ({cat.services.length} Specialized Services)
+                    </span>
+                  </div>
+
+                  <h2 className="card-main-title">
+                    <Link
+                      href={`/services/${cat.slug}`}
+                      style={{ color: "inherit", textDecoration: "none" }}
+                    >
+                      {cat.title}
+                    </Link>
+                  </h2>
+
+                  <p className="card-main-desc">{cat.description}</p>
+
+                  {/* Sub-links List of Services */}
+                  {cat.services && cat.services.length > 0 && (
+                    <div style={{ marginBottom: "20px" }}>
                       <div
                         style={{
-                          width: "56px",
-                          height: "56px",
-                          borderRadius: "12px",
-                          background: "#e0f2fe",
-                          color: "#0284c7",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "24px",
-                          marginBottom: "20px",
-                        }}
-                      >
-                        💼
-                      </div>
-
-                      <span
-                        style={{
-                          display: "inline-block",
-                          fontSize: "12px",
+                          fontSize: "14px",
                           fontWeight: "700",
                           textTransform: "uppercase",
-                          color: "#0284c7",
-                          marginBottom: "8px",
                           letterSpacing: "0.5px",
+                          color: "#475569",
+                          marginBottom: "12px",
                         }}
                       >
-                        {service.category}
+                        Services in this Category:
+                      </div>
+                      <ul className="card-sublinks-list two-col">
+                        {cat.services.map((service) => (
+                          <li key={service.slug}>
+                            <Link
+                              href={`/services/${cat.slug}/${service.slug}`}
+                              className="ksfe-service-link-anchor"
+                            >
+                              <span>{service.title}</span>
+                              <span className="arrow-icon">
+                                <svg
+                                  width="10"
+                                  height="10"
+                                  viewBox="0 0 1024 1024"
+                                  style={{
+                                    display: "inline-block",
+                                    stroke: "currentColor",
+                                    fill: "currentColor",
+                                  }}
+                                >
+                                  <path
+                                    d="M275.692 945.231l393.846-443.306-393.846-423.155"
+                                    fill="none"
+                                    strokeLinejoin="miter"
+                                    strokeLinecap="butt"
+                                    strokeMiterlimit="4"
+                                    strokeWidth="157.53846153846155"
+                                  />
+                                </svg>
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Explore Category CTA */}
+                  <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", alignItems: "center" }}>
+                    <Link
+                      href={`/services/${cat.slug}`}
+                      className="ksfe-card-btn-action"
+                    >
+                      <span>Explore All {cat.services.length} Services</span>
+                      <span className="diagonal-arrow">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 1024 1024"
+                          style={{
+                            display: "inline-block",
+                            stroke: "currentColor",
+                            fill: "currentColor",
+                          }}
+                        >
+                          <path d="M282.349 247.217l97.767 97.767 232.597 0.001-398.647 398.649 68.215 68.215 397.245-397.245v229.789l97.253 97.258v-494.434h-494.43z" />
+                        </svg>
                       </span>
-
-                      <h3 style={{ fontSize: "20px", fontWeight: "700", marginBottom: "12px", color: "#0f172a" }}>
-                        <Link href={`/services/${service.slug}`} style={{ color: "inherit", textDecoration: "none" }}>
-                          {service.title}
-                        </Link>
-                      </h3>
-
-                      <p style={{ color: "#64748b", fontSize: "14px", lineHeight: "1.6", marginBottom: "20px" }}>
-                        {service.shortDescription}
-                      </p>
-
-                      {featuresList.length > 0 && (
-                        <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px", fontSize: "13px", color: "#334155" }}>
-                          {featuresList.map((f, idx) => (
-                            <li key={idx} style={{ marginBottom: "8px", display: "flex", alignItems: "center", gap: "8px" }}>
-                              <span style={{ color: "#16a34a", fontWeight: "bold" }}>✓</span> {f}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-
-                    <div>
-                      <Link
-                        href={`/services/${service.slug}`}
-                        style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          gap: "8px",
-                          color: "#0284c7",
-                          fontWeight: "700",
-                          fontSize: "14px",
-                          textDecoration: "none",
-                        }}
-                      >
-                        Learn More &amp; Apply &rarr;
-                      </Link>
-                    </div>
+                    </Link>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </Layout>
   );
 }

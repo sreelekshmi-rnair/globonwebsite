@@ -77,9 +77,9 @@ export default async function SingleLoanPage({ params }) {
                   marginBottom: "36px",
                 }}
               >
-                <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", padding: "20px", borderRadius: "12px" }}>
-                  <div style={{ fontSize: "12px", color: "#166534", fontWeight: "700", textTransform: "uppercase" }}>Interest Rate</div>
-                  <div style={{ fontSize: "22px", fontWeight: "800", color: "#15803d", marginTop: "4px" }}>{loan.interestRate}</div>
+                <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", padding: "20px", borderRadius: "12px" }}>
+                  <div style={{ fontSize: "12px", color: "#1e3a8a", fontWeight: "700", textTransform: "uppercase" }}>Interest Rate</div>
+                  <div style={{ fontSize: "22px", fontWeight: "800", color: "#0366a2", marginTop: "4px" }}>{loan.interestRate}</div>
                 </div>
 
                 <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", padding: "20px", borderRadius: "12px" }}>
@@ -170,7 +170,7 @@ export default async function SingleLoanPage({ params }) {
                           color: "#334155",
                         }}
                       >
-                        <span style={{ color: "#16a34a", fontWeight: "bold" }}>✓</span> {doc}
+                        <span style={{ color: "#0366a2", fontWeight: "bold" }}>✓</span> {doc}
                       </div>
                     ))}
                   </div>
