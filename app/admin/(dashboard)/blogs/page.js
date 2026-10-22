@@ -186,7 +186,7 @@ export default function AdminBlogsPage() {
                 {blogs.map((blog) => (
                   <tr key={blog.id}>
                     <td>
-                      <div style={{ fontWeight: '700', color: '#0f172a', fontSize: '15px' }}>
+                      <div style={{ fontWeight: '500', color: '#0f172a', fontSize: '15px' }}>
                         {blog.title}
                       </div>
                       <div style={{ fontSize: '12px', color: '#0284c7' }}>

@@ -185,7 +185,7 @@ export default function AdminInquiriesPage() {
         ) : filteredInquiries.length === 0 ? (
           <div style={{ padding: '60px 20px', textAlign: 'center', color: '#94a3b8' }}>
             <div style={{ fontSize: '36px', marginBottom: '10px' }}>📋</div>
-            <div style={{ fontSize: '16px', fontWeight: '700', color: '#475569' }}>
+            <div style={{ fontSize: '16px', fontWeight: '500', color: '#475569' }}>
               No Consultation Submissions Found
             </div>
             <p style={{ margin: '6px 0 0', fontSize: '13px' }}>
@@ -224,7 +224,7 @@ export default function AdminInquiriesPage() {
                     return (
                       <tr key={inq.id}>
                         {/* 1. Full Name */}
-                        <td style={{ fontWeight: '700', color: '#0f172a' }}>
+                        <td style={{ fontWeight: '500', color: '#0f172a' }}>
                           {inq.fullName || inq.name || '—'}
                         </td>
 
@@ -241,7 +241,7 @@ export default function AdminInquiriesPage() {
                         <td>
                           <a
                             href={`tel:${phone}`}
-                            style={{ color: '#005b94', textDecoration: 'none', fontWeight: '700', whiteSpace: 'nowrap' }}
+                            style={{ color: '#005b94', textDecoration: 'none', fontWeight: '500', whiteSpace: 'nowrap' }}
                           >
                             {phone}
                           </a>
@@ -288,7 +288,7 @@ export default function AdminInquiriesPage() {
                         </td>
 
                         {/* 7. Monthly Revenue */}
-                        <td style={{ fontWeight: '700', color: '#16a34a', fontSize: '12.5px', whiteSpace: 'nowrap' }}>
+                        <td style={{ fontWeight: '500', color: '#16a34a', fontSize: '12.5px', whiteSpace: 'nowrap' }}>
                           {inq.monthlyRevenue || '—'}
                         </td>
 
@@ -343,7 +343,7 @@ export default function AdminInquiriesPage() {
         <div className="admin-modal-backdrop">
           <div className="admin-modal-dialog" style={{ maxWidth: '640px' }}>
             <div className="admin-modal-header">
-              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: '800', color: '#0f172a' }}>
+              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: '500', color: '#0f172a' }}>
                 Consultation Lead: {selectedInquiry.fullName || selectedInquiry.name}
               </h3>
               <button
@@ -365,15 +365,15 @@ export default function AdminInquiriesPage() {
                 marginBottom: '10px'
               }}>
                 <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '700', textTransform: 'uppercase' }}>Full Name</div>
-                  <div style={{ fontSize: '14.5px', fontWeight: '700', color: '#0f172a', marginTop: '3px' }}>
+                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', textTransform: 'uppercase' }}>Full Name</div>
+                  <div style={{ fontSize: '14.5px', fontWeight: '500', color: '#0f172a', marginTop: '3px' }}>
                     {selectedInquiry.fullName || selectedInquiry.name || '—'}
                   </div>
                 </div>
 
                 <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '700', textTransform: 'uppercase' }}>Email Address</div>
-                  <div style={{ fontSize: '14px', fontWeight: '600', color: '#0f172a', marginTop: '3px' }}>
+                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', textTransform: 'uppercase' }}>Email Address</div>
+                  <div style={{ fontSize: '14px', fontWeight: '500', color: '#0f172a', marginTop: '3px' }}>
                     {selectedInquiry.email ? (
                       <a href={`mailto:${selectedInquiry.email}`} style={{ color: '#005b94', textDecoration: 'none' }}>
                         {selectedInquiry.email}
@@ -383,8 +383,8 @@ export default function AdminInquiriesPage() {
                 </div>
 
                 <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '700', textTransform: 'uppercase' }}>Phone Number</div>
-                  <div style={{ fontSize: '14.5px', fontWeight: '700', color: '#005b94', marginTop: '3px' }}>
+                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', textTransform: 'uppercase' }}>Phone Number</div>
+                  <div style={{ fontSize: '14.5px', fontWeight: '500', color: '#005b94', marginTop: '3px' }}>
                     {selectedInquiry.phoneNumber || selectedInquiry.phone ? (
                       <a href={`tel:${selectedInquiry.phoneNumber || selectedInquiry.phone}`} style={{ color: '#005b94', textDecoration: 'none' }}>
                         {selectedInquiry.phoneNumber || selectedInquiry.phone}
@@ -394,43 +394,43 @@ export default function AdminInquiriesPage() {
                 </div>
 
                 <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '700', textTransform: 'uppercase' }}>Service Needed</div>
-                  <div style={{ fontSize: '14.5px', fontWeight: '700', color: '#1d4ed8', marginTop: '3px' }}>
+                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', textTransform: 'uppercase' }}>Service Needed</div>
+                  <div style={{ fontSize: '14.5px', fontWeight: '500', color: '#1d4ed8', marginTop: '3px' }}>
                     {selectedInquiry.serviceNeeded || '—'}
                   </div>
                 </div>
 
                 <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '700', textTransform: 'uppercase' }}>Business Name</div>
-                  <div style={{ fontSize: '14.5px', fontWeight: '700', color: '#0f172a', marginTop: '3px' }}>
+                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', textTransform: 'uppercase' }}>Business Name</div>
+                  <div style={{ fontSize: '14.5px', fontWeight: '500', color: '#0f172a', marginTop: '3px' }}>
                     {selectedInquiry.businessName || '—'}
                   </div>
                 </div>
 
                 <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '700', textTransform: 'uppercase' }}>Industry</div>
-                  <div style={{ fontSize: '14px', fontWeight: '600', color: '#0f172a', marginTop: '3px' }}>
+                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', textTransform: 'uppercase' }}>Industry</div>
+                  <div style={{ fontSize: '14px', fontWeight: '500', color: '#0f172a', marginTop: '3px' }}>
                     {selectedInquiry.industry || '—'}
                   </div>
                 </div>
 
                 <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '700', textTransform: 'uppercase' }}>Business Age</div>
-                  <div style={{ fontSize: '14px', fontWeight: '600', color: '#0f172a', marginTop: '3px' }}>
+                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', textTransform: 'uppercase' }}>Business Age</div>
+                  <div style={{ fontSize: '14px', fontWeight: '500', color: '#0f172a', marginTop: '3px' }}>
                     {selectedInquiry.businessAge || '—'}
                   </div>
                 </div>
 
                 <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '700', textTransform: 'uppercase' }}>Monthly Revenue</div>
-                  <div style={{ fontSize: '14.5px', fontWeight: '700', color: '#16a34a', marginTop: '3px' }}>
+                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', textTransform: 'uppercase' }}>Monthly Revenue</div>
+                  <div style={{ fontSize: '14.5px', fontWeight: '500', color: '#16a34a', marginTop: '3px' }}>
                     {selectedInquiry.monthlyRevenue || '—'}
                   </div>
                 </div>
 
                 <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '700', textTransform: 'uppercase' }}>Submission Date</div>
-                  <div style={{ fontSize: '13.5px', fontWeight: '600', color: '#475569', marginTop: '3px' }}>
+                  <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', textTransform: 'uppercase' }}>Submission Date</div>
+                  <div style={{ fontSize: '13.5px', fontWeight: '500', color: '#475569', marginTop: '3px' }}>
                     {new Date(selectedInquiry.createdAt).toLocaleString()}
                   </div>
                 </div>

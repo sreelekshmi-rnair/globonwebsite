@@ -5,6 +5,7 @@ import animateBoxVideo from "@/utils/animateBoxVideo"
 import animateImgItem from "@/utils/animateImgItem"
 import animateText from "@/utils/animateText"
 import { useCircularTextEffect } from "@/utils/applyCircularText "
+import useScrollFade from "@/utils/useScrollFade"
 import { useEffect, useState } from "react"
 import AddClassBody from "../elements/AddClassBody"
 import BackToTop from '../elements/BackToTop'
@@ -26,7 +27,7 @@ import Header4 from "./header/Header4"
 // import { hoverTextAnimate } from "@/utils/hoverTextAnimate"
 
 export default function Layout({ headerStyle, footerStyle, breadcrumbTitle, breadcrumbBg, children, mainCls, breadcrumbAlt, hero }) {
-	const [scroll, setScroll] = useState(0)
+	const [scroll, setScroll] = useState(false)
 	// MobilleMenu
 	const [isMobileMenu, setMobileMenu] = useState(false)
 	const handleMobileMenu = () => {
@@ -60,6 +61,7 @@ export default function Layout({ headerStyle, footerStyle, breadcrumbTitle, brea
 	DataBg()
 	// hoverTextAnimate()
 	useCircularTextEffect()
+	useScrollFade()
 	return (
 		<><div id="top" />
 			<AddClassBody />

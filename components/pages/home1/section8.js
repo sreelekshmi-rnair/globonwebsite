@@ -64,12 +64,11 @@ export default function Section8() {
 							<h2 className="s-title mb-15 testimonials-main-title" style={{
 								fontFamily: "'Public Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif",
 								fontSize: 'clamp(40px, 4.2vw, 52px)',
-								fontWeight: 400,
 								color: '#000000',
 								letterSpacing: '0.2px',
 								lineHeight: 1.2
 							}}>
-								What Our Clients Say About <span style={{ fontWeight: 400 }}>Globon</span>
+								<span style={{ fontWeight: 800 }}>What Our Clients Say</span> <span style={{ fontWeight: 400 }}>About Globon</span>
 							</h2>
 							<p className="text font-main-2" style={{ maxWidth: '640px', fontSize: '16px', lineHeight: '1.6', color: '#64748b' }}>
 								Real experiences from entrepreneurs, retailers, and growing enterprises across Kerala who achieved fast funding and strategic support with Globon.

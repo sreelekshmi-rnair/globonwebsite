@@ -5,61 +5,7 @@ import MobileMenu from "../MobileMenu"
 export default function Header4({ scroll, isMobileMenu, handleMobileMenu, handleWelcomeBox, isWelcomeBox }) {
 	return (
 		<>
-			<div className="tf-topbar style-3">
-				<div className="tf-container">
-					<div className="row">
-						<div className="col-lg-12">
-							<div className="topbar-inner">
-								<div className="topbar-left">
-									<ul className="infor-list">
-										<li>
-											<div className="icon">
-												<i className="icon-envelope-open" />
-											</div>
-											<Link href="mailto:Themesflat@gmail.com"> Themesflat@gmail.com </Link>
-										</li>
-										<li>
-											<div className="icon">
-												<i className="icon-clock" />
-											</div>
-											<Link href="/#"> Working Hours : 08am - 05pm</Link>
-										</li>
-									</ul>
-								</div>
-								<div className="topbar-right">
-									<div className="social">
-										<p>Follow Us</p>
-										<span className="line"> </span>
-										<ul className="social-list style-3">
-											<li>
-												<Link href="/#">
-													<i className="icon-facebook" />
-												</Link>
-											</li>
-											<li>
-												<Link href="/#">
-													<i className="icon-twitter" />
-												</Link>
-											</li>
-											<li>
-												<Link href="/#">
-													<i className="icon-linkedin" />
-												</Link>
-											</li>
-											<li>
-												<Link href="/#">
-													<i className="icon-youtube" />
-												</Link>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			{/* /.Topbar */}
+
 			{/* Header */}
 			<div className={`header-wrap-2 header header-style-absolute ${scroll ? "header-bg scrollHeader top-0 left-0 right-0" : ""}`}>
 				<header className="tf-header style-4">

@@ -299,12 +299,12 @@ export default function Section9() {
 							<h2 className="ksfe-help-title" style={{
 								fontFamily: "'Public Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif",
 								fontSize: 'clamp(40px, 4.2vw, 52px)',
-								fontWeight: 400,
 								color: '#000000',
 								letterSpacing: '0.3px',
 								lineHeight: 1.2
 							}}>
-								WE ARE HAPPY TO<br />HELP YOU
+								<span style={{ fontWeight: 800 }}>WE ARE HAPPY TO</span><br />
+								<span style={{ fontWeight: 400 }}>HELP YOU</span>
 							</h2>
 
 							<p className="ksfe-help-subtitle">

@@ -148,7 +148,7 @@ export default function CategoryPage({ params }) {
           </div>
         </section>
 
-        {/* Hero Banner (#CDF260 Chartreuse Lime) */}
+        {/* Hero Banner (Globon Brand Blue Gradient) */}
         <section className="ksfe-services-hero-banner">
           <div className="tf-container w-1780">
             <div className="banner-grid">
@@ -156,15 +156,16 @@ export default function CategoryPage({ params }) {
                 <span
                   style={{
                     display: "inline-block",
-                    fontSize: "13px",
+                    fontSize: "12px",
                     fontWeight: "700",
                     textTransform: "uppercase",
-                    letterSpacing: "1px",
-                    padding: "4px 14px",
+                    letterSpacing: "1.5px",
+                    padding: "5px 14px",
                     borderRadius: "20px",
-                    backgroundColor: "rgba(0, 0, 0, 0.08)",
-                    color: "#0f172a",
-                    marginBottom: "16px",
+                    backgroundColor: "rgba(245, 158, 11, 0.2)",
+                    color: "#fbbf24",
+                    border: "1px solid rgba(245, 158, 11, 0.45)",
+                    marginBottom: "14px",
                   }}
                 >
                   Category Overview

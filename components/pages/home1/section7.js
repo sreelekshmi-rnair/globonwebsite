@@ -33,7 +33,6 @@ export default function Section7() {
 						<div style={{ paddingRight: '28px' }}>
 							<h2 className="why-globon-heading" style={{
 								fontSize: 'clamp(28px, 3.2vw, 38px)',
-								fontWeight: 500,
 								color: '#000000',
 								letterSpacing: '0.4px',
 								textTransform: 'uppercase',
@@ -41,7 +40,7 @@ export default function Section7() {
 								lineHeight: 1.2,
 								fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 							}}>
-								WHY GLOBON?
+								<span style={{ fontWeight: 800 }}>WHY</span> <span style={{ fontWeight: 400 }}>GLOBON?</span>
 							</h2>
 
 							<div style={{ display: 'flex', flexDirection: 'column' }}>

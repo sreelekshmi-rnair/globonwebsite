@@ -209,7 +209,7 @@ export default function AdminLoansPage() {
                       #{loan.order}
                     </td>
                     <td>
-                      <div style={{ fontWeight: '700', color: '#0f172a', fontSize: '15px' }}>
+                      <div style={{ fontWeight: '500', color: '#0f172a', fontSize: '15px' }}>
                         {loan.title}
                       </div>
                       <div style={{ fontSize: '12px', color: '#0284c7' }}>
@@ -219,7 +219,7 @@ export default function AdminLoansPage() {
                     <td>
                       <span className="admin-badge badge-in_review">{loan.category}</span>
                     </td>
-                    <td style={{ fontWeight: '700', color: '#16a34a' }}>
+                    <td style={{ fontWeight: '500', color: '#16a34a' }}>
                       {loan.interestRate}
                     </td>
                     <td style={{ fontWeight: '600', color: '#0f172a' }}>

@@ -8,7 +8,6 @@ export default function Section1() {
 				<div className="ksfe-sig-header">
 					<h2 className="ksfe-sig-title" style={{
 						fontSize: 'clamp(28px, 3.2vw, 38px)',
-						fontWeight: 500,
 						color: '#000000',
 						textTransform: 'uppercase',
 						letterSpacing: '0.4px',
@@ -16,7 +15,7 @@ export default function Section1() {
 						margin: 0,
 						fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 					}}>
-						SIGNATURE SCHEMES
+						<span style={{ fontWeight: 800 }}>SIGNATURE</span> <span style={{ fontWeight: 400 }}>SCHEMES</span>
 					</h2>
 					<Link href="/our-service" className="ksfe-sig-explore-btn">
 						<span>Explore All</span>

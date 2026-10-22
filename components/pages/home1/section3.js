@@ -84,16 +84,15 @@ export default function Section3() {
 							<div style={{ paddingLeft: '14px' }}>
 								<h2 style={{
 									fontSize: 'clamp(28px, 3.2vw, 42px)',
-									fontWeight: 500,
 									color: '#000000',
 									textTransform: 'uppercase',
 									lineHeight: '1.2',
 									letterSpacing: '0.5px',
 									marginBottom: '20px',
 									fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
-								
 								}}>
-									EXPLORE OUR PRODUCTS<br />&amp; SERVICES
+									<span style={{ fontWeight: 800 }}>EXPLORE OUR PRODUCTS</span><br />
+									<span style={{ fontWeight: 400 }}>&amp; SERVICES</span>
 								</h2>
 
 								<p style={{

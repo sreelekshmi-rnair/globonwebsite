@@ -5,48 +5,7 @@ import MobileMenu from "../MobileMenu"
 export default function Header2({ scroll, isMobileMenu, handleMobileMenu, handleWelcomeBox, isWelcomeBox }) {
 	return (
 		<>
-			<div className="tf-topbar style-2">
-				<div className="tf-container w-1780">
-					<div className="row">
-						<div className="col-lg-12">
-							<div className="topbar-inner">
-								<div className="topbar-left">
-									<ul className="infor-list">
-										<li>
-											<div className="icon">
-												<i className="flaticon-open-mail" />
-											</div>
-											<Link href="mailto:Themesflat@gmail.com"> Themesflat@gmail.com </Link>
-										</li>
-										<li>
-											<div className="icon">
-												<i className="flaticon-phone-call" />
-											</div>
-											<Link href="/tel:+00012345688"> Phone No : +000 (123) 456 88 </Link>
-										</li>
-									</ul>
-								</div>
-								<div className="topbar-right">
-									<ul className="infor-list">
-										<li>
-											<div className="icon">
-												<i className="flaticon-placeholder" />
-											</div>
-											<Link href="https://www.google.com/maps?q=Hopkins,Minnesota(MN),55305" target="_blank"> Hopkins, Minnesota(MN), 55305 </Link>
-										</li>
-										<li>
-											<div className="icon">
-												<i className="flaticon-clock" />
-											</div>
-											<Link href="/#"> Working Hours : 08am - 05pm </Link>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>{/* /.Topbar */}
+
 			{/* Header */}
 			<header className="tf-header style-2">
 				<div className="tf-container w-1780">

@@ -147,14 +147,14 @@ export default function Section7b() {
 							<h2 className="takeover-heading" style={{
 								fontFamily: "'Public Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif",
 								fontSize: 'clamp(40px, 4.2vw, 52px)',
-								fontWeight: 400,
 								color: '#000000',
 								textTransform: 'uppercase',
 								lineHeight: '1.2',
 								letterSpacing: '0.3px',
 								marginBottom: '22px'
 							}}>
-								LOAN TAKEOVER &amp;<br />REFINANCING
+								<span style={{ fontWeight: 800 }}>LOAN TAKEOVER &amp;</span><br />
+								<span style={{ fontWeight: 400 }}>REFINANCING</span>
 							</h2>
 
 							<p style={{

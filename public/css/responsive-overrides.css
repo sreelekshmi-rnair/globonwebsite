@@ -830,6 +830,99 @@ img, svg, video, canvas, audio, iframe, embed, object {
   transform: scale(1);
 }
 
+/* Hero Slide 2 (Multi-Bank Trust Banner) Responsive Image Tuning */
+.globon-ksfe-slide-bg-2 {
+  object-fit: cover !important;
+  object-position: 70% 48% !important;
+  transform: none !important; /* Prevent zoom crop on the bottom hand/badge */
+}
+
+@media (min-width: 1400px) {
+  .globon-ksfe-slide-bg-2 {
+    object-position: 70% 48% !important;
+  }
+}
+
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .globon-ksfe-slide-bg-2 {
+    object-position: 74% 48% !important;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .globon-ksfe-slide-bg-2 {
+    object-position: 78% 50% !important;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .globon-ksfe-slide-bg-2 {
+    object-position: 82% 50% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .globon-ksfe-slide-bg-2 {
+    object-position: 69% 52% !important;
+    opacity: 0.82;
+  }
+  .globon-ksfe-slide-2 .globon-ksfe-overlay {
+    background: linear-gradient(180deg, rgba(8, 22, 38, 0.92) 0%, rgba(8, 22, 38, 0.72) 40%, rgba(8, 22, 38, 0.92) 100%) !important;
+  }
+
+  .globon-ksfe-heading,
+  .globon-ksfe-heading span,
+  h1.globon-ksfe-heading,
+  h1.globon-ksfe-heading span {
+    font-size: clamp(21px, 5.2vw, 27px) !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.8px !important;
+    margin-bottom: 18px !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9) !important;
+  }
+
+  .globon-ksfe-btn {
+    padding: 10px 18px !important;
+    font-size: 13.5px !important;
+  }
+
+  .globon-ksfe-btn-secondary {
+    padding: 10px 18px !important;
+    font-size: 13.5px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .globon-ksfe-slide-bg-2 {
+    object-position: 69% 52% !important;
+    opacity: 0.78;
+  }
+
+  .globon-ksfe-heading,
+  .globon-ksfe-heading span,
+  h1.globon-ksfe-heading,
+  h1.globon-ksfe-heading span {
+    font-size: clamp(18px, 5vw, 22px) !important;
+    line-height: 1.28 !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .globon-ksfe-btn-group {
+    gap: 8px !important;
+  }
+
+  .globon-ksfe-btn {
+    padding: 8px 14px !important;
+    font-size: 12.5px !important;
+  }
+
+  .globon-ksfe-btn-secondary {
+    padding: 8px 14px !important;
+    font-size: 12.5px !important;
+  }
+}
+
 .globon-ksfe-overlay {
   position: absolute;
   inset: 0;
@@ -845,7 +938,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 25px;
+  padding-top: 90px;
   padding-bottom: 25px;
 }
 
@@ -1022,96 +1115,59 @@ h1.globon-ksfe-heading span {
   background: #f59e0b;
 }
 
-/* 17. KSFE-Style Two-Tier Full-Width Header (Matching Image 2 with Details from 1 & 3) */
-.globon-ksfe-header-wrapper {
+/* 17. Header Styling: Home Page (KSFE-Style Floating Card) vs Other Pages (Normal Full-Width White Navbar) */
+
+/* Default / Normal Header for Other Pages */
+.globon-ksfe-header-wrapper.normal-page-header {
   position: relative;
   width: 100%;
   background: #ffffff;
+  padding: 0;
   z-index: 1000;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
-.globon-ksfe-header-wrapper.is-sticky {
+.globon-ksfe-header-wrapper.normal-page-header.is-sticky {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: #ffffff !important;
+  padding: 0;
   z-index: 9999;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  animation: stickySlideDown 0.3s ease forwards;
+  animation: stickySlideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.globon-ksfe-header-wrapper.normal-page-header.is-sticky .globon-ksfe-navbar-inner {
+  height: 76px;
+  transition: height 0.25s ease;
+}
+
+.globon-ksfe-header-wrapper.normal-page-header.is-sticky .navbar-logo-area img {
+  height: 52px !important;
+  max-height: 52px !important;
+  transition: height 0.25s ease;
 }
 
 @keyframes stickySlideDown {
   from {
     transform: translateY(-100%);
+    opacity: 0;
   }
   to {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
-.globon-ksfe-header-wrapper.is-sticky .globon-ksfe-topbar {
-  display: none !important;
-}
-
-/* Header container width: expansive, generous width across high-res displays */
-.globon-ksfe-header-wrapper .tf-container {
+.globon-ksfe-header-wrapper.normal-page-header .tf-container {
   max-width: 1820px !important;
   width: 100% !important;
   padding-left: 48px !important;
   padding-right: 48px !important;
 }
 
-/* Upper Tier: Clean Light Grey Topbar with Substantial Vertical Width & Luxurious Spacing */
-.globon-ksfe-topbar {
-  background: #f5f6f8;
-  border-bottom: 1px solid #eaecef;
-  padding: 15px 0 16px 0;
-  font-family: 'Poppins', sans-serif;
-  transition: all 0.25s ease;
-}
-
-.globon-ksfe-topbar .topbar-content {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-.globon-ksfe-topbar .topbar-right-links {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  color: #4b5563;
-  font-size: 14.5px;
-  font-weight: 500;
-  letter-spacing: 0.15px;
-}
-
-.globon-ksfe-topbar .topbar-right-links a,
-.globon-ksfe-topbar .topbar-right-links span {
-  color: #374151 !important;
-  font-size: 14.5px !important;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.2s ease;
-}
-
-.globon-ksfe-topbar .topbar-right-links a:hover {
-  color: #0366a2 !important;
-}
-
-.globon-ksfe-topbar .topbar-divider {
-  width: 1px;
-  height: 16px;
-  background-color: #d1d5db;
-  display: inline-block;
-}
-
-/* Lower Tier: Elegant Full-Width Solid White Navbar with Increased Height & Prominent Presence */
 .globon-ksfe-main-navbar {
   background: #ffffff;
   border-bottom: 1px solid #edf2f7;
@@ -1129,12 +1185,12 @@ h1.globon-ksfe-heading span {
   width: 100%;
 }
 
-.navbar-logo-area {
+.globon-ksfe-navbar-inner .navbar-logo-area {
   display: flex;
   align-items: center;
 }
 
-.navbar-logo-area img {
+.globon-ksfe-navbar-inner .navbar-logo-area img {
   height: 65px;
   max-height: 70px;
   width: auto;
@@ -1142,20 +1198,20 @@ h1.globon-ksfe-heading span {
   transition: transform 0.2s ease;
 }
 
-.navbar-right-group {
+.globon-ksfe-navbar-inner .navbar-right-group {
   display: flex;
   align-items: center;
   gap: 20px;
   height: 100%;
 }
 
-.navbar-nav-links {
+.globon-ksfe-navbar-inner .navbar-nav-links {
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-.nav-items-list {
+.globon-ksfe-navbar-inner .nav-items-list {
   display: flex;
   align-items: center;
   gap: 36px;
@@ -1166,20 +1222,20 @@ h1.globon-ksfe-heading span {
 }
 
 @media (max-width: 1400px) {
-  .nav-items-list {
+  .globon-ksfe-navbar-inner .nav-items-list {
     gap: 22px;
   }
 }
 
-.nav-item {
+.globon-ksfe-navbar-inner .nav-item {
   position: relative;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-.nav-item > a,
-.nav-item > .nav-link-dropdown {
+.globon-ksfe-navbar-inner .nav-item > a,
+.globon-ksfe-navbar-inner .nav-item > .nav-link-dropdown {
   font-family: 'Poppins', sans-serif !important;
   color: #212529 !important;
   font-size: 16px !important;
@@ -1194,9 +1250,116 @@ h1.globon-ksfe-heading span {
   transition: color 0.2s ease !important;
 }
 
-.nav-item:hover > a,
-.nav-item:hover > .nav-link-dropdown,
-.nav-item.active > a {
+.globon-ksfe-navbar-inner .nav-item:hover > a,
+.globon-ksfe-navbar-inner .nav-item:hover > .nav-link-dropdown,
+.globon-ksfe-navbar-inner .nav-item.active > a {
+  color: #0366a2 !important;
+  font-weight: 600 !important;
+}
+
+/* Home Page: KSFE-Style Floating Card Header */
+.globon-ksfe-header-wrapper.home-floating-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent !important;
+  padding: 20px 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.globon-ksfe-header-wrapper.home-floating-header .tf-container {
+  max-width: 1440px !important;
+  width: 100% !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+/* Floating White Card Navbar matching Image 2 */
+.globon-ksfe-navbar-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.16);
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.globon-ksfe-navbar-card .navbar-logo-area {
+  display: flex;
+  align-items: center;
+  padding-left: 28px;
+  height: 100%;
+}
+
+.globon-ksfe-navbar-card .navbar-logo-area img {
+  height: 48px;
+  max-height: 52px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.globon-ksfe-navbar-card .navbar-right-group {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 0;
+  padding-right: 32px;
+}
+
+.globon-ksfe-navbar-card .navbar-nav-links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.globon-ksfe-navbar-card .nav-items-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+@media (max-width: 1300px) {
+  .globon-ksfe-navbar-card .nav-items-list {
+    gap: 20px;
+  }
+}
+
+.globon-ksfe-navbar-card .nav-item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.globon-ksfe-navbar-card .nav-item > a,
+.globon-ksfe-navbar-card .nav-item > .nav-link-dropdown {
+  font-family: 'Poppins', sans-serif !important;
+  color: #1e293b !important;
+  font-size: 15.5px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  white-space: nowrap !important;
+  padding: 8px 0 !important;
+  cursor: pointer;
+  transition: color 0.2s ease !important;
+}
+
+.globon-ksfe-navbar-card .nav-item:hover > a,
+.globon-ksfe-navbar-card .nav-item:hover > .nav-link-dropdown,
+.globon-ksfe-navbar-card .nav-item.active > a {
   color: #0366a2 !important;
   font-weight: 600 !important;
 }
@@ -1208,7 +1371,7 @@ h1.globon-ksfe-heading span {
   transition: transform 0.25s ease, color 0.2s ease;
 }
 
-.nav-item:hover .dropdown-chevron {
+.globon-ksfe-navbar-card .nav-item:hover .dropdown-chevron {
   transform: rotate(180deg);
   color: #0366a2;
 }
@@ -1219,9 +1382,11 @@ h1.globon-ksfe-heading span {
   top: 100%;
   left: 0;
   background: #ffffff;
-  min-width: 270px;
+  min-width: 295px;
+  max-height: 85vh;
+  overflow-y: auto;
   border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   padding: 8px 0;
   list-style: none;
   margin: 0;
@@ -1256,12 +1421,12 @@ h1.globon-ksfe-heading span {
 }
 
 /* Search Icon Button */
-.search-icon-btn {
+.globon-ksfe-navbar-card .search-icon-btn {
   background: transparent;
   border: none;
-  color: #212529;
-  width: 36px;
-  height: 36px;
+  color: #1e293b;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -1269,36 +1434,78 @@ h1.globon-ksfe-heading span {
   cursor: pointer;
   transition: all 0.2s ease;
   padding: 0;
+  margin: 0 16px 0 4px;
 }
 
-.search-icon-btn:hover {
+.globon-ksfe-navbar-card .search-icon-btn:hover {
   color: #0366a2;
-  background: #f1f5f9;
+  background-color: #f1f5f9;
+  transform: scale(1.08);
 }
 
 /* Green Pay Online Button matching Image 2 */
-.globon-pay-online-btn {
-  background-color: #5bb300;
+.globon-ksfe-navbar-card .globon-pay-online-btn {
+  background-color: #5dbb02 !important; /* Exact vibrant KSFE green */
   color: #ffffff !important;
   font-family: 'Poppins', sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  padding: 10px 24px !important;
-  border-radius: 6px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  height: 74px !important;
+  line-height: 74px !important;
+  padding: 0 34px !important;
+  border-radius: 0 8px 8px 0 !important; /* Curves seamlessly with the card right border */
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   text-decoration: none !important;
-  transition: all 0.2s ease !important;
+  letter-spacing: 0.3px !important;
+  transition: background-color 0.2s ease, transform 0.15s ease !important;
   white-space: nowrap !important;
-  box-shadow: 0 2px 8px rgba(91, 179, 0, 0.25);
+  box-shadow: none !important;
+  flex-shrink: 0;
 }
 
-.globon-pay-online-btn:hover {
-  background-color: #4e9a00;
+.globon-ksfe-navbar-card .globon-pay-online-btn:hover {
+  background-color: #50a400 !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(91, 179, 0, 0.38);
-  transform: translateY(-1px);
+}
+
+@media (max-width: 1199px) {
+  .globon-ksfe-header-wrapper {
+    padding: 10px 0;
+  }
+  .globon-ksfe-navbar-card {
+    height: 64px;
+  }
+  .globon-ksfe-navbar-card .navbar-logo-area {
+    padding-left: 16px;
+  }
+  .globon-ksfe-navbar-card .navbar-logo-area img {
+    height: 40px;
+  }
+  .globon-ksfe-navbar-card .globon-pay-online-btn {
+    height: 64px !important;
+    line-height: 64px !important;
+    padding: 0 18px !important;
+    font-size: 14px !important;
+  }
+  .globon-ksfe-navbar-card .navbar-right-group {
+    padding-right: 18px;
+  }
+  .globon-ksfe-navbar-card .mobile-action-area {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .globon-ksfe-navbar-card .globon-pay-online-btn {
+    padding: 0 14px !important;
+    font-size: 13px !important;
+  }
+  .globon-ksfe-header-wrapper .tf-container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
 }
 
 
@@ -1734,12 +1941,36 @@ h1.globon-ksfe-heading span {
   font-weight: 500;
 }
 
-/* KSFE Vibrant Banner */
+/* Globon Services Hero Banner - Harmonized with Globon Brand Blue & Gold */
 .ksfe-services-hero-banner {
-  background-color: #CDF260;
+  background: linear-gradient(135deg, #043d66 0%, #0366a2 52%, #0284c7 100%);
   padding: 70px 0 60px 0;
   position: relative;
   overflow: hidden;
+}
+
+.ksfe-services-hero-banner::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(3, 102, 162, 0) 70%);
+  pointer-events: none;
+}
+
+.ksfe-services-hero-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: 20%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.25) 0%, rgba(3, 102, 162, 0) 70%);
+  pointer-events: none;
 }
 
 .ksfe-services-hero-banner .banner-grid {
@@ -1752,26 +1983,34 @@ h1.globon-ksfe-heading span {
 .ksfe-services-hero-banner .banner-text {
   flex: 1;
   max-width: 620px;
+  position: relative;
+  z-index: 2;
 }
 
-.ksfe-services-hero-banner h1.banner-title {
-  font-size: clamp(34px, 4.2vw, 52px);
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #000000;
-  line-height: 1.15;
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
-  font-family: 'Poppins', sans-serif;
+.ksfe-services-hero-banner h1.banner-title,
+.ksfe-services-hero-banner .banner-title,
+.ksfe-services-hero-banner .banner-text h1 {
+  font-size: clamp(34px, 4.2vw, 52px) !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  line-height: 1.15 !important;
+  margin-bottom: 20px !important;
+  letter-spacing: 0.8px !important;
+  font-family: 'Poppins', sans-serif !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35) !important;
 }
 
-.ksfe-services-hero-banner p.banner-subtitle {
-  font-size: clamp(16px, 1.6vw, 20px);
-  line-height: 1.6;
-  color: #1e1e1e;
-  max-width: 500px;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
+.ksfe-services-hero-banner p.banner-subtitle,
+.ksfe-services-hero-banner .banner-subtitle,
+.ksfe-services-hero-banner .banner-text p {
+  font-size: clamp(16px, 1.6vw, 20px) !important;
+  line-height: 1.6 !important;
+  color: #ffffff !important;
+  max-width: 520px !important;
+  margin: 0 !important;
+  font-family: 'Poppins', sans-serif !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25) !important;
 }
 
 .ksfe-services-hero-banner .banner-visual {
@@ -1781,15 +2020,16 @@ h1.globon-ksfe-heading span {
   display: flex;
   justify-content: center;
   position: relative;
+  z-index: 2;
 }
 
 .ksfe-services-hero-banner .banner-visual img {
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 16px;
-  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.08));
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
 @media (max-width: 991px) {
@@ -1848,6 +2088,11 @@ h1.globon-ksfe-heading span {
 
 .ksfe-service-card-item.bg-loans {
   background-color: #EEF6FA;
+}
+
+/* Card 1: Loans & Advances - Warm Globon Gold/Amber Cream (distinct from Card 2's soft blue) */
+.ksfe-service-card-item.card-loans-advances {
+  background-color: #FFF6E5 !important;
 }
 
 .ksfe-service-card-item.bg-deposits {
@@ -2202,4 +2447,55 @@ h1.globon-ksfe-heading span {
   background-color: #ffffff !important;
   border-bottom: none !important;
 }
+
+/* =========================================================
+   22. Universal Scroll Fade Effect for All Images & Designs
+   ========================================================= */
+.globon-scroll-fade {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Subtle extra depth for standalone images & visual wraps */
+img.globon-scroll-fade,
+.tf-image-wrap.globon-scroll-fade,
+.banner-visual.globon-scroll-fade {
+  transform: translateY(28px) scale(0.97);
+}
+
+.globon-scroll-fade.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Cascade stagger delay for grid cards */
+.ksfe-services-grid > .globon-scroll-fade:nth-child(2),
+.row > [class*="col-"]:nth-child(2) > .globon-scroll-fade,
+.row > [class*="col-"]:nth-child(2).globon-scroll-fade {
+  transition-delay: 0.08s;
+}
+
+.ksfe-services-grid > .globon-scroll-fade:nth-child(3),
+.row > [class*="col-"]:nth-child(3) > .globon-scroll-fade,
+.row > [class*="col-"]:nth-child(3).globon-scroll-fade {
+  transition-delay: 0.16s;
+}
+
+.ksfe-services-grid > .globon-scroll-fade:nth-child(4),
+.row > [class*="col-"]:nth-child(4) > .globon-scroll-fade,
+.row > [class*="col-"]:nth-child(4).globon-scroll-fade {
+  transition-delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .globon-scroll-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 

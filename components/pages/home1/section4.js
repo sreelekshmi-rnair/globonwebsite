@@ -61,7 +61,6 @@ export default function Section4() {
 							<div className="text-center mb-50">
 								<h2 style={{
 									fontSize: 'clamp(28px, 3.2vw, 42px)',
-									fontWeight: 500,
 									color: '#000000',
 									textTransform: 'uppercase',
 									lineHeight: '1.2',
@@ -70,8 +69,8 @@ export default function Section4() {
 									maxWidth: '850px',
 									fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 								}}>
-									FROM STRATEGY TO DISBURSEMENT<br />
-									OUR FINANCIAL PROCESS
+									<span style={{ fontWeight: 800 }}>FROM STRATEGY TO DISBURSEMENT</span><br />
+									<span style={{ fontWeight: 400 }}>OUR FINANCIAL PROCESS</span>
 								</h2>
 							</div>
 

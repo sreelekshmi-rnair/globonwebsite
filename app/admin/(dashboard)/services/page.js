@@ -31,10 +31,16 @@ export default function AdminServicesPage() {
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [searchQuery, setSearchQuery] = useState('');
+  const [viewMode, setViewMode] = useState('grid');
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 12;
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [deleteModal, setDeleteModal] = useState({ isOpen: false, id: null, title: '' });
+  const [deleting, setDeleting] = useState(false);
   const [editingService, setEditingService] = useState(null);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState({ text: '', type: '', liveLink: '', categoryLink: '' });
+  const [activeDropdownId, setActiveDropdownId] = useState(null);
   const [uploadingHero, setUploadingHero] = useState(false);
   const [uploadingOverview, setUploadingOverview] = useState(false);
   const [uploadError, setUploadError] = useState('');
@@ -140,6 +146,17 @@ export default function AdminServicesPage() {
     }, 4000);
     return () => clearTimeout(timer);
   }, [message.text]);
+
+  // Close dropdown menu on outside click
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (!e.target.closest('.service-action-dropdown')) {
+        setActiveDropdownId(null);
+      }
+    };
+    document.addEventListener('click', handleOutsideClick);
+    return () => document.removeEventListener('click', handleOutsideClick);
+  }, []);
 
   const openCreateModal = () => {
     setEditingService(null);
@@ -412,13 +429,27 @@ export default function AdminServicesPage() {
     }
   };
 
-  const handleDelete = async (id, title) => {
-    if (!confirm(`Are you sure you want to delete the service "${title}"?`)) return;
+  const openDeleteModal = (service) => {
+    setDeleteModal({
+      isOpen: true,
+      id: service.id || service.slug,
+      title: service.title || '',
+    });
+  };
+
+  const closeDeleteModal = () => {
+    setDeleteModal({ isOpen: false, id: null, title: '' });
+  };
+
+  const executeDelete = async () => {
+    if (!deleteModal.id) return;
+    setDeleting(true);
 
     try {
-      const res = await fetch(`/api/services/${id}`, { method: 'DELETE' });
+      const res = await fetch(`/api/services/${deleteModal.id}`, { method: 'DELETE' });
       if (res.ok) {
-        setMessage({ text: `Service "${title}" deleted successfully`, type: 'success', liveLink: '', categoryLink: '' });
+        setMessage({ text: `Service "${deleteModal.title}" deleted successfully`, type: 'success', liveLink: '', categoryLink: '' });
+        closeDeleteModal();
         fetchServices();
       } else {
         const data = await res.json();
@@ -426,6 +457,8 @@ export default function AdminServicesPage() {
       }
     } catch (err) {
       alert(err.message);
+    } finally {
+      setDeleting(false);
     }
   };
 
@@ -440,49 +473,85 @@ export default function AdminServicesPage() {
     return matchesCat && matchesSearch;
   });
 
+  const totalPages = Math.ceil(filteredServices.length / pageSize) || 1;
+  const validCurrentPage = Math.min(currentPage, totalPages);
+  const startIndex = (validCurrentPage - 1) * pageSize;
+  const paginatedServices = filteredServices.slice(startIndex, startIndex + pageSize);
+
   const currentCatObj = CATEGORY_OPTIONS.find((c) => c.slug === form.category);
 
   return (
     <div style={{ paddingBottom: '60px' }}>
-      {/* Top Banner & Stats */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '20px', marginBottom: '28px' }}>
+      {/* Top Banner: Airy & Aligned */}
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '16px',
+          marginBottom: '24px',
+        }}
+      >
         <div>
-          <h1 style={{ fontSize: '28px', fontWeight: '800', color: '#0f172a', margin: '0 0 8px 0', fontFamily: "'Poppins', sans-serif" }}>
-            Services Management Studio
-          </h1>
-          <p style={{ color: '#64748b', fontSize: '15px', margin: 0 }}>
-            Fill out a single form to add any service. Select its category to automatically publish it to that category's page.
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '4px' }}>
+            <h1
+              style={{
+                fontSize: '20px',
+                fontWeight: '500',
+                color: '#0f172a',
+                margin: 0,
+                letterSpacing: '-0.2px',
+              }}
+            >
+              Services Management
+            </h1>
+            <span
+              style={{
+                backgroundColor: '#e0f2fe',
+                color: '#005b94',
+                fontSize: '12.5px',
+                fontWeight: '500',
+                padding: '3px 10px',
+                borderRadius: '20px',
+              }}
+            >
+              {services.length} Total
+            </span>
+          </div>
+          <p style={{ color: '#64748b', fontSize: '14px', margin: 0 }}>
+            Manage, edit, and organize all website services across categories.
           </p>
         </div>
 
         <button
           onClick={openCreateModal}
           style={{
-            backgroundColor: '#0366a2',
+            backgroundColor: '#005b94',
             color: '#ffffff',
-            padding: '12px 24px',
+            padding: '11px 22px',
             borderRadius: '10px',
-            fontWeight: '700',
-            fontSize: '15px',
+            fontWeight: '500',
+            fontSize: '14px',
             border: 'none',
             cursor: 'pointer',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            boxShadow: '0 4px 14px rgba(3, 102, 162, 0.35)',
+            boxShadow: '0 4px 14px rgba(0, 91, 148, 0.25)',
             transition: 'all 0.2s ease',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#004d7c';
-            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.backgroundColor = '#004775';
+            e.currentTarget.style.transform = 'translateY(-1px)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#0366a2';
+            e.currentTarget.style.backgroundColor = '#005b94';
             e.currentTarget.style.transform = 'translateY(0)';
           }}
         >
           <span style={{ fontSize: '18px', lineHeight: 1 }}>+</span>
-          <span>Add New Service Page</span>
+          <span>Add New Service</span>
         </button>
       </div>
 
@@ -492,7 +561,7 @@ export default function AdminServicesPage() {
           style={{
             padding: '14px 20px',
             borderRadius: '12px',
-            marginBottom: '24px',
+            marginBottom: '20px',
             backgroundColor: message.type === 'success' ? '#dcfce7' : '#fee2e2',
             color: message.type === 'success' ? '#15803d' : '#b91c1c',
             border: `1px solid ${message.type === 'success' ? '#86efac' : '#fca5a5'}`,
@@ -500,10 +569,10 @@ export default function AdminServicesPage() {
             alignItems: 'center',
             justifyContent: 'space-between',
             gap: '12px',
-            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.04)',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: '600', fontSize: '14.5px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: '600', fontSize: '14px' }}>
             <span>{message.type === 'success' ? '✓' : '⚠️'}</span>
             <span>{message.text}</span>
           </div>
@@ -513,7 +582,7 @@ export default function AdminServicesPage() {
             style={{
               background: 'none',
               border: 'none',
-              fontSize: '18px',
+              fontSize: '16px',
               color: message.type === 'success' ? '#15803d' : '#b91c1c',
               cursor: 'pointer',
               padding: '0 4px',
@@ -526,119 +595,243 @@ export default function AdminServicesPage() {
         </div>
       )}
 
-      {/* Search & Category Filter Toolbar */}
+      {/* Streamlined Single-Row Toolbar */}
       <div
         style={{
           backgroundColor: '#ffffff',
-          borderRadius: '16px',
-          padding: '20px',
-          marginBottom: '24px',
+          borderRadius: '14px',
+          padding: '14px 18px',
+          marginBottom: '20px',
           border: '1px solid #e2e8f0',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.02)',
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02)',
           display: 'flex',
-          flexDirection: 'column',
-          gap: '16px',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '14px',
         }}
       >
-        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ position: 'relative', flexGrow: 1, maxWidth: '480px' }}>
+        {/* Left Side: Search + Category Dropdown */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: '1 1 auto', minWidth: '280px' }}>
+          {/* Search Input */}
+          <div style={{ position: 'relative', flex: '1 1 260px', maxWidth: '360px' }}>
+            <span
+              style={{
+                position: 'absolute',
+                left: '14px',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                color: '#94a3b8',
+                fontSize: '15px',
+                pointerEvents: 'none',
+              }}
+            >
+              🔍
+            </span>
             <input
               type="text"
-              placeholder="Search services by title, slug, or keywords..."
+              placeholder="Search services by title or keyword..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setCurrentPage(1);
+              }}
               style={{
                 width: '100%',
-                padding: '12px 18px',
-                borderRadius: '10px',
-                border: '1px solid #cbd5e1',
-                fontSize: '14.5px',
+                padding: '10px 36px 10px 38px',
+                borderRadius: '8px',
+                border: '1px solid #e2e8f0',
+                fontSize: '14px',
                 outline: 'none',
                 color: '#1e293b',
+                backgroundColor: '#ffffff',
+                transition: 'all 0.2s ease',
+              }}
+              onFocus={(e) => {
+                e.target.style.backgroundColor = '#ffffff';
+                e.target.style.borderColor = '#005b94';
+              }}
+              onBlur={(e) => {
+                e.target.style.backgroundColor = '#ffffff';
+                e.target.style.borderColor = '#e2e8f0';
               }}
             />
             {searchQuery && (
               <button
-                onClick={() => setSearchQuery('')}
+                type="button"
+                onClick={() => {
+                  setSearchQuery('');
+                  setCurrentPage(1);
+                }}
                 style={{
                   position: 'absolute',
-                  right: '12px',
+                  right: '10px',
                   top: '50%',
                   transform: 'translateY(-50%)',
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
                   color: '#94a3b8',
-                  fontSize: '16px',
+                  fontSize: '14px',
+                  padding: '2px',
                 }}
+                title="Clear search"
               >
                 ✕
               </button>
             )}
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span style={{ fontSize: '14px', color: '#64748b', fontWeight: '600' }}>
-              Showing {filteredServices.length} of {services.length} services
-            </span>
+          {/* Category Dropdown Selector */}
+          <div style={{ position: 'relative', minWidth: '220px' }}>
+            <select
+              value={selectedCategory}
+              onChange={(e) => {
+                setSelectedCategory(e.target.value);
+                setCurrentPage(1);
+              }}
+              style={{
+                width: '100%',
+                padding: '10px 34px 10px 14px',
+                borderRadius: '8px',
+                border: '1px solid #cbd5e1',
+                fontSize: '13.5px',
+                fontWeight: '600',
+                color: selectedCategory === 'ALL' ? '#334155' : '#005b94',
+                backgroundColor: selectedCategory === 'ALL' ? '#ffffff' : '#f0f9ff',
+                cursor: 'pointer',
+                outline: 'none',
+                appearance: 'none',
+                WebkitAppearance: 'none',
+                backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'right 12px center',
+                backgroundSize: '14px',
+              }}
+            >
+              <option value="ALL">📁 All Categories ({services.length})</option>
+              {CATEGORY_OPTIONS.map((cat) => {
+                const count = services.filter((s) => s.category === cat.slug).length;
+                return (
+                  <option key={cat.slug} value={cat.slug}>
+                    {cat.icon} {cat.title} ({count})
+                  </option>
+                );
+              })}
+            </select>
           </div>
+
+          {/* Active filter badge if category is selected */}
+          {selectedCategory !== 'ALL' && (
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '6px 12px',
+                backgroundColor: '#e0f2fe',
+                color: '#005b94',
+                borderRadius: '20px',
+                fontSize: '12.5px',
+                fontWeight: '600',
+              }}
+            >
+              <span>{CATEGORY_OPTIONS.find((c) => c.slug === selectedCategory)?.title}</span>
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedCategory('ALL');
+                  setCurrentPage(1);
+                }}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: '#005b94',
+                  cursor: 'pointer',
+                  padding: 0,
+                  fontSize: '13px',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+                title="Clear category filter"
+              >
+                ✕
+              </button>
+            </div>
+          )}
         </div>
 
-        {/* Category Pills Bar */}
-        <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px' }}>
-          <button
-            onClick={() => setSelectedCategory('ALL')}
+        {/* Right Side: View Switcher (Table vs Grid) & Item Count */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          <span style={{ fontSize: '13px', color: '#64748b', fontWeight: '500' }}>
+            Showing <strong>{filteredServices.length === 0 ? 0 : startIndex + 1}–{Math.min(startIndex + pageSize, filteredServices.length)}</strong> of <strong>{filteredServices.length}</strong>
+          </span>
+
+          {/* View Mode Toggle: Cards or List */}
+          <div
             style={{
-              padding: '8px 16px',
-              borderRadius: '20px',
-              fontSize: '13px',
-              fontWeight: '700',
-              border: 'none',
-              cursor: 'pointer',
-              whiteSpace: 'nowrap',
-              backgroundColor: selectedCategory === 'ALL' ? '#0366a2' : '#f1f5f9',
-              color: selectedCategory === 'ALL' ? '#ffffff' : '#475569',
-              transition: 'all 0.2s ease',
+              display: 'inline-flex',
+              backgroundColor: '#ffffff',
+              padding: '3px',
+              borderRadius: '8px',
+              border: '1px solid #e2e8f0',
             }}
           >
-            All Categories ({services.length})
-          </button>
-          {CATEGORY_OPTIONS.map((cat) => {
-            const count = services.filter((s) => s.category === cat.slug).length;
-            const isSelected = selectedCategory === cat.slug;
-            return (
-              <button
-                key={cat.slug}
-                onClick={() => setSelectedCategory(cat.slug)}
-                style={{
-                  padding: '8px 16px',
-                  borderRadius: '20px',
-                  fontSize: '13px',
-                  fontWeight: '700',
-                  border: 'none',
-                  cursor: 'pointer',
-                  whiteSpace: 'nowrap',
-                  backgroundColor: isSelected ? '#0366a2' : '#f1f5f9',
-                  color: isSelected ? '#ffffff' : '#475569',
-                  transition: 'all 0.2s ease',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                }}
-              >
-                <span>{cat.icon}</span>
-                <span>{cat.title} ({count})</span>
-              </button>
-            );
-          })}
+            <button
+              type="button"
+              onClick={() => setViewMode('grid')}
+              style={{
+                padding: '6px 14px',
+                borderRadius: '6px',
+                border: 'none',
+                fontSize: '13px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                backgroundColor: viewMode === 'grid' ? '#ffffff' : 'transparent',
+                color: viewMode === 'grid' ? '#005b94' : '#64748b',
+                boxShadow: viewMode === 'grid' ? '0 1px 3px rgba(0,0,0,0.08)' : 'none',
+                transition: 'all 0.15s ease',
+              }}
+              title="Cards Grid View"
+            >
+              <span>⊞</span>
+              <span>Cards</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setViewMode('table')}
+              style={{
+                padding: '6px 14px',
+                borderRadius: '6px',
+                border: 'none',
+                fontSize: '13px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                backgroundColor: viewMode === 'table' ? '#ffffff' : 'transparent',
+                color: viewMode === 'table' ? '#005b94' : '#64748b',
+                boxShadow: viewMode === 'table' ? '0 1px 3px rgba(0,0,0,0.08)' : 'none',
+                transition: 'all 0.15s ease',
+              }}
+              title="Horizontal Card List"
+            >
+              <span>☰</span>
+              <span>List</span>
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Services List Grid */}
+      {/* Services List Display */}
       {loading ? (
         <div style={{ textAlign: 'center', padding: '60px 0', color: '#64748b' }}>
           <div style={{ fontSize: '32px', marginBottom: '12px' }}>⚡</div>
-          Loading services from backend...
+          Loading services...
         </div>
       ) : filteredServices.length === 0 ? (
         <div
@@ -651,205 +844,615 @@ export default function AdminServicesPage() {
           }}
         >
           <div style={{ fontSize: '40px', marginBottom: '12px' }}>📝</div>
-          <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#0f172a', marginBottom: '8px' }}>
-            No services listed yet
+          <h3 style={{ fontSize: '18px', fontWeight: '500', color: '#0f172a', marginBottom: '8px' }}>
+            No services match your search
           </h3>
           <p style={{ color: '#64748b', fontSize: '14.5px', marginBottom: '20px', maxWidth: '500px', margin: '0 auto 20px auto' }}>
-            Add your first service using the simple form. Pick a category from the dropdown and it will automatically appear in that specific page.
+            Try adjusting your search query or category filter, or add a new service.
           </p>
+          <button
+            onClick={() => {
+              setSearchQuery('');
+              setSelectedCategory('ALL');
+              setCurrentPage(1);
+            }}
+            style={{
+              backgroundColor: '#f1f5f9',
+              color: '#0f172a',
+              padding: '10px 20px',
+              borderRadius: '8px',
+              fontWeight: '500',
+              border: '1px solid #cbd5e1',
+              cursor: 'pointer',
+              marginRight: '12px',
+            }}
+          >
+            Reset Filters
+          </button>
           <button
             onClick={openCreateModal}
             style={{
-              backgroundColor: '#0366a2',
+              backgroundColor: '#005b94',
               color: '#ffffff',
-              padding: '12px 24px',
+              padding: '10px 20px',
               borderRadius: '8px',
-              fontWeight: '700',
+              fontWeight: '500',
               border: 'none',
               cursor: 'pointer',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
             }}
           >
-            <span>+</span>
-            <span>Add Your First Service</span>
+            + Add New Service
           </button>
         </div>
-      ) : (
-        <div className="row g-4">
-          {filteredServices.map((service) => {
+      ) : viewMode === 'table' ? (
+        /* HORIZONTAL CARD ROWS - Clean, floating cards with no vertical spreadsheet borders */
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          {paginatedServices.map((service) => {
             const catObj = CATEGORY_OPTIONS.find((c) => c.slug === service.category);
             const catName = catObj ? catObj.title : (service.categoryTitle || service.category);
             const liveUrl = `/services/${service.category}/${service.slug}`;
             const categoryUrl = `/services/${service.category}`;
 
             return (
-              <div key={service.id || service.slug} className="col-12 col-md-6 col-lg-4">
-                <div
-                  style={{
-                    backgroundColor: '#ffffff',
-                    borderRadius: '18px',
-                    border: '1px solid #e2e8f0',
-                    padding: '24px',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    boxShadow: '0 4px 16px rgba(0,0,0,0.03)',
-                    transition: 'all 0.25s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.boxShadow = '0 12px 28px rgba(3, 102, 162, 0.08)';
-                    e.currentTarget.style.borderColor = '#0366a2';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.03)';
-                    e.currentTarget.style.borderColor = '#e2e8f0';
-                  }}
-                >
-                  <div>
-                    {/* Category Tag & Live Links */}
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px', flexWrap: 'wrap', gap: '8px' }}>
-                      <Link
-                        href={categoryUrl}
-                        target="_blank"
-                        style={{
-                          fontSize: '12px',
-                          fontWeight: '700',
-                          padding: '4px 12px',
-                          borderRadius: '14px',
-                          backgroundColor: '#e0f2fe',
-                          color: '#0366a2',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.5px',
-                          textDecoration: 'none',
-                        }}
-                        title={`View category page: ${catName}`}
-                      >
-                        {catObj?.icon} {catName}
-                      </Link>
-
-                      <Link
-                        href={liveUrl}
-                        target="_blank"
-                        style={{
-                          fontSize: '13px',
-                          color: '#0366a2',
-                          textDecoration: 'none',
-                          fontWeight: '600',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '4px',
-                        }}
-                      >
-                        <span>View Live</span>
-                        <span>↗</span>
-                      </Link>
-                    </div>
-
-                    {/* Service Title */}
-                    <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#0f172a', margin: '0 0 8px 0', lineHeight: '1.3' }}>
+              <div
+                key={service.id || service.slug}
+                style={{
+                  backgroundColor: '#ffffff',
+                  borderRadius: '14px',
+                  border: '1px solid #e2e8f0',
+                  padding: '16px 22px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '18px',
+                  flexWrap: 'wrap',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.02)',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 91, 148, 0.08)';
+                  e.currentTarget.style.borderColor = '#005b94';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.02)';
+                  e.currentTarget.style.borderColor = '#e2e8f0';
+                }}
+              >
+                {/* Left: Title, Slug, Subtitle & Full Description */}
+                <div style={{ flex: '1 1 320px', minWidth: '240px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px', flexWrap: 'wrap' }}>
+                    <h3 style={{ fontSize: '14.5px', fontWeight: '500', color: '#0f172a', margin: 0 }}>
                       {service.title}
                     </h3>
-
-                    {/* Subtitle / Description */}
-                    <p
-                      style={{
-                        fontSize: '14px',
-                        color: '#64748b',
-                        lineHeight: '1.6',
-                        margin: '0 0 16px 0',
-                        display: '-webkit-box',
-                        WebkitLineClamp: 3,
-                        WebkitBoxOrient: 'vertical',
-                        overflow: 'hidden',
-                      }}
-                    >
-                      {service.subtitle || service.shortDesc}
-                    </p>
-
-                    {/* Badges Info */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '18px' }}>
-                      <span style={{ fontSize: '11.5px', backgroundColor: '#f1f5f9', color: '#475569', padding: '3px 8px', borderRadius: '6px' }}>
-                        Slug: /{service.slug}
-                      </span>
-                      {service.highlights && service.highlights.length > 0 && (
-                        <span style={{ fontSize: '11.5px', backgroundColor: '#f0fdf4', color: '#16a34a', padding: '3px 8px', borderRadius: '6px' }}>
-                          ✓ {service.highlights.length} Highlights
-                        </span>
-                      )}
-                    </div>
+                    <span style={{ fontSize: '10.5px', backgroundColor: '#f1f5f9', color: '#475569', padding: '2px 7px', borderRadius: '5px', fontFamily: 'monospace' }}>
+                      /{service.slug}
+                    </span>
                   </div>
+                  {service.subtitle && (
+                    <p style={{ fontSize: '12.5px', fontWeight: '500', color: '#005b94', margin: '0 0 4px 0', lineHeight: '1.4' }}>
+                      {service.subtitle}
+                    </p>
+                  )}
+                  {(service.shortDesc || service.overviewDesc) && (
+                    <p style={{ fontSize: '12px', color: '#64748b', margin: 0, lineHeight: '1.5' }}>
+                      {service.shortDesc || service.overviewDesc}
+                    </p>
+                  )}
+                </div>
 
-                  {/* Action Buttons */}
-                  <div
+                {/* Center: Category Badge */}
+                <div style={{ flex: '0 0 auto' }}>
+                  <Link
+                    href={categoryUrl}
+                    target="_blank"
                     style={{
-                      display: 'flex',
-                      gap: '8px',
-                      borderTop: '1px solid #f1f5f9',
-                      paddingTop: '14px',
+                      display: 'inline-flex',
                       alignItems: 'center',
-                      justifyContent: 'space-between',
+                      gap: '6px',
+                      fontSize: '12.5px',
+                      fontWeight: '600',
+                      padding: '5px 12px',
+                      borderRadius: '12px',
+                      backgroundColor: '#eff6ff',
+                      color: '#005b94',
+                      border: '1px solid #dbeafe',
+                      textDecoration: 'none',
                     }}
                   >
+                    <span>{catObj?.icon || '📁'}</span>
+                    <span>{catName}</span>
+                  </Link>
+                </div>
+
+                {/* Right: Live Link + Edit + Delete */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: '0 0 auto' }}>
+                  <Link
+                    href={liveUrl}
+                    target="_blank"
+                    style={{
+                      fontSize: '13px',
+                      fontWeight: '600',
+                      color: '#005b94',
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      padding: '7px 12px',
+                      borderRadius: '8px',
+                      backgroundColor: '#f0f9ff',
+                      border: '1px solid #e0f2fe',
+                      transition: 'all 0.15s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#e0f2fe';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#f0f9ff';
+                    }}
+                  >
+                    <span>View Page</span>
+                    <span>↗</span>
+                  </Link>
+
+                  {/* Sky-Blue Action Dropdown Button (matching user reference design) */}
+                  <div className="service-action-dropdown" style={{ position: 'relative' }}>
                     <button
-                      onClick={() => openEditModal(service)}
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveDropdownId(activeDropdownId === (service.id || service.slug) ? null : (service.id || service.slug));
+                      }}
                       style={{
-                        flexGrow: 1,
-                        backgroundColor: '#f8fafc',
-                        border: '1px solid #cbd5e1',
-                        color: '#1e293b',
-                        padding: '8px 14px',
+                        width: '36px',
+                        height: '36px',
+                        backgroundColor: '#38bdf8',
+                        color: '#ffffff',
+                        border: 'none',
                         borderRadius: '8px',
-                        fontWeight: '600',
-                        fontSize: '13.5px',
                         cursor: 'pointer',
-                        display: 'inline-flex',
+                        display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        gap: '6px',
-                        transition: 'all 0.2s ease',
+                        boxShadow: '0 2px 8px rgba(56, 189, 248, 0.35)',
+                        transition: 'all 0.15s ease',
                       }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#0366a2';
-                        e.currentTarget.style.color = '#ffffff';
-                        e.currentTarget.style.borderColor = '#0366a2';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#f8fafc';
-                        e.currentTarget.style.color = '#1e293b';
-                        e.currentTarget.style.borderColor = '#cbd5e1';
-                      }}
+                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0ea5e9')}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#38bdf8')}
+                      title="Actions"
+                      aria-label="Actions"
                     >
-                      <span>✏️</span>
-                      <span>Edit Service</span>
+                      <svg width="11" height="9" viewBox="0 0 12 10" fill="#ffffff">
+                        <path d="M6 9L1 2H11L6 9Z" />
+                      </svg>
                     </button>
 
-                    <button
-                      onClick={() => handleDelete(service.id || service.slug, service.title)}
-                      style={{
-                        backgroundColor: '#fff1f2',
-                        border: '1px solid #fecdd3',
-                        color: '#e11d48',
-                        padding: '8px 12px',
-                        borderRadius: '8px',
-                        fontWeight: '600',
-                        fontSize: '13.5px',
-                        cursor: 'pointer',
-                        transition: 'all 0.2s ease',
-                      }}
-                      title="Delete Service"
-                    >
-                      🗑️
-                    </button>
+                    {activeDropdownId === (service.id || service.slug) && (
+                      <div
+                        style={{
+                          position: 'absolute',
+                          top: 'calc(100% + 6px)',
+                          right: 0,
+                          backgroundColor: '#ffffff',
+                          borderRadius: '12px',
+                          border: '1px solid #eef2f6',
+                          boxShadow: '0 12px 30px rgba(0, 0, 0, 0.09), 0 4px 12px rgba(0, 0, 0, 0.04)',
+                          minWidth: '140px',
+                          padding: '6px 0',
+                          zIndex: 100,
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setActiveDropdownId(null);
+                            openEditModal(service);
+                          }}
+                          style={{
+                            display: 'block',
+                            width: '100%',
+                            textAlign: 'left',
+                            padding: '10px 20px',
+                            backgroundColor: 'transparent',
+                            border: 'none',
+                            fontSize: '14px',
+                            fontWeight: '500',
+                            color: '#334155',
+                            cursor: 'pointer',
+                            transition: 'all 0.15s ease',
+                            fontFamily: 'inherit',
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = '#f8fafc';
+                            e.currentTarget.style.color = '#005b94';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                            e.currentTarget.style.color = '#334155';
+                          }}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setActiveDropdownId(null);
+                            openDeleteModal(service);
+                          }}
+                          style={{
+                            display: 'block',
+                            width: '100%',
+                            textAlign: 'left',
+                            padding: '10px 20px',
+                            backgroundColor: 'transparent',
+                            border: 'none',
+                            fontSize: '14px',
+                            fontWeight: '500',
+                            color: '#475569',
+                            cursor: 'pointer',
+                            transition: 'all 0.15s ease',
+                            fontFamily: 'inherit',
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = '#fff1f2';
+                            e.currentTarget.style.color = '#e11d48';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent';
+                            e.currentTarget.style.color = '#475569';
+                          }}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
             );
           })}
+        </div>
+      ) : (
+        /* GRID VIEW - Refined, Spacious Cards */
+        <div className="row g-4">
+          {paginatedServices.map((service) => {
+            const catObj = CATEGORY_OPTIONS.find((c) => c.slug === service.category);
+            const catName = catObj ? catObj.title : (service.categoryTitle || service.category);
+            const liveUrl = `/services/${service.category}/${service.slug}`;
+            const categoryUrl = `/services/${service.category}`;
+
+            return (
+              <div key={service.id || service.slug} className="col-12 col-md-6 col-lg-4" style={{ zIndex: activeDropdownId === (service.id || service.slug) ? 50 : 1 }}>
+                <div
+                  style={{
+                    backgroundColor: '#ffffff',
+                    borderRadius: '16px',
+                    border: '1px solid #eef2f6',
+                    padding: '28px 24px 22px',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    boxShadow: '0 4px 20px -2px rgba(0,0,0,0.03)',
+                    transition: 'all 0.2s ease',
+                    position: 'relative',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-3px)';
+                    e.currentTarget.style.boxShadow = '0 12px 30px -4px rgba(0, 91, 148, 0.08)';
+                    e.currentTarget.style.borderColor = '#cbd5e1';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 4px 20px -2px rgba(0,0,0,0.03)';
+                    e.currentTarget.style.borderColor = '#eef2f6';
+                  }}
+                >
+                  <div>
+                    {/* Top Row: Category Pill with blue square + Live Link */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px', gap: '8px' }}>
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                        <span style={{ width: '10px', height: '10px', backgroundColor: '#005b94', borderRadius: '2px', display: 'inline-block' }}></span>
+                        <span style={{ fontSize: '11px', fontWeight: '500', letterSpacing: '0.6px', color: '#005b94', textTransform: 'uppercase' }}>
+                          {catName}
+                        </span>
+                      </div>
+                      <Link
+                        href={liveUrl}
+                        target="_blank"
+                        style={{
+                          fontSize: '12px',
+                          color: '#005b94',
+                          fontWeight: '500',
+                          textDecoration: 'none',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '3px',
+                          padding: '2px 8px',
+                          borderRadius: '6px',
+                          backgroundColor: '#f0f9ff',
+                        }}
+                        title="View live service page"
+                      >
+                        <span>View</span>
+                        <span>↗</span>
+                      </Link>
+                    </div>
+
+                    {/* Main Title (reduced clean normal letters) */}
+                    <h3
+                      style={{
+                        fontSize: '15px',
+                        fontWeight: '500',
+                        color: '#0f172a',
+                        margin: '0 0 6px 0',
+                        lineHeight: '1.35',
+                        letterSpacing: '-0.1px',
+                      }}
+                    >
+                      {service.title}
+                    </h3>
+
+                    {/* Subtitle */}
+                    {service.subtitle && (
+                      <h4
+                        style={{
+                          fontSize: '12.5px',
+                          fontWeight: '500',
+                          color: '#005b94',
+                          lineHeight: '1.4',
+                          margin: '0 0 8px 0',
+                        }}
+                      >
+                        {service.subtitle}
+                      </h4>
+                    )}
+
+                    {/* Full Description / shortDesc */}
+                    {(service.shortDesc || service.overviewDesc) && (
+                      <p
+                        style={{
+                          fontSize: '12.5px',
+                          color: '#475569',
+                          lineHeight: '1.5',
+                          margin: '0 0 14px 0',
+                        }}
+                      >
+                        {service.shortDesc || service.overviewDesc}
+                      </p>
+                    )}
+
+                    {/* Image / Graphic Display */}
+                    {service.heroImage && (
+                      <div style={{ marginBottom: '18px', borderRadius: '12px', overflow: 'hidden', border: '1px solid #f1f5f9', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                        <img
+                          src={service.heroImage}
+                          alt={service.title}
+                          style={{
+                            width: '100%',
+                            height: '140px',
+                            objectFit: 'cover',
+                            display: 'block',
+                          }}
+                          onError={(e) => {
+                            e.currentTarget.parentElement.style.display = 'none';
+                          }}
+                        />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Centered Sky-Blue Dropdown Button (matching user reference screenshot) */}
+                  <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '6px' }}>
+                    <div className="service-action-dropdown" style={{ position: 'relative', display: 'inline-block' }}>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActiveDropdownId(activeDropdownId === (service.id || service.slug) ? null : (service.id || service.slug));
+                        }}
+                        style={{
+                          width: '36px',
+                          height: '36px',
+                          backgroundColor: '#38bdf8',
+                          color: '#ffffff',
+                          border: 'none',
+                          borderRadius: '8px',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          boxShadow: '0 3px 10px rgba(56, 189, 248, 0.35)',
+                          transition: 'all 0.15s ease',
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0ea5e9')}
+                        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#38bdf8')}
+                        title="Actions"
+                        aria-label="Actions"
+                      >
+                        <svg width="11" height="9" viewBox="0 0 12 10" fill="#ffffff">
+                          <path d="M6 9L1 2H11L6 9Z" />
+                        </svg>
+                      </button>
+
+                      {/* Clean Dropdown Popover Menu */}
+                      {activeDropdownId === (service.id || service.slug) && (
+                        <div
+                          style={{
+                            position: 'absolute',
+                            top: 'calc(100% + 6px)',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            backgroundColor: '#ffffff',
+                            borderRadius: '12px',
+                            border: '1px solid #eef2f6',
+                            boxShadow: '0 14px 35px rgba(0, 0, 0, 0.09), 0 4px 12px rgba(0, 0, 0, 0.04)',
+                            minWidth: '140px',
+                            padding: '6px 0',
+                            zIndex: 100,
+                          }}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setActiveDropdownId(null);
+                              openEditModal(service);
+                            }}
+                            style={{
+                              display: 'block',
+                              width: '100%',
+                              textAlign: 'left',
+                              padding: '10px 20px',
+                              backgroundColor: 'transparent',
+                              border: 'none',
+                              fontSize: '14px',
+                              fontWeight: '500',
+                              color: '#334155',
+                              cursor: 'pointer',
+                              transition: 'all 0.15s ease',
+                              fontFamily: 'inherit',
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor = '#f8fafc';
+                              e.currentTarget.style.color = '#005b94';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor = 'transparent';
+                              e.currentTarget.style.color = '#334155';
+                            }}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setActiveDropdownId(null);
+                              openDeleteModal(service);
+                            }}
+                            style={{
+                              display: 'block',
+                              width: '100%',
+                              textAlign: 'left',
+                              padding: '10px 20px',
+                              backgroundColor: 'transparent',
+                              border: 'none',
+                              fontSize: '14px',
+                              fontWeight: '500',
+                              color: '#475569',
+                              cursor: 'pointer',
+                              transition: 'all 0.15s ease',
+                              fontFamily: 'inherit',
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor = '#fff1f2';
+                              e.currentTarget.style.color = '#e11d48';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor = 'transparent';
+                              e.currentTarget.style.color = '#475569';
+                            }}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '12px',
+            marginTop: '24px',
+            padding: '12px 18px',
+            backgroundColor: '#ffffff',
+            borderRadius: '12px',
+            border: '1px solid #e2e8f0',
+          }}
+        >
+          <div style={{ fontSize: '13.5px', color: '#64748b' }}>
+            Page <strong>{validCurrentPage}</strong> of <strong>{totalPages}</strong> ({filteredServices.length} total services)
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <button
+              type="button"
+              disabled={validCurrentPage === 1}
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              style={{
+                padding: '6px 12px',
+                borderRadius: '6px',
+                border: '1px solid #cbd5e1',
+                backgroundColor: validCurrentPage === 1 ? '#f8fafc' : '#ffffff',
+                color: validCurrentPage === 1 ? '#94a3b8' : '#334155',
+                cursor: validCurrentPage === 1 ? 'not-allowed' : 'pointer',
+                fontSize: '13px',
+                fontWeight: '600',
+              }}
+            >
+              ← Previous
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+              <button
+                key={pageNum}
+                type="button"
+                onClick={() => setCurrentPage(pageNum)}
+                style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '6px',
+                  border: pageNum === validCurrentPage ? '1px solid #005b94' : '1px solid #e2e8f0',
+                  backgroundColor: pageNum === validCurrentPage ? '#005b94' : '#ffffff',
+                  color: pageNum === validCurrentPage ? '#ffffff' : '#334155',
+                  cursor: 'pointer',
+                  fontSize: '13px',
+                  fontWeight: '500',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                {pageNum}
+              </button>
+            ))}
+
+            <button
+              type="button"
+              disabled={validCurrentPage === totalPages}
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              style={{
+                padding: '6px 12px',
+                borderRadius: '6px',
+                border: '1px solid #cbd5e1',
+                backgroundColor: validCurrentPage === totalPages ? '#f8fafc' : '#ffffff',
+                color: validCurrentPage === totalPages ? '#94a3b8' : '#334155',
+                cursor: validCurrentPage === totalPages ? 'not-allowed' : 'pointer',
+                fontSize: '13px',
+                fontWeight: '600',
+              }}
+            >
+              Next →
+            </button>
+          </div>
         </div>
       )}
 
@@ -2211,6 +2814,167 @@ export default function AdminServicesPage() {
               </div>
 
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Custom Delete Confirmation Modal - Matches User's 2nd Design */}
+      {deleteModal.isOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(15, 23, 42, 0.45)',
+            backdropFilter: 'blur(4px)',
+            zIndex: 10000,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '20px',
+          }}
+          onClick={closeDeleteModal}
+        >
+          <div
+            style={{
+              backgroundColor: '#ffffff',
+              borderRadius: '16px',
+              width: '100%',
+              maxWidth: '460px',
+              padding: '26px 30px',
+              boxShadow: '0 20px 45px rgba(0, 0, 0, 0.16)',
+              border: '1px solid #f1f5f9',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header: Title on left, close icon on right */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginBottom: '20px',
+              }}
+            >
+              <h3
+                style={{
+                  fontSize: '18px',
+                  fontWeight: '500',
+                  color: '#1e293b',
+                  margin: 0,
+                }}
+              >
+                Delete Service
+              </h3>
+              <button
+                type="button"
+                onClick={closeDeleteModal}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  outline: 'none',
+                  color: '#64748b',
+                  cursor: 'pointer',
+                  padding: 0,
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  overflow: 'hidden',
+                  appearance: 'none',
+                  WebkitAppearance: 'none',
+                  transition: 'all 0.15s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = '#0f172a';
+                  e.currentTarget.style.backgroundColor = '#f1f5f9';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = '#64748b';
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }}
+                title="Close"
+                aria-label="Close"
+              >
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 1L1 13M1 1L13 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
+
+            {/* Body Description */}
+            <p
+              style={{
+                fontSize: '15px',
+                color: '#475569',
+                lineHeight: '1.5',
+                margin: '0 0 28px 0',
+              }}
+            >
+              Are you sure you want to delete {deleteModal.title ? `"${deleteModal.title}"` : 'this service'}?
+            </p>
+
+            {/* Footer Buttons: Sky-Blue Cancel and Coral-Red Delete */}
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+                gap: '12px',
+              }}
+            >
+              <button
+                type="button"
+                onClick={closeDeleteModal}
+                style={{
+                  backgroundColor: '#38bdf8',
+                  color: '#ffffff',
+                  border: 'none',
+                  padding: '9px 24px',
+                  borderRadius: '8px',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  boxShadow: '0 2px 8px rgba(56, 189, 248, 0.3)',
+                  transition: 'background-color 0.15s ease',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0ea5e9')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#38bdf8')}
+              >
+                Cancel
+              </button>
+
+              <button
+                type="button"
+                onClick={executeDelete}
+                disabled={deleting}
+                style={{
+                  backgroundColor: '#ff7051',
+                  color: '#ffffff',
+                  border: 'none',
+                  padding: '9px 24px',
+                  borderRadius: '8px',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  cursor: deleting ? 'not-allowed' : 'pointer',
+                  boxShadow: '0 2px 8px rgba(255, 112, 81, 0.3)',
+                  opacity: deleting ? 0.7 : 1,
+                  transition: 'background-color 0.15s ease',
+                }}
+                onMouseEnter={(e) => {
+                  if (!deleting) e.currentTarget.style.backgroundColor = '#ea580c';
+                }}
+                onMouseLeave={(e) => {
+                  if (!deleting) e.currentTarget.style.backgroundColor = '#ff7051';
+                }}
+              >
+                {deleting ? 'Deleting...' : 'Delete'}
+              </button>
+            </div>
           </div>
         </div>
       )}

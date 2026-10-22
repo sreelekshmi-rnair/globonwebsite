@@ -31,6 +31,23 @@ export default function ServicesCategoriesPage() {
           <div className="tf-container w-1780">
             <div className="banner-grid">
               <div className="banner-text">
+                <span
+                  style={{
+                    display: "inline-block",
+                    fontSize: "12px",
+                    fontWeight: "700",
+                    textTransform: "uppercase",
+                    letterSpacing: "1.5px",
+                    padding: "5px 14px",
+                    borderRadius: "20px",
+                    backgroundColor: "rgba(245, 158, 11, 0.2)",
+                    color: "#fbbf24",
+                    border: "1px solid rgba(245, 158, 11, 0.45)",
+                    marginBottom: "14px",
+                  }}
+                >
+                  Globon Portfolio
+                </span>
                 <h1 className="banner-title">SERVICES</h1>
                 <p className="banner-subtitle">
                   Explore our comprehensive spectrum of specialized business, financial, 
@@ -82,7 +99,7 @@ export default function ServicesCategoriesPage() {
               <div
                 key={cat.id}
                 id={cat.slug}
-                className={`ksfe-service-card-item ${cat.badgeClass || 'bg-loans'}`}
+                className={`ksfe-service-card-item ${cat.badgeClass || 'bg-loans'} card-${cat.slug}`}
               >
                 {/* Left Column: Full-height Image */}
                 <div className="card-media">

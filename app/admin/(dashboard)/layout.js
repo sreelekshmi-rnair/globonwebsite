@@ -73,7 +73,7 @@ export default function AdminDashboardLayout({ children }) {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f8fafc' }}>
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#ffffff' }}>
         <div style={{ textAlign: 'center', color: '#64748b' }}>
           <div style={{ fontSize: '28px', marginBottom: '8px' }}>⚡</div>
           Loading Admin Control Center...
@@ -106,41 +106,34 @@ export default function AdminDashboardLayout({ children }) {
               href="/admin"
               className={`admin-nav-item ${pathname === '/admin' ? 'active' : ''}`}
             >
-              <span style={{ fontSize: '17px' }}>⊞</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+                <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+              </svg>
               <span>Dashboard</span>
             </Link>
 
-            <div className="admin-nav-category">MANAGEMENT</div>
             <Link
               href="/admin/services"
               className={`admin-nav-item ${pathname === '/admin/services' ? 'active' : ''}`}
             >
-              <span style={{ fontSize: '17px' }}>💼</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
               <span>Services</span>
             </Link>
 
             <Link
-              href="/admin/loans"
-              className={`admin-nav-item ${pathname === '/admin/loans' ? 'active' : ''}`}
-            >
-              <span style={{ fontSize: '17px' }}>💰</span>
-              <span>Loan Products</span>
-            </Link>
-
-            <Link
-              href="/admin/blogs"
-              className={`admin-nav-item ${pathname === '/admin/blogs' ? 'active' : ''}`}
-            >
-              <span style={{ fontSize: '17px' }}>📝</span>
-              <span>Blogs</span>
-            </Link>
-
-            <div className="admin-nav-category">COMMUNICATION</div>
-            <Link
               href="/admin/inquiries"
               className={`admin-nav-item ${pathname === '/admin/inquiries' ? 'active' : ''}`}
             >
-              <span style={{ fontSize: '17px' }}>📬</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
               <span>Consultations &amp; Leads</span>
               {Boolean(newLeadsCount && newLeadsCount > 0) && (
                 <span className="admin-nav-badge">{newLeadsCount}</span>
@@ -151,7 +144,9 @@ export default function AdminDashboardLayout({ children }) {
               href="/admin/contacts"
               className={`admin-nav-item ${pathname === '/admin/contacts' ? 'active' : ''}`}
             >
-              <span style={{ fontSize: '17px' }}>💬</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
               <span>Contact Messages</span>
               {Boolean(newContactsCount && newContactsCount > 0) && (
                 <span className="admin-nav-badge" style={{ background: '#059669' }}>{newContactsCount}</span>
@@ -171,14 +166,14 @@ export default function AdminDashboardLayout({ children }) {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontWeight: '700',
+                  fontWeight: '500',
                   fontSize: '13px',
                 }}
               >
                 {adminUser?.username?.[0]?.toUpperCase() || 'A'}
               </div>
               <div>
-                <div style={{ fontSize: '13px', fontWeight: '700', color: '#0f172a' }}>
+                <div style={{ fontSize: '13px', fontWeight: '500', color: '#0f172a' }}>
                   {adminUser?.name || 'Administrator'}
                 </div>
                 <div style={{ fontSize: '11px', color: '#94a3b8' }}>Admin Mode</div>

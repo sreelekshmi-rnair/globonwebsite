@@ -105,7 +105,7 @@ export default function AdminContactsPage() {
         ) : filteredContacts.length === 0 ? (
           <div style={{ padding: '60px', textAlign: 'center', color: '#64748b' }}>
             <div style={{ fontSize: '32px', marginBottom: '10px' }}>✉️</div>
-            <div style={{ fontSize: '16px', fontWeight: '700', color: '#334155', marginBottom: '6px' }}>No messages found</div>
+            <div style={{ fontSize: '16px', fontWeight: '500', color: '#334155', marginBottom: '6px' }}>No messages found</div>
             <div style={{ fontSize: '13.5px' }}>
               {search ? 'No contact messages matched your search query.' : 'No messages have been submitted through the contact form yet.'}
             </div>
@@ -134,7 +134,7 @@ export default function AdminContactsPage() {
                   return (
                     <tr key={c.id}>
                       {/* 1. Name */}
-                      <td style={{ fontWeight: '700', color: '#0f172a' }}>
+                      <td style={{ fontWeight: '500', color: '#0f172a' }}>
                         {name}
                       </td>
 
@@ -142,7 +142,7 @@ export default function AdminContactsPage() {
                       <td>
                         <a
                           href={`tel:${phone}`}
-                          style={{ color: '#005b94', textDecoration: 'none', fontWeight: '700' }}
+                          style={{ color: '#005b94', textDecoration: 'none', fontWeight: '500' }}
                         >
                           {phone}
                         </a>

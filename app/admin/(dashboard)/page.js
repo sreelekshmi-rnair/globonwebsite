@@ -39,7 +39,7 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* Metric Cards Grid */}
-      <div className="admin-stat-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
+      <div className="admin-stat-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
         {/* Card 1: Services */}
         <div className="admin-stat-card-dark">
           <div>
@@ -72,40 +72,12 @@ export default function AdminDashboardPage() {
             <span>💬</span>
           </div>
         </div>
-
-        {/* Card 4: Loan Products */}
-        <div className="admin-stat-card-white">
-          <div>
-            <div className="stat-label">Loan Products</div>
-            <div className="stat-val">{counts.loans}</div>
-          </div>
-          <div className="stat-icon-wrap icon-yellow-circle">
-            <span>💰</span>
-          </div>
-        </div>
-
-        {/* Card 5: Blog Articles */}
-        <div className="admin-stat-card-white">
-          <div>
-            <div className="stat-label">Published Blogs</div>
-            <div className="stat-val">{counts.blogs}</div>
-          </div>
-          <div className="stat-icon-wrap icon-green-circle">
-            <span>📝</span>
-          </div>
-        </div>
       </div>
 
       {/* Quick Action Shortcuts */}
       <div style={{ display: 'flex', gap: '12px', marginBottom: '28px', flexWrap: 'wrap' }}>
         <Link href="/admin/services" className="admin-btn admin-btn-primary">
           + Add New Service
-        </Link>
-        <Link href="/admin/loans" className="admin-btn admin-btn-outline">
-          + Add Loan Product
-        </Link>
-        <Link href="/admin/blogs" className="admin-btn admin-btn-outline">
-          + Write Blog Post
         </Link>
         <Link href="/admin/inquiries" className="admin-btn admin-btn-outline">
           📬 View Consultation Leads
@@ -119,7 +91,7 @@ export default function AdminDashboardPage() {
       <div className="admin-card" style={{ marginBottom: '28px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
           <div>
-            <h3 style={{ fontSize: '17px', fontWeight: '800', margin: '0 0 4px', color: '#0f172a' }}>
+            <h3 style={{ fontSize: '17px', fontWeight: '500', margin: '0 0 4px', color: '#0f172a' }}>
               Recent Consultation Leads (Home Page Form)
             </h3>
             <span style={{ fontSize: '13px', color: '#64748b' }}>
@@ -134,7 +106,7 @@ export default function AdminDashboardPage() {
         {recentInquiries.length === 0 ? (
           <div style={{ padding: '40px 20px', textAlign: 'center', color: '#94a3b8' }}>
             <div style={{ fontSize: '32px', marginBottom: '8px' }}>📬</div>
-            <div style={{ fontWeight: '600', color: '#475569', marginBottom: '4px' }}>No consultation leads yet</div>
+            <div style={{ fontWeight: '500', color: '#475569', marginBottom: '4px' }}>No consultation leads yet</div>
             <p style={{ margin: 0, fontSize: '13px' }}>
               Consultation inquiries submitted on your home page will appear here automatically.
             </p>
@@ -161,10 +133,10 @@ export default function AdminDashboardPage() {
 
                   return (
                     <tr key={inq.id}>
-                      <td style={{ fontWeight: '700', color: '#0f172a' }}>{fullName}</td>
+                      <td style={{ fontWeight: '500', color: '#0f172a' }}>{fullName}</td>
                       <td style={{ fontSize: '13px', color: '#475569' }}>{inq.email || '—'}</td>
                       <td>
-                        <a href={`tel:${phone}`} style={{ fontSize: '13px', fontWeight: '700', color: '#005b94', textDecoration: 'none' }}>
+                        <a href={`tel:${phone}`} style={{ fontSize: '13px', fontWeight: '500', color: '#005b94', textDecoration: 'none' }}>
                           {phone}
                         </a>
                       </td>
@@ -213,7 +185,7 @@ export default function AdminDashboardPage() {
       <div className="admin-card">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
           <div>
-            <h3 style={{ fontSize: '17px', fontWeight: '800', margin: '0 0 4px', color: '#0f172a' }}>
+            <h3 style={{ fontSize: '17px', fontWeight: '500', margin: '0 0 4px', color: '#0f172a' }}>
               Recent Contact Form Messages
             </h3>
             <span style={{ fontSize: '13px', color: '#64748b' }}>
@@ -228,7 +200,7 @@ export default function AdminDashboardPage() {
         {recentContacts.length === 0 ? (
           <div style={{ padding: '40px 20px', textAlign: 'center', color: '#94a3b8' }}>
             <div style={{ fontSize: '32px', marginBottom: '8px' }}>💬</div>
-            <div style={{ fontWeight: '600', color: '#475569', marginBottom: '4px' }}>No contact messages yet</div>
+            <div style={{ fontWeight: '500', color: '#475569', marginBottom: '4px' }}>No contact messages yet</div>
             <p style={{ margin: 0, fontSize: '13px' }}>
               Messages submitted on the Contact page will appear here.
             </p>
@@ -249,9 +221,9 @@ export default function AdminDashboardPage() {
               <tbody>
                 {recentContacts.map((c) => (
                   <tr key={c.id}>
-                    <td style={{ fontWeight: '700', color: '#0f172a' }}>{c.name || c.fullName || '—'}</td>
+                    <td style={{ fontWeight: '500', color: '#0f172a' }}>{c.name || c.fullName || '—'}</td>
                     <td>
-                      <a href={`tel:${c.phoneNumber}`} style={{ fontSize: '13px', fontWeight: '700', color: '#005b94', textDecoration: 'none' }}>
+                      <a href={`tel:${c.phoneNumber}`} style={{ fontSize: '13px', fontWeight: '500', color: '#005b94', textDecoration: 'none' }}>
                         {c.phoneNumber}
                       </a>
                     </td>

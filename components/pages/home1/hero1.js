@@ -89,7 +89,7 @@ export default function Hero1() {
 				return (
 					<div
 						key={slide.id}
-						className={`globon-ksfe-slide ${isActive ? 'active' : ''}`}
+						className={`globon-ksfe-slide ${isActive ? 'active' : ''} globon-ksfe-slide-${slide.id}`}
 						aria-hidden={!isActive}
 					>
 						<Image
@@ -98,7 +98,7 @@ export default function Hero1() {
 							fill
 							priority={idx === 0}
 							sizes="100vw"
-							className="globon-ksfe-slide-bg"
+							className={`globon-ksfe-slide-bg globon-ksfe-slide-bg-${slide.id}`}
 						/>
 						<div className="globon-ksfe-overlay" />
 
@@ -106,7 +106,7 @@ export default function Hero1() {
 							<div className="row">
 								<div className="col-xl-10 col-lg-11 col-md-12">
 									<h1 className="globon-ksfe-heading">
-										<span>{slide.line1}</span>
+										<span>{slide.line1} </span>
 										<br />
 										<span>{slide.line2}</span>
 									</h1>
