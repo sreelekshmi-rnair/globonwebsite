@@ -17,19 +17,23 @@ export async function GET() {
 
     let dbAdmin = null;
     try {
-      dbAdmin = await prisma.adminUser.findUnique({
-        where: { username: email },
-      });
+      const rows = await prisma.$queryRawUnsafe(
+        'SELECT name, username, phone, address, avatar FROM AdminUser WHERE username = ? LIMIT 1',
+        email
+      );
+      if (rows && rows.length > 0) {
+        dbAdmin = rows[0];
+      }
     } catch (e) {
-      // Prisma offline or skipped
+      console.warn('DB profile query note:', e?.message);
     }
 
     const profile = {
       name: (dbAdmin && dbAdmin.name) || (stored && stored.name) || admin.name || 'Admin',
       email: email,
-      phone: (stored && stored.phone) || '',
-      address: (stored && stored.address) || '',
-      avatar: (stored && stored.avatar) || '',
+      phone: (dbAdmin && dbAdmin.phone) || (stored && stored.phone) || '',
+      address: (dbAdmin && dbAdmin.address) || (stored && stored.address) || '',
+      avatar: (dbAdmin && dbAdmin.avatar) || (stored && stored.avatar) || '',
     };
 
     return NextResponse.json({ success: true, profile });
@@ -54,17 +58,21 @@ export async function PUT(request) {
       return NextResponse.json({ error: 'Full name is required' }, { status: 400 });
     }
 
-    // 1. Update in MySQL Database if available
+    // 1. Update directly in MySQL Database
     try {
-      await prisma.adminUser.update({
-        where: { username: email },
-        data: { name: name.trim() },
-      });
+      await prisma.$executeRawUnsafe(
+        'UPDATE AdminUser SET name = ?, phone = ?, address = ?, avatar = ? WHERE username = ?',
+        name.trim(),
+        phone ? phone.trim() : '',
+        address ? address.trim() : '',
+        avatar || '',
+        email
+      );
     } catch (e) {
-      console.warn('Prisma profile name update skipped:', e?.message);
+      console.warn('MySQL profile update note:', e?.message);
     }
 
-    // 2. Update in Admin Store
+    // 2. Also keep local store in sync as backup
     const updated = updateAdminProfile(email, {
       name: name.trim(),
       phone: phone ? phone.trim() : '',
@@ -75,9 +83,9 @@ export async function PUT(request) {
     const updatedProfile = {
       name: name.trim(),
       email: email,
-      phone: (updated && updated.phone) || phone || '',
-      address: (updated && updated.address) || address || '',
-      avatar: (updated && updated.avatar) || avatar || '',
+      phone: phone ? phone.trim() : (updated && updated.phone) || '',
+      address: address ? address.trim() : (updated && updated.address) || '',
+      avatar: avatar || (updated && updated.avatar) || '',
     };
 
     const response = NextResponse.json({
