@@ -23,6 +23,7 @@ export default function AdminDashboardLayout({ children }) {
         '/admin/blogs': 'Globon Admin - Blogs',
         '/admin/inquiries': 'Globon Admin - Consultations & Leads',
         '/admin/contacts': 'Globon Admin - Contact Messages',
+        '/admin/profile': 'Globon Admin - Profile',
       };
       document.title = titles[pathname] || 'Globon Admin Panel';
 
@@ -152,10 +153,25 @@ export default function AdminDashboardLayout({ children }) {
                 <span className="admin-nav-badge" style={{ background: '#059669' }}>{newContactsCount}</span>
               )}
             </Link>
+
+            <Link
+              href="/admin/profile"
+              className={`admin-nav-item ${pathname === '/admin/profile' ? 'active' : ''}`}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Profile</span>
+            </Link>
           </nav>
 
           <div className="admin-sidebar-footer">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <Link
+              href="/admin/profile"
+              style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', color: 'inherit', flexGrow: 1 }}
+              title="View & Edit Profile"
+            >
               <div
                 style={{
                   width: '34px',
@@ -178,7 +194,7 @@ export default function AdminDashboardLayout({ children }) {
                 </div>
                 <div style={{ fontSize: '11px', color: '#94a3b8' }}>Admin Mode</div>
               </div>
-            </div>
+            </Link>
             <button
               onClick={handleLogout}
               className="admin-btn admin-btn-danger admin-btn-sm"
