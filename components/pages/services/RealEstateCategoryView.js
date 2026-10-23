@@ -1211,18 +1211,20 @@ export default function RealEstateCategoryView({ category }) {
         </div>
       </section>
 
-      {/* Contact Us Section - Full Width with Distinct Background Color */}
+      {/* Contact Us Section - Full Width with Deep Navy Luxury Gradient */}
       <section
         id="contact-assistance"
+        className="globon-navy-cta-section"
         style={{
-          padding: "90px 0 95px 0",
-          background: "#edf5fd",
-          borderTop: "1px solid #e0ecf8",
-          borderBottom: "1px solid #e0ecf8",
-          position: "relative"
+          padding: "95px 0 100px 0",
+          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(3, 102, 162, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
+          borderTop: "1px solid rgba(255, 255, 255, 0.08)",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
+          position: "relative",
+          overflow: "hidden"
         }}
       >
-        <div className="tf-container w-1780">
+        <div className="tf-container w-1780" style={{ position: "relative", zIndex: 2 }}>
           <div
             style={{
               maxWidth: "860px",
@@ -1231,43 +1233,48 @@ export default function RealEstateCategoryView({ category }) {
             }}
           >
             <span
+              className="globon-cta-badge"
               style={{
                 display: "inline-block",
                 fontSize: "12px",
                 fontWeight: 600,
                 textTransform: "uppercase",
-                letterSpacing: "1.2px",
-                padding: "6px 16px",
-                borderRadius: "20px",
-                backgroundColor: "#ffffff",
-                border: "1px solid #dbeafe",
-                color: "#0366a2",
-                marginBottom: "18px"
+                letterSpacing: "1.4px",
+                padding: "7px 18px",
+                borderRadius: "30px",
+                backgroundColor: "rgba(255, 255, 255, 0.08)",
+                border: "1px solid rgba(56, 189, 248, 0.3)",
+                color: "#38bdf8",
+                backdropFilter: "blur(8px)",
+                marginBottom: "20px"
               }}
             >
               CONTACT US
             </span>
 
             <h2
+              className="globon-cta-heading"
               style={{
                 fontSize: "clamp(28px, 3.2vw, 42px)",
-                fontWeight: 400,
-                color: "#000000",
+                fontWeight: 600,
+                color: "#ffffff",
                 lineHeight: "1.25",
                 marginBottom: "16px",
-                fontFamily: "'Poppins', sans-serif"
+                fontFamily: "'Poppins', sans-serif",
+                letterSpacing: "-0.5px"
               }}
             >
               Ready to explore real estate services?
             </h2>
 
             <p
+              className="globon-cta-desc"
               style={{
                 fontSize: "17px",
                 fontWeight: 400,
-                color: "#4b5563",
-                lineHeight: "1.6",
-                marginBottom: "36px",
+                color: "#cbd5e1",
+                lineHeight: "1.65",
+                marginBottom: "38px",
                 maxWidth: "640px",
                 marginLeft: "auto",
                 marginRight: "auto"
@@ -1292,14 +1299,14 @@ export default function RealEstateCategoryView({ category }) {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
-                  backgroundColor: "#0366a2",
+                  backgroundColor: "#0284c7",
                   color: "#ffffff",
                   fontWeight: "700",
                   fontSize: "16px",
                   padding: "16px 36px",
                   borderRadius: "8px",
                   textDecoration: "none",
-                  boxShadow: "0 6px 20px rgba(3, 102, 162, 0.25)",
+                  boxShadow: "0 8px 24px rgba(2, 132, 199, 0.35)",
                   transition: "all 0.25s ease"
                 }}
               >
@@ -1315,14 +1322,14 @@ export default function RealEstateCategoryView({ category }) {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
-                  backgroundColor: "#25d366",
+                  backgroundColor: "#22c55e",
                   color: "#ffffff",
                   fontWeight: "700",
                   fontSize: "16px",
                   padding: "16px 36px",
                   borderRadius: "8px",
                   textDecoration: "none",
-                  boxShadow: "0 6px 20px rgba(37, 211, 102, 0.25)",
+                  boxShadow: "0 8px 24px rgba(34, 197, 94, 0.35)",
                   transition: "all 0.25s ease"
                 }}
               >

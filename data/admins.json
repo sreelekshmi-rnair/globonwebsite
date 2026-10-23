@@ -7,8 +7,8 @@
     "password": "$2b$10$M9DfZEKY0uDavZxe34d5EOL.DgsNucCwLwpiEDxUGOGLNBgnCpguO",
     "createdAt": "2026-10-22T04:56:49.379Z",
     "updatedAt": "2026-10-22T11:59:04.314Z",
-    "phone": "+91 9876543210",
-    "address": "123 Business Street, Cyber Park, Kochi",
+    "phone": "",
+    "address": "",
     "avatar": ""
   },
   {
@@ -18,6 +18,9 @@
     "username": "sreelekshmi.cognetz@gmail.com",
     "password": "$2b$10$pwK14EhNJcjAi67jbAAIJ.QOBjq5UZ7jOvZt5YdMQ8FOwELjIeBDK",
     "createdAt": "2026-10-22T05:17:41.135Z",
-    "updatedAt": "2026-10-22T10:38:17.142Z"
+    "updatedAt": "2026-10-22T10:38:17.142Z",
+    "phone": "",
+    "address": "",
+    "avatar": ""
   }
 ]
