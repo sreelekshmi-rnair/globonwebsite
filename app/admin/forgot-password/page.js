@@ -66,7 +66,7 @@ export default function AdminForgotPassword() {
               priority
             />
           </div>
-          <h2 className="admin-auth-title" style={{ fontSize: '22px', fontWeight: '500', color: '#005b94' }}>
+          <h2 className="admin-auth-title" style={{ fontSize: '22px', fontWeight: '500', color: '#0369a1' }}>
             Forgot Password
           </h2>
           <p style={{ margin: '8px 0 0', fontSize: '13px', color: '#64748b', lineHeight: 1.5 }}>
@@ -163,7 +163,7 @@ export default function AdminForgotPassword() {
         <div className="admin-auth-footer" style={{ marginTop: '20px' }}>
           <div>
             Remembered your password?{' '}
-            <Link href="/admin/login" style={{ color: '#005b94', fontWeight: 500, textDecoration: 'none' }}>
+            <Link href="/admin/login" style={{ color: '#0369a1', fontWeight: 500, textDecoration: 'none' }}>
               Sign In
             </Link>
           </div>

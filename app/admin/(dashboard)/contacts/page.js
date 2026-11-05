@@ -80,7 +80,7 @@ export default function AdminContactsPage() {
           flexWrap: 'wrap',
           gap: '14px'
         }}>
-          <div style={{ position: 'relative', width: '320px', maxWidth: '100%' }}>
+          <div style={{ position: 'relative', width: '320px', maxWidth: '100%', flex: '1 1 240px' }}>
             <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }}>🔍</span>
             <input
               type="text"
@@ -88,7 +88,7 @@ export default function AdminContactsPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="admin-form-input"
-              style={{ paddingLeft: '38px', height: '42px', margin: 0, fontSize: '14px' }}
+              style={{ paddingLeft: '38px', height: '42px', margin: 0, fontSize: '14px', width: '100%' }}
             />
           </div>
 
@@ -142,7 +142,7 @@ export default function AdminContactsPage() {
                       <td>
                         <a
                           href={`tel:${phone}`}
-                          style={{ color: '#005b94', textDecoration: 'none', fontWeight: '500' }}
+                          style={{ color: '#0369a1', textDecoration: 'none', fontWeight: '500' }}
                         >
                           {phone}
                         </a>

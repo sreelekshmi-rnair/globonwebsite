@@ -52,7 +52,7 @@ export default function Section3() {
 				<div className="tf-container about-page-container">
 					{/* Header Block */}
 					<div className="text-center mb-5">
-						<p style={{ color: "#0366a2", fontWeight: 700, textTransform: "uppercase", fontSize: "13px", letterSpacing: "1.5px", marginBottom: "14px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+						<p style={{ color: "#0369a1", fontWeight: 700, textTransform: "uppercase", fontSize: "13px", letterSpacing: "1.5px", marginBottom: "14px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
 							<i className="icon-angles-right" />
 							The Globon Difference
 						</p>
@@ -88,19 +88,19 @@ export default function Section3() {
 							marginRight: "auto"
 						}}>
 							<div style={{ textAlign: "center", padding: "10px" }}>
-								<div style={{ fontSize: "clamp(32px, 3vw, 42px)", fontWeight: 800, color: "#0366a2", lineHeight: 1 }}>₹200+ Cr</div>
+								<div style={{ fontSize: "clamp(32px, 3vw, 42px)", fontWeight: 800, color: "#0369a1", lineHeight: 1 }}>₹200+ Cr</div>
 								<div style={{ color: "#64748b", fontSize: "15px", fontWeight: 600, marginTop: "8px" }}>Funding Facilitated</div>
 							</div>
 							<div style={{ textAlign: "center", padding: "10px", borderLeft: "1px solid #e2e8f0" }}>
-								<div style={{ fontSize: "clamp(32px, 3vw, 42px)", fontWeight: 800, color: "#0366a2", lineHeight: 1 }}>48 Hours</div>
+								<div style={{ fontSize: "clamp(32px, 3vw, 42px)", fontWeight: 800, color: "#0369a1", lineHeight: 1 }}>48 Hours</div>
 								<div style={{ color: "#64748b", fontSize: "15px", fontWeight: 600, marginTop: "8px" }}>Fast Approval Turnaround</div>
 							</div>
 							<div style={{ textAlign: "center", padding: "10px", borderLeft: "1px solid #e2e8f0" }}>
-								<div style={{ fontSize: "clamp(32px, 3vw, 42px)", fontWeight: 800, color: "#0366a2", lineHeight: 1 }}>194+</div>
+								<div style={{ fontSize: "clamp(32px, 3vw, 42px)", fontWeight: 800, color: "#0369a1", lineHeight: 1 }}>194+</div>
 								<div style={{ color: "#64748b", fontSize: "15px", fontWeight: 600, marginTop: "8px" }}>Support &amp; Collection Centers</div>
 							</div>
 							<div style={{ textAlign: "center", padding: "10px", borderLeft: "1px solid #e2e8f0" }}>
-								<div style={{ fontSize: "clamp(32px, 3vw, 42px)", fontWeight: 800, color: "#0366a2", lineHeight: 1 }}>30+</div>
+								<div style={{ fontSize: "clamp(32px, 3vw, 42px)", fontWeight: 800, color: "#0369a1", lineHeight: 1 }}>30+</div>
 								<div style={{ color: "#64748b", fontSize: "15px", fontWeight: 600, marginTop: "8px" }}>Partner Banks &amp; NBFCs</div>
 							</div>
 						</div>
@@ -142,7 +142,7 @@ export default function Section3() {
 											height: "44px",
 											borderRadius: "12px",
 											background: "#edf5fd",
-											color: "#0366a2",
+											color: "#0369a1",
 											display: "flex",
 											alignItems: "center",
 											justifyContent: "center",
@@ -188,15 +188,15 @@ export default function Section3() {
 								display: "inline-flex",
 								alignItems: "center",
 								gap: "10px",
-								backgroundColor: "#0366a2",
-								color: "#ffffff",
+								backgroundColor: "#59bdfc",
+								color: "#0f172a",
 								fontWeight: 600,
 								fontSize: "16px",
 								padding: "15px 36px",
 								borderRadius: "6px",
 								textDecoration: "none",
 								transition: "all 0.25s ease",
-								boxShadow: "0 4px 16px rgba(3, 102, 162, 0.25)"
+								boxShadow: "0 4px 16px rgba(89, 189, 252, 0.25)"
 							}}
 						>
 							<span>Experience The Globon Difference</span>

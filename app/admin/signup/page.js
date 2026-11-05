@@ -273,7 +273,7 @@ export default function AdminSignup() {
         <div className="admin-auth-footer">
           <div>
             Already have an account?{' '}
-            <Link href="/admin/login" style={{ color: '#005b94', fontWeight: 500, textDecoration: 'none' }}>
+            <Link href="/admin/login" style={{ color: '#0369a1', fontWeight: 500, textDecoration: 'none' }}>
               Sign In
             </Link>
           </div>

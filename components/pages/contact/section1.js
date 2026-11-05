@@ -7,7 +7,7 @@ export default function Section1() {
 			badge: "Head Office",
 			title: "Office Address",
 			icon: (
-				<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0366a2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+				<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#59bdfc" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
 					<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
 					<circle cx="12" cy="10" r="3"></circle>
 				</svg>
@@ -24,7 +24,7 @@ export default function Section1() {
 			badge: "Direct Support",
 			title: "Phone & WhatsApp",
 			icon: (
-				<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0366a2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+				<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#59bdfc" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
 					<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
 				</svg>
 			),
@@ -32,7 +32,7 @@ export default function Section1() {
 				<div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', alignItems: 'center' }}>
 					<div>
 						<span style={{ fontSize: '13px', color: '#64748b', fontWeight: 600, display: 'block', marginBottom: '2px' }}>Call Advisory Team:</span>
-						<a href="tel:+919846053539" style={{ fontSize: '18px', fontWeight: 700, color: '#0366a2', textDecoration: 'none' }}>
+						<a href="tel:+919846053539" style={{ fontSize: '18px', fontWeight: 700, color: '#0369a1', textDecoration: 'none' }}>
 							+91 98460 53539
 						</a>
 					</div>
@@ -51,7 +51,7 @@ export default function Section1() {
 			badge: "Quick Response",
 			title: "Email Inquiries",
 			icon: (
-				<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0366a2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+				<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#59bdfc" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
 					<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
 					<polyline points="22,6 12,13 2,6"></polyline>
 				</svg>
@@ -60,7 +60,7 @@ export default function Section1() {
 				<div>
 					<a
 						href="mailto:globonfinance@gmail.com"
-						style={{ fontSize: '18px', fontWeight: 700, color: '#0366a2', textDecoration: 'none', display: 'inline-block', marginBottom: '4px' }}
+						style={{ fontSize: '18px', fontWeight: 700, color: '#0369a1', textDecoration: 'none', display: 'inline-block', marginBottom: '4px' }}
 					>
 						globonfinance@gmail.com
 					</a>
@@ -76,7 +76,7 @@ export default function Section1() {
 			badge: "Office Timing",
 			title: "Working Hours",
 			icon: (
-				<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0366a2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+				<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#59bdfc" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
 					<circle cx="12" cy="12" r="10"></circle>
 					<polyline points="12 6 12 12 16 14"></polyline>
 				</svg>
@@ -112,7 +112,7 @@ export default function Section1() {
 				{/* Section Header */}
 				<div className="text-center mb-5">
 					<p style={{
-						color: '#0366a2',
+						color: '#0369a1',
 						fontWeight: 700,
 						fontSize: '13px',
 						letterSpacing: '1.5px',
@@ -201,7 +201,7 @@ export default function Section1() {
 									</h3>
 									<span style={{
 										background: '#f8fafc',
-										color: '#0366a2',
+										color: '#0369a1',
 										fontWeight: 700,
 										fontSize: '12px',
 										letterSpacing: '0.5px',
@@ -224,7 +224,7 @@ export default function Section1() {
 										target={card.actionHref.startsWith('http') ? '_blank' : '_self'}
 										rel="noopener noreferrer"
 										style={{
-											color: '#0366a2',
+											color: '#0369a1',
 											fontSize: '15px',
 											fontWeight: 700,
 											textDecoration: 'none',

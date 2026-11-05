@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import SubServiceLinks from "./SubServiceLinks";
 
 export default function BusinessRegistrationCategoryView({ category }) {
   const [activeFaq, setActiveFaq] = useState(null)
@@ -20,7 +21,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Certificate of Incorporation */}
             <rect x="70" y="48" width="135" height="106" rx="6" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-            <rect x="80" y="58" width="115" height="12" rx="2" fill="#1F4E7A" />
+            <rect x="80" y="58" width="115" height="12" rx="2" fill="#59bdfc" />
             <text x="137" y="67" fontSize="7.5" fontWeight="bold" textAnchor="middle" fill="#FFFFFF" letterSpacing="0.8">CERTIFICATE OF INCORPORATION</text>
             <line x1="84" y1="80" x2="190" y2="80" stroke="#CBD5E1" strokeWidth="2.5" strokeLinecap="round" />
             <line x1="84" y1="90" x2="175" y2="90" stroke="#CBD5E1" strokeWidth="2.5" strokeLinecap="round" />
@@ -31,7 +32,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
             <polygon points="168,133 163,148 172,142 181,148 176,133" fill="#EF4444" stroke="#0F172A" strokeWidth="1.2" />
             {/* Corporate Shield Badge with CIN */}
             <g transform="translate(210, 64) rotate(6)">
-              <rect x="0" y="0" width="76" height="56" rx="6" fill="#0284C7" stroke="#0F172A" strokeWidth="2" />
+              <rect x="0" y="0" width="76" height="56" rx="6" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
               <text x="38" y="20" fontSize="8" fontWeight="900" textAnchor="middle" fill="#FFFFFF" letterSpacing="0.5">MCA SPICe+</text>
               <rect x="10" y="28" width="56" height="16" rx="3" fill="#FFFFFF" stroke="#0F172A" strokeWidth="1" />
               <text x="38" y="40" fontSize="7.5" fontWeight="bold" textAnchor="middle" fill="#0F172A">CIN &amp; DIN</text>
@@ -56,8 +57,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
             <text x="185" y="102" fontSize="7.5" fontWeight="bold" textAnchor="middle" fill="#0F172A">AGREEMENT</text>
             {/* Two Partner Figures */}
             <g transform="translate(68, 76)">
-              <circle cx="20" cy="20" r="14" fill="#38BDF8" stroke="#0F172A" strokeWidth="2" />
-              <path d="M 4 56 C 4 40 10 36 20 36 C 30 36 36 40 36 56" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+              <circle cx="20" cy="20" r="14" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
+              <path d="M 4 56 C 4 40 10 36 20 36 C 30 36 36 40 36 56" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
               <polygon points="18,36 22,36 20,44" fill="#F59E0B" />
               <circle cx="52" cy="22" r="14" fill="#34D399" stroke="#0F172A" strokeWidth="2" />
               <path d="M 36 56 C 36 42 42 38 52 38 C 62 38 68 42 68 56" fill="#065F46" stroke="#0F172A" strokeWidth="2" />
@@ -91,9 +92,9 @@ export default function BusinessRegistrationCategoryView({ category }) {
             <circle cx="140" cy="116" r="9" fill="#EF4444" />
             {/* Registrar of Firms Stamp */}
             <g transform="translate(210, 68) rotate(12)">
-              <rect x="0" y="0" width="70" height="50" rx="6" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+              <rect x="0" y="0" width="70" height="50" rx="6" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
               <text x="35" y="20" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#FFFFFF">ROF</text>
-              <rect x="8" y="26" width="54" height="15" rx="3" fill="#38BDF8" />
+              <rect x="8" y="26" width="54" height="15" rx="3" fill="#59bdfc" />
               <text x="35" y="37" fontSize="7" fontWeight="bold" textAnchor="middle" fill="#0F172A">REGISTERED</text>
             </g>
           </svg>
@@ -109,7 +110,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
               <path d="M 40 10 C 65 30 70 70 70 95 L 10 95 C 10 70 15 30 40 10 Z" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2.5" />
               <polygon points="40,10 50,32 30,32" fill="#EF4444" stroke="#0F172A" strokeWidth="1.5" />
               {/* Round Window */}
-              <circle cx="40" cy="50" r="14" fill="#0284C7" stroke="#0F172A" strokeWidth="2" />
+              <circle cx="40" cy="50" r="14" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
               <circle cx="40" cy="50" r="9" fill="#BAE6FD" />
               {/* Wings */}
               <polygon points="10,80 -8,105 10,100" fill="#EF4444" stroke="#0F172A" strokeWidth="2" />
@@ -120,7 +121,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
             </g>
             {/* DPIIT Recognition Certificate Plaque */}
             <g transform="translate(185, 52)">
-              <rect x="0" y="0" width="85" height="95" rx="6" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+              <rect x="0" y="0" width="85" height="95" rx="6" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
               <rect x="6" y="6" width="73" height="83" rx="4" fill="#FFFFFF" />
               <text x="42" y="24" fontSize="8" fontWeight="900" textAnchor="middle" fill="#D97706" letterSpacing="0.5">DPIIT</text>
               <line x1="14" y1="34" x2="70" y2="34" stroke="#CBD5E1" strokeWidth="2" strokeLinecap="round" />
@@ -150,7 +151,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
             {/* Micro/Small/Medium Tag Stack */}
             <g transform="translate(205, 54)">
               <rect x="0" y="0" width="70" height="26" rx="4" fill="#1E293B" stroke="#0F172A" strokeWidth="1.5" />
-              <text x="35" y="16" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#38BDF8">MICRO</text>
+              <text x="35" y="16" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#0369a1">MICRO</text>
               <rect x="0" y="32" width="70" height="26" rx="4" fill="#1E293B" stroke="#0F172A" strokeWidth="1.5" />
               <text x="35" y="48" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#34D399">SMALL</text>
               <rect x="0" y="64" width="70" height="26" rx="4" fill="#1E293B" stroke="#0F172A" strokeWidth="1.5" />
@@ -165,10 +166,10 @@ export default function BusinessRegistrationCategoryView({ category }) {
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Kerala Storefront / Commercial Establishment */}
             <rect x="75" y="70" width="130" height="80" rx="4" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-            <polygon points="68,70 140,34 212,70" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2.2" />
+            <polygon points="68,70 140,34 212,70" fill="#59bdfc" stroke="#0F172A" strokeWidth="2.2" />
             <rect x="135" y="48" width="10" height="12" fill="#FEF08A" />
             {/* Awning */}
-            <polygon points="70,70 210,70 204,86 76,86" fill="#0284C7" stroke="#0F172A" strokeWidth="1.8" />
+            <polygon points="70,70 210,70 204,86 76,86" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.8" />
             <polygon points="88,70 104,70 100,86 84,86" fill="#FFFFFF" />
             <polygon points="120,70 136,70 132,86 116,86" fill="#FFFFFF" />
             <polygon points="152,70 168,70 164,86 148,86" fill="#FFFFFF" />
@@ -194,7 +195,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
           <svg className="ksfe-sig-visual-svg" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             <rect x="100" y="60" width="140" height="90" rx="8" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-            <circle cx="170" cy="105" r="24" fill="#38BDF8" stroke="#0F172A" strokeWidth="2" />
+            <circle cx="170" cy="105" r="24" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <text x="170" y="112" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#0F172A">★</text>
           </svg>
         )
@@ -224,11 +225,11 @@ export default function BusinessRegistrationCategoryView({ category }) {
       <section style={{ backgroundColor: "#f8fafc", borderBottom: "1px solid #e2e8f0", padding: "14px 0" }}>
         <div className="tf-container w-1780">
           <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#64748b" }}>
-            <Link href="/" style={{ color: "#0366a2", textDecoration: "none", fontWeight: 500 }}>
+            <Link href="/" style={{ color: "#0369a1", textDecoration: "none", fontWeight: 500 }}>
               Home
             </Link>
             <span>/</span>
-            <Link href="/services" style={{ color: "#0366a2", textDecoration: "none", fontWeight: 500 }}>
+            <Link href="/services" style={{ color: "#0369a1", textDecoration: "none", fontWeight: 500 }}>
               Services
             </Link>
             <span>/</span>
@@ -256,8 +257,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                 {/* Main Heading */}
                 <h1 style={{
                   fontSize: "clamp(34px, 3.8vw, 54px)",
-                  fontWeight: 400,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.15",
                   letterSpacing: "0.2px",
                   marginBottom: "16px",
@@ -269,7 +270,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
                 {/* Subheadline from User */}
                 <h2 style={{
                   fontSize: "clamp(18px, 1.8vw, 22px)",
-                  fontWeight: 400,
+                  fontWeight: 600,
                   color: "#475569",
                   lineHeight: "1.4",
                   marginBottom: "20px",
@@ -296,14 +297,14 @@ export default function BusinessRegistrationCategoryView({ category }) {
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "10px",
-                      backgroundColor: "#0366a2",
-                      color: "#ffffff",
+                      backgroundColor: "#59bdfc",
+                      color: "#0f172a",
                       fontWeight: "700",
                       fontSize: "16px",
                       padding: "14px 32px",
                       borderRadius: "8px",
                       textDecoration: "none",
-                      boxShadow: "0 6px 20px rgba(3, 102, 162, 0.25)",
+                      boxShadow: "0 6px 20px rgba(89, 189, 252, 0.25)",
                       transition: "all 0.25s ease"
                     }}
                   >
@@ -348,15 +349,18 @@ export default function BusinessRegistrationCategoryView({ category }) {
                   overflow: "hidden",
                   boxShadow: "0 20px 50px rgba(0, 0, 0, 0.08)",
                   position: "relative",
-                  height: "460px",
-                  width: "100%"
+                  height: "440px",
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}>
                   <Image
                     src="/images/services/3.png"
                     alt="Globon Business Registration"
                     fill
                     sizes="(max-width: 991px) 100vw, 560px"
-                    style={{ objectFit: "cover", objectPosition: "center 15%" }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                     priority
                   />
                 </div>
@@ -383,8 +387,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                     width: "32px",
                     height: "32px",
                     borderRadius: "50%",
-                    background: "#0366a2",
-                    color: "#ffffff",
+                    background: "#59bdfc",
+                    color: "#0f172a",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -426,7 +430,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
                     borderRadius: "12px",
                     background: "#f8fafc",
                     border: "1px solid #e2e8f0",
-                    color: "#0366a2",
+                    color: "#0369a1",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center"
@@ -475,9 +479,9 @@ export default function BusinessRegistrationCategoryView({ category }) {
             </span>
             <h2 style={{
               fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 400,
+              fontWeight: 600,
               letterSpacing: "0.5px",
-              color: "#000000",
+              color: '#0369a1',
               lineHeight: 1.3,
               marginBottom: "18px",
               fontFamily: "'Poppins', sans-serif"
@@ -516,7 +520,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
                   borderRadius: "50%",
                   background: "#f8fafc",
                   border: "1px solid #e2e8f0",
-                  color: "#0366a2",
+                  color: "#0369a1",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -527,8 +531,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -576,8 +580,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -614,7 +618,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
                   borderRadius: "50%",
                   background: "#f8fafc",
                   border: "1px solid #e2e8f0",
-                  color: "#0284c7",
+                  color: "#0369a1",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -625,8 +629,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -674,8 +678,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -711,10 +715,10 @@ export default function BusinessRegistrationCategoryView({ category }) {
           }}>
             <h2 style={{
               fontSize: "clamp(24px, 2.6vw, 36px)",
-              fontWeight: "400",
+              fontWeight: 600,
               letterSpacing: "0.5px",
               textTransform: "uppercase",
-              color: "#000000",
+              color: '#0369a1',
               margin: 0,
               fontFamily: "inherit"
             }}>
@@ -758,7 +762,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
                 <div key={service.slug} className="col-12 col-sm-6 col-lg-4 col-xl-4">
                   <div className="loan-scheme-sig-card wow fadeInUp" data-wow-delay={`${(idx % 3) * 0.1}s`}>
                     <Link
-                      href={`/services/${category.slug}/${service.slug}`}
+                      href={service.href}
                       className="ksfe-sig-visual-wrap"
                       aria-label={service.title}
                     >
@@ -767,7 +771,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
                           src={service.heroImage || service.image}
                           alt={service.title}
                           fill
-                          style={{ objectFit: 'cover' }}
+                          style={{ objectFit: 'cover', objectPosition: 'center' }}
                         />
                       ) : (
                         getServiceIllustration(service.slug)
@@ -777,8 +781,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                     <div className="ksfe-sig-content">
                       <h3 className="ksfe-sig-card-title">
                         <Link
-                          href={`/services/${category.slug}/${service.slug}`}
-                          style={{ color: "#000000" }}
+                          href={service.href}
+                          style={{ color: '#0369a1' }}
                         >
                           {service.title}
                         </Link>
@@ -787,7 +791,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
                       <p style={{
                         fontSize: "15px",
                         fontWeight: 500,
-                        color: "#0366a2",
+                        color: "#0369a1",
                         lineHeight: "1.4",
                         marginBottom: "10px"
                       }}>
@@ -798,6 +802,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                         {service.shortDesc}
                       </p>
 
+                      <SubServiceLinks items={service.subServices} />
+
                       <div className="ksfe-sig-divider" />
 
                       {service.highlights && service.highlights.length > 0 && (
@@ -806,7 +812,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
                             <li key={i} className="ksfe-sig-bullet-item">
                               <span className="bullet-asterisk">✻</span>
                               <Link
-                                href={`/services/${category.slug}/${service.slug}`}
+                                href={service.href}
                                 style={{ color: "inherit", textDecoration: "none" }}
                               >
                                 {hl}
@@ -853,9 +859,9 @@ export default function BusinessRegistrationCategoryView({ category }) {
             </span>
             <h2 style={{
               fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 400,
+              fontWeight: 600,
               letterSpacing: "0.5px",
-              color: "#000000",
+              color: '#0369a1',
               marginBottom: "16px",
               fontFamily: "'Poppins', sans-serif"
             }}>
@@ -888,8 +894,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -898,8 +904,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -933,8 +939,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -943,8 +949,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -978,8 +984,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -988,8 +994,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -1014,8 +1020,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
               <div style={{ maxWidth: "620px" }}>
                 <h2 style={{
                   fontSize: "clamp(24px, 2.6vw, 36px)",
-                  fontWeight: 400,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   textTransform: "uppercase",
                   letterSpacing: "0.5px",
                   lineHeight: 1.25,
@@ -1054,7 +1060,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
                           <span style={{
                             fontSize: "clamp(18px, 1.4vw, 21px)",
                             fontWeight: 500,
-                            color: isOpen ? "#0366a2" : "#0f172a",
+                            color: isOpen ? "#0369a1" : "#0f172a",
                             lineHeight: 1.4,
                             fontFamily: "'Poppins', sans-serif"
                           }}>
@@ -1064,8 +1070,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                             width: "32px",
                             height: "32px",
                             borderRadius: "50%",
-                            background: isOpen ? "#0366a2" : "#f1f5f9",
-                            color: isOpen ? "#ffffff" : "#475569",
+                            background: isOpen ? "#59bdfc" : "#f1f5f9",
+                            color: isOpen ? "#0f172a" : "#475569",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -1136,14 +1142,14 @@ export default function BusinessRegistrationCategoryView({ category }) {
                     width: "48px",
                     height: "48px",
                     borderRadius: "14px",
-                    background: "#0284c7",
+                    background: "#59bdfc",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "#ffffff",
+                    color: "#0f172a",
                     fontSize: "22px",
                     fontWeight: "900",
-                    boxShadow: "0 10px 24px rgba(2, 132, 199, 0.35)",
+                    boxShadow: "0 10px 24px rgba(89, 189, 252, 0.35)",
                     zIndex: 3
                   }}
                 >
@@ -1181,7 +1187,7 @@ export default function BusinessRegistrationCategoryView({ category }) {
         className="globon-navy-cta-section"
         style={{
           padding: "95px 0 100px 0",
-          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(3, 102, 162, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
+          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(89, 189, 252, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
           borderTop: "1px solid rgba(255, 255, 255, 0.08)",
           borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
           position: "relative",
@@ -1207,8 +1213,8 @@ export default function BusinessRegistrationCategoryView({ category }) {
                 padding: "7px 18px",
                 borderRadius: "30px",
                 backgroundColor: "rgba(255, 255, 255, 0.08)",
-                border: "1px solid rgba(56, 189, 248, 0.3)",
-                color: "#38bdf8",
+                border: "1px solid rgba(89, 189, 252, 0.3)",
+                color: "#0369a1",
                 backdropFilter: "blur(8px)",
                 marginBottom: "20px"
               }}
@@ -1263,14 +1269,14 @@ export default function BusinessRegistrationCategoryView({ category }) {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
-                  backgroundColor: "#0284c7",
-                  color: "#ffffff",
+                  backgroundColor: "#59bdfc",
+                  color: "#0f172a",
                   fontWeight: "700",
                   fontSize: "16px",
                   padding: "16px 36px",
                   borderRadius: "8px",
                   textDecoration: "none",
-                  boxShadow: "0 8px 24px rgba(2, 132, 199, 0.35)",
+                  boxShadow: "0 8px 24px rgba(89, 189, 252, 0.35)",
                   transition: "all 0.25s ease"
                 }}
               >

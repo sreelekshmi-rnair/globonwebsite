@@ -69,7 +69,7 @@ export default function AdminLogin() {
               priority
             />
           </div>
-          <h2 style={{ fontSize: '24px', fontWeight: '500', margin: '0', color: '#005b94' }}>
+          <h2 style={{ fontSize: '24px', fontWeight: '500', margin: '0', color: '#0369a1' }}>
             Sign In
           </h2>
         </div>
@@ -109,7 +109,7 @@ export default function AdminLogin() {
                 href="/admin/forgot-password"
                 style={{
                   fontSize: '13px',
-                  color: '#005b94',
+                  color: '#0369a1',
                   textDecoration: 'none',
                   fontWeight: 500,
                 }}
@@ -185,7 +185,7 @@ export default function AdminLogin() {
         >
           <div>
             Don't have an account?{' '}
-            <Link href="/admin/signup" style={{ color: '#005b94', fontWeight: 500, textDecoration: 'none' }}>
+            <Link href="/admin/signup" style={{ color: '#0369a1', fontWeight: 500, textDecoration: 'none' }}>
               Sign Up
             </Link>
           </div>

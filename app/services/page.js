@@ -1,17 +1,18 @@
 import Layout from "@/components/layout/Layout";
 import Image from "next/image";
 import Link from "next/link";
-import { getAllCategories } from "@/lib/servicesStore";
+import { getMenuOrderedCards } from "@/lib/servicesStore";
+import SubServiceLinks from "@/components/pages/services/SubServiceLinks";
 
 export const revalidate = 0;
 
 export const metadata = {
   title: "Service Categories - Globon Business Solutions",
-  description: "Browse all service categories from Globon Business Solutions including Loans & Advances, Business Registration, Tax & Accounting, Licenses, and Digital Services.",
+  description: "Browse all service categories from Globon Business Solutions including Loans, Business Services, Study Abroad, Insurance, Real Estate, and Digital Services.",
 };
 
 export default function ServicesCategoriesPage() {
-  const categories = getAllCategories();
+  const categories = getMenuOrderedCards();
   return (
     <Layout mainCls="padding-0">
       <div className="ksfe-services-page">
@@ -41,7 +42,7 @@ export default function ServicesCategoriesPage() {
                     padding: "5px 14px",
                     borderRadius: "20px",
                     backgroundColor: "rgba(245, 158, 11, 0.2)",
-                    color: "#fbbf24",
+                    color: "#0f172a",
                     border: "1px solid rgba(245, 158, 11, 0.45)",
                     marginBottom: "14px",
                   }}
@@ -82,7 +83,7 @@ export default function ServicesCategoriesPage() {
             <div className="ksfe-services-intro-text">
               <p>
                 Globon Business Solutions offers tailored, end-to-end expertise across{" "}
-                <strong>{categories.length} core business categories</strong>.{" "}
+                <strong>{categories.length} core business areas</strong>.{" "}
                 <span style={{ color: "#475569" }}>
                   Select any category below to browse specific services, review eligibility criteria, 
                   and submit your application directly online.
@@ -110,7 +111,7 @@ export default function ServicesCategoriesPage() {
                     sizes="(max-width: 991px) 100vw, 45vw"
                     style={{
                       objectFit: "cover",
-                      objectPosition: "center top",
+                      objectPosition: "center",
                     }}
                     priority={index < 2}
                   />
@@ -131,16 +132,18 @@ export default function ServicesCategoriesPage() {
                         color: "#0f172a",
                       }}
                     >
-                      Category {index + 1} of {categories.length}
+                      {index + 1} of {categories.length}
                     </span>
-                    <span style={{ fontSize: "13px", color: "#64748b", fontWeight: "500" }}>
-                      ({cat.services.length} Specialized Services)
-                    </span>
+                    {cat.services.length > 0 && (
+                      <span style={{ fontSize: "13px", color: "#64748b", fontWeight: "500" }}>
+                        ({cat.services.length} Specialized {cat.services.length === 1 ? "Service" : "Services"})
+                      </span>
+                    )}
                   </div>
 
                   <h2 className="card-main-title">
                     <Link
-                      href={`/services/${cat.slug}`}
+                      href={cat.href || `/services/${cat.slug}`}
                       style={{ color: "inherit", textDecoration: "none" }}
                     >
                       {cat.title}
@@ -162,13 +165,13 @@ export default function ServicesCategoriesPage() {
                           marginBottom: "12px",
                         }}
                       >
-                        Services in this Category:
+                        Services:
                       </div>
                       <ul className="card-sublinks-list two-col">
                         {cat.services.map((service) => (
                           <li key={service.slug}>
                             <Link
-                              href={`/services/${cat.slug}/${service.slug}`}
+                              href={service.href || `/services/${cat.slug}/${service.slug}`}
                               className="ksfe-service-link-anchor"
                             >
                               <span>{service.title}</span>
@@ -194,6 +197,7 @@ export default function ServicesCategoriesPage() {
                                 </svg>
                               </span>
                             </Link>
+                            <SubServiceLinks items={service.subServices} depth={1} />
                           </li>
                         ))}
                       </ul>
@@ -203,10 +207,10 @@ export default function ServicesCategoriesPage() {
                   {/* Explore Category CTA */}
                   <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", alignItems: "center" }}>
                     <Link
-                      href={`/services/${cat.slug}`}
+                      href={cat.href || `/services/${cat.slug}`}
                       className="ksfe-card-btn-action"
                     >
-                      <span>Explore All {cat.services.length} Services</span>
+                      <span>{cat.services.length > 1 ? `Explore All ${cat.services.length} Services` : "Explore Services"}</span>
                       <span className="diagonal-arrow">
                         <svg
                           width="14"

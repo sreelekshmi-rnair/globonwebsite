@@ -52,7 +52,7 @@ export default async function SingleLoanPage({ params }) {
                     padding: "6px 14px",
                     borderRadius: "999px",
                     background: "#e0f2fe",
-                    color: "#0284c7",
+                    color: "#0369a1",
                     fontWeight: "700",
                     fontSize: "13px",
                     marginBottom: "16px",
@@ -79,7 +79,7 @@ export default async function SingleLoanPage({ params }) {
               >
                 <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", padding: "20px", borderRadius: "12px" }}>
                   <div style={{ fontSize: "12px", color: "#1e3a8a", fontWeight: "700", textTransform: "uppercase" }}>Interest Rate</div>
-                  <div style={{ fontSize: "22px", fontWeight: "800", color: "#0366a2", marginTop: "4px" }}>{loan.interestRate}</div>
+                  <div style={{ fontSize: "22px", fontWeight: "800", color: "#0369a1", marginTop: "4px" }}>{loan.interestRate}</div>
                 </div>
 
                 <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", padding: "20px", borderRadius: "12px" }}>
@@ -133,7 +133,7 @@ export default async function SingleLoanPage({ params }) {
                   <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                     {eligibilityList.map((item, idx) => (
                       <li key={idx} style={{ marginBottom: "12px", display: "flex", alignItems: "center", gap: "10px", fontSize: "14px", color: "#1e293b" }}>
-                        <span style={{ color: "#0284c7", fontWeight: "bold" }}>●</span> {item}
+                        <span style={{ color: "#0369a1", fontWeight: "bold" }}>●</span> {item}
                       </li>
                     ))}
                   </ul>
@@ -170,7 +170,7 @@ export default async function SingleLoanPage({ params }) {
                           color: "#334155",
                         }}
                       >
-                        <span style={{ color: "#0366a2", fontWeight: "bold" }}>✓</span> {doc}
+                        <span style={{ color: "#0369a1", fontWeight: "bold" }}>✓</span> {doc}
                       </div>
                     ))}
                   </div>
@@ -208,7 +208,7 @@ export default async function SingleLoanPage({ params }) {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "8px",
-                    color: "#0284c7",
+                    color: "#0369a1",
                     fontWeight: "600",
                     textDecoration: "none",
                   }}

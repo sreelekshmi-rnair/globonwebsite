@@ -49,6 +49,6 @@ export async function POST(request) {
     return NextResponse.json(saved, { status: 201 });
   } catch (error) {
     console.error('Error creating service:', error);
-    return NextResponse.json({ error: error.message || 'Failed to create service' }, { status: 500 });
+    return NextResponse.json({ error: error.message || 'Failed to create service' }, { status: error.status || 500 });
   }
 }

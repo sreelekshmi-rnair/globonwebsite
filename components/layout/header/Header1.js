@@ -1,11 +1,67 @@
 'use client'
+import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import MobileMenu from "../MobileMenu"
+import ServicesMegaMenu from "./ServicesMegaMenu"
+
+function ServicesDropdownItem({ isActive }) {
+	const [isOpen, setIsOpen] = useState(false)
+	const timerRef = useRef(null)
+
+	const handleMouseEnter = () => {
+		if (timerRef.current) clearTimeout(timerRef.current)
+		setIsOpen(true)
+	}
+
+	const handleMouseLeave = () => {
+		timerRef.current = setTimeout(() => {
+			setIsOpen(false)
+			
+		}, 200)
+	}
+
+	const handleToggle = (e) => {
+		e.preventDefault()
+		setIsOpen((prev) => !prev)
+	}
+
+	const handleClose = () => {
+		setIsOpen(false)
+	}
+
+	return (
+		<li
+			className={`nav-item has-dropdown has-mega-menu ${isActive ? "active" : ""} ${isOpen ? "dropdown-open" : ""}`}
+			onMouseEnter={handleMouseEnter}
+			onMouseLeave={handleMouseLeave}
+		>
+			<Link
+				href="/services"
+				className="nav-link-dropdown"
+				onClick={handleToggle}
+				aria-expanded={isOpen}
+			>
+				<span>Services</span>
+				<span className={`dropdown-chevron ${isOpen ? "is-rotated" : ""}`}>
+					<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+					</svg>
+				</span>
+			</Link>
+
+			{isOpen && <ServicesMegaMenu onClose={handleClose} />}
+		</li>
+	)
+}
 
 export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
 	const pathname = usePathname()
+
+	useEffect(() => {
+		fetch('/api/menu').catch(() => {})
+	}, [])
 
 	const isActive = (path) => {
 		if (!pathname) return ""
@@ -24,28 +80,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
 			<li className={`nav-item ${isActive("/about-us")}`}>
 				<Link href="/about-us">About Us</Link>
 			</li>
-			<li className={`nav-item has-dropdown ${isActive("/services")}`}>
-				<Link href="/services" className="nav-link-dropdown">
-					<span>Services</span>
-					<span className="dropdown-chevron">
-						<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-						</svg>
-					</span>
-				</Link>
-				<ul className="dropdown-menu-list">
-					<li><Link href="/services">All Services Overview</Link></li>
-					<li><Link href="/services/loans-advances">Loans &amp; Advances</Link></li>
-					<li><Link href="/services/business-financial-solutions">Business &amp; Financial Solutions</Link></li>
-					<li><Link href="/services/business-registration-compliance">Business Registration &amp; Compliance</Link></li>
-					<li><Link href="/services/business-planning-consultancy">Business Planning &amp; Consultancy</Link></li>
-					<li><Link href="/services/business-technology-solutions">Business Technology Solutions</Link></li>
-					<li><Link href="/services/life-health-insurance">Life &amp; Health Insurance</Link></li>
-					<li><Link href="/services/travel-group-insurance">Travel &amp; Group Insurance</Link></li>
-					<li><Link href="/services/real-estate-services">Real Estate Services</Link></li>
-					<li><Link href="/services/digital-marketing-services">Digital &amp; Marketing Services</Link></li>
-				</ul>
-			</li>
+			<ServicesDropdownItem isActive={Boolean(isActive("/services"))} />
 			<li className={`nav-item ${isActive("/contact")}`}>
 				<Link href="/contact">Contact</Link>
 			</li>
@@ -110,7 +145,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
 				<>
 					{/* HOME PAGE TOP: Floating Card Header at page top */}
 					<div className="globon-ksfe-header-wrapper home-floating-header">
-						<div className="tf-container">
+						<div className="tf-container w-1780 navbar-container">
 							<header className="globon-ksfe-navbar-card">
 								{/* Left: Globon Logo */}
 								<div className="navbar-logo-area">
@@ -149,7 +184,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
 					{Boolean(scroll) && (
 						<div className="globon-ksfe-header-wrapper normal-page-header is-sticky">
 							<header className="globon-ksfe-main-navbar">
-								<div className="tf-container w-1780">
+								<div className="tf-container w-1780 navbar-container">
 									<div className="globon-ksfe-navbar-inner">
 										{/* Left: Globon Logo */}
 										<div className="navbar-logo-area">
@@ -193,7 +228,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
 				<>
 					<div className={`globon-ksfe-header-wrapper normal-page-header ${scroll ? "is-sticky" : ""}`}>
 						<header className="globon-ksfe-main-navbar">
-							<div className="tf-container w-1780">
+							<div className="tf-container w-1780 navbar-container">
 								<div className="globon-ksfe-navbar-inner">
 									{/* Left: Globon Logo */}
 									<div className="navbar-logo-area">

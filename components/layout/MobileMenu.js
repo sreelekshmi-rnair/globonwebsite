@@ -22,15 +22,12 @@ export default function MobileMenu() {
 			path: "/services",
 			subMenu: [
 				{ title: "All Services Overview", path: "/services" },
-				{ title: "Loans & Advances", path: "/services/loans-advances" },
-				{ title: "Business & Financial Solutions", path: "/services/business-financial-solutions" },
-				{ title: "Business Registration & Compliance", path: "/services/business-registration-compliance" },
-				{ title: "Business Planning & Consultancy", path: "/services/business-planning-consultancy" },
-				{ title: "Business Technology Solutions", path: "/services/business-technology-solutions" },
-				{ title: "Life & Health Insurance", path: "/services/life-health-insurance" },
-				{ title: "Travel & Group Insurance", path: "/services/travel-group-insurance" },
-				{ title: "Real Estate Services", path: "/services/real-estate-services" },
-				{ title: "Digital & Marketing Services", path: "/services/digital-marketing-services" }
+				{ title: "Loans", path: "/services/loans" },
+				{ title: "Business Services", path: "/services/business-services" },
+				{ title: "Study Abroad", path: "/services/study-abroad" },
+				{ title: "Insurance", path: "/services/insurance" },
+				{ title: "Real Estate", path: "/services/real-estate" },
+				{ title: "Digital Services", path: "/services/digital-services" }
 			]
 		},
 		{ title: "Schemes & Offers", path: "/#signature-schemes" },

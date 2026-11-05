@@ -11,6 +11,7 @@
         "sass": "sass --watch public/assets/scss/main.scss:public/assets/css/main.css"
     },
     "dependencies": {
+        "@hello-pangea/dnd": "^18.0.1",
         "@prisma/client": "5.22.0",
         "bcryptjs": "^3.0.3",
         "gsap": "^3.12.7",

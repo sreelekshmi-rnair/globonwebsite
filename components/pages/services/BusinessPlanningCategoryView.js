@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import SubServiceLinks from "./SubServiceLinks";
 
 export default function BusinessPlanningCategoryView({ category }) {
   const [activeFaq, setActiveFaq] = useState(null)
@@ -19,9 +20,9 @@ export default function BusinessPlanningCategoryView({ category }) {
           <svg className="ksfe-sig-visual-svg" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Bound Project Report Book */}
-            <rect x="68" y="52" width="118" height="102" rx="6" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+            <rect x="68" y="52" width="118" height="102" rx="6" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <rect x="78" y="60" width="98" height="86" rx="4" fill="#FFFFFF" stroke="#0F172A" strokeWidth="1.5" />
-            <text x="127" y="76" fontSize="8" fontWeight="900" textAnchor="middle" fill="#1F4E7A" letterSpacing="0.8">PROJECT REPORT / DPR</text>
+            <text x="127" y="76" fontSize="8" fontWeight="900" textAnchor="middle" fill="#0369a1" letterSpacing="0.8">PROJECT REPORT / DPR</text>
             {/* CMA Financial Projections Graph */}
             <line x1="86" y1="130" x2="166" y2="130" stroke="#0F172A" strokeWidth="1.5" />
             <line x1="86" y1="90" x2="86" y2="130" stroke="#0F172A" strokeWidth="1.5" />
@@ -29,11 +30,11 @@ export default function BusinessPlanningCategoryView({ category }) {
             <polygon points="158,88 164,98 152,98" fill="#10B981" />
             {/* Bar Charts */}
             <rect x="94" y="116" width="10" height="14" fill="#BAE6FD" />
-            <rect x="114" y="106" width="10" height="24" fill="#38BDF8" />
-            <rect x="134" y="96" width="10" height="34" fill="#0284C7" />
+            <rect x="114" y="106" width="10" height="24" fill="#59bdfc" />
+            <rect x="134" y="96" width="10" height="34" fill="#59bdfc" />
             {/* Bank Sanction Stamp Badge */}
             <g transform="translate(196, 56) rotate(6)">
-              <rect x="0" y="0" width="82" height="54" rx="6" fill="#0284C7" stroke="#0F172A" strokeWidth="2" />
+              <rect x="0" y="0" width="82" height="54" rx="6" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
               <text x="41" y="20" fontSize="8.5" fontWeight="900" textAnchor="middle" fill="#FFFFFF" letterSpacing="0.5">BANKABLE</text>
               <rect x="10" y="28" width="62" height="16" rx="3" fill="#FFFFFF" />
               <text x="41" y="40" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#065F46">CMA &amp; TEV APPROVED</text>
@@ -52,7 +53,7 @@ export default function BusinessPlanningCategoryView({ category }) {
             <g transform="translate(70, 48)">
               {/* Stand / Pillar */}
               <line x1="45" y1="20" x2="45" y2="95" stroke="#0F172A" strokeWidth="3" />
-              <rect x="25" y="92" width="40" height="8" rx="2" fill="#1F4E7A" stroke="#0F172A" strokeWidth="1.8" />
+              <rect x="25" y="92" width="40" height="8" rx="2" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.8" />
               <circle cx="45" cy="18" r="6" fill="#F59E0B" stroke="#0F172A" strokeWidth="1.5" />
               {/* Beam */}
               <line x1="10" y1="28" x2="80" y2="28" stroke="#0F172A" strokeWidth="3" />
@@ -68,7 +69,7 @@ export default function BusinessPlanningCategoryView({ category }) {
             {/* Legal Contract Document with Red Wax Seal */}
             <g transform="translate(180, 50)">
               <rect x="0" y="0" width="85" height="104" rx="5" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-              <rect x="8" y="8" width="69" height="12" rx="2" fill="#1F4E7A" />
+              <rect x="8" y="8" width="69" height="12" rx="2" fill="#59bdfc" />
               <text x="42" y="17" fontSize="7" fontWeight="bold" textAnchor="middle" fill="#FFFFFF" letterSpacing="0.5">LEGAL CONTRACT</text>
               <line x1="10" y1="30" x2="75" y2="30" stroke="#CBD5E1" strokeWidth="2" strokeLinecap="round" />
               <line x1="10" y1="40" x2="68" y2="40" stroke="#CBD5E1" strokeWidth="2" strokeLinecap="round" />
@@ -96,7 +97,7 @@ export default function BusinessPlanningCategoryView({ category }) {
             {/* Mortarboard Graduation Cap */}
             <g transform="translate(140, 44)">
               <ellipse cx="40" cy="35" rx="24" ry="9" fill="#0F172A" />
-              <polygon points="40,8 80,22 40,36 0,22" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+              <polygon points="40,8 80,22 40,36 0,22" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
               <circle cx="40" cy="22" r="3" fill="#F59E0B" />
               <path d="M 40 22 Q 68 25 74 38" fill="none" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" />
               <rect x="72" y="38" width="4" height="10" rx="1.5" fill="#FBBF24" />
@@ -113,7 +114,7 @@ export default function BusinessPlanningCategoryView({ category }) {
             </g>
             {/* Flight Airplane */}
             <g transform="translate(75, 48) rotate(-22)">
-              <path d="M 0 10 L 22 7 L 34 0 L 39 1 L 29 10 L 46 11 L 51 6 L 55 7 L 51 13 L 55 19 L 51 20 L 46 15 L 29 16 L 39 25 L 34 26 L 22 19 L 0 16 Z" fill="#0284C7" stroke="#0F172A" strokeWidth="1.2" />
+              <path d="M 0 10 L 22 7 L 34 0 L 39 1 L 29 10 L 46 11 L 51 6 L 55 7 L 51 13 L 55 19 L 51 20 L 46 15 L 29 16 L 39 25 L 34 26 L 22 19 L 0 16 Z" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.2" />
             </g>
           </svg>
         )
@@ -123,7 +124,7 @@ export default function BusinessPlanningCategoryView({ category }) {
           <svg className="ksfe-sig-visual-svg" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             <rect x="100" y="60" width="140" height="90" rx="8" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-            <circle cx="170" cy="105" r="24" fill="#38BDF8" stroke="#0F172A" strokeWidth="2" />
+            <circle cx="170" cy="105" r="24" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <text x="170" y="112" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#0F172A">★</text>
           </svg>
         )
@@ -153,11 +154,11 @@ export default function BusinessPlanningCategoryView({ category }) {
       <section style={{ backgroundColor: "#f8fafc", borderBottom: "1px solid #e2e8f0", padding: "14px 0" }}>
         <div className="tf-container w-1780">
           <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#64748b" }}>
-            <Link href="/" style={{ color: "#0366a2", textDecoration: "none", fontWeight: 500 }}>
+            <Link href="/" style={{ color: "#0369a1", textDecoration: "none", fontWeight: 500 }}>
               Home
             </Link>
             <span>/</span>
-            <Link href="/services" style={{ color: "#0366a2", textDecoration: "none", fontWeight: 500 }}>
+            <Link href="/services" style={{ color: "#0369a1", textDecoration: "none", fontWeight: 500 }}>
               Services
             </Link>
             <span>/</span>
@@ -185,8 +186,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                 {/* Main Heading */}
                 <h1 style={{
                   fontSize: "clamp(34px, 3.8vw, 54px)",
-                  fontWeight: 400,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.15",
                   letterSpacing: "0.2px",
                   marginBottom: "16px",
@@ -198,7 +199,7 @@ export default function BusinessPlanningCategoryView({ category }) {
                 {/* Subheadline from User */}
                 <h2 style={{
                   fontSize: "clamp(18px, 1.8vw, 22px)",
-                  fontWeight: 400,
+                  fontWeight: 600,
                   color: "#475569",
                   lineHeight: "1.4",
                   marginBottom: "20px",
@@ -225,14 +226,14 @@ export default function BusinessPlanningCategoryView({ category }) {
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "10px",
-                      backgroundColor: "#0366a2",
-                      color: "#ffffff",
+                      backgroundColor: "#59bdfc",
+                      color: "#0f172a",
                       fontWeight: "700",
                       fontSize: "16px",
                       padding: "14px 32px",
                       borderRadius: "8px",
                       textDecoration: "none",
-                      boxShadow: "0 6px 20px rgba(3, 102, 162, 0.25)",
+                      boxShadow: "0 6px 20px rgba(89, 189, 252, 0.25)",
                       transition: "all 0.25s ease"
                     }}
                   >
@@ -277,15 +278,18 @@ export default function BusinessPlanningCategoryView({ category }) {
                   overflow: "hidden",
                   boxShadow: "0 20px 50px rgba(0, 0, 0, 0.08)",
                   position: "relative",
-                  height: "460px",
-                  width: "100%"
+                  height: "440px",
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}>
                   <Image
                     src="/images/services/4.png"
                     alt="Globon Business Planning & Consultancy"
                     fill
                     sizes="(max-width: 991px) 100vw, 560px"
-                    style={{ objectFit: "cover", objectPosition: "center 30%" }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                     priority
                   />
                 </div>
@@ -312,8 +316,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                     width: "32px",
                     height: "32px",
                     borderRadius: "50%",
-                    background: "#0366a2",
-                    color: "#ffffff",
+                    background: "#59bdfc",
+                    color: "#0f172a",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -355,7 +359,7 @@ export default function BusinessPlanningCategoryView({ category }) {
                     borderRadius: "12px",
                     background: "#f8fafc",
                     border: "1px solid #e2e8f0",
-                    color: "#0366a2",
+                    color: "#0369a1",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center"
@@ -402,9 +406,9 @@ export default function BusinessPlanningCategoryView({ category }) {
             </span>
             <h2 style={{
               fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 400,
+              fontWeight: 600,
               letterSpacing: "0.5px",
-              color: "#000000",
+              color: '#0369a1',
               lineHeight: 1.3,
               marginBottom: "18px",
               fontFamily: "'Poppins', sans-serif"
@@ -443,7 +447,7 @@ export default function BusinessPlanningCategoryView({ category }) {
                   borderRadius: "50%",
                   background: "#f8fafc",
                   border: "1px solid #e2e8f0",
-                  color: "#0366a2",
+                  color: "#0369a1",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -454,8 +458,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -503,8 +507,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -541,7 +545,7 @@ export default function BusinessPlanningCategoryView({ category }) {
                   borderRadius: "50%",
                   background: "#f8fafc",
                   border: "1px solid #e2e8f0",
-                  color: "#0284c7",
+                  color: "#0369a1",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -552,8 +556,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -601,8 +605,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -638,10 +642,10 @@ export default function BusinessPlanningCategoryView({ category }) {
           }}>
             <h2 style={{
               fontSize: "clamp(24px, 2.6vw, 36px)",
-              fontWeight: "400",
+              fontWeight: 600,
               letterSpacing: "0.5px",
               textTransform: "uppercase",
-              color: "#000000",
+              color: '#0369a1',
               margin: 0,
               fontFamily: "inherit"
             }}>
@@ -685,7 +689,7 @@ export default function BusinessPlanningCategoryView({ category }) {
                 <div key={service.slug} className="col-12 col-md-6 col-lg-4">
                   <div className="loan-scheme-sig-card wow fadeInUp" data-wow-delay={`${(idx % 3) * 0.1}s`}>
                     <Link
-                      href={`/services/${category.slug}/${service.slug}`}
+                      href={service.href}
                       className="ksfe-sig-visual-wrap"
                       aria-label={service.title}
                     >
@@ -694,7 +698,7 @@ export default function BusinessPlanningCategoryView({ category }) {
                           src={service.heroImage || service.image}
                           alt={service.title}
                           fill
-                          style={{ objectFit: 'cover' }}
+                          style={{ objectFit: 'cover', objectPosition: 'center' }}
                         />
                       ) : (
                         getServiceIllustration(service.slug)
@@ -704,8 +708,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                     <div className="ksfe-sig-content">
                       <h3 className="ksfe-sig-card-title">
                         <Link
-                          href={`/services/${category.slug}/${service.slug}`}
-                          style={{ color: "#000000" }}
+                          href={service.href}
+                          style={{ color: '#0369a1' }}
                         >
                           {service.title}
                         </Link>
@@ -714,7 +718,7 @@ export default function BusinessPlanningCategoryView({ category }) {
                       <p style={{
                         fontSize: "15px",
                         fontWeight: 500,
-                        color: "#0366a2",
+                        color: "#0369a1",
                         lineHeight: "1.4",
                         marginBottom: "10px"
                       }}>
@@ -725,6 +729,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                         {service.shortDesc}
                       </p>
 
+                      <SubServiceLinks items={service.subServices} />
+
                       <div className="ksfe-sig-divider" />
 
                       {service.highlights && service.highlights.length > 0 && (
@@ -733,7 +739,7 @@ export default function BusinessPlanningCategoryView({ category }) {
                             <li key={i} className="ksfe-sig-bullet-item">
                               <span className="bullet-asterisk">✻</span>
                               <Link
-                                href={`/services/${category.slug}/${service.slug}`}
+                                href={service.href}
                                 style={{ color: "inherit", textDecoration: "none" }}
                               >
                                 {hl}
@@ -780,9 +786,9 @@ export default function BusinessPlanningCategoryView({ category }) {
             </span>
             <h2 style={{
               fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 400,
+              fontWeight: 600,
               letterSpacing: "0.5px",
-              color: "#000000",
+              color: '#0369a1',
               marginBottom: "16px",
               fontFamily: "'Poppins', sans-serif"
             }}>
@@ -815,8 +821,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -825,8 +831,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -860,8 +866,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -870,8 +876,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -905,8 +911,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -915,8 +921,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -941,8 +947,8 @@ export default function BusinessPlanningCategoryView({ category }) {
               <div style={{ maxWidth: "620px" }}>
                 <h2 style={{
                   fontSize: "clamp(24px, 2.6vw, 36px)",
-                  fontWeight: 400,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   textTransform: "uppercase",
                   letterSpacing: "0.5px",
                   lineHeight: 1.25,
@@ -981,7 +987,7 @@ export default function BusinessPlanningCategoryView({ category }) {
                           <span style={{
                             fontSize: "clamp(18px, 1.4vw, 21px)",
                             fontWeight: 500,
-                            color: isOpen ? "#0366a2" : "#0f172a",
+                            color: isOpen ? "#0369a1" : "#0f172a",
                             lineHeight: 1.4,
                             fontFamily: "'Poppins', sans-serif"
                           }}>
@@ -991,8 +997,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                             width: "32px",
                             height: "32px",
                             borderRadius: "50%",
-                            background: isOpen ? "#0366a2" : "#f1f5f9",
-                            color: isOpen ? "#ffffff" : "#475569",
+                            background: isOpen ? "#59bdfc" : "#f1f5f9",
+                            color: isOpen ? "#0f172a" : "#475569",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -1063,14 +1069,14 @@ export default function BusinessPlanningCategoryView({ category }) {
                     width: "48px",
                     height: "48px",
                     borderRadius: "14px",
-                    background: "#0284c7",
+                    background: "#59bdfc",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "#ffffff",
+                    color: "#0f172a",
                     fontSize: "22px",
                     fontWeight: "900",
-                    boxShadow: "0 10px 24px rgba(2, 132, 199, 0.35)",
+                    boxShadow: "0 10px 24px rgba(89, 189, 252, 0.35)",
                     zIndex: 3
                   }}
                 >
@@ -1108,7 +1114,7 @@ export default function BusinessPlanningCategoryView({ category }) {
         className="globon-navy-cta-section"
         style={{
           padding: "95px 0 100px 0",
-          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(3, 102, 162, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
+          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(89, 189, 252, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
           borderTop: "1px solid rgba(255, 255, 255, 0.08)",
           borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
           position: "relative",
@@ -1134,8 +1140,8 @@ export default function BusinessPlanningCategoryView({ category }) {
                 padding: "7px 18px",
                 borderRadius: "30px",
                 backgroundColor: "rgba(255, 255, 255, 0.08)",
-                border: "1px solid rgba(56, 189, 248, 0.3)",
-                color: "#38bdf8",
+                border: "1px solid rgba(89, 189, 252, 0.3)",
+                color: "#0369a1",
                 backdropFilter: "blur(8px)",
                 marginBottom: "20px"
               }}
@@ -1190,14 +1196,14 @@ export default function BusinessPlanningCategoryView({ category }) {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
-                  backgroundColor: "#0284c7",
-                  color: "#ffffff",
+                  backgroundColor: "#59bdfc",
+                  color: "#0f172a",
                   fontWeight: "700",
                   fontSize: "16px",
                   padding: "16px 36px",
                   borderRadius: "8px",
                   textDecoration: "none",
-                  boxShadow: "0 8px 24px rgba(2, 132, 199, 0.35)",
+                  boxShadow: "0 8px 24px rgba(89, 189, 252, 0.35)",
                   transition: "all 0.25s ease"
                 }}
               >

@@ -132,7 +132,7 @@ export default function AdminBlogsPage() {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '28px' }}>
+      <div className="admin-page-header-row">
         <div className="admin-page-header" style={{ marginBottom: 0 }}>
           <h1 className="admin-page-title">
             Blog Articles &amp; News
@@ -141,7 +141,7 @@ export default function AdminBlogsPage() {
             Publish educational articles, financial guides, and corporate updates.
           </p>
         </div>
-        <button onClick={openCreateModal} className="admin-btn admin-btn-primary">
+        <button onClick={openCreateModal} className="admin-btn admin-btn-primary" style={{ whiteSpace: 'nowrap' }}>
           + Write New Blog Post
         </button>
       </div>
@@ -189,7 +189,7 @@ export default function AdminBlogsPage() {
                       <div style={{ fontWeight: '500', color: '#0f172a', fontSize: '15px' }}>
                         {blog.title}
                       </div>
-                      <div style={{ fontSize: '12px', color: '#0284c7' }}>
+                      <div style={{ fontSize: '12px', color: '#0369a1' }}>
                         /blog/{blog.slug}
                       </div>
                     </td>

@@ -4,7 +4,7 @@ export default function Section4() {
 	const verticals = [
 		{
 			num: "01",
-			title: "Loans & Advances",
+			title: "Loans",
 			desc: "Comprehensive credit facilities from 30+ leading partner banks & NBFCs with 48-hour approvals.",
 			items: ["Personal & Education Loans", "Home & Property Loans (LAP)", "Business & Project Loans", "PMEGP & Stand-Up India Schemes", "Vehicle Loans & KSFE Chitty Support"],
 			link: "/our-service#loans"
@@ -53,7 +53,7 @@ export default function Section4() {
 					{/* Top Header Block */}
 					<div className="row align-items-center g-5 mb-5">
 						<div className="col-lg-8">
-							<p style={{ color: "#0366a2", fontWeight: 700, textTransform: "uppercase", fontSize: "13px", letterSpacing: "1.5px", marginBottom: "14px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+							<p style={{ color: "#0369a1", fontWeight: 700, textTransform: "uppercase", fontSize: "13px", letterSpacing: "1.5px", marginBottom: "14px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
 								<i className="icon-angles-right" />
 								Essential Services Under One Roof
 							</p>
@@ -80,7 +80,7 @@ export default function Section4() {
 							<div style={{
 								background: "#ffffff",
 								border: "1px solid #e2e8f0",
-								borderLeft: "4px solid #0366a2",
+								borderLeft: "4px solid #59bdfc",
 								padding: "30px 28px",
 								borderRadius: "18px",
 								display: "inline-block",
@@ -89,7 +89,7 @@ export default function Section4() {
 								width: "100%",
 								maxWidth: "380px"
 							}}>
-								<p style={{ color: "#0366a2", fontWeight: 800, fontSize: "12px", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "10px" }}>
+								<p style={{ color: "#0369a1", fontWeight: 800, fontSize: "12px", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "10px" }}>
 									Our Core Triad
 								</p>
 								<div style={{ fontSize: "18px", fontWeight: 700, color: "#000000", lineHeight: "1.6", fontFamily: "'Public Sans', 'Manrope', 'Inter', sans-serif" }}>
@@ -105,7 +105,7 @@ export default function Section4() {
 											alignItems: "center",
 											gap: "8px",
 											backgroundColor: "#edf5fd",
-											color: "#0366a2",
+											color: "#0369a1",
 											fontWeight: 700,
 											fontSize: "14px",
 											padding: "10px 20px",
@@ -142,8 +142,8 @@ export default function Section4() {
 							}}>
 								<div>
 									<div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "18px" }}>
-										<span style={{ fontSize: "28px", fontWeight: 800, color: "#0366a2", lineHeight: 1 }}>{vert.num}</span>
-										<div style={{ width: "42px", height: "42px", background: "#edf5fd", color: "#0366a2", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+										<span style={{ fontSize: "28px", fontWeight: 800, color: "#0369a1", lineHeight: 1 }}>{vert.num}</span>
+										<div style={{ width: "42px", height: "42px", background: "#edf5fd", color: "#0369a1", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
 											<i className="flaticon-target" style={{ fontSize: "18px" }} />
 										</div>
 									</div>
@@ -179,7 +179,7 @@ export default function Section4() {
 									<Link
 										href={vert.link}
 										style={{
-											color: "#0366a2",
+											color: "#0369a1",
 											fontSize: "15px",
 											fontWeight: 700,
 											display: "inline-flex",

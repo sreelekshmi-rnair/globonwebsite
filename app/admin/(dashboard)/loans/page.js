@@ -150,7 +150,7 @@ export default function AdminLoansPage() {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '28px' }}>
+      <div className="admin-page-header-row">
         <div className="admin-page-header" style={{ marginBottom: 0 }}>
           <h1 className="admin-page-title">
             Loan Products Management
@@ -159,7 +159,7 @@ export default function AdminLoansPage() {
             Add and manage loan offerings (Business, Home, LAP, Personal) with interest rates and eligibility.
           </p>
         </div>
-        <button onClick={openCreateModal} className="admin-btn admin-btn-primary">
+        <button onClick={openCreateModal} className="admin-btn admin-btn-primary" style={{ whiteSpace: 'nowrap' }}>
           + Add New Loan Product
         </button>
       </div>
@@ -212,7 +212,7 @@ export default function AdminLoansPage() {
                       <div style={{ fontWeight: '500', color: '#0f172a', fontSize: '15px' }}>
                         {loan.title}
                       </div>
-                      <div style={{ fontSize: '12px', color: '#0284c7' }}>
+                      <div style={{ fontSize: '12px', color: '#0369a1' }}>
                         /loans/{loan.slug}
                       </div>
                     </td>

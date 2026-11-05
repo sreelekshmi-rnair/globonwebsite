@@ -147,21 +147,14 @@ export default function AdminProfilePage() {
   return (
     <div style={{ maxWidth: '1100px', margin: '0 auto', paddingBottom: '40px' }}>
       {/* Two Column Grid */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '28px',
-          alignItems: 'start',
-        }}
-      >
+      <div className="admin-profile-grid">
         {/* Left Column: Profile Details Card */}
         <div
           style={{
             background: '#ffffff',
             borderRadius: '16px',
             border: '1px solid #e2e8f0',
-            boxShadow: '0 4px 18px rgba(0, 91, 148, 0.04)',
+            boxShadow: '0 4px 18px rgba(89, 189, 252, 0.04)',
             overflow: 'hidden',
           }}
         >
@@ -203,7 +196,7 @@ export default function AdminProfilePage() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 overflow: 'hidden',
-                boxShadow: '0 6px 20px rgba(0, 91, 148, 0.15)',
+                boxShadow: '0 6px 20px rgba(89, 189, 252, 0.15)',
                 border: '4px solid #ffffff',
                 marginBottom: '20px',
               }}
@@ -314,7 +307,7 @@ export default function AdminProfilePage() {
             background: '#ffffff',
             borderRadius: '16px',
             border: '1px solid #e2e8f0',
-            boxShadow: '0 4px 18px rgba(0, 91, 148, 0.04)',
+            boxShadow: '0 4px 18px rgba(89, 189, 252, 0.04)',
             overflow: 'hidden',
           }}
         >
@@ -353,7 +346,7 @@ export default function AdminProfilePage() {
                 style={{
                   background: activeTab === 'edit' ? '#f0f9ff' : 'transparent',
                   border: activeTab === 'edit' ? '1px solid #bae6fd' : '1px solid transparent',
-                  color: activeTab === 'edit' ? '#005b94' : '#64748b',
+                  color: activeTab === 'edit' ? '#0369a1' : '#64748b',
                   padding: '7px 16px',
                   borderRadius: '8px',
                   fontSize: '13.5px',

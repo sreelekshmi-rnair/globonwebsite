@@ -60,12 +60,12 @@ export default function Section5() {
 					<div className="row">
 						<div className="col-lg-12">
 							<div className="text-center mb-60">
-								<p className="s-sub-title mb-10" style={{ color: "#0366a2", fontWeight: 700, textTransform: "uppercase" }}>
+								<p className="s-sub-title mb-10" style={{ color: "#0369a1", fontWeight: 700, textTransform: "uppercase" }}>
 									<i className="icon-angles-right moveLeftToRight" style={{ marginRight: "6px" }} />
 									Client Success Stories
 								</p>
 								<h2 className="s-title text-anime-wave" style={{ fontSize: "38px", color: "#0f172a" }}>
-									What People Talk About <span style={{ color: "#0366a2" }}>Globon</span>
+									What People Talk About <span style={{ color: "#0369a1" }}>Globon</span>
 								</h2>
 								<p className="text mx-auto mt-20" style={{ maxWidth: "700px", fontSize: "16px", color: "#475569" }}>
 									Real experiences from retail chains, growing logistics firms, and emerging startups who scaled their ventures with Globon Business Solutions.
@@ -92,7 +92,7 @@ export default function Section5() {
 											position: "relative",
 											boxShadow: "0 6px 25px rgba(0,0,0,0.04)"
 										}}>
-											<div style={{ position: "absolute", top: "24px", right: "24px", color: "#0366a2", opacity: 0.15, fontSize: "40px" }}>
+											<div style={{ position: "absolute", top: "24px", right: "24px", color: "#0369a1", opacity: 0.15, fontSize: "40px" }}>
 												<i className="icon-quote-left-saying-speech" />
 											</div>
 
@@ -125,7 +125,7 @@ export default function Section5() {
 												<h4 style={{ color: "#0f172a", fontSize: "18px", fontWeight: 700, margin: 0 }}>
 													{item.name}
 												</h4>
-												<p style={{ color: "#0366a2", fontSize: "13px", fontWeight: 600, margin: "4px 0" }}>
+												<p style={{ color: "#0369a1", fontSize: "13px", fontWeight: 600, margin: "4px 0" }}>
 													{item.role}
 												</p>
 												<span style={{ color: "#64748b", fontSize: "12px" }}>
@@ -152,7 +152,7 @@ export default function Section5() {
 							}}>
 								<div className="row text-center" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "24px" }}>
 									<div>
-										<div style={{ fontSize: "42px", fontWeight: 900, color: "#0366a2" }}>
+										<div style={{ fontSize: "42px", fontWeight: 900, color: "#0369a1" }}>
 											<CounterUp count={500} />+
 										</div>
 										<p style={{ color: "#0f172a", fontWeight: 700, fontSize: "15px", marginTop: "6px" }}>
@@ -160,7 +160,7 @@ export default function Section5() {
 										</p>
 									</div>
 									<div>
-										<div style={{ fontSize: "42px", fontWeight: 900, color: "#0366a2" }}>
+										<div style={{ fontSize: "42px", fontWeight: 900, color: "#0369a1" }}>
 											<CounterUp count={2345} />+
 										</div>
 										<p style={{ color: "#0f172a", fontWeight: 700, fontSize: "15px", marginTop: "6px" }}>
@@ -168,7 +168,7 @@ export default function Section5() {
 										</p>
 									</div>
 									<div>
-										<div style={{ fontSize: "42px", fontWeight: 900, color: "#0366a2" }}>
+										<div style={{ fontSize: "42px", fontWeight: 900, color: "#0369a1" }}>
 											<CounterUp count={30} />+
 										</div>
 										<p style={{ color: "#0f172a", fontWeight: 700, fontSize: "15px", marginTop: "6px" }}>
@@ -176,7 +176,7 @@ export default function Section5() {
 										</p>
 									</div>
 									<div>
-										<div style={{ fontSize: "42px", fontWeight: 900, color: "#0366a2" }}>
+										<div style={{ fontSize: "42px", fontWeight: 900, color: "#0369a1" }}>
 											<CounterUp count={194} />+
 										</div>
 										<p style={{ color: "#0f172a", fontWeight: 700, fontSize: "15px", marginTop: "6px" }}>

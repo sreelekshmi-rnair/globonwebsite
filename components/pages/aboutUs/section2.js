@@ -19,7 +19,7 @@ export default function Section2() {
 					<div className="row align-items-center g-5 mb-5">
 						<div className="col-lg-6">
 							<div>
-								<p style={{ color: "#0366a2", fontWeight: 700, textTransform: "uppercase", fontSize: "13px", letterSpacing: "1.5px", marginBottom: "14px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+								<p style={{ color: "#0369a1", fontWeight: 700, textTransform: "uppercase", fontSize: "13px", letterSpacing: "1.5px", marginBottom: "14px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
 									<i className="icon-angles-right" />
 									What Guides Us
 								</p>
@@ -51,7 +51,7 @@ export default function Section2() {
 												height: "44px",
 												borderRadius: "12px",
 												background: "#edf5fd",
-												color: "#0366a2",
+												color: "#0369a1",
 												display: "flex",
 												alignItems: "center",
 												justifyContent: "center",
@@ -135,7 +135,7 @@ export default function Section2() {
 					}}>
 						<div className="row align-items-center mb-5">
 							<div className="col-lg-7">
-								<p style={{ color: "#0366a2", fontWeight: 700, fontSize: "13px", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "12px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+								<p style={{ color: "#0369a1", fontWeight: 700, fontSize: "13px", letterSpacing: "1.5px", textTransform: "uppercase", marginBottom: "12px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
 									<i className="icon-angles-right" />
 									Our Principles
 								</p>
@@ -173,7 +173,7 @@ export default function Section2() {
 										padding: "26px 24px",
 										borderRadius: "16px",
 										border: "1px solid #e2e8f0",
-										borderLeft: "4px solid #0366a2",
+										borderLeft: "4px solid #59bdfc",
 										display: "flex",
 										flexDirection: "column",
 										justifyContent: "space-between",
@@ -184,7 +184,7 @@ export default function Section2() {
 										<div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "14px" }}>
 											<span style={{
 												background: "#ffffff",
-												color: "#0366a2",
+												color: "#0369a1",
 												fontWeight: 800,
 												fontSize: "14px",
 												padding: "4px 12px",

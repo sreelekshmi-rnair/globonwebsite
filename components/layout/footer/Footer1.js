@@ -52,8 +52,8 @@ export default function Footer1() {
 							<ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
 								{[
 									{ label: 'About', href: '/about-us' },
-									{ label: 'Services', href: '/our-service' },
-									{ label: 'Project Report', href: '/our-service#business' },
+									{ label: 'Services', href: '/services' },
+									{ label: 'Business Solutions', href: '/services/business-services' },
 									{ label: 'Contact Us', href: '/contact' }
 								].map((item, idx) => (
 									<li key={idx} style={{ marginBottom: '14px' }}>
@@ -92,9 +92,12 @@ export default function Footer1() {
 							</h4>
 							<ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
 								{[
-									{ label: 'Loans & Advances', href: '/our-service#loans' },
-									{ label: 'Insurance Solutions', href: '/our-service#insurance' },
-									{ label: 'Real Estate Consulting', href: '/our-service#real-estate' }
+									{ label: 'Loans', href: '/services/loans' },
+									{ label: 'Business Services', href: '/services/business-services' },
+									{ label: 'Study Abroad', href: '/services/study-abroad' },
+									{ label: 'Insurance', href: '/services/insurance' },
+									{ label: 'Real Estate', href: '/services/real-estate' },
+									{ label: 'Digital Services', href: '/services/digital-services' }
 								].map((item, idx) => (
 									<li key={idx} style={{ marginBottom: '16px' }}>
 										<Link

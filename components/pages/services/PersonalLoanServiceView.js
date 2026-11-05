@@ -36,7 +36,7 @@ export default function PersonalLoanServiceView() {
             <span>/</span>
             <Link href="/services" style={{ color: "#64748b", textDecoration: "none" }}>Services</Link>
             <span>/</span>
-            <Link href="/services/loans-advances" style={{ color: "#64748b", textDecoration: "none" }}>Loans &amp; Advances</Link>
+            <Link href="/services/loans" style={{ color: "#64748b", textDecoration: "none" }}>Loans</Link>
             <span>/</span>
             <span style={{ color: "#000000", fontWeight: "600" }}>Personal Loan Assistance</span>
           </div>
@@ -125,7 +125,7 @@ export default function PersonalLoanServiceView() {
                   style={{
                     width: "14px",
                     height: "14px",
-                    backgroundColor: "#0366a2",
+                    backgroundColor: "#59bdfc",
                     display: "inline-block",
                     borderRadius: "3px"
                   }}
@@ -147,8 +147,8 @@ export default function PersonalLoanServiceView() {
               <h1
                 style={{
                   fontSize: "clamp(26px, 3vw, 38px)",
-                  fontWeight: 800,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.15",
                   marginBottom: "12px",
                   textTransform: "uppercase",
@@ -163,7 +163,7 @@ export default function PersonalLoanServiceView() {
                 style={{
                   fontSize: "17px",
                   fontWeight: 600,
-                  color: "#0366a2",
+                  color: "#0369a1",
                   marginBottom: "12px",
                   lineHeight: "1.4"
                 }}
@@ -193,22 +193,22 @@ export default function PersonalLoanServiceView() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
-                  backgroundColor: "#0366a2",
-                  color: "#ffffff",
+                  backgroundColor: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "16px",
                   fontWeight: "700",
                   padding: "14px 34px",
                   borderRadius: "8px",
                   textDecoration: "none",
-                  boxShadow: "0 6px 20px rgba(3, 102, 162, 0.3)",
+                  boxShadow: "0 6px 20px rgba(89, 189, 252, 0.3)",
                   transition: "all 0.25s ease"
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#004d7c"
+                  e.currentTarget.style.backgroundColor = "#0ea5e9"
                   e.currentTarget.style.transform = "translateY(-2px)"
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "#0366a2"
+                  e.currentTarget.style.backgroundColor = "#59bdfc"
                   e.currentTarget.style.transform = "translateY(0)"
                 }}
               >
@@ -245,7 +245,7 @@ export default function PersonalLoanServiceView() {
                   fill
                   style={{
                     objectFit: "cover",
-                    objectPosition: "center 20%"
+                    objectPosition: "center"
                   }}
                 />
               </div>
@@ -259,7 +259,7 @@ export default function PersonalLoanServiceView() {
                   fontWeight: "700",
                   letterSpacing: "1px",
                   textTransform: "uppercase",
-                  color: "#0366a2",
+                  color: "#0369a1",
                   marginBottom: "8px",
                   display: "inline-block"
                 }}
@@ -271,7 +271,7 @@ export default function PersonalLoanServiceView() {
                 style={{
                   fontSize: "clamp(26px, 2.8vw, 36px)",
                   fontWeight: 600,
-                  color: "#000000",
+                  color: '#0369a1',
                   textTransform: "uppercase",
                   lineHeight: "1.25",
                   marginBottom: "18px"
@@ -303,7 +303,7 @@ export default function PersonalLoanServiceView() {
                   <div key={idx} style={{ display: "flex", alignItems: "flex-start", gap: "14px" }}>
                     <span
                       style={{
-                        color: "#0366a2",
+                        color: "#0369a1",
                         fontSize: "20px",
                         fontWeight: "900",
                         lineHeight: 1,
@@ -334,7 +334,7 @@ export default function PersonalLoanServiceView() {
                 fontWeight: "700",
                 letterSpacing: "1px",
                 textTransform: "uppercase",
-                color: "#0366a2",
+                color: "#0369a1",
                 display: "inline-block",
                 marginBottom: "6px"
               }}
@@ -345,7 +345,7 @@ export default function PersonalLoanServiceView() {
               style={{
                 fontSize: "clamp(24px, 2.5vw, 34px)",
                 fontWeight: 600,
-                color: "#000000",
+                color: '#0369a1',
                 textTransform: "uppercase",
                 margin: 0
               }}
@@ -363,8 +363,8 @@ export default function PersonalLoanServiceView() {
                 bg: "#eff6ff",
                 border: "#bfdbfe",
                 iconBg: "#dbeafe",
-                accent: "#0366a2",
-                hoverShadow: "0 16px 36px rgba(3, 102, 162, 0.12)"
+                accent: "#59bdfc",
+                hoverShadow: "0 16px 36px rgba(89, 189, 252, 0.12)"
               },
               {
                 title: "Medical or Education Expenses",
@@ -435,7 +435,7 @@ export default function PersonalLoanServiceView() {
                     style={{
                       fontSize: "20px",
                       fontWeight: 600,
-                      color: "#000000",
+                      color: '#0369a1',
                       marginBottom: "12px",
                       lineHeight: "1.3"
                     }}
@@ -471,7 +471,7 @@ export default function PersonalLoanServiceView() {
                 className="features-title"
                 style={{
                   fontSize: "clamp(32px, 3.4vw, 44px)",
-                  fontWeight: 800,
+                  fontWeight: 600,
                   color: "#ffffff",
                   lineHeight: "1.15",
                   marginBottom: "8px",
@@ -485,7 +485,7 @@ export default function PersonalLoanServiceView() {
                 style={{
                   fontSize: "15px",
                   fontWeight: 600,
-                  color: "#38bdf8",
+                  color: "#0369a1",
                   textTransform: "capitalize",
                   display: "inline-block"
                 }}
@@ -518,8 +518,8 @@ export default function PersonalLoanServiceView() {
                         width: "36px",
                         height: "36px",
                         borderRadius: "50%",
-                        backgroundColor: "#0366a2",
-                        boxShadow: "0 4px 14px rgba(3, 102, 162, 0.45)",
+                        backgroundColor: "#59bdfc",
+                        boxShadow: "0 4px 14px rgba(89, 189, 252, 0.45)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -565,7 +565,7 @@ export default function PersonalLoanServiceView() {
                     fontWeight: "700",
                     letterSpacing: "1px",
                     textTransform: "uppercase",
-                    color: "#0366a2",
+                    color: "#0369a1",
                     display: "inline-block",
                     marginBottom: "6px"
                   }}
@@ -576,7 +576,7 @@ export default function PersonalLoanServiceView() {
                   style={{
                     fontSize: "clamp(24px, 2.5vw, 32px)",
                     fontWeight: 600,
-                    color: "#000000",
+                    color: '#0369a1',
                     textTransform: "uppercase",
                     margin: 0
                   }}
@@ -605,14 +605,14 @@ export default function PersonalLoanServiceView() {
                     height: "48px",
                     borderRadius: "12px",
                     backgroundColor: "#eff6ff",
-                    color: "#0366a2",
+                    color: "#0369a1",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     flexShrink: 0
                   }}
                 >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0366a2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#59bdfc" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
                     <line x1="12" y1="16" x2="12" y2="12" />
                     <line x1="12" y1="8" x2="12.01" y2="8" strokeWidth="3" />
@@ -643,7 +643,7 @@ export default function PersonalLoanServiceView() {
                     fontWeight: "700",
                     letterSpacing: "1px",
                     textTransform: "uppercase",
-                    color: "#0366a2",
+                    color: "#0369a1",
                     display: "inline-block",
                     marginBottom: "6px"
                   }}
@@ -654,7 +654,7 @@ export default function PersonalLoanServiceView() {
                   style={{
                     fontSize: "clamp(24px, 2.5vw, 32px)",
                     fontWeight: 600,
-                    color: "#000000",
+                    color: '#0369a1',
                     textTransform: "uppercase",
                     margin: 0
                   }}
@@ -724,7 +724,7 @@ export default function PersonalLoanServiceView() {
                 fontWeight: "700",
                 letterSpacing: "1px",
                 textTransform: "uppercase",
-                color: "#0366a2",
+                color: "#0369a1",
                 display: "inline-block",
                 marginBottom: "6px"
               }}
@@ -735,7 +735,7 @@ export default function PersonalLoanServiceView() {
               style={{
                 fontSize: "clamp(24px, 2.5vw, 34px)",
                 fontWeight: 600,
-                color: "#000000",
+                color: '#0369a1',
                 textTransform: "uppercase",
                 marginBottom: "12px"
               }}
@@ -791,7 +791,7 @@ export default function PersonalLoanServiceView() {
                       style={{
                         fontSize: "20px",
                         fontWeight: 600,
-                        color: "#000000",
+                        color: '#0369a1',
                         margin: 0,
                         lineHeight: "1.25"
                       }}
@@ -827,7 +827,7 @@ export default function PersonalLoanServiceView() {
                     >
                       <span
                         style={{
-                          color: "#0366a2",
+                          color: "#0369a1",
                           fontSize: "17px",
                           fontWeight: "bold",
                           lineHeight: 1,
@@ -867,7 +867,7 @@ export default function PersonalLoanServiceView() {
                       height: "48px",
                       borderRadius: "12px",
                       backgroundColor: "#eff6ff",
-                      color: "#0366a2",
+                      color: "#0369a1",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -881,7 +881,7 @@ export default function PersonalLoanServiceView() {
                       style={{
                         fontSize: "20px",
                         fontWeight: 600,
-                        color: "#000000",
+                        color: '#0369a1',
                         margin: 0,
                         lineHeight: "1.25"
                       }}
@@ -917,7 +917,7 @@ export default function PersonalLoanServiceView() {
                     >
                       <span
                         style={{
-                          color: "#0366a2",
+                          color: "#0369a1",
                           fontSize: "17px",
                           fontWeight: "bold",
                           lineHeight: 1,
@@ -976,7 +976,7 @@ export default function PersonalLoanServiceView() {
                     style={{
                       fontSize: "15px",
                       fontWeight: 600,
-                      color: "#000000",
+                      color: '#0369a1',
                       margin: 0,
                       lineHeight: "1.3"
                     }}
@@ -1060,7 +1060,7 @@ export default function PersonalLoanServiceView() {
                     fontWeight: "700",
                     letterSpacing: "1.2px",
                     textTransform: "uppercase",
-                    color: "#0366a2",
+                    color: "#0369a1",
                     display: "inline-block",
                     marginBottom: "8px"
                   }}
@@ -1072,7 +1072,7 @@ export default function PersonalLoanServiceView() {
                   style={{
                     fontSize: "clamp(26px, 2.8vw, 38px)",
                     fontWeight: 600,
-                    color: "#0f172a",
+                    color: '#0369a1',
                     textTransform: "uppercase",
                     lineHeight: "1.2",
                     marginBottom: "32px",
@@ -1113,7 +1113,7 @@ export default function PersonalLoanServiceView() {
                             style={{
                               fontSize: "17.5px",
                               fontWeight: 500,
-                              color: isOpen ? "#0366a2" : "#0f172a",
+                              color: isOpen ? "#0369a1" : "#0f172a",
                               lineHeight: "1.4",
                               fontFamily: "'Poppins', sans-serif",
                               transition: "color 0.2s ease"
@@ -1126,8 +1126,8 @@ export default function PersonalLoanServiceView() {
                               width: "36px",
                               height: "36px",
                               borderRadius: "50%",
-                              backgroundColor: isOpen ? "#0366a2" : "#edf5fd",
-                              color: isOpen ? "#ffffff" : "#0366a2",
+                              backgroundColor: isOpen ? "#59bdfc" : "#edf5fd",
+                              color: isOpen ? "#0f172a" : "#0369a1",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
@@ -1217,11 +1217,11 @@ export default function PersonalLoanServiceView() {
                       width: "48px",
                       height: "48px",
                       borderRadius: "12px",
-                      background: "#0284c7",
+                      background: "#59bdfc",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      boxShadow: "0 6px 18px rgba(2, 132, 199, 0.4)"
+                      boxShadow: "0 6px 18px rgba(89, 189, 252, 0.4)"
                     }}
                   >
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
@@ -1264,7 +1264,7 @@ export default function PersonalLoanServiceView() {
         className="globon-navy-cta-section"
         style={{
           padding: "95px 0 100px 0",
-          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(3, 102, 162, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
+          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(89, 189, 252, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
           borderTop: "1px solid rgba(255, 255, 255, 0.08)",
           borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
           position: "relative",
@@ -1290,8 +1290,8 @@ export default function PersonalLoanServiceView() {
                 padding: "7px 18px",
                 borderRadius: "30px",
                 backgroundColor: "rgba(255, 255, 255, 0.08)",
-                border: "1px solid rgba(56, 189, 248, 0.3)",
-                color: "#38bdf8",
+                border: "1px solid rgba(89, 189, 252, 0.3)",
+                color: "#0369a1",
                 backdropFilter: "blur(8px)",
                 marginBottom: "20px"
               }}
@@ -1378,14 +1378,14 @@ export default function PersonalLoanServiceView() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
-                  backgroundColor: "#0284c7",
-                  color: "#ffffff",
+                  backgroundColor: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "16px",
                   fontWeight: "700",
                   padding: "16px 36px",
                   borderRadius: "8px",
                   textDecoration: "none",
-                  boxShadow: "0 8px 24px rgba(2, 132, 199, 0.35)",
+                  boxShadow: "0 8px 24px rgba(89, 189, 252, 0.35)",
                   transition: "all 0.25s ease"
                 }}
                 onMouseEnter={(e) => {
@@ -1393,7 +1393,7 @@ export default function PersonalLoanServiceView() {
                   e.currentTarget.style.transform = "translateY(-2px)"
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "#0284c7"
+                  e.currentTarget.style.backgroundColor = "#59bdfc"
                   e.currentTarget.style.transform = "translateY(0)"
                 }}
               >

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import SubServiceLinks from "./SubServiceLinks";
 
 export default function BusinessTechnologyCategoryView({ category }) {
   const [activeFaq, setActiveFaq] = useState(null)
@@ -25,14 +26,14 @@ export default function BusinessTechnologyCategoryView({ category }) {
               {/* Screen display */}
               <rect x="6" y="6" width="138" height="74" rx="4" fill="#FFFFFF" />
               {/* Header bar inside screen */}
-              <rect x="6" y="6" width="138" height="16" rx="4" fill="#0366A2" />
+              <rect x="6" y="6" width="138" height="16" rx="4" fill="#59bdfc" />
               <circle cx="16" cy="14" r="3" fill="#EF4444" />
               <circle cx="25" cy="14" r="3" fill="#F59E0B" />
               <circle cx="34" cy="14" r="3" fill="#10B981" />
               <text x="80" y="17" fontSize="7" fontWeight="bold" fill="#FFFFFF" textAnchor="middle">GLOBON CLOUD ERP</text>
               {/* Left sidebar inside screen */}
               <rect x="10" y="26" width="28" height="50" rx="3" fill="#F1F5F9" />
-              <line x1="14" y1="32" x2="34" y2="32" stroke="#0366A2" strokeWidth="2" strokeLinecap="round" />
+              <line x1="14" y1="32" x2="34" y2="32" stroke="#59bdfc" strokeWidth="2" strokeLinecap="round" />
               <line x1="14" y1="40" x2="32" y2="40" stroke="#94A3B8" strokeWidth="1.5" strokeLinecap="round" />
               <line x1="14" y1="48" x2="30" y2="48" stroke="#94A3B8" strokeWidth="1.5" strokeLinecap="round" />
               <line x1="14" y1="56" x2="33" y2="56" stroke="#94A3B8" strokeWidth="1.5" strokeLinecap="round" />
@@ -49,7 +50,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
               <rect x="54" y="60" width="6" height="16" fill="#60A5FA" />
               <rect x="63" y="54" width="6" height="22" fill="#3B82F6" />
               <rect x="72" y="50" width="6" height="26" fill="#1D4ED8" />
-              <rect x="81" y="56" width="6" height="20" fill="#0284C7" />
+              <rect x="81" y="56" width="6" height="20" fill="#59bdfc" />
               {/* Live line chart */}
               <path d="M 95 72 Q 108 58 120 64 T 136 52" fill="none" stroke="#10B981" strokeWidth="2" strokeLinecap="round" />
               {/* Monitor stand */}
@@ -58,9 +59,9 @@ export default function BusinessTechnologyCategoryView({ category }) {
             </g>
             {/* Multi-Branch Cloud Sync Badge */}
             <g transform="translate(200, 48) rotate(4)">
-              <rect x="0" y="0" width="86" height="52" rx="8" fill="#0366A2" stroke="#0F172A" strokeWidth="1.8" />
+              <rect x="0" y="0" width="86" height="52" rx="8" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.8" />
               <rect x="6" y="6" width="74" height="40" rx="4" fill="#FFFFFF" />
-              <text x="43" y="18" fontSize="7" fontWeight="900" textAnchor="middle" fill="#0366A2">MULTI-BRANCH</text>
+              <text x="43" y="18" fontSize="7" fontWeight="900" textAnchor="middle" fill="#0369a1">MULTI-BRANCH</text>
               <text x="43" y="28" fontSize="6" fontWeight="bold" textAnchor="middle" fill="#10B981">● REALTIME SYNC</text>
               <text x="43" y="38" fontSize="6.5" fontWeight="bold" textAnchor="middle" fill="#64748B">GST &amp; Invoicing</text>
             </g>
@@ -77,10 +78,10 @@ export default function BusinessTechnologyCategoryView({ category }) {
             {/* Sales Pipeline Funnel */}
             <g transform="translate(68, 44)">
               {/* Funnel Stage 1: Leads */}
-              <polygon points="0,0 120,0 102,28 18,28" fill="#38BDF8" stroke="#0F172A" strokeWidth="1.8" />
+              <polygon points="0,0 120,0 102,28 18,28" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.8" />
               <text x="60" y="18" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#FFFFFF">LEAD INTAKE (100%)</text>
               {/* Funnel Stage 2: Qualified */}
-              <polygon points="18,31 102,31 88,58 32,58" fill="#0284C7" stroke="#0F172A" strokeWidth="1.8" />
+              <polygon points="18,31 102,31 88,58 32,58" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.8" />
               <text x="60" y="48" fontSize="7.5" fontWeight="bold" textAnchor="middle" fill="#FFFFFF">QUALIFIED (68%)</text>
               {/* Funnel Stage 3: Deals Closed */}
               <polygon points="32,61 88,61 74,86 46,86" fill="#10B981" stroke="#0F172A" strokeWidth="1.8" />
@@ -91,7 +92,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
             {/* Floating Customer Profile Card with WhatsApp Integration */}
             <g transform="translate(192, 42) rotate(-3)">
               <rect x="0" y="0" width="88" height="96" rx="8" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-              <circle cx="24" cy="22" r="12" fill="#0366A2" />
+              <circle cx="24" cy="22" r="12" fill="#59bdfc" />
               <circle cx="24" cy="18" r="4.5" fill="#FFFFFF" />
               <path d="M 16 28 C 16 24 32 24 32 28" fill="#FFFFFF" />
               <rect x="42" y="14" width="38" height="6" rx="2" fill="#0F172A" />
@@ -101,7 +102,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
               <text x="44" y="55" fontSize="7.5" fontWeight="bold" textAnchor="middle" fill="#FFFFFF">WHATSAPP SYNC</text>
               {/* Pipeline Status */}
               <rect x="8" y="68" width="72" height="18" rx="4" fill="#F1F5F9" stroke="#E2E8F0" />
-              <text x="44" y="80" fontSize="7" fontWeight="bold" textAnchor="middle" fill="#0366A2">DEAL: ₹8.5 LAKH</text>
+              <text x="44" y="80" fontSize="7" fontWeight="bold" textAnchor="middle" fill="#0369a1">DEAL: ₹8.5 LAKH</text>
             </g>
             {/* Growth Pill */}
             <g transform="translate(210, 136)">
@@ -120,7 +121,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
               <rect x="0" y="0" width="108" height="106" rx="6" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
               {/* Certificate Border Line */}
               <rect x="6" y="6" width="96" height="94" rx="3" fill="none" stroke="#D1D5DB" strokeWidth="1" strokeDasharray="3 3" />
-              <rect x="14" y="14" width="80" height="14" rx="3" fill="#1F4E7A" />
+              <rect x="14" y="14" width="80" height="14" rx="3" fill="#59bdfc" />
               <text x="54" y="24" fontSize="6.5" fontWeight="900" textAnchor="middle" fill="#FFFFFF" letterSpacing="0.6">SOCIETIES ACT REG</text>
               {/* Certificate Content Lines */}
               <line x1="16" y1="36" x2="92" y2="36" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" />
@@ -140,7 +141,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
             <g transform="translate(190, 52) rotate(4)">
               <rect x="0" y="0" width="86" height="84" rx="8" fill="#F8FAFC" stroke="#0F172A" strokeWidth="2" />
               {/* Club Trophy / Crest Shield */}
-              <path d="M 43 14 L 68 22 C 68 46 43 62 43 62 C 43 62 18 46 18 22 Z" fill="#0366A2" stroke="#0F172A" strokeWidth="1.5" />
+              <path d="M 43 14 L 68 22 C 68 46 43 62 43 62 C 43 62 18 46 18 22 Z" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.5" />
               {/* Star inside shield */}
               <polygon points="43,26 45,31 50,31 46,34 48,39 43,36 38,39 40,34 36,31 41,31" fill="#FBBF24" />
               <text x="43" y="50" fontSize="6.5" fontWeight="bold" textAnchor="middle" fill="#FFFFFF">CLUB / NGO</text>
@@ -160,7 +161,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
           <svg className="ksfe-sig-visual-svg" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             <rect x="100" y="60" width="140" height="90" rx="8" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-            <circle cx="170" cy="105" r="24" fill="#38BDF8" stroke="#0F172A" strokeWidth="2" />
+            <circle cx="170" cy="105" r="24" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <text x="170" y="112" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#0F172A">★</text>
           </svg>
         )
@@ -190,11 +191,11 @@ export default function BusinessTechnologyCategoryView({ category }) {
       <section style={{ backgroundColor: "#f8fafc", borderBottom: "1px solid #e2e8f0", padding: "14px 0" }}>
         <div className="tf-container w-1780">
           <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#64748b" }}>
-            <Link href="/" style={{ color: "#0366a2", textDecoration: "none", fontWeight: 500 }}>
+            <Link href="/" style={{ color: "#0369a1", textDecoration: "none", fontWeight: 500 }}>
               Home
             </Link>
             <span>/</span>
-            <Link href="/services" style={{ color: "#0366a2", textDecoration: "none", fontWeight: 500 }}>
+            <Link href="/services" style={{ color: "#0369a1", textDecoration: "none", fontWeight: 500 }}>
               Services
             </Link>
             <span>/</span>
@@ -222,8 +223,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                 {/* Main Heading */}
                 <h1 style={{
                   fontSize: "clamp(34px, 3.8vw, 54px)",
-                  fontWeight: 400,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.15",
                   letterSpacing: "0.2px",
                   marginBottom: "16px",
@@ -235,7 +236,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
                 {/* Subheadline from User */}
                 <h2 style={{
                   fontSize: "clamp(18px, 1.8vw, 22px)",
-                  fontWeight: 400,
+                  fontWeight: 600,
                   color: "#475569",
                   lineHeight: "1.4",
                   marginBottom: "20px",
@@ -262,14 +263,14 @@ export default function BusinessTechnologyCategoryView({ category }) {
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "10px",
-                      backgroundColor: "#0366a2",
-                      color: "#ffffff",
+                      backgroundColor: "#59bdfc",
+                      color: "#0f172a",
                       fontWeight: "700",
                       fontSize: "16px",
                       padding: "14px 32px",
                       borderRadius: "8px",
                       textDecoration: "none",
-                      boxShadow: "0 6px 20px rgba(3, 102, 162, 0.25)",
+                      boxShadow: "0 6px 20px rgba(89, 189, 252, 0.25)",
                       transition: "all 0.25s ease"
                     }}
                   >
@@ -314,15 +315,18 @@ export default function BusinessTechnologyCategoryView({ category }) {
                   overflow: "hidden",
                   boxShadow: "0 20px 50px rgba(0, 0, 0, 0.08)",
                   position: "relative",
-                  height: "460px",
-                  width: "100%"
+                  height: "440px",
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}>
                   <Image
                     src="/images/services/5.png"
                     alt="Globon Business Technology Solutions"
                     fill
                     sizes="(max-width: 991px) 100vw, 560px"
-                    style={{ objectFit: "cover", objectPosition: "center 30%" }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                     priority
                   />
                 </div>
@@ -349,8 +353,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                     width: "32px",
                     height: "32px",
                     borderRadius: "50%",
-                    background: "#0366a2",
-                    color: "#ffffff",
+                    background: "#59bdfc",
+                    color: "#0f172a",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -392,7 +396,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
                     borderRadius: "12px",
                     background: "#f8fafc",
                     border: "1px solid #e2e8f0",
-                    color: "#0366a2",
+                    color: "#0369a1",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center"
@@ -439,9 +443,9 @@ export default function BusinessTechnologyCategoryView({ category }) {
             </span>
             <h2 style={{
               fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 400,
+              fontWeight: 600,
               letterSpacing: "0.5px",
-              color: "#000000",
+              color: '#0369a1',
               lineHeight: 1.3,
               marginBottom: "18px",
               fontFamily: "'Poppins', sans-serif"
@@ -480,7 +484,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
                   borderRadius: "50%",
                   background: "#f8fafc",
                   border: "1px solid #e2e8f0",
-                  color: "#0366a2",
+                  color: "#0369a1",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -491,8 +495,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -540,8 +544,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -578,7 +582,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
                   borderRadius: "50%",
                   background: "#f8fafc",
                   border: "1px solid #e2e8f0",
-                  color: "#0284c7",
+                  color: "#0369a1",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -589,8 +593,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -638,8 +642,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -675,10 +679,10 @@ export default function BusinessTechnologyCategoryView({ category }) {
           }}>
             <h2 style={{
               fontSize: "clamp(24px, 2.6vw, 36px)",
-              fontWeight: "400",
+              fontWeight: 600,
               letterSpacing: "0.5px",
               textTransform: "uppercase",
-              color: "#000000",
+              color: '#0369a1',
               margin: 0,
               fontFamily: "inherit"
             }}>
@@ -722,7 +726,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
                 <div key={service.slug} className="col-12 col-md-6 col-lg-4">
                   <div className="loan-scheme-sig-card wow fadeInUp" data-wow-delay={`${(idx % 3) * 0.1}s`}>
                     <Link
-                      href={`/services/${category.slug}/${service.slug}`}
+                      href={service.href}
                       className="ksfe-sig-visual-wrap"
                       aria-label={service.title}
                     >
@@ -731,7 +735,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
                           src={service.heroImage || service.image}
                           alt={service.title}
                           fill
-                          style={{ objectFit: 'cover' }}
+                          style={{ objectFit: 'cover', objectPosition: 'center' }}
                         />
                       ) : (
                         getServiceIllustration(service.slug)
@@ -741,8 +745,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                     <div className="ksfe-sig-content">
                       <h3 className="ksfe-sig-card-title">
                         <Link
-                          href={`/services/${category.slug}/${service.slug}`}
-                          style={{ color: "#000000" }}
+                          href={service.href}
+                          style={{ color: '#0369a1' }}
                         >
                           {service.title}
                         </Link>
@@ -751,7 +755,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
                       <p style={{
                         fontSize: "15px",
                         fontWeight: 500,
-                        color: "#0366a2",
+                        color: "#0369a1",
                         lineHeight: "1.4",
                         marginBottom: "10px"
                       }}>
@@ -762,6 +766,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                         {service.shortDesc}
                       </p>
 
+                      <SubServiceLinks items={service.subServices} />
+
                       <div className="ksfe-sig-divider" />
 
                       {service.highlights && service.highlights.length > 0 && (
@@ -770,7 +776,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
                             <li key={i} className="ksfe-sig-bullet-item">
                               <span className="bullet-asterisk">✻</span>
                               <Link
-                                href={`/services/${category.slug}/${service.slug}`}
+                                href={service.href}
                                 style={{ color: "inherit", textDecoration: "none" }}
                               >
                                 {hl}
@@ -817,9 +823,9 @@ export default function BusinessTechnologyCategoryView({ category }) {
             </span>
             <h2 style={{
               fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 400,
+              fontWeight: 600,
               letterSpacing: "0.5px",
-              color: "#000000",
+              color: '#0369a1',
               marginBottom: "16px",
               fontFamily: "'Poppins', sans-serif"
             }}>
@@ -852,8 +858,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -862,8 +868,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -897,8 +903,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -907,8 +913,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -942,8 +948,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -952,8 +958,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -978,8 +984,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
               <div style={{ maxWidth: "620px" }}>
                 <h2 style={{
                   fontSize: "clamp(24px, 2.6vw, 36px)",
-                  fontWeight: 400,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   textTransform: "uppercase",
                   letterSpacing: "0.5px",
                   lineHeight: 1.25,
@@ -1018,7 +1024,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
                           <span style={{
                             fontSize: "clamp(18px, 1.4vw, 21px)",
                             fontWeight: 500,
-                            color: isOpen ? "#0366a2" : "#0f172a",
+                            color: isOpen ? "#0369a1" : "#0f172a",
                             lineHeight: 1.4,
                             fontFamily: "'Poppins', sans-serif"
                           }}>
@@ -1028,8 +1034,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                             width: "32px",
                             height: "32px",
                             borderRadius: "50%",
-                            background: isOpen ? "#0366a2" : "#f1f5f9",
-                            color: isOpen ? "#ffffff" : "#475569",
+                            background: isOpen ? "#59bdfc" : "#f1f5f9",
+                            color: isOpen ? "#0f172a" : "#475569",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -1100,14 +1106,14 @@ export default function BusinessTechnologyCategoryView({ category }) {
                     width: "48px",
                     height: "48px",
                     borderRadius: "14px",
-                    background: "#0284c7",
+                    background: "#59bdfc",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "#ffffff",
+                    color: "#0f172a",
                     fontSize: "22px",
                     fontWeight: "900",
-                    boxShadow: "0 10px 24px rgba(2, 132, 199, 0.35)",
+                    boxShadow: "0 10px 24px rgba(89, 189, 252, 0.35)",
                     zIndex: 3
                   }}
                 >
@@ -1145,7 +1151,7 @@ export default function BusinessTechnologyCategoryView({ category }) {
         className="globon-navy-cta-section"
         style={{
           padding: "95px 0 100px 0",
-          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(3, 102, 162, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
+          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(89, 189, 252, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
           borderTop: "1px solid rgba(255, 255, 255, 0.08)",
           borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
           position: "relative",
@@ -1171,8 +1177,8 @@ export default function BusinessTechnologyCategoryView({ category }) {
                 padding: "7px 18px",
                 borderRadius: "30px",
                 backgroundColor: "rgba(255, 255, 255, 0.08)",
-                border: "1px solid rgba(56, 189, 248, 0.3)",
-                color: "#38bdf8",
+                border: "1px solid rgba(89, 189, 252, 0.3)",
+                color: "#0369a1",
                 backdropFilter: "blur(8px)",
                 marginBottom: "20px"
               }}
@@ -1227,14 +1233,14 @@ export default function BusinessTechnologyCategoryView({ category }) {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
-                  backgroundColor: "#0284c7",
-                  color: "#ffffff",
+                  backgroundColor: "#59bdfc",
+                  color: "#0f172a",
                   fontWeight: "700",
                   fontSize: "16px",
                   padding: "16px 36px",
                   borderRadius: "8px",
                   textDecoration: "none",
-                  boxShadow: "0 8px 24px rgba(2, 132, 199, 0.35)",
+                  boxShadow: "0 8px 24px rgba(89, 189, 252, 0.35)",
                   transition: "all 0.25s ease"
                 }}
               >

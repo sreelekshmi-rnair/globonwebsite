@@ -62,7 +62,7 @@ export default function EmiCalculator() {
 				<div className="row justify-content-center">
 					<div className="col-lg-8 text-center mb-40">
 						<div className="ksfe-sub-pill" style={{ marginBottom: '12px' }}>
-							<span className="dot" style={{ backgroundColor: '#1f4e7a' }} />
+							<span className="dot" style={{ backgroundColor: '#59bdfc' }} />
 							SMART FINANCIAL TOOLS
 						</div>
 						<h2 className="ksfe-main-title" style={{ fontSize: '36px', marginBottom: '12px' }}>
@@ -91,14 +91,14 @@ export default function EmiCalculator() {
 								style={{
 									padding: '10px 22px',
 									borderRadius: '9999px',
-									border: isSelected ? '1px solid #1f4e7a' : '1px solid #e2e8f0',
+									border: isSelected ? '1px solid #59bdfc' : '1px solid #e2e8f0',
 									fontSize: '14px',
 									fontWeight: 700,
 									cursor: 'pointer',
 									transition: 'all 0.2s ease',
-									backgroundColor: isSelected ? '#1f4e7a' : '#ffffff',
-									color: isSelected ? '#ffffff' : '#334155',
-									boxShadow: isSelected ? '0 4px 12px rgba(3, 102, 162, 0.25)' : '0 2px 4px rgba(0,0,0,0.02)'
+									backgroundColor: isSelected ? '#59bdfc' : '#ffffff',
+									color: isSelected ? '#0f172a' : '#334155',
+									boxShadow: isSelected ? '0 4px 12px rgba(89, 189, 252, 0.25)' : '0 2px 4px rgba(0,0,0,0.02)'
 								}}
 							>
 								<span style={{ marginRight: '6px' }}>{tab.icon}</span>
@@ -134,8 +134,8 @@ export default function EmiCalculator() {
 									position: 'absolute',
 									top: '14px',
 									left: '14px',
-									backgroundColor: '#1f4e7a',
-									color: '#ffffff',
+									backgroundColor: '#59bdfc',
+									color: '#0f172a',
 									fontSize: '11px',
 									fontWeight: 800,
 									padding: '4px 10px',
@@ -169,19 +169,19 @@ export default function EmiCalculator() {
 									</p>
 									<ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
 										<li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#334155' }}>
-											<span style={{ color: '#1f4e7a', fontWeight: 800 }}>✓</span> Zero advance consultation fees
+											<span style={{ color: '#0369a1', fontWeight: 800 }}>✓</span> Zero advance consultation fees
 										</li>
 										<li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#334155' }}>
-											<span style={{ color: '#1f4e7a', fontWeight: 800 }}>✓</span> 194+ centers across Kerala
+											<span style={{ color: '#0369a1', fontWeight: 800 }}>✓</span> 194+ centers across Kerala
 										</li>
 										<li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#334155' }}>
-											<span style={{ color: '#1f4e7a', fontWeight: 800 }}>✓</span> Doorstep documentation support
+											<span style={{ color: '#0369a1', fontWeight: 800 }}>✓</span> Doorstep documentation support
 										</li>
 									</ul>
 								</div>
 
 								<div style={{ marginTop: '20px', paddingTop: '16px', borderTop: '1px solid #f1f5f9' }}>
-									<Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', fontWeight: 700, color: '#1f4e7a', textDecoration: 'none' }}>
+									<Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', fontWeight: 700, color: '#0369a1', textDecoration: 'none' }}>
 										Speak with a Loan Advisor ↗
 									</Link>
 								</div>
@@ -208,7 +208,7 @@ export default function EmiCalculator() {
 									<label style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>
 										Required Loan Amount
 									</label>
-									<span style={{ fontSize: '18px', fontWeight: 800, color: '#1f4e7a', backgroundColor: '#e0f2fe', padding: '3px 12px', borderRadius: '6px' }}>
+									<span style={{ fontSize: '18px', fontWeight: 800, color: '#0369a1', backgroundColor: '#e0f2fe', padding: '3px 12px', borderRadius: '6px' }}>
 										₹ {formatIndianCurrency(amount)}
 									</span>
 								</div>
@@ -219,7 +219,7 @@ export default function EmiCalculator() {
 									step="50000"
 									value={amount}
 									onChange={(e) => setAmount(Number(e.target.value))}
-									style={{ width: '100%', height: '8px', cursor: 'pointer', accentColor: '#1f4e7a' }}
+									style={{ width: '100%', height: '8px', cursor: 'pointer', accentColor: '#59bdfc' }}
 								/>
 								<div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#64748b', marginTop: '6px' }}>
 									<span>₹1 Lakh</span>
@@ -234,7 +234,7 @@ export default function EmiCalculator() {
 									<label style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>
 										Expected Interest Rate (p.a.)
 									</label>
-									<span style={{ fontSize: '18px', fontWeight: 800, color: '#1f4e7a', backgroundColor: '#e0f2fe', padding: '3px 12px', borderRadius: '6px' }}>
+									<span style={{ fontSize: '18px', fontWeight: 800, color: '#0369a1', backgroundColor: '#e0f2fe', padding: '3px 12px', borderRadius: '6px' }}>
 										{interestRate}%
 									</span>
 								</div>
@@ -245,7 +245,7 @@ export default function EmiCalculator() {
 									step="0.05"
 									value={interestRate}
 									onChange={(e) => setInterestRate(Number(e.target.value))}
-									style={{ width: '100%', height: '8px', cursor: 'pointer', accentColor: '#1f4e7a' }}
+									style={{ width: '100%', height: '8px', cursor: 'pointer', accentColor: '#59bdfc' }}
 								/>
 								<div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#64748b', marginTop: '6px' }}>
 									<span>7.5%</span>
@@ -260,7 +260,7 @@ export default function EmiCalculator() {
 									<label style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>
 										Repayment Tenure
 									</label>
-									<span style={{ fontSize: '18px', fontWeight: 800, color: '#1f4e7a', backgroundColor: '#e0f2fe', padding: '3px 12px', borderRadius: '6px' }}>
+									<span style={{ fontSize: '18px', fontWeight: 800, color: '#0369a1', backgroundColor: '#e0f2fe', padding: '3px 12px', borderRadius: '6px' }}>
 										{tenureYears} Years ({tenureYears * 12} Mos)
 									</span>
 								</div>
@@ -271,7 +271,7 @@ export default function EmiCalculator() {
 									step="1"
 									value={tenureYears}
 									onChange={(e) => setTenureYears(Number(e.target.value))}
-									style={{ width: '100%', height: '8px', cursor: 'pointer', accentColor: '#1f4e7a' }}
+									style={{ width: '100%', height: '8px', cursor: 'pointer', accentColor: '#59bdfc' }}
 								/>
 								<div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#64748b', marginTop: '6px' }}>
 									<span>1 Year</span>
@@ -293,10 +293,10 @@ export default function EmiCalculator() {
 							display: 'flex',
 							flexDirection: 'column',
 							justifyContent: 'space-between',
-							boxShadow: '0 8px 24px rgba(3, 102, 162, 0.08)'
+							boxShadow: '0 8px 24px rgba(89, 189, 252, 0.08)'
 						}}>
 							<div>
-								<div style={{ fontSize: '12px', fontWeight: 800, letterSpacing: '1px', textTransform: 'uppercase', color: '#1f4e7a', marginBottom: '6px' }}>
+								<div style={{ fontSize: '12px', fontWeight: 800, letterSpacing: '1px', textTransform: 'uppercase', color: '#0369a1', marginBottom: '6px' }}>
 									Monthly EMI Payable
 								</div>
 								<div style={{ fontSize: '32px', fontWeight: 900, color: '#0f172a', lineHeight: 1.1, marginBottom: '20px' }}>
@@ -311,7 +311,7 @@ export default function EmiCalculator() {
 									</div>
 									<div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13.5px' }}>
 										<span style={{ color: '#64748b' }}>Total Interest:</span>
-										<span style={{ fontWeight: 700, color: '#1f4e7a' }}>₹ {formatIndianCurrency(totalInterest)}</span>
+										<span style={{ fontWeight: 700, color: '#0369a1' }}>₹ {formatIndianCurrency(totalInterest)}</span>
 									</div>
 									<div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px', paddingTop: '10px', borderTop: '1px dashed #e2e8f0' }}>
 										<span style={{ fontWeight: 800, color: '#0f172a' }}>Total Amount:</span>
@@ -327,8 +327,8 @@ export default function EmiCalculator() {
 									style={{
 										width: '100%',
 										justifyContent: 'center',
-										background: '#1f4e7a',
-										color: '#ffffff',
+										background: '#59bdfc',
+										color: '#0f172a',
 										fontSize: '14px',
 										padding: '12px 16px',
 										borderRadius: '8px'

@@ -1,9 +1,26 @@
 'use client'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 export default function Section4() {
 	const [activeStep, setActiveStep] = useState(1)
+	const stepRefs = useRef({})
+
+	const handleStepClick = (id) => {
+		setActiveStep(id)
+		setTimeout(() => {
+			const el = stepRefs.current[id]
+			if (el) {
+				const headerOffset = 95
+				const elementPosition = el.getBoundingClientRect().top
+				const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+				window.scrollTo({
+					top: offsetPosition,
+					behavior: 'smooth'
+				})
+			}
+		}, 50)
+	}
 
 	const steps = [
 		{
@@ -61,7 +78,7 @@ export default function Section4() {
 							<div className="text-center mb-50">
 								<h2 style={{
 									fontSize: 'clamp(28px, 3.2vw, 42px)',
-									color: '#000000',
+									color: '#0369a1',
 									textTransform: 'uppercase',
 									lineHeight: '1.2',
 									letterSpacing: '0.5px',
@@ -69,8 +86,8 @@ export default function Section4() {
 									maxWidth: '850px',
 									fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 								}}>
-									<span style={{ fontWeight: 800 }}>FROM STRATEGY TO DISBURSEMENT</span><br />
-									<span style={{ fontWeight: 400 }}>OUR FINANCIAL PROCESS</span>
+									<span className="heading-bold" style={{ fontWeight: 800 }}>FROM STRATEGY TO DISBURSEMENT</span><br />
+									<span className="heading-normal" style={{ fontWeight: 400 }}>OUR FINANCIAL PROCESS</span>
 								</h2>
 							</div>
 
@@ -84,13 +101,14 @@ export default function Section4() {
 										return (
 											<div
 												key={item.id}
+												ref={(el) => (stepRefs.current[item.id] = el)}
 												className="methodology-card methodology-expanded-card"
 												style={{
 													borderRadius: '20px',
 													border: '1px solid #e5e7eb',
 													background: '#f7f7f8',
 													marginBottom: '20px',
-													padding: 'clamp(20px, 3.5vw, 38px)',
+													padding: 'clamp(20px, 2.5vw, 32px)',
 													display: 'flex',
 													flexWrap: 'wrap',
 													alignItems: 'stretch',
@@ -98,24 +116,25 @@ export default function Section4() {
 													transition: 'all 0.3s ease'
 												}}
 											>
-												{/* Left Column (Globon Content) */}
+												{/* Left Column (Globon Content / Text - ALWAYS FIRST) */}
 												<div style={{
 													flex: '1 1 450px',
 													minWidth: '280px',
 													display: 'flex',
 													flexDirection: 'column',
-													justifyContent: 'center'
+													justifyContent: 'center',
+													order: 1
 												}}>
 													{/* Step Pill Badge */}
-													<div style={{ marginBottom: '24px' }}>
+													<div style={{ marginBottom: '18px' }}>
 														<span style={{
 															background: '#FFB800',
 															border: '1px solid #111111',
 															borderRadius: '6px',
-															padding: '6px 14px',
-															fontSize: '13px',
+															padding: '5px 12px',
+															fontSize: '12px',
 															fontWeight: 800,
-															letterSpacing: '2.5px',
+															letterSpacing: '2px',
 															textTransform: 'uppercase',
 															color: '#111111',
 															display: 'inline-block'
@@ -126,12 +145,12 @@ export default function Section4() {
 
 													{/* Title */}
 													<h3 style={{
-														fontSize: 'clamp(21px, 2vw, 25px)',
-														fontWeight: 500,
-														color: '#000000',
+														fontSize: 'clamp(20px, 1.8vw, 24px)',
+														fontWeight: 600,
+														color: '#0369a1',
 														textTransform: 'uppercase',
 														letterSpacing: '0.4px',
-														marginBottom: '16px',
+														marginBottom: '14px',
 														lineHeight: '1.25',
 														fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 													}}>
@@ -140,10 +159,10 @@ export default function Section4() {
 
 													{/* Description */}
 													<p style={{
-														fontSize: '17.5px',
-														lineHeight: '1.7',
+														fontSize: '16px',
+														lineHeight: '1.65',
 														color: '#334155',
-														marginBottom: '26px'
+														marginBottom: '20px'
 													}}>
 														{item.desc}
 													</p>
@@ -155,7 +174,7 @@ export default function Section4() {
 														margin: 0,
 														display: 'flex',
 														flexDirection: 'column',
-														gap: '14px'
+														gap: '10px'
 													}}>
 														{item.benefits.map((b, bIdx) => (
 															<li
@@ -167,11 +186,11 @@ export default function Section4() {
 																}}
 															>
 																<svg
-																	width="20"
-																	height="20"
+																	width="18"
+																	height="18"
 																	viewBox="0 0 24 24"
 																	fill="none"
-																	stroke="#0f172a"
+																	stroke="#59bdfc"
 																	strokeWidth="2.5"
 																	strokeLinecap="round"
 																	strokeLinejoin="round"
@@ -180,7 +199,7 @@ export default function Section4() {
 																	<polyline points="20 6 9 17 4 12" />
 																</svg>
 																<span style={{
-																	fontSize: '17px',
+																	fontSize: '16px',
 																	fontWeight: 600,
 																	color: '#0f172a'
 																}}>
@@ -191,13 +210,15 @@ export default function Section4() {
 													</ul>
 												</div>
 
-												{/* Right Column (Tailored Image) */}
+												{/* Right Column (Tailored Image - ALWAYS SECOND) */}
 												<div style={{
-													flex: '1 1 450px',
+													flex: '1 1 420px',
 													minWidth: '280px',
 													borderRadius: '16px',
 													overflow: 'hidden',
-													boxShadow: '0 4px 20px rgba(0,0,0,0.06)'
+													boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
+													order: 2,
+													maxHeight: '340px'
 												}}>
 													<Image
 														src={item.image}
@@ -207,8 +228,8 @@ export default function Section4() {
 														style={{
 															width: '100%',
 															height: '100%',
-															minHeight: '320px',
-															maxHeight: '380px',
+															minHeight: '260px',
+															maxHeight: '340px',
 															objectFit: 'cover',
 															display: 'block',
 															borderRadius: '16px'
@@ -224,7 +245,8 @@ export default function Section4() {
 									return (
 										<div
 											key={item.id}
-											onClick={() => setActiveStep(item.id)}
+											ref={(el) => (stepRefs.current[item.id] = el)}
+											onClick={() => handleStepClick(item.id)}
 											className="methodology-card methodology-collapsed-card"
 											style={{
 												borderRadius: '16px',

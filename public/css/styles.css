@@ -617,7 +617,7 @@ h6,
 .h6 {
 	font-family: "Manrope", sans-serif;
 	color: var(--Title);
-	font-weight: 700;
+	font-weight: 600;
 	margin: 0;
 	text-rendering: optimizeLegibility;
 }

@@ -51,8 +51,8 @@ export default function Section1() {
 										width: "48px",
 										height: "48px",
 										borderRadius: "50%",
-										background: "#0366a2",
-										color: "#ffffff",
+										background: "#59bdfc",
+										color: "#0f172a",
 										display: "flex",
 										alignItems: "center",
 										justifyContent: "center",
@@ -64,7 +64,7 @@ export default function Section1() {
 									</div>
 									<div>
 										<div style={{ display: "flex", alignItems: "baseline", gap: "2px" }}>
-											<span style={{ fontSize: "28px", fontWeight: 800, color: "#0366a2", lineHeight: 1 }}>9+</span>
+											<span style={{ fontSize: "28px", fontWeight: 800, color: "#0369a1", lineHeight: 1 }}>9+</span>
 											<span style={{ fontSize: "15px", fontWeight: 700, color: "#0f172a", marginLeft: "4px" }}>Years Experience</span>
 										</div>
 										<div style={{ fontSize: "13px", color: "#64748b", fontWeight: 500, marginTop: "3px" }}>
@@ -79,7 +79,7 @@ export default function Section1() {
 						<div className="col-lg-6">
 							<div style={{ paddingLeft: "clamp(0px, 2.5vw, 28px)" }}>
 								<p style={{
-									color: "#0366a2",
+									color: "#0369a1",
 									fontWeight: 700,
 									textTransform: "uppercase",
 									letterSpacing: "1.5px",
@@ -110,14 +110,14 @@ export default function Section1() {
 								{/* Tagline Box */}
 								<div style={{
 									background: "#f8fafc",
-									borderLeft: "4px solid #0366a2",
+									borderLeft: "4px solid #59bdfc",
 									padding: "18px 24px",
 									borderRadius: "0 14px 14px 0",
 									border: "1px solid #e2e8f0",
 									borderLeftWidth: "4px",
 									marginBottom: "28px"
 								}}>
-									<p style={{ color: "#0366a2", fontWeight: 700, fontSize: "12px", textTransform: "uppercase", letterSpacing: "1.2px", marginBottom: "4px" }}>
+									<p style={{ color: "#0369a1", fontWeight: 700, fontSize: "12px", textTransform: "uppercase", letterSpacing: "1.2px", marginBottom: "4px" }}>
 										Our Tagline
 									</p>
 									<p style={{ color: "#0f172a", fontSize: "18px", fontWeight: 700, margin: 0, lineHeight: "1.4" }}>
@@ -166,7 +166,7 @@ export default function Section1() {
 												height: "24px",
 												borderRadius: "50%",
 												background: "#edf5fd",
-												color: "#0366a2",
+												color: "#0369a1",
 												display: "flex",
 												alignItems: "center",
 												justifyContent: "center",
@@ -190,15 +190,15 @@ export default function Section1() {
 											display: "inline-flex",
 											alignItems: "center",
 											gap: "10px",
-											backgroundColor: "#0366a2",
-											color: "#ffffff",
+											backgroundColor: "#59bdfc",
+											color: "#0f172a",
 											fontWeight: 600,
 											fontSize: "16px",
 											padding: "14px 32px",
 											borderRadius: "6px",
 											textDecoration: "none",
 											transition: "all 0.25s ease",
-											boxShadow: "0 4px 16px rgba(3, 102, 162, 0.25)"
+											boxShadow: "0 4px 16px rgba(89, 189, 252, 0.25)"
 										}}
 									>
 										<span>Our Services</span>

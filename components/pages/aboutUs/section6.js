@@ -326,11 +326,11 @@ export default function Section6() {
 													fontSize: '16px',
 													fontWeight: 700,
 													borderRadius: '8px',
-													background: '#1f4e7a',
-													color: '#ffffff',
+													background: '#59bdfc',
+													color: '#0f172a',
 													cursor: submitting ? 'not-allowed' : 'pointer',
 													opacity: submitting ? 0.75 : 1,
-													boxShadow: '0 4px 14px rgba(31, 78, 122, 0.25)'
+													boxShadow: '0 4px 14px rgba(89, 189, 252, 0.25)'
 												}}
 											>
 												{submitting ? 'Submitting Your Request...' : 'Get Started Now'}

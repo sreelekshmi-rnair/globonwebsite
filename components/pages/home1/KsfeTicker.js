@@ -12,7 +12,7 @@ export default function KsfeTicker() {
 		{ text: "HOME & PROPERTY LOANS STARTING FROM 8.35% P.A.", link: "/#loans-section" },
 		{ text: "OVER ₹250 CRORES FUNDING FACILITATED SINCE 2017", link: "/about-us" },
 		{ text: "ZERO ADVANCE CONSULTATION FEES • COMPLETE DOCUMENTATION SUPPORT", link: "/#consultation" },
-		{ text: "15,000+ SATISFIED BORROWERS & BUSINESS CLIENTS", link: "/#why-globon" },
+		{ text: "999+ SATISFIED BORROWERS & BUSINESS CLIENTS", link: "/#why-globon" },
 		{ text: "HEADQUARTERS: KODUNGALLUR, THRISSUR • CALL: +91 98460 53539", link: "tel:+919846053539" }
 	]
 

@@ -18,7 +18,7 @@ export default function Section2() {
 									<h2 className="s-title mb-30 text-anime-wave-right">
 										Helping You Move Forward With the <span>Right Financial Solution</span>
 									</h2>
-									<p style={{ fontSize: '16px', color: '#1f4e7a', fontWeight: '700', marginBottom: '16px', letterSpacing: '0.5px' }}>
+									<p style={{ fontSize: '16px', color: '#0369a1', fontWeight: '700', marginBottom: '16px', letterSpacing: '0.5px' }}>
 										Loan Assistance • Financial Solutions • Business Support
 									</p>
 									<p className="text mb-25" style={{ fontSize: '16px', lineHeight: '1.7' }}>

@@ -12,6 +12,9 @@ model AdminUser {
   username  String   @unique
   password  String
   name      String   @default("Admin")
+  phone     String?  @default("")
+  address   String?  @default("")
+  avatar    String?  @default("") @db.Text
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

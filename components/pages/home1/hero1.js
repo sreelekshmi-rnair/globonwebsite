@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from 'react'
 const heroSlides = [
 	{
 		id: 1,
-		image: '/images/page-title/globon-empowering-building.jpg',
+		image: '/images/section/hero-slide1-consulting.jpg',
 		line1: 'ACCELERATE YOUR BUSINESS',
 		line2: 'GROWTH WITH EXPERT STRATEGY',
 		cta1Text: 'Schedule Free Consultation',
@@ -16,7 +16,7 @@ const heroSlides = [
 	},
 	{
 		id: 2,
-		image: '/images/section/globon-multibank-trust-banner.jpg',
+		image: '/images/section/hero-slide2-loan-handshake.jpg',
 		line1: 'SCALE YOUR BUSINESS WITH',
 		line2: 'FLEXIBLE BUSINESS LOANS',
 		cta1Text: 'Apply for Business Loan',
@@ -26,7 +26,7 @@ const heroSlides = [
 	},
 	{
 		id: 3,
-		image: '/images/section/globon-hero-advisory.jpg',
+		image: '/images/section/hero-slide3-msme-workshop.jpg',
 		line1: 'ACCESS SUBSIDIZED FUNDING',
 		line2: 'THROUGH GOVERNMENT SCHEMES',
 		cta1Text: 'Explore Schemes',

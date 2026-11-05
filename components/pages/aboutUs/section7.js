@@ -21,7 +21,7 @@ export default function Section7() {
 				<div className="tf-container about-page-container">
 					{/* Header Block */}
 					<div className="text-center mb-5">
-						<p style={{ color: "#0366a2", fontWeight: 700, textTransform: "uppercase", fontSize: "13px", letterSpacing: "1.5px", marginBottom: "14px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+						<p style={{ color: "#0369a1", fontWeight: 700, textTransform: "uppercase", fontSize: "13px", letterSpacing: "1.5px", marginBottom: "14px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
 							<i className="icon-angles-right" />
 							Our Banking Network
 						</p>

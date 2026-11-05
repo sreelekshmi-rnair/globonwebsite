@@ -85,9 +85,9 @@ export default function Section7b() {
 									alignItems: 'center',
 									justifyContent: 'center',
 									flexShrink: 0,
-									boxShadow: '0 8px 20px rgba(3, 102, 162, 0.15)'
+									boxShadow: '0 8px 20px rgba(89, 189, 252, 0.15)'
 								}}>
-									<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#0366a2" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+									<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#59bdfc" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
 										<path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0" />
 										<path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2" />
 										<path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8" />
@@ -147,14 +147,14 @@ export default function Section7b() {
 							<h2 className="takeover-heading" style={{
 								fontFamily: "'Public Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif",
 								fontSize: 'clamp(40px, 4.2vw, 52px)',
-								color: '#000000',
+								color: '#0369a1',
 								textTransform: 'uppercase',
 								lineHeight: '1.2',
 								letterSpacing: '0.3px',
 								marginBottom: '22px'
 							}}>
-								<span style={{ fontWeight: 800 }}>LOAN TAKEOVER &amp;</span><br />
-								<span style={{ fontWeight: 400 }}>REFINANCING</span>
+								<span className="heading-bold" style={{ fontWeight: 800 }}>LOAN TAKEOVER &amp;</span><br />
+								<span className="heading-normal" style={{ fontWeight: 400 }}>REFINANCING</span>
 							</h2>
 
 							<p style={{
@@ -182,15 +182,15 @@ export default function Section7b() {
 									display: 'inline-flex',
 									alignItems: 'center',
 									gap: '10px',
-									backgroundColor: '#0366a2',
-									color: '#ffffff',
+									backgroundColor: '#59bdfc',
+									color: '#0f172a',
 									fontWeight: 700,
 									fontSize: '15px',
 									padding: '14px 34px',
 									borderRadius: '4px',
 									textDecoration: 'none',
 									transition: 'all 0.25s ease',
-									boxShadow: '0 4px 14px rgba(3, 102, 162, 0.25)'
+									boxShadow: '0 4px 14px rgba(89, 189, 252, 0.25)'
 								}}
 								className="ksfe-hover-btn"
 							>

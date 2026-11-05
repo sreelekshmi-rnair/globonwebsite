@@ -88,7 +88,7 @@ export default function InquiryForm({
             fontSize: '14px',
             lineHeight: '1.5',
             backgroundColor: status.success ? '#eff6ff' : '#fee2e2',
-            color: status.success ? '#0366a2' : '#b91c1c',
+            color: status.success ? '#0369a1' : '#b91c1c',
             border: `1px solid ${status.success ? '#bfdbfe' : '#fecaca'}`,
           }}
         >
@@ -238,8 +238,8 @@ export default function InquiryForm({
           style={{
             width: '100%',
             padding: '14px',
-            backgroundColor: '#0284c7',
-            color: '#fff',
+            backgroundColor: '#59bdfc',
+            color: '#0f172a',
             border: 'none',
             borderRadius: '8px',
             fontSize: '15px',

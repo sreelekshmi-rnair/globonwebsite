@@ -8,7 +8,7 @@ export default function KsfeSignatureSchemes() {
 
 	const categories = [
 		{ id: "all", label: "All Solutions" },
-		{ id: "loans", label: "Loans & Advances" },
+		{ id: "loans", label: "Loans" },
 		{ id: "subsidies", label: "Govt Subsidies (PMEGP)" },
 		{ id: "reports", label: "Project Reports & CMA" },
 		{ id: "compliance", label: "Registrations & Tax" },

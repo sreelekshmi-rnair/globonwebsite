@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 export default function Section9() {
-	const [selectedScheme, setSelectedScheme] = useState('Loans & Advances')
+	const [selectedScheme, setSelectedScheme] = useState('Loans')
 	const [formData, setFormData] = useState({
 		fullName: '',
 		phoneNumber: '',
@@ -33,14 +33,14 @@ export default function Section9() {
 	const schemes = [
 		{
 			id: 'loans',
-			name: 'Loans & Advances',
+			name: 'Loans',
 			icon: (
 				<svg width="42" height="42" viewBox="0 0 44 44" fill="none">
-					{/* Blue Calendar / Pouch */}
-					<rect x="4" y="8" width="30" height="28" rx="6" fill="#0366a2" />
+					{/* Blue Calendar / Pouch with Rupee Coin */}
+					<rect x="4" y="8" width="30" height="28" rx="6" fill="#59bdfc" />
 					<rect x="10" y="4" width="4" height="7" rx="2" fill="#025283" />
 					<rect x="24" y="4" width="4" height="7" rx="2" fill="#025283" />
-					<rect x="4" y="14" width="30" height="4" fill="#0284c7" />
+					<rect x="4" y="14" width="30" height="4" fill="#59bdfc" />
 					<path d="M 12 24 L 17 29 L 26 19" fill="none" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
 					<circle cx="32" cy="30" r="9" fill="#f59e0b" stroke="#ffffff" strokeWidth="2" />
 					<circle cx="32" cy="30" r="6.5" fill="#fbbf24" />
@@ -49,42 +49,81 @@ export default function Section9() {
 			)
 		},
 		{
-			id: 'personal',
-			name: 'Personal Loan',
-			icon: (
-				<svg width="42" height="42" viewBox="0 0 44 44" fill="none">
-					<path d="M 12 16 C 8 16 4 22 4 30 C 4 38 10 40 22 40 C 34 40 40 38 40 30 C 40 22 36 16 32 16 Z" fill="#0366a2" />
-					<path d="M 15 16 C 14 10 18 6 22 6 C 26 6 30 10 29 16 Z" fill="#38bdf8" />
-					<rect x="14" y="14" width="16" height="4" rx="2" fill="#025283" />
-					<circle cx="16" cy="34" r="8" fill="#f59e0b" stroke="#ffffff" strokeWidth="1.5" />
-					<circle cx="16" cy="34" r="5.5" fill="#fbbf24" />
-					<circle cx="28" cy="34" r="8" fill="#eab308" stroke="#ffffff" strokeWidth="1.5" />
-					<circle cx="28" cy="34" r="5.5" fill="#fde047" />
-				</svg>
-			)
-		},
-		{
-			id: 'gold',
-			name: 'Gold Loan',
-			icon: (
-				<svg width="42" height="42" viewBox="0 0 44 44" fill="none">
-					<circle cx="18" cy="22" r="13" fill="#f59e0b" />
-					<circle cx="18" cy="22" r="10.5" fill="#fbbf24" />
-					<text x="18" y="26.5" fontSize="13" fontWeight="bold" textAnchor="middle" fill="#78350f">₹</text>
-					<polygon points="20,26 28,21 42,21 34,26" fill="#fde047" stroke="#b45309" strokeWidth="1" />
-					<polygon points="20,26 34,26 34,34 20,34" fill="#eab308" stroke="#b45309" strokeWidth="1" />
-					<polygon points="34,26 42,21 42,29 34,34" fill="#ca8a04" stroke="#b45309" strokeWidth="1" />
-				</svg>
-			)
-		},
-		{
 			id: 'business',
-			name: 'Business & Compliance',
+			name: 'Business Services',
 			icon: (
 				<svg width="42" height="42" viewBox="0 0 44 44" fill="none">
-					<path d="M 22 4 L 38 10 C 38 25 30 35 22 40 C 14 35 6 25 6 10 Z" fill="#0366a2" />
-					<path d="M 22 7 L 35 12 C 35 23 28 32 22 36 C 16 32 9 23 9 12 Z" fill="#0284c7" />
+					{/* Shield with checkmark & star */}
+					<path d="M 22 4 L 38 10 C 38 25 30 35 22 40 C 14 35 6 25 6 10 Z" fill="#59bdfc" />
+					<path d="M 22 7 L 35 12 C 35 23 28 32 22 36 C 16 32 9 23 9 12 Z" fill="#59bdfc" />
 					<path d="M 15 21 L 20 26 L 29 16" fill="none" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+					<circle cx="33" cy="31" r="7" fill="#f59e0b" stroke="#ffffff" strokeWidth="1.5" />
+					<text x="33" y="34" fontSize="7" fontWeight="bold" textAnchor="middle" fill="#78350f">✓</text>
+				</svg>
+			)
+		},
+		{
+			id: 'study-abroad',
+			name: 'Study Abroad',
+			icon: (
+				<svg width="42" height="42" viewBox="0 0 44 44" fill="none">
+					{/* Graduation Mortarboard & Globe */}
+					<circle cx="22" cy="24" r="14" fill="#59bdfc" />
+					<ellipse cx="22" cy="24" rx="7" ry="14" fill="none" stroke="#ffffff" strokeWidth="1.2" />
+					<line x1="8" y1="24" x2="36" y2="24" stroke="#ffffff" strokeWidth="1.2" />
+					<polygon points="22,6 39,13 22,20 5,13" fill="#59bdfc" stroke="#025283" strokeWidth="1.5" />
+					<path d="M 12 17 L 12 24 C 12 28 32 28 32 24 L 32 17" fill="#025283" />
+					<line x1="22" y1="13" x2="38" y2="19" stroke="#f59e0b" strokeWidth="1.5" />
+					<circle cx="38" cy="20" r="2.5" fill="#f59e0b" />
+				</svg>
+			)
+		},
+		{
+			id: 'insurance',
+			name: 'Insurance',
+			icon: (
+				<svg width="42" height="42" viewBox="0 0 44 44" fill="none">
+					{/* Protective Umbrella / Health Shield */}
+					<path d="M 6 22 C 6 12 13 6 22 6 C 31 6 38 12 38 22 Z" fill="#59bdfc" />
+					<path d="M 6 22 C 10 20 14 20 18 22 C 22 20 26 20 30 22 C 34 20 38 20 38 22" fill="#59bdfc" />
+					<line x1="22" y1="6" x2="22" y2="34" stroke="#025283" strokeWidth="2.5" strokeLinecap="round" />
+					<path d="M 22 34 C 22 38 18 38 18 35" fill="none" stroke="#025283" strokeWidth="2.5" strokeLinecap="round" />
+					<circle cx="32" cy="28" r="8" fill="#f59e0b" stroke="#ffffff" strokeWidth="1.5" />
+					<rect x="30" y="23" width="4" height="10" rx="1" fill="#ffffff" />
+					<rect x="27" y="26" width="10" height="4" rx="1" fill="#ffffff" />
+				</svg>
+			)
+		},
+		{
+			id: 'real-estate',
+			name: 'Real Estate',
+			icon: (
+				<svg width="42" height="42" viewBox="0 0 44 44" fill="none">
+					{/* Modern Property / LAP with Key */}
+					<polygon points="22,5 39,18 5,18" fill="#59bdfc" />
+					<rect x="9" y="18" width="26" height="20" rx="3" fill="#59bdfc" />
+					<rect x="18" y="25" width="8" height="13" rx="2" fill="#59bdfc" />
+					<rect x="12" y="21" width="5" height="5" rx="1" fill="#ffffff" />
+					<rect x="27" y="21" width="5" height="5" rx="1" fill="#ffffff" />
+					<circle cx="34" cy="30" r="7.5" fill="#f59e0b" stroke="#ffffff" strokeWidth="1.5" />
+					<circle cx="32" cy="30" r="2.5" fill="#78350f" />
+					<rect x="34" y="29" width="4" height="2" fill="#78350f" />
+				</svg>
+			)
+		},
+		{
+			id: 'digital-services',
+			name: 'Digital Services',
+			icon: (
+				<svg width="42" height="42" viewBox="0 0 44 44" fill="none">
+					{/* Modern Laptop with Code & Growth Spark */}
+					<rect x="7" y="10" width="30" height="20" rx="3" fill="#59bdfc" />
+					<rect x="9" y="12" width="26" height="16" rx="2" fill="#0f172a" />
+					<path d="M 16 17 L 13 20 L 16 23" fill="none" stroke="#59bdfc" strokeWidth="1.8" strokeLinecap="round" />
+					<path d="M 20 17 L 23 20 L 20 23" fill="none" stroke="#59bdfc" strokeWidth="1.8" strokeLinecap="round" />
+					<path d="M 4 30 L 40 30 L 37 34 L 7 34 Z" fill="#94a3b8" />
+					<circle cx="34" cy="12" r="6.5" fill="#f59e0b" stroke="#ffffff" strokeWidth="1.5" />
+					<polygon points="34,7 35.5,10.5 39,12 35.5,13.5 34,17 32.5,13.5 29,12 32.5,10.5" fill="#ffffff" />
 				</svg>
 			)
 		}
@@ -92,6 +131,7 @@ export default function Section9() {
 
 	const handleSchemeSelect = (schemeName) => {
 		setSelectedScheme(schemeName)
+		setFormData((prev) => ({ ...prev, serviceNeeded: schemeName }))
 	}
 
 	const handleChange = (e) => {
@@ -122,7 +162,7 @@ export default function Section9() {
 						alignItems: 'center',
 						height: '48px',
 						boxSizing: 'border-box',
-						borderBottom: isOpen ? '1.5px solid #0366a2' : '1.5px solid #e2e8f0',
+						borderBottom: isOpen ? '1.5px solid #59bdfc' : '1.5px solid #e2e8f0',
 						cursor: 'pointer',
 						userSelect: 'none',
 						padding: '10px 0',
@@ -253,7 +293,7 @@ export default function Section9() {
 					businessAge: formData.businessAge,
 					monthlyRevenue: formData.monthlyRevenue,
 					serviceNeeded: formData.serviceNeeded,
-					type: 'Call Back Request - ' + (formData.serviceNeeded || selectedScheme || 'Loans & Advances')
+					type: 'Call Back Request - ' + (formData.serviceNeeded || selectedScheme || 'Loans')
 				})
 			})
 
@@ -299,12 +339,12 @@ export default function Section9() {
 							<h2 className="ksfe-help-title" style={{
 								fontFamily: "'Public Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif",
 								fontSize: 'clamp(40px, 4.2vw, 52px)',
-								color: '#000000',
+								color: '#0369a1',
 								letterSpacing: '0.3px',
 								lineHeight: 1.2
 							}}>
-								<span style={{ fontWeight: 800 }}>WE ARE HAPPY TO</span><br />
-								<span style={{ fontWeight: 400 }}>HELP YOU</span>
+								<span className="heading-bold" style={{ fontWeight: 800 }}>WE ARE HAPPY TO</span><br />
+								<span className="heading-normal" style={{ fontWeight: 400 }}>HELP YOU</span>
 							</h2>
 
 							<p className="ksfe-help-subtitle">
@@ -336,7 +376,7 @@ export default function Section9() {
 
 							{/* Explore All Button */}
 							<div style={{ marginTop: '28px' }}>
-								<Link href="/our-service" className="ksfe-explore-outline-btn">
+								<Link href="/services" className="ksfe-explore-outline-btn">
 									<span>Explore All</span>
 									<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
 										<line x1="7" y1="17" x2="17" y2="7"></line>
@@ -472,9 +512,12 @@ export default function Section9() {
 										{/* Service Needed */}
 										<div>
 											{renderDropdown('serviceNeeded', 'serviceNeeded', 'Service Needed', [
-												'Loans and advances',
-												'Consulting',
-												'ERP/CRM Automation',
+												'Loans',
+												'Business Services',
+												'Study Abroad',
+												'Insurance',
+												'Real Estate',
+												'Digital Services',
 												'Other'
 											], true)}
 										</div>

@@ -65,7 +65,7 @@ export default async function BlogListingPage() {
                       <span
                         style={{
                           background: "#e0f2fe",
-                          color: "#0284c7",
+                          color: "#0369a1",
                           fontSize: "12px",
                           fontWeight: "700",
                           padding: "4px 10px",
@@ -109,7 +109,7 @@ export default async function BlogListingPage() {
                     <Link
                       href={`/blog/${post.slug}`}
                       style={{
-                        color: "#0284c7",
+                        color: "#0369a1",
                         fontWeight: "700",
                         fontSize: "13px",
                         textDecoration: "none",

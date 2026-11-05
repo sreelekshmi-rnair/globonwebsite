@@ -47,6 +47,9 @@ export default function useScrollFade() {
 					el.closest('.globon-ksfe-hero-wrapper') ||
 					el.closest('.nri-stack-container') ||
 					el.classList.contains('nri-rollover-card') ||
+					el.closest('.globon-ksfe-stat-section') ||
+					el.closest('.ksfe-cards-stack-wrapper') ||
+					el.closest('#govt-schemes') ||
 					el.closest('.dropdown-menu-list') ||
 					el.classList.contains('globon-ksfe-slide-bg') ||
 					el.id === 'mobile-logo_header' ||

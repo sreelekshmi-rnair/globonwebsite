@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { getServiceBySlug, getCategoryBySlug, findServiceAcrossAll } from "@/lib/servicesStore";
 import UniversalServiceDetailView from "@/components/pages/services/UniversalServiceDetailView";
 
@@ -31,6 +31,9 @@ export default function SingleServiceDetailPage({ params }) {
   }
 
   if (!service) {
+    // A category nested under another one in the menu
+    const nestedCategory = getCategoryBySlug(params.service);
+    if (nestedCategory) redirect(`/services/${nestedCategory.slug}`);
     notFound();
   }
 

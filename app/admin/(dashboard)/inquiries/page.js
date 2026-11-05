@@ -143,7 +143,7 @@ export default function AdminInquiriesPage() {
   return (
     <div>
       {/* Header bar */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px', flexWrap: 'wrap', gap: '16px' }}>
+      <div className="admin-page-header-row">
         <div className="admin-page-header" style={{ marginBottom: 0 }}>
           <h1 className="admin-page-title">
             Consultation Requests &amp; Leads
@@ -196,7 +196,7 @@ export default function AdminInquiriesPage() {
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px', fontSize: '12.5px', color: '#64748b' }}>
               <span>Showing <strong>{filteredInquiries.length}</strong> consultation submissions</span>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', background: '#ffffff', padding: '4px 10px', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '11.5px', color: '#005b94', fontWeight: '600' }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', background: '#ffffff', padding: '4px 10px', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '11.5px', color: '#0369a1', fontWeight: '600' }}>
                 ↔️ Scroll right to view all columns & actions
               </span>
             </div>
@@ -241,7 +241,7 @@ export default function AdminInquiriesPage() {
                         <td>
                           <a
                             href={`tel:${phone}`}
-                            style={{ color: '#005b94', textDecoration: 'none', fontWeight: '500', whiteSpace: 'nowrap' }}
+                            style={{ color: '#0369a1', textDecoration: 'none', fontWeight: '500', whiteSpace: 'nowrap' }}
                           >
                             {phone}
                           </a>
@@ -358,12 +358,7 @@ export default function AdminInquiriesPage() {
 
             <div className="admin-modal-body">
               {/* Form Data Grid matching consultation form */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '14px',
-                marginBottom: '10px'
-              }}>
+              <div className="admin-grid-2col" style={{ gap: '12px', marginBottom: '10px' }}>
                 <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
                   <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', textTransform: 'uppercase' }}>Full Name</div>
                   <div style={{ fontSize: '14.5px', fontWeight: '500', color: '#0f172a', marginTop: '3px' }}>
@@ -375,7 +370,7 @@ export default function AdminInquiriesPage() {
                   <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', textTransform: 'uppercase' }}>Email Address</div>
                   <div style={{ fontSize: '14px', fontWeight: '500', color: '#0f172a', marginTop: '3px' }}>
                     {selectedInquiry.email ? (
-                      <a href={`mailto:${selectedInquiry.email}`} style={{ color: '#005b94', textDecoration: 'none' }}>
+                      <a href={`mailto:${selectedInquiry.email}`} style={{ color: '#0369a1', textDecoration: 'none' }}>
                         {selectedInquiry.email}
                       </a>
                     ) : '—'}
@@ -384,9 +379,9 @@ export default function AdminInquiriesPage() {
 
                 <div style={{ background: '#f8fafc', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
                   <div style={{ fontSize: '11px', color: '#64748b', fontWeight: '500', textTransform: 'uppercase' }}>Phone Number</div>
-                  <div style={{ fontSize: '14.5px', fontWeight: '500', color: '#005b94', marginTop: '3px' }}>
+                  <div style={{ fontSize: '14.5px', fontWeight: '500', color: '#0369a1', marginTop: '3px' }}>
                     {selectedInquiry.phoneNumber || selectedInquiry.phone ? (
-                      <a href={`tel:${selectedInquiry.phoneNumber || selectedInquiry.phone}`} style={{ color: '#005b94', textDecoration: 'none' }}>
+                      <a href={`tel:${selectedInquiry.phoneNumber || selectedInquiry.phone}`} style={{ color: '#0369a1', textDecoration: 'none' }}>
                         {selectedInquiry.phoneNumber || selectedInquiry.phone}
                       </a>
                     ) : '—'}

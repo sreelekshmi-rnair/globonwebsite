@@ -34,7 +34,7 @@ export async function PUT(request, { params }) {
     return NextResponse.json(updated);
   } catch (error) {
     console.error('Update service error:', error);
-    return NextResponse.json({ error: error.message || 'Failed to update service' }, { status: 500 });
+    return NextResponse.json({ error: error.message || 'Failed to update service' }, { status: error.status || 500 });
   }
 }
 

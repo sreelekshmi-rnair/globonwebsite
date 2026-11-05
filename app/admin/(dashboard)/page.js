@@ -39,7 +39,7 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* Metric Cards Grid */}
-      <div className="admin-stat-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
+      <div className="admin-stat-grid">
         {/* Card 1: Services */}
         <div className="admin-stat-card-dark">
           <div>
@@ -75,7 +75,7 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* Quick Action Shortcuts */}
-      <div style={{ display: 'flex', gap: '12px', marginBottom: '28px', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '24px', flexWrap: 'wrap' }}>
         <Link href="/admin/services" className="admin-btn admin-btn-primary">
           + Add New Service
         </Link>
@@ -88,8 +88,8 @@ export default function AdminDashboardPage() {
       </div>
 
       {/* Recent Consultation Leads Table */}
-      <div className="admin-card" style={{ marginBottom: '28px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+      <div className="admin-card" style={{ marginBottom: '24px' }}>
+        <div className="admin-page-header-row" style={{ marginBottom: '16px' }}>
           <div>
             <h3 style={{ fontSize: '17px', fontWeight: '500', margin: '0 0 4px', color: '#0f172a' }}>
               Recent Consultation Leads (Home Page Form)
@@ -98,7 +98,7 @@ export default function AdminDashboardPage() {
               Submissions received from the homepage advisory consultation form
             </span>
           </div>
-          <Link href="/admin/inquiries" className="admin-btn admin-btn-outline admin-btn-sm">
+          <Link href="/admin/inquiries" className="admin-btn admin-btn-outline admin-btn-sm" style={{ whiteSpace: 'nowrap' }}>
             View All Leads &rarr;
           </Link>
         </div>
@@ -136,7 +136,7 @@ export default function AdminDashboardPage() {
                       <td style={{ fontWeight: '500', color: '#0f172a' }}>{fullName}</td>
                       <td style={{ fontSize: '13px', color: '#475569' }}>{inq.email || '—'}</td>
                       <td>
-                        <a href={`tel:${phone}`} style={{ fontSize: '13px', fontWeight: '500', color: '#005b94', textDecoration: 'none' }}>
+                        <a href={`tel:${phone}`} style={{ fontSize: '13px', fontWeight: '500', color: '#0369a1', textDecoration: 'none' }}>
                           {phone}
                         </a>
                       </td>
@@ -183,7 +183,7 @@ export default function AdminDashboardPage() {
 
       {/* Recent Contact Form Messages Table */}
       <div className="admin-card">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+        <div className="admin-page-header-row" style={{ marginBottom: '16px' }}>
           <div>
             <h3 style={{ fontSize: '17px', fontWeight: '500', margin: '0 0 4px', color: '#0f172a' }}>
               Recent Contact Form Messages
@@ -192,7 +192,7 @@ export default function AdminDashboardPage() {
               Direct messages and questions received from the Contact Us page
             </span>
           </div>
-          <Link href="/admin/contacts" className="admin-btn admin-btn-outline admin-btn-sm" style={{ borderColor: '#059669', color: '#059669' }}>
+          <Link href="/admin/contacts" className="admin-btn admin-btn-outline admin-btn-sm" style={{ borderColor: '#059669', color: '#059669', whiteSpace: 'nowrap' }}>
             View All Contact Messages &rarr;
           </Link>
         </div>
@@ -223,7 +223,7 @@ export default function AdminDashboardPage() {
                   <tr key={c.id}>
                     <td style={{ fontWeight: '500', color: '#0f172a' }}>{c.name || c.fullName || '—'}</td>
                     <td>
-                      <a href={`tel:${c.phoneNumber}`} style={{ fontSize: '13px', fontWeight: '500', color: '#005b94', textDecoration: 'none' }}>
+                      <a href={`tel:${c.phoneNumber}`} style={{ fontSize: '13px', fontWeight: '500', color: '#0369a1', textDecoration: 'none' }}>
                         {c.phoneNumber}
                       </a>
                     </td>

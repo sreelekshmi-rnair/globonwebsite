@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getCategoryBySlug, findServiceAcrossAll, getAllCategories } from "@/lib/servicesStore";
 import UniversalServiceDetailView from "@/components/pages/services/UniversalServiceDetailView";
+import SubServiceLinks from "@/components/pages/services/SubServiceLinks";
 import LoansAdvancesCategoryView from "@/components/pages/services/LoansAdvancesCategoryView";
 import BusinessFinancialCategoryView from "@/components/pages/services/BusinessFinancialCategoryView";
 import BusinessRegistrationCategoryView from "@/components/pages/services/BusinessRegistrationCategoryView";
@@ -51,8 +52,8 @@ export default function CategoryPage({ params }) {
     return renderServiceView(service, parentCat);
   }
 
-  // Dedicated Rich Custom View for Loans & Advances
-  if (category.slug === "loans-advances") {
+  // Dedicated Rich Custom View for Loans
+  if (category.slug === "loans" || category.slug === "loans-advances") {
     return (
       <Layout mainCls="padding-0">
         <LoansAdvancesCategoryView category={category} />
@@ -60,8 +61,14 @@ export default function CategoryPage({ params }) {
     );
   }
 
-  // Dedicated Rich Custom View for Business & Financial Solutions
-  if (category.slug === "business-financial-solutions") {
+  // Dedicated Rich Custom View for Business Services
+  if (
+    category.slug === "business-services" ||
+    category.slug === "business-financial-solutions" ||
+    category.slug === "business-registration-compliance" ||
+    category.slug === "business-planning-consultancy" ||
+    category.slug === "business-technology-solutions"
+  ) {
     return (
       <Layout mainCls="padding-0">
         <BusinessFinancialCategoryView category={category} />
@@ -69,35 +76,12 @@ export default function CategoryPage({ params }) {
     );
   }
 
-  // Dedicated Rich Custom View for Business Registration & Compliance
-  if (category.slug === "business-registration-compliance") {
-    return (
-      <Layout mainCls="padding-0">
-        <BusinessRegistrationCategoryView category={category} />
-      </Layout>
-    );
-  }
-
-  // Dedicated Rich Custom View for Business Planning & Consultancy
-  if (category.slug === "business-planning-consultancy") {
-    return (
-      <Layout mainCls="padding-0">
-        <BusinessPlanningCategoryView category={category} />
-      </Layout>
-    );
-  }
-
-  // Dedicated Rich Custom View for Business Technology Solutions
-  if (category.slug === "business-technology-solutions") {
-    return (
-      <Layout mainCls="padding-0">
-        <BusinessTechnologyCategoryView category={category} />
-      </Layout>
-    );
-  }
-
-  // Dedicated Rich Custom View for Life & Health Insurance
-  if (category.slug === "life-health-insurance") {
+  // Dedicated Rich Custom View for Insurance
+  if (
+    category.slug === "insurance" ||
+    category.slug === "life-health-insurance" ||
+    category.slug === "travel-group-insurance"
+  ) {
     return (
       <Layout mainCls="padding-0">
         <LifeHealthCategoryView category={category} />
@@ -105,17 +89,8 @@ export default function CategoryPage({ params }) {
     );
   }
 
-  // Dedicated Rich Custom View for Travel & Group Insurance
-  if (category.slug === "travel-group-insurance") {
-    return (
-      <Layout mainCls="padding-0">
-        <TravelGroupCategoryView category={category} />
-      </Layout>
-    );
-  }
-
-  // Dedicated Rich Custom View for Real Estate Services
-  if (category.slug === "real-estate-services") {
+  // Dedicated Rich Custom View for Real Estate
+  if (category.slug === "real-estate" || category.slug === "real-estate-services") {
     return (
       <Layout mainCls="padding-0">
         <RealEstateCategoryView category={category} />
@@ -123,8 +98,8 @@ export default function CategoryPage({ params }) {
     );
   }
 
-  // Dedicated Rich Custom View for Digital & Marketing Services
-  if (category.slug === "digital-marketing-services") {
+  // Dedicated Rich Custom View for Digital Services
+  if (category.slug === "digital-services" || category.slug === "digital-marketing-services") {
     return (
       <Layout mainCls="padding-0">
         <DigitalMarketingCategoryView category={category} />
@@ -163,7 +138,7 @@ export default function CategoryPage({ params }) {
                     padding: "5px 14px",
                     borderRadius: "20px",
                     backgroundColor: "rgba(245, 158, 11, 0.2)",
-                    color: "#fbbf24",
+                    color: "#0f172a",
                     border: "1px solid rgba(245, 158, 11, 0.45)",
                     marginBottom: "14px",
                   }}
@@ -174,7 +149,7 @@ export default function CategoryPage({ params }) {
                 <p className="banner-subtitle">{category.subtitle || category.description}</p>
               </div>
 
-              <div className="banner-visual">
+              <div className="banner-visual" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Image
                   src={category.image}
                   alt={category.imageAlt}
@@ -255,7 +230,7 @@ export default function CategoryPage({ params }) {
                           style={{
                             fontSize: "12px",
                             fontWeight: "800",
-                            color: "#0366a2",
+                            color: "#0369a1",
                             background: "#e0f2fe",
                             padding: "4px 10px",
                             borderRadius: "6px",
@@ -279,7 +254,7 @@ export default function CategoryPage({ params }) {
                         }}
                       >
                         <Link
-                          href={`/services/${category.slug}/${service.slug}`}
+                          href={service.href}
                           style={{ color: "inherit", textDecoration: "none" }}
                         >
                           {service.title}
@@ -296,6 +271,8 @@ export default function CategoryPage({ params }) {
                       >
                         {service.shortDesc}
                       </p>
+
+                      <SubServiceLinks items={service.subServices} />
 
                       {service.highlights && service.highlights.length > 0 && (
                         <ul
@@ -327,7 +304,7 @@ export default function CategoryPage({ params }) {
 
                     <div style={{ paddingTop: "16px", borderTop: "1px solid #f1f5f9" }}>
                       <Link
-                        href={`/services/${category.slug}/${service.slug}`}
+                        href={service.href}
                         style={{
                           display: "inline-flex",
                           alignItems: "center",
@@ -361,13 +338,13 @@ export default function CategoryPage({ params }) {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "8px",
-                  color: "#0366a2",
+                  color: "#0369a1",
                   fontWeight: "700",
                   fontSize: "16px",
                   textDecoration: "none",
                 }}
               >
-                &larr; Back to All {categories.length} Categories
+                &larr; Back to All Services
               </Link>
             </div>
           </div>

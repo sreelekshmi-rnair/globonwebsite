@@ -72,7 +72,7 @@ export default function KsfeKeralaPresence() {
 							{/* Metric 3: Customers style */}
 							<div className="presence-metric-row">
 								<div className="metric-info">
-									<div className="metric-number">15,000+</div>
+									<div className="metric-number">999+</div>
 									<div className="metric-label">Customers</div>
 								</div>
 								<div className="metric-icon-circle" aria-hidden="true">

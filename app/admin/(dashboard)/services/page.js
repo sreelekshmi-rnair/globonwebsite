@@ -5,15 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const CATEGORY_OPTIONS = [
-  { slug: 'loans-advances', title: 'Loans & Advances', icon: '🏦' },
-  { slug: 'business-financial-solutions', title: 'Business & Financial Solutions', icon: '💼' },
-  { slug: 'business-registration-compliance', title: 'Business Registration & Compliance', icon: '🏛️' },
-  { slug: 'business-planning-consultancy', title: 'Business Planning & Consultancy', icon: '📊' },
-  { slug: 'business-technology-solutions', title: 'Business Technology Solutions', icon: '💻' },
-  { slug: 'life-health-insurance', title: 'Life & Health Insurance', icon: '🛡️' },
-  { slug: 'travel-group-insurance', title: 'Travel & Group Insurance', icon: '✈️' },
-  { slug: 'real-estate-services', title: 'Real Estate Services', icon: '🏡' },
-  { slug: 'digital-marketing-services', title: 'Digital & Marketing Services', icon: '🚀' },
+  { slug: 'loans', title: 'Loans', icon: '🏦' },
+  { slug: 'business-services', title: 'Business Services', icon: '💼' },
+  { slug: 'study-abroad', title: 'Study Abroad', icon: '🎓' },
+  { slug: 'insurance', title: 'Insurance', icon: '🛡️' },
+  { slug: 'real-estate', title: 'Real Estate', icon: '🏡' },
+  { slug: 'digital-services', title: 'Digital Services', icon: '🚀' },
 ];
 
 function slugify(text) {
@@ -31,7 +28,7 @@ export default function AdminServicesPage() {
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [searchQuery, setSearchQuery] = useState('');
-  const [viewMode, setViewMode] = useState('grid');
+  const [viewMode, setViewMode] = useState('menu');
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 12;
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -95,8 +92,7 @@ export default function AdminServicesPage() {
 
   // Unified Single-Form State - Clean and only saving user-provided fields
   const initialForm = {
-    category: 'loans-advances',
-    customCategory: '',
+    category: 'general',
     title: '',
     slug: '',
     subtitle: '',
@@ -118,6 +114,8 @@ export default function AdminServicesPage() {
   };
 
   const [form, setForm] = useState(initialForm);
+  const [menuTree, setMenuTree] = useState([]);
+  const [copiedLink, setCopiedLink] = useState('');
 
   const fetchServices = async () => {
     try {
@@ -126,6 +124,11 @@ export default function AdminServicesPage() {
       if (res.ok) {
         const data = await res.json();
         setServices(data.services || []);
+      }
+      const menuRes = await fetch('/api/admin/menu');
+      if (menuRes.ok) {
+        const menuData = await menuRes.json();
+        setMenuTree(menuData.menu || []);
       }
     } catch (err) {
       console.error(err);
@@ -140,7 +143,8 @@ export default function AdminServicesPage() {
 
   // Automatically dismiss message after 4 seconds
   useEffect(() => {
-    if (!message.text) return;
+    // Errors and links to copy stay until dismissed
+    if (!message.text || message.type === 'error' || message.liveLink) return;
     const timer = setTimeout(() => {
       setMessage({ text: '', type: '', liveLink: '', categoryLink: '' });
     }, 4000);
@@ -158,19 +162,29 @@ export default function AdminServicesPage() {
     return () => document.removeEventListener('click', handleOutsideClick);
   }, []);
 
-  const openCreateModal = () => {
+  // Add details for a menu item that has no service yet
+  const openCreateForMenuItem = (item) => {
     setEditingService(null);
-    const defaultCat = selectedCategory !== 'ALL' ? selectedCategory : 'loans-advances';
     setForm({
       ...initialForm,
-      category: defaultCat,
+      category: item.categorySlug || 'general',
+      title: item.isCategory ? '' : item.node.title,
+      slug: item.isCategory ? '' : item.slug,
+    });
+    setIsModalOpen(true);
+  };
+
+  const openCreateModal = () => {
+    setEditingService(null);
+    setForm({
+      ...initialForm,
+      category: selectedMenuItem?.categorySlug || 'general',
     });
     setIsModalOpen(true);
   };
 
   const openEditModal = (service) => {
     setEditingService(service);
-    const isStandardCat = CATEGORY_OPTIONS.some((c) => c.slug === service.category);
 
     const overviewBulletsArr = Array.isArray(service.overviewBullets) && service.overviewBullets.length > 0
       ? service.overviewBullets
@@ -204,8 +218,7 @@ export default function AdminServicesPage() {
       : [];
 
     setForm({
-      category: isStandardCat ? service.category : 'custom',
-      customCategory: isStandardCat ? '' : (service.categoryTitle || service.category || ''),
+      category: service.category || 'general',
       title: service.title || '',
       slug: service.slug || '',
       subtitle: service.subtitle || service.tagline || '',
@@ -231,6 +244,7 @@ export default function AdminServicesPage() {
   const closeModal = () => {
     setIsModalOpen(false);
     setEditingService(null);
+    setMessage((prev) => (prev.type === 'error' ? { text: '', type: '', liveLink: '', categoryLink: '' } : prev));
   };
 
   const handleDocGroupChange = (index, field, value) => {
@@ -322,11 +336,10 @@ export default function AdminServicesPage() {
     setMessage({ text: '', type: '', liveLink: '', categoryLink: '' });
 
     try {
-      const finalCategory = form.category === 'custom' ? slugify(form.customCategory) : form.category;
       if (!form.title.trim()) throw new Error('Service Title is required');
-      if (!finalCategory) throw new Error('Category selection is required');
 
       const finalSlug = form.slug.trim() || slugify(form.title);
+      if (!finalSlug) throw new Error('Please use letters or numbers in the title or URL slug.');
 
       // Parse overview bullets - ONLY what user typed
       const parsedOverviewBullets = (form.overviewBulletsText || '')
@@ -367,7 +380,7 @@ export default function AdminServicesPage() {
           bg: idx % 3 === 0 ? '#eff6ff' : idx % 3 === 1 ? '#f0fdf4' : '#fffbeb',
           border: idx % 3 === 0 ? '#bfdbfe' : idx % 3 === 1 ? '#bbf7d0' : '#fde68a',
           iconBg: idx % 3 === 0 ? '#dbeafe' : idx % 3 === 1 ? '#dcfce7' : '#fef3c7',
-          accent: idx % 3 === 0 ? '#0366a2' : idx % 3 === 1 ? '#16a34a' : '#d97706',
+          accent: idx % 3 === 0 ? '#59bdfc' : idx % 3 === 1 ? '#16a34a' : '#d97706',
         }))
         .filter((o) => o.title || o.desc);
 
@@ -378,7 +391,8 @@ export default function AdminServicesPage() {
         originalSlug: editingService ? String(editingService.slug || '') : undefined,
         title: form.title.trim(),
         slug: finalSlug,
-        category: finalCategory,
+        category: form.category,
+        categoryTitle: form.category === 'general' ? 'Services' : undefined,
         subtitle: form.subtitle.trim(),
         shortDesc: form.shortDesc.trim(),
         heroImage: form.heroImage.trim(),
@@ -407,17 +421,18 @@ export default function AdminServicesPage() {
         body: JSON.stringify(payload),
       });
 
-      const data = await res.json();
+      if (res.status === 401) {
+        throw new Error('Your login has expired. Log in again in another tab, then come back and save.');
+      }
+
+      const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || 'Failed to save service');
 
-      const liveServiceUrl = `/services/${finalCategory}/${finalSlug}`;
-      const categoryUrl = `/services/${finalCategory}`;
-
       setMessage({
-        text: `Service "${payload.title}" successfully ${editingService ? 'updated' : 'published'}! It is now live in that category.`,
+        text: `Service "${payload.title}" successfully ${editingService ? 'updated' : 'published'}.`,
         type: 'success',
-        liveLink: liveServiceUrl,
-        categoryLink: categoryUrl,
+        liveLink: serviceLink({ slug: data.slug, category: data.category }),
+        categoryLink: '',
       });
 
       closeModal();
@@ -462,9 +477,79 @@ export default function AdminServicesPage() {
     }
   };
 
+  // Flat list of the menu in order, with what each item links to
+  const flattenMenu = (nodes, level = 1, parentCategory = '', trail = [], parentId = '') =>
+    nodes.flatMap((node) => {
+      const segments = (node.url || '').split('/').filter(Boolean);
+      const slug = segments[segments.length - 1] || node.id;
+      const isCategory = segments[0] === 'services' && segments.length === 2 && CATEGORY_OPTIONS.some((c) => c.slug === slug);
+      const service = isCategory ? null : services.find((s) => s.slug === slug);
+      const ownCategory = isCategory ? slug : '';
+      const urlCategory = CATEGORY_OPTIONS.some((c) => c.slug === segments[1]) ? segments[1] : '';
+      const categorySlug = ownCategory || parentCategory || service?.category || urlCategory;
+      const item = { node, level, slug, isCategory, service, categorySlug, trail, parentId };
+      return [item, ...flattenMenu(node.children || [], level + 1, ownCategory || parentCategory, [...trail, node.title], node.id)];
+    });
+
+  const menuItems = flattenMenu(menuTree);
+  const selectedMenuItem = menuItems.find((item) => item.node.id === selectedCategory) || null;
+  const branchItems = selectedMenuItem ? flattenMenu([selectedMenuItem.node], selectedMenuItem.level) : menuItems;
+  const branchSlugs = new Set(branchItems.map((item) => item.slug));
+  const branchCategories = new Set(branchItems.filter((item) => item.isCategory).map((item) => item.slug));
+  const unplacedServices = services.filter((s) => !menuItems.some((item) => item.slug === s.slug));
+  const LEVEL_LABELS = { 1: 'Service', 2: 'Sub-service', 3: 'Sub-sub-service' };
+
+  // The address to paste into Menu Hierarchy > Links
+  const serviceLink = (service) => {
+    const inMenu = menuItems.find((item) => item.slug === service.slug);
+    if (inMenu?.node.url) return inMenu.node.url;
+    return service.category && service.category !== 'general'
+      ? `/services/${service.category}/${service.slug}`
+      : `/services/${service.slug}`;
+  };
+
+  const copyLink = async (link) => {
+    try {
+      await navigator.clipboard.writeText(link);
+    } catch {
+      // Clipboard API needs https or localhost
+      const box = document.createElement('textarea');
+      box.value = link;
+      document.body.appendChild(box);
+      box.select();
+      document.execCommand('copy');
+      box.remove();
+    }
+    setCopiedLink(link);
+    setTimeout(() => setCopiedLink(''), 2000);
+  };
+
+  const renderCopyButton = (link) => (
+    <button
+      type="button"
+      onClick={() => copyLink(link)}
+      style={{ padding: '6px 12px', borderRadius: '6px', border: '1px solid #cbd5e1', background: '#ffffff', color: '#0f172a', fontSize: '13px', cursor: 'pointer' }}
+    >
+      {copiedLink === link ? 'Copied ✓' : 'Copy link'}
+    </button>
+  );
+
+  // Where a service sits in Menu Hierarchy, e.g. "Study Abroad › Digital Services"
+  const findMenuPath = (slug) => menuItems.find((item) => item.slug === slug)?.trail || null;
+
+  const renderMenuPath = (service) => {
+    const trail = findMenuPath(service.slug);
+    return (
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '8px', fontSize: '12px', color: trail ? '#0369a1' : '#94a3b8', margin: '2px 0 6px' }}>
+        <span>{!trail ? 'Not in menu yet' : trail.length > 0 ? `In menu: ${trail.join(' › ')}` : 'In menu: top level'}</span>
+        {renderCopyButton(serviceLink(service))}
+      </div>
+    );
+  };
+
   // Filtered Services List
   const filteredServices = services.filter((s) => {
-    const matchesCat = selectedCategory === 'ALL' || s.category === selectedCategory;
+    const matchesCat = !selectedMenuItem || branchSlugs.has(s.slug) || branchCategories.has(s.category);
     const matchesSearch =
       !searchQuery ||
       s.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -478,21 +563,10 @@ export default function AdminServicesPage() {
   const startIndex = (validCurrentPage - 1) * pageSize;
   const paginatedServices = filteredServices.slice(startIndex, startIndex + pageSize);
 
-  const currentCatObj = CATEGORY_OPTIONS.find((c) => c.slug === form.category);
-
   return (
     <div style={{ paddingBottom: '60px' }}>
       {/* Top Banner: Airy & Aligned */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '16px',
-          marginBottom: '24px',
-        }}
-      >
+      <div className="admin-page-header-row">
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '4px' }}>
             <h1
@@ -509,14 +583,14 @@ export default function AdminServicesPage() {
             <span
               style={{
                 backgroundColor: '#e0f2fe',
-                color: '#005b94',
+                color: '#0369a1',
                 fontSize: '12.5px',
                 fontWeight: '500',
                 padding: '3px 10px',
                 borderRadius: '20px',
               }}
             >
-              {services.length} Total
+              {menuItems.length + unplacedServices.length} Total
             </span>
           </div>
           <p style={{ color: '#64748b', fontSize: '14px', margin: 0 }}>
@@ -527,8 +601,8 @@ export default function AdminServicesPage() {
         <button
           onClick={openCreateModal}
           style={{
-            backgroundColor: '#005b94',
-            color: '#ffffff',
+            backgroundColor: '#59bdfc',
+            color: '#0f172a',
             padding: '11px 22px',
             borderRadius: '10px',
             fontWeight: '500',
@@ -538,15 +612,15 @@ export default function AdminServicesPage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            boxShadow: '0 4px 14px rgba(0, 91, 148, 0.25)',
+            boxShadow: '0 4px 14px rgba(89, 189, 252, 0.25)',
             transition: 'all 0.2s ease',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#004775';
+            e.currentTarget.style.backgroundColor = '#0ea5e9';
             e.currentTarget.style.transform = 'translateY(-1px)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#005b94';
+            e.currentTarget.style.backgroundColor = '#59bdfc';
             e.currentTarget.style.transform = 'translateY(0)';
           }}
         >
@@ -575,6 +649,13 @@ export default function AdminServicesPage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: '600', fontSize: '14px' }}>
             <span>{message.type === 'success' ? '✓' : '⚠️'}</span>
             <span>{message.text}</span>
+            {message.type === 'success' && message.liveLink && (
+              <>
+                <code style={{ fontSize: '13px' }}>{message.liveLink}</code>
+                {renderCopyButton(message.liveLink)}
+                <a href="/admin/menu" style={{ fontSize: '13px', color: '#15803d', textDecoration: 'underline' }}>Go to Menu Hierarchy</a>
+              </>
+            )}
           </div>
           <button
             type="button"
@@ -596,21 +677,7 @@ export default function AdminServicesPage() {
       )}
 
       {/* Streamlined Single-Row Toolbar */}
-      <div
-        style={{
-          backgroundColor: '#ffffff',
-          borderRadius: '14px',
-          padding: '14px 18px',
-          marginBottom: '20px',
-          border: '1px solid #e2e8f0',
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02)',
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '14px',
-        }}
-      >
+      <div className="admin-toolbar">
         {/* Left Side: Search + Category Dropdown */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: '1 1 auto', minWidth: '280px' }}>
           {/* Search Input */}
@@ -649,7 +716,7 @@ export default function AdminServicesPage() {
               }}
               onFocus={(e) => {
                 e.target.style.backgroundColor = '#ffffff';
-                e.target.style.borderColor = '#005b94';
+                e.target.style.borderColor = '#59bdfc';
               }}
               onBlur={(e) => {
                 e.target.style.backgroundColor = '#ffffff';
@@ -697,7 +764,7 @@ export default function AdminServicesPage() {
                 border: '1px solid #cbd5e1',
                 fontSize: '13.5px',
                 fontWeight: '600',
-                color: selectedCategory === 'ALL' ? '#334155' : '#005b94',
+                color: selectedCategory === 'ALL' ? '#334155' : '#0369a1',
                 backgroundColor: selectedCategory === 'ALL' ? '#ffffff' : '#f0f9ff',
                 cursor: 'pointer',
                 outline: 'none',
@@ -709,20 +776,17 @@ export default function AdminServicesPage() {
                 backgroundSize: '14px',
               }}
             >
-              <option value="ALL">📁 All Categories ({services.length})</option>
-              {CATEGORY_OPTIONS.map((cat) => {
-                const count = services.filter((s) => s.category === cat.slug).length;
-                return (
-                  <option key={cat.slug} value={cat.slug}>
-                    {cat.icon} {cat.title} ({count})
-                  </option>
-                );
-              })}
+              <option value="ALL">📁 All Services ({menuItems.length + unplacedServices.length})</option>
+              {menuItems.map((item) => (
+                <option key={item.node.id} value={item.node.id}>
+                  {'\u00A0\u00A0\u00A0\u00A0'.repeat(item.level - 1)}{item.level > 1 ? '└ ' : ''}{item.node.title}
+                </option>
+              ))}
             </select>
           </div>
 
           {/* Active filter badge if category is selected */}
-          {selectedCategory !== 'ALL' && (
+          {selectedMenuItem && (
             <div
               style={{
                 display: 'inline-flex',
@@ -730,13 +794,13 @@ export default function AdminServicesPage() {
                 gap: '6px',
                 padding: '6px 12px',
                 backgroundColor: '#e0f2fe',
-                color: '#005b94',
+                color: '#0369a1',
                 borderRadius: '20px',
                 fontSize: '12.5px',
                 fontWeight: '600',
               }}
             >
-              <span>{CATEGORY_OPTIONS.find((c) => c.slug === selectedCategory)?.title}</span>
+              <span>{selectedMenuItem?.node.title}</span>
               <button
                 type="button"
                 onClick={() => {
@@ -746,7 +810,7 @@ export default function AdminServicesPage() {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#005b94',
+                  color: '#0369a1',
                   cursor: 'pointer',
                   padding: 0,
                   fontSize: '13px',
@@ -763,7 +827,7 @@ export default function AdminServicesPage() {
 
         {/* Right Side: View Switcher (Table vs Grid) & Item Count */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-          <span style={{ fontSize: '13px', color: '#64748b', fontWeight: '500' }}>
+          <span hidden={viewMode === 'menu'} style={{ fontSize: '13px', color: '#64748b', fontWeight: '500' }}>
             Showing <strong>{filteredServices.length === 0 ? 0 : startIndex + 1}–{Math.min(startIndex + pageSize, filteredServices.length)}</strong> of <strong>{filteredServices.length}</strong>
           </span>
 
@@ -779,6 +843,24 @@ export default function AdminServicesPage() {
           >
             <button
               type="button"
+              onClick={() => setViewMode('menu')}
+              title="Same order and levels as Menu Hierarchy"
+              style={{
+                padding: '6px 12px',
+                borderRadius: '6px',
+                border: 'none',
+                fontSize: '13px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                backgroundColor: viewMode === 'menu' ? '#ffffff' : 'transparent',
+                color: viewMode === 'menu' ? '#0369a1' : '#64748b',
+                boxShadow: viewMode === 'menu' ? '0 1px 3px rgba(0,0,0,0.08)' : 'none',
+              }}
+            >
+              Menu Order
+            </button>
+            <button
+              type="button"
               onClick={() => setViewMode('grid')}
               style={{
                 padding: '6px 14px',
@@ -791,7 +873,7 @@ export default function AdminServicesPage() {
                 alignItems: 'center',
                 gap: '6px',
                 backgroundColor: viewMode === 'grid' ? '#ffffff' : 'transparent',
-                color: viewMode === 'grid' ? '#005b94' : '#64748b',
+                color: viewMode === 'grid' ? '#0369a1' : '#64748b',
                 boxShadow: viewMode === 'grid' ? '0 1px 3px rgba(0,0,0,0.08)' : 'none',
                 transition: 'all 0.15s ease',
               }}
@@ -814,7 +896,7 @@ export default function AdminServicesPage() {
                 alignItems: 'center',
                 gap: '6px',
                 backgroundColor: viewMode === 'table' ? '#ffffff' : 'transparent',
-                color: viewMode === 'table' ? '#005b94' : '#64748b',
+                color: viewMode === 'table' ? '#0369a1' : '#64748b',
                 boxShadow: viewMode === 'table' ? '0 1px 3px rgba(0,0,0,0.08)' : 'none',
                 transition: 'all 0.15s ease',
               }}
@@ -832,6 +914,56 @@ export default function AdminServicesPage() {
         <div style={{ textAlign: 'center', padding: '60px 0', color: '#64748b' }}>
           <div style={{ fontSize: '32px', marginBottom: '12px' }}>⚡</div>
           Loading services...
+        </div>
+      ) : viewMode === 'menu' ? (
+        <div data-testid="menu-order-view" style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '8px 16px' }}>
+          {branchItems.map((item) => (
+            <div
+              key={item.node.id}
+              data-testid="menu-order-row"
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '12px 0 12px ' + ((item.level - 1) * 32) + 'px',
+                borderBottom: '1px solid #f1f5f9',
+              }}
+            >
+              <span style={{ fontSize: '11px', fontWeight: 700, color: '#0369a1', background: '#e0f2fe', padding: '3px 10px', borderRadius: '12px' }}>
+                {LEVEL_LABELS[item.level] || 'Sub-service'}
+              </span>
+              <strong style={{ fontSize: '15px', color: '#0f172a', flex: '1 1 180px' }}>{item.node.title}</strong>
+              <span style={{ fontSize: '12px', color: item.isCategory || item.service ? '#15803d' : '#b45309' }}>
+                {item.isCategory ? 'Category page' : item.service ? 'Details added' : 'No details yet'}
+              </span>
+              <a href={item.node.url || '#'} target="_blank" rel="noreferrer" style={{ fontSize: '13px', color: '#0369a1' }}>View ↗</a>
+              {item.service ? (
+                <button type="button" onClick={() => openEditModal(item.service)} style={{ padding: '6px 14px', borderRadius: '6px', border: '1px solid #cbd5e1', background: '#ffffff', color: '#0f172a', fontSize: '13px', cursor: 'pointer' }}>
+                  Edit
+                </button>
+              ) : item.isCategory && item.level >= 3 ? null : (
+                <button type="button" onClick={() => openCreateForMenuItem(item)} style={{ padding: '6px 14px', borderRadius: '6px', border: 'none', background: '#59bdfc', color: '#0f172a', fontSize: '13px', fontWeight: 600, cursor: 'pointer' }}>
+                  {item.isCategory ? 'Add service here' : 'Add details'}
+                </button>
+              )}
+            </div>
+          ))}
+          {!selectedMenuItem && unplacedServices.length > 0 && (
+            <div style={{ paddingTop: '14px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#64748b', marginBottom: '4px' }}>Not in the menu yet: copy the link, then paste it in Menu Hierarchy → Links</div>
+              {unplacedServices.map((service) => (
+                <div key={service.slug} data-testid="unplaced-row" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px', padding: '10px 0', borderBottom: '1px solid #f1f5f9' }}>
+                  <strong style={{ fontSize: '14px', color: '#0f172a', flex: '1 1 180px' }}>{service.title}</strong>
+                  <a href={serviceLink(service)} target="_blank" rel="noreferrer" style={{ fontSize: '13px', color: '#0369a1' }}>View ↗</a>
+                  {renderCopyButton(serviceLink(service))}
+                  <button type="button" onClick={() => openEditModal(service)} style={{ padding: '6px 14px', borderRadius: '6px', border: '1px solid #cbd5e1', background: '#ffffff', color: '#0f172a', fontSize: '13px', cursor: 'pointer' }}>
+                    Edit
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       ) : filteredServices.length === 0 ? (
         <div
@@ -872,8 +1004,8 @@ export default function AdminServicesPage() {
           <button
             onClick={openCreateModal}
             style={{
-              backgroundColor: '#005b94',
-              color: '#ffffff',
+              backgroundColor: '#59bdfc',
+              color: '#0f172a',
               padding: '10px 20px',
               borderRadius: '8px',
               fontWeight: '500',
@@ -911,8 +1043,8 @@ export default function AdminServicesPage() {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 91, 148, 0.08)';
-                  e.currentTarget.style.borderColor = '#005b94';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(89, 189, 252, 0.08)';
+                  e.currentTarget.style.borderColor = '#59bdfc';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
@@ -926,12 +1058,13 @@ export default function AdminServicesPage() {
                     <h3 style={{ fontSize: '14.5px', fontWeight: '500', color: '#0f172a', margin: 0 }}>
                       {service.title}
                     </h3>
+                    {renderMenuPath(service)}
                     <span style={{ fontSize: '10.5px', backgroundColor: '#f1f5f9', color: '#475569', padding: '2px 7px', borderRadius: '5px', fontFamily: 'monospace' }}>
                       /{service.slug}
                     </span>
                   </div>
                   {service.subtitle && (
-                    <p style={{ fontSize: '12.5px', fontWeight: '500', color: '#005b94', margin: '0 0 4px 0', lineHeight: '1.4' }}>
+                    <p style={{ fontSize: '12.5px', fontWeight: '500', color: '#0369a1', margin: '0 0 4px 0', lineHeight: '1.4' }}>
                       {service.subtitle}
                     </p>
                   )}
@@ -956,7 +1089,7 @@ export default function AdminServicesPage() {
                       padding: '5px 12px',
                       borderRadius: '12px',
                       backgroundColor: '#eff6ff',
-                      color: '#005b94',
+                      color: '#0369a1',
                       border: '1px solid #dbeafe',
                       textDecoration: 'none',
                     }}
@@ -974,7 +1107,7 @@ export default function AdminServicesPage() {
                     style={{
                       fontSize: '13px',
                       fontWeight: '600',
-                      color: '#005b94',
+                      color: '#0369a1',
                       textDecoration: 'none',
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -1007,19 +1140,19 @@ export default function AdminServicesPage() {
                       style={{
                         width: '36px',
                         height: '36px',
-                        backgroundColor: '#38bdf8',
-                        color: '#ffffff',
+                        backgroundColor: '#59bdfc',
+                        color: '#0f172a',
                         border: 'none',
                         borderRadius: '8px',
                         cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        boxShadow: '0 2px 8px rgba(56, 189, 248, 0.35)',
+                        boxShadow: '0 2px 8px rgba(89, 189, 252, 0.35)',
                         transition: 'all 0.15s ease',
                       }}
                       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0ea5e9')}
-                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#38bdf8')}
+                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#59bdfc')}
                       title="Actions"
                       aria-label="Actions"
                     >
@@ -1067,7 +1200,7 @@ export default function AdminServicesPage() {
                           }}
                           onMouseEnter={(e) => {
                             e.currentTarget.style.backgroundColor = '#f8fafc';
-                            e.currentTarget.style.color = '#005b94';
+                            e.currentTarget.style.color = '#0369a1';
                           }}
                           onMouseLeave={(e) => {
                             e.currentTarget.style.backgroundColor = 'transparent';
@@ -1143,7 +1276,7 @@ export default function AdminServicesPage() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-3px)';
-                    e.currentTarget.style.boxShadow = '0 12px 30px -4px rgba(0, 91, 148, 0.08)';
+                    e.currentTarget.style.boxShadow = '0 12px 30px -4px rgba(89, 189, 252, 0.08)';
                     e.currentTarget.style.borderColor = '#cbd5e1';
                   }}
                   onMouseLeave={(e) => {
@@ -1156,8 +1289,8 @@ export default function AdminServicesPage() {
                     {/* Top Row: Category Pill with blue square + Live Link */}
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px', gap: '8px' }}>
                       <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                        <span style={{ width: '10px', height: '10px', backgroundColor: '#005b94', borderRadius: '2px', display: 'inline-block' }}></span>
-                        <span style={{ fontSize: '11px', fontWeight: '500', letterSpacing: '0.6px', color: '#005b94', textTransform: 'uppercase' }}>
+                        <span style={{ width: '10px', height: '10px', backgroundColor: '#59bdfc', borderRadius: '2px', display: 'inline-block' }}></span>
+                        <span style={{ fontSize: '11px', fontWeight: '500', letterSpacing: '0.6px', color: '#0369a1', textTransform: 'uppercase' }}>
                           {catName}
                         </span>
                       </div>
@@ -1166,7 +1299,7 @@ export default function AdminServicesPage() {
                         target="_blank"
                         style={{
                           fontSize: '12px',
-                          color: '#005b94',
+                          color: '#0369a1',
                           fontWeight: '500',
                           textDecoration: 'none',
                           display: 'inline-flex',
@@ -1196,6 +1329,7 @@ export default function AdminServicesPage() {
                     >
                       {service.title}
                     </h3>
+                    {renderMenuPath(service)}
 
                     {/* Subtitle */}
                     {service.subtitle && (
@@ -1203,7 +1337,7 @@ export default function AdminServicesPage() {
                         style={{
                           fontSize: '12.5px',
                           fontWeight: '500',
-                          color: '#005b94',
+                          color: '#0369a1',
                           lineHeight: '1.4',
                           margin: '0 0 8px 0',
                         }}
@@ -1258,19 +1392,19 @@ export default function AdminServicesPage() {
                         style={{
                           width: '36px',
                           height: '36px',
-                          backgroundColor: '#38bdf8',
-                          color: '#ffffff',
+                          backgroundColor: '#59bdfc',
+                          color: '#0f172a',
                           border: 'none',
                           borderRadius: '8px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          boxShadow: '0 3px 10px rgba(56, 189, 248, 0.35)',
+                          boxShadow: '0 3px 10px rgba(89, 189, 252, 0.35)',
                           transition: 'all 0.15s ease',
                         }}
                         onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0ea5e9')}
-                        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#38bdf8')}
+                        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#59bdfc')}
                         title="Actions"
                         aria-label="Actions"
                       >
@@ -1320,7 +1454,7 @@ export default function AdminServicesPage() {
                             }}
                             onMouseEnter={(e) => {
                               e.currentTarget.style.backgroundColor = '#f8fafc';
-                              e.currentTarget.style.color = '#005b94';
+                              e.currentTarget.style.color = '#0369a1';
                             }}
                             onMouseLeave={(e) => {
                               e.currentTarget.style.backgroundColor = 'transparent';
@@ -1420,9 +1554,9 @@ export default function AdminServicesPage() {
                   width: '32px',
                   height: '32px',
                   borderRadius: '6px',
-                  border: pageNum === validCurrentPage ? '1px solid #005b94' : '1px solid #e2e8f0',
-                  backgroundColor: pageNum === validCurrentPage ? '#005b94' : '#ffffff',
-                  color: pageNum === validCurrentPage ? '#ffffff' : '#334155',
+                  border: pageNum === validCurrentPage ? '1px solid #59bdfc' : '1px solid #e2e8f0',
+                  backgroundColor: pageNum === validCurrentPage ? '#59bdfc' : '#ffffff',
+                  color: pageNum === validCurrentPage ? '#0f172a' : '#334155',
                   cursor: 'pointer',
                   fontSize: '13px',
                   fontWeight: '500',
@@ -1458,35 +1592,8 @@ export default function AdminServicesPage() {
 
       {/* Single Form Modal */}
       {isModalOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(15, 23, 42, 0.65)',
-            backdropFilter: 'blur(4px)',
-            zIndex: 9999,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px',
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: '#ffffff',
-              borderRadius: '20px',
-              maxWidth: '820px',
-              width: '100%',
-              maxHeight: '90vh',
-              boxShadow: '0 25px 60px rgba(0, 0, 0, 0.25)',
-              display: 'flex',
-              flexDirection: 'column',
-              overflow: 'hidden',
-            }}
-          >
+        <div className="admin-service-modal-backdrop">
+          <div className="admin-service-modal-dialog">
             {/* Modal Header - Fixed at Top */}
             <div
               style={{
@@ -1547,108 +1654,36 @@ export default function AdminServicesPage() {
                   gap: '22px',
                 }}
               >
-                {/* Category Dropdown (High Priority) */}
-              <div
-                style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '14px',
-                  padding: '18px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '10px',
-                }}
-              >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <label style={{ fontSize: '14px', fontWeight: 'normal', color: '#0f172a' }}>
-                    1. Select Target Category *
-                  </label>
-                  <span style={{ fontSize: '12px', color: '#64748b' }}>
-                    Auto-publishes to this category
-                  </span>
-                </div>
-
-                <select
-                  value={form.category}
-                  onChange={(e) => setForm({ ...form, category: e.target.value })}
+              {/* Service Title */}
+              <div>
+                <label style={{ display: 'block', fontSize: '13.5px', fontWeight: 'normal', color: '#334155', marginBottom: '6px' }}>
+                  Service Title *
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. Personal Loan Assistance"
+                  value={form.title}
+                  onChange={(e) => handleTitleChange(e.target.value)}
                   style={{
                     width: '100%',
-                    padding: '12px 16px',
-                    borderRadius: '10px',
+                    padding: '11px 14px',
+                    borderRadius: '8px',
                     border: '1px solid #cbd5e1',
-                    fontSize: '15px',
-                    fontWeight: 'normal',
+                    fontSize: '14.5px',
                     color: '#0f172a',
-                    backgroundColor: '#ffffff',
-                    outline: 'none',
-                    cursor: 'pointer',
                   }}
                   required
-                >
-                  {CATEGORY_OPTIONS.map((cat) => (
-                    <option key={cat.slug} value={cat.slug}>
-                      {cat.icon} {cat.title}
-                    </option>
-                  ))}
-                  <option value="custom">➕ Other / Custom Category...</option>
-                </select>
-
-                {form.category === 'custom' && (
-                  <input
-                    type="text"
-                    placeholder="Enter Custom Category Name (e.g. Export Import Services)"
-                    value={form.customCategory}
-                    onChange={(e) => setForm({ ...form, customCategory: e.target.value })}
-                    style={{
-                      width: '100%',
-                      padding: '10px 14px',
-                      borderRadius: '8px',
-                      border: '1px solid #cbd5e1',
-                      fontSize: '14px',
-                      marginTop: '4px',
-                    }}
-                    required
-                  />
-                )}
-
-                <div style={{ fontSize: '12.5px', color: '#64748b', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span>📍 Target URLs:</span>
-                  <span style={{ fontFamily: 'monospace' }}>
-                    /services/{form.category === 'custom' ? slugify(form.customCategory || 'custom') : form.category}
-                  </span>
-                  <span>&amp;</span>
-                  <span style={{ fontFamily: 'monospace' }}>
-                    /services/{form.category === 'custom' ? slugify(form.customCategory || 'custom') : form.category}/{form.slug || '[service-slug]'}
-                  </span>
-                </div>
+                />
               </div>
 
-              {/* Basic Details: Title & Slug */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                <div>
-                  <label style={{ display: 'block', fontSize: '13.5px', fontWeight: 'normal', color: '#1e293b', marginBottom: '6px' }}>
-                    Service Title *
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="e.g. Personal Loan Assistance"
-                    value={form.title}
-                    onChange={(e) => handleTitleChange(e.target.value)}
-                    style={{
-                      width: '100%',
-                      padding: '11px 14px',
-                      borderRadius: '8px',
-                      border: '1px solid #cbd5e1',
-                      fontSize: '14.5px',
-                      color: '#0f172a',
-                    }}
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label style={{ display: 'block', fontSize: '13.5px', fontWeight: 'normal', color: '#1e293b', marginBottom: '6px' }}>
-                    URL Slug *
+              {/* URL slug fills in from the title, so it stays out of the way */}
+              <details>
+                <summary style={{ fontSize: '13px', color: '#64748b', cursor: 'pointer' }}>
+                  Advanced: web address ({form.slug || 'fills in from the title'})
+                </summary>
+                <div style={{ marginTop: '10px' }}>
+                  <label style={{ display: 'block', fontSize: '13.5px', fontWeight: 'normal', color: '#334155', marginBottom: '6px' }}>
+                    URL Slug
                   </label>
                   <input
                     type="text"
@@ -1664,10 +1699,9 @@ export default function AdminServicesPage() {
                       color: '#334155',
                       fontFamily: 'monospace',
                     }}
-                    required
                   />
                 </div>
-              </div>
+              </details>
 
               {/* Subtitle / Tagline */}
               <div>
@@ -2220,7 +2254,7 @@ export default function AdminServicesPage() {
                 </div>
 
                 {/* Section Header Controls */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', backgroundColor: '#ffffff', padding: '14px 16px', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                <div className="admin-grid-2col" style={{ gap: '14px', backgroundColor: '#ffffff', padding: '14px 16px', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '12px', fontWeight: 'normal', color: '#475569', marginBottom: '4px' }}>
                       Section Subtitle / Tag
@@ -2582,7 +2616,7 @@ export default function AdminServicesPage() {
                   </span>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                <div className="admin-grid-2col">
                   <div style={{ backgroundColor: '#ffffff', padding: '16px', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
                     <label style={{ display: 'block', fontSize: '13px', fontWeight: 'normal', color: '#0f172a', marginBottom: '6px' }}>
                       Eligibility Criteria
@@ -2762,6 +2796,25 @@ export default function AdminServicesPage() {
               </div>
 
               {/* Form Action Buttons - Fixed at Bottom */}
+              {/* Shown here because the page-level message sits behind this form */}
+              {message.type === 'error' && message.text && (
+                <div
+                  role="alert"
+                  style={{
+                    margin: '0 0 14px',
+                    padding: '12px 16px',
+                    borderRadius: '8px',
+                    backgroundColor: '#fee2e2',
+                    color: '#b91c1c',
+                    border: '1px solid #fca5a5',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                  }}
+                >
+                  ⚠️ {message.text}
+                </div>
+              )}
+
               <div
                 style={{
                   display: 'flex',
@@ -2931,19 +2984,19 @@ export default function AdminServicesPage() {
                 type="button"
                 onClick={closeDeleteModal}
                 style={{
-                  backgroundColor: '#38bdf8',
-                  color: '#ffffff',
+                  backgroundColor: '#59bdfc',
+                  color: '#0f172a',
                   border: 'none',
                   padding: '9px 24px',
                   borderRadius: '8px',
                   fontSize: '14px',
                   fontWeight: '600',
                   cursor: 'pointer',
-                  boxShadow: '0 2px 8px rgba(56, 189, 248, 0.3)',
+                  boxShadow: '0 2px 8px rgba(89, 189, 252, 0.3)',
                   transition: 'background-color 0.15s ease',
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#0ea5e9')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#38bdf8')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#59bdfc')}
               >
                 Cancel
               </button>

@@ -11,7 +11,7 @@ export default function Section7() {
 			desc: "Founded with a mission to empower entrepreneurs, MSMEs, and individuals, Globon operates with verified bank partnerships, ethical advisory standards, and transparent fee structures across Kerala and India."
 		},
 		{
-			title: "Wide Array of Financial Products and Services",
+			title: "Comprehensive Range of Financial Products and Services",
 			desc: "From retail personal, home, and vehicle loans to ₹10Cr+ corporate project financing, PMEGP/Mudra subsidies, bank project reports, and GST/tax compliance—all delivered under one roof."
 		},
 		{
@@ -33,14 +33,14 @@ export default function Section7() {
 						<div style={{ paddingRight: '28px' }}>
 							<h2 className="why-globon-heading" style={{
 								fontSize: 'clamp(28px, 3.2vw, 38px)',
-								color: '#000000',
+								color: '#0369a1',
 								letterSpacing: '0.4px',
 								textTransform: 'uppercase',
 								marginBottom: '30px',
 								lineHeight: 1.2,
 								fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 							}}>
-								<span style={{ fontWeight: 800 }}>WHY</span> <span style={{ fontWeight: 400 }}>GLOBON?</span>
+								<span className="heading-bold" style={{ fontWeight: 800 }}>WHY</span> <span className="heading-normal" style={{ fontWeight: 400 }}>GLOBON?</span>
 							</h2>
 
 							<div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -56,10 +56,18 @@ export default function Section7() {
 												transition: 'all 0.2s ease'
 											}}
 										>
-											<button
+											<div
+												role="button"
+												tabIndex={0}
 												onClick={() => setOpenIdx(isOpen ? null : idx)}
-												type="button"
+												onKeyDown={(e) => {
+													if (e.key === 'Enter' || e.key === ' ') {
+														e.preventDefault()
+														setOpenIdx(isOpen ? null : idx)
+													}
+												}}
 												aria-expanded={isOpen}
+												className="why-globon-trigger-btn"
 												style={{
 													width: '100%',
 													display: 'flex',
@@ -69,7 +77,9 @@ export default function Section7() {
 													border: 'none',
 													padding: 0,
 													cursor: 'pointer',
-													textAlign: 'left'
+													textAlign: 'left',
+													outline: 'none',
+													overflow: 'hidden'
 												}}
 											>
 												<span className="why-globon-question" style={{
@@ -84,22 +94,23 @@ export default function Section7() {
 													{item.title}
 												</span>
 												<span className="why-globon-toggle-btn" style={{
-													fontSize: '34px',
+													fontSize: '28px',
 													fontWeight: 300,
-													color: '#16a34a',
+													color: '#0369a1',
 													lineHeight: 1,
 													display: 'inline-flex',
 													alignItems: 'center',
 													justifyContent: 'center',
-													width: '38px',
-													height: '38px',
+													width: '32px',
+													height: '32px',
 													flexShrink: 0,
 													transition: 'transform 0.2s ease',
-													userSelect: 'none'
+													userSelect: 'none',
+													overflow: 'hidden'
 												}}>
 													{isOpen ? '−' : '+'}
 												</span>
-											</button>
+											</div>
 											{isOpen && (
 												<div className="why-globon-answer" style={{
 													marginTop: '16px',
@@ -185,11 +196,11 @@ export default function Section7() {
 									width: '46px',
 									height: '46px',
 									borderRadius: '13px',
-									backgroundColor: '#0284c7',
+									backgroundColor: '#59bdfc',
 									display: 'flex',
 									alignItems: 'center',
 									justifyContent: 'center',
-									boxShadow: '0 4px 12px rgba(2, 132, 199, 0.3)'
+									boxShadow: '0 4px 12px rgba(89, 189, 252, 0.3)'
 								}}>
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
 										<polyline points="20 6 9 17 4 12"></polyline>
@@ -215,7 +226,7 @@ export default function Section7() {
 								{/* Blue & Orange Split Pie Chart Icon */}
 								<svg width="38" height="38" viewBox="0 0 38 38">
 									{/* Blue 3/4 wedge */}
-									<path d="M 19 19 L 19 3 A 16 16 0 1 0 35 19 Z" fill="#0366a2" />
+									<path d="M 19 19 L 19 3 A 16 16 0 1 0 35 19 Z" fill="#59bdfc" />
 									{/* Orange 1/4 wedge */}
 									<path d="M 21 17 L 35 17 A 16 16 0 0 0 21 3 Z" fill="#f59e0b" />
 								</svg>

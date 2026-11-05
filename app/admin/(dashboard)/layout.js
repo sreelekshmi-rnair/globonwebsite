@@ -13,12 +13,35 @@ export default function AdminDashboardLayout({ children }) {
   const [loading, setLoading] = useState(true);
   const [newLeadsCount, setNewLeadsCount] = useState(0);
   const [newContactsCount, setNewContactsCount] = useState(0);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  // Auto-close sidebar on route change
+  useEffect(() => {
+    setIsSidebarOpen(false);
+  }, [pathname]);
+
+  // Prevent background scroll when mobile sidebar drawer is open
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      if (isSidebarOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+    return () => {
+      if (typeof document !== 'undefined') {
+        document.body.style.overflow = '';
+      }
+    };
+  }, [isSidebarOpen]);
 
   useEffect(() => {
     if (typeof document !== 'undefined') {
       const titles = {
         '/admin': 'Globon Admin - Dashboard',
         '/admin/services': 'Globon Admin - Services',
+        '/admin/menu': 'Globon Admin - Menu & Services Hierarchy',
         '/admin/loans': 'Globon Admin - Loan Products',
         '/admin/blogs': 'Globon Admin - Blogs',
         '/admin/inquiries': 'Globon Admin - Consultations & Leads',
@@ -85,26 +108,49 @@ export default function AdminDashboardLayout({ children }) {
 
   return (
     <div className="admin-body">
+      {/* Mobile Drawer Backdrop Overlay */}
+      <div
+        className={`admin-sidebar-overlay ${isSidebarOpen ? 'active' : ''}`}
+        onClick={() => setIsSidebarOpen(false)}
+        aria-hidden="true"
+      />
+
       <div className="admin-wrapper">
         {/* Crisp White Sidebar with Globon Official Logo */}
-        <aside className="admin-sidebar">
+        <aside className={`admin-sidebar ${isSidebarOpen ? 'open' : ''}`}>
           <div className="admin-sidebar-header">
-            <Link href="/admin" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Link
+              href="/admin"
+              onClick={() => setIsSidebarOpen(false)}
+              style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+            >
               <Image
                 src="/images/logo/logo_.webp"
                 alt="Globon Business Solutions"
-                width={160}
-                height={65}
-                style={{ height: '54px', width: 'auto', objectFit: 'contain' }}
+                width={150}
+                height={60}
+                style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
                 priority
               />
             </Link>
+            <button
+              type="button"
+              className="admin-sidebar-close-btn"
+              onClick={() => setIsSidebarOpen(false)}
+              aria-label="Close navigation"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
           </div>
 
           <nav className="admin-nav">
-            <div className="admin-nav-category">HOME</div>
+            <div className="admin-nav-category">NAVIGATION</div>
             <Link
               href="/admin"
+              onClick={() => setIsSidebarOpen(false)}
               className={`admin-nav-item ${pathname === '/admin' ? 'active' : ''}`}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
@@ -118,6 +164,7 @@ export default function AdminDashboardLayout({ children }) {
 
             <Link
               href="/admin/services"
+              onClick={() => setIsSidebarOpen(false)}
               className={`admin-nav-item ${pathname === '/admin/services' ? 'active' : ''}`}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
@@ -128,7 +175,24 @@ export default function AdminDashboardLayout({ children }) {
             </Link>
 
             <Link
+              href="/admin/menu"
+              onClick={() => setIsSidebarOpen(false)}
+              className={`admin-nav-item ${pathname === '/admin/menu' ? 'active' : ''}`}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
+              <span>Menu Hierarchy</span>
+            </Link>
+
+            <Link
               href="/admin/inquiries"
+              onClick={() => setIsSidebarOpen(false)}
               className={`admin-nav-item ${pathname === '/admin/inquiries' ? 'active' : ''}`}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
@@ -143,6 +207,7 @@ export default function AdminDashboardLayout({ children }) {
 
             <Link
               href="/admin/contacts"
+              onClick={() => setIsSidebarOpen(false)}
               className={`admin-nav-item ${pathname === '/admin/contacts' ? 'active' : ''}`}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
@@ -156,6 +221,7 @@ export default function AdminDashboardLayout({ children }) {
 
             <Link
               href="/admin/profile"
+              onClick={() => setIsSidebarOpen(false)}
               className={`admin-nav-item ${pathname === '/admin/profile' ? 'active' : ''}`}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
@@ -169,7 +235,8 @@ export default function AdminDashboardLayout({ children }) {
           <div className="admin-sidebar-footer">
             <Link
               href="/admin/profile"
-              style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', color: 'inherit', flexGrow: 1 }}
+              onClick={() => setIsSidebarOpen(false)}
+              style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', color: 'inherit', flexGrow: 1, minWidth: 0 }}
               title="View & Edit Profile"
             >
               <div
@@ -184,12 +251,13 @@ export default function AdminDashboardLayout({ children }) {
                   justifyContent: 'center',
                   fontWeight: '500',
                   fontSize: '13px',
+                  flexShrink: 0,
                 }}
               >
                 {adminUser?.username?.[0]?.toUpperCase() || 'A'}
               </div>
-              <div>
-                <div style={{ fontSize: '13px', fontWeight: '500', color: '#0f172a' }}>
+              <div style={{ minWidth: 0, overflow: 'hidden' }}>
+                <div style={{ fontSize: '13px', fontWeight: '500', color: '#0f172a', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
                   {adminUser?.name || 'Administrator'}
                 </div>
                 <div style={{ fontSize: '11px', color: '#94a3b8' }}>Admin Mode</div>
@@ -199,6 +267,7 @@ export default function AdminDashboardLayout({ children }) {
               onClick={handleLogout}
               className="admin-btn admin-btn-danger admin-btn-sm"
               title="Logout"
+              style={{ flexShrink: 0 }}
             >
               Exit
             </button>
@@ -208,20 +277,50 @@ export default function AdminDashboardLayout({ children }) {
         {/* Main Content Area */}
         <div className="admin-main">
           <header className="admin-topbar">
-            <div>
-              <span style={{ color: '#94a3b8', fontSize: '12px', fontWeight: '600', letterSpacing: '0.5px' }}>
-                ADMIN CONTROL PANEL
-              </span>
+            <div className="admin-topbar-left">
+              <button
+                type="button"
+                className="admin-mobile-toggle-btn"
+                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                aria-label="Toggle Navigation Menu"
+              >
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              </button>
+              <div className="admin-topbar-title-wrap">
+                <span className="admin-topbar-brand">
+                  GLOBON ADMIN
+                </span>
+                <span className="admin-topbar-sep">•</span>
+                <span className="admin-topbar-badge">
+                  {pathname === '/admin' ? 'Dashboard' : pathname.replace('/admin/', '').split('/')[0].toUpperCase()}
+                </span>
+              </div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+
+            <div className="admin-topbar-right">
               <a
                 href="/"
-                className="admin-btn admin-btn-outline admin-btn-sm"
+                className="admin-btn admin-btn-outline admin-btn-sm admin-topbar-live-btn"
                 target="_blank"
                 rel="noreferrer"
               >
-                Live Site ↗
+                <span>Live Site</span>
+                <span style={{ fontSize: '12px' }}>↗</span>
               </a>
+
+              <Link
+                href="/admin/profile"
+                className="admin-topbar-profile-link"
+                title="Profile"
+              >
+                <div className="admin-topbar-avatar">
+                  {adminUser?.username?.[0]?.toUpperCase() || 'A'}
+                </div>
+              </Link>
             </div>
           </header>
 

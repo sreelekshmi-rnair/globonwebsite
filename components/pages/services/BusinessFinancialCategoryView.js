@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import SubServiceLinks from "./SubServiceLinks";
 
 export default function BusinessFinancialCategoryView({ category }) {
   const [activeFaq, setActiveFaq] = useState(null)
@@ -20,7 +21,7 @@ export default function BusinessFinancialCategoryView({ category }) {
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Certificate of Incorporation */}
             <rect x="75" y="48" width="130" height="106" rx="6" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-            <rect x="85" y="58" width="110" height="12" rx="2" fill="#0284C7" />
+            <rect x="85" y="58" width="110" height="12" rx="2" fill="#59bdfc" />
             <text x="140" y="67" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#FFFFFF" letterSpacing="1">INCORPORATION</text>
             <line x1="88" y1="80" x2="192" y2="80" stroke="#CBD5E1" strokeWidth="2.5" strokeLinecap="round" />
             <line x1="88" y1="90" x2="175" y2="90" stroke="#CBD5E1" strokeWidth="2.5" strokeLinecap="round" />
@@ -31,9 +32,9 @@ export default function BusinessFinancialCategoryView({ category }) {
             <polygon points="171,133 166,148 175,142 184,148 179,133" fill="#EF4444" stroke="#0F172A" strokeWidth="1.2" />
             {/* Government Stamp Badge */}
             <g transform="translate(210, 68) rotate(8)">
-              <rect x="0" y="0" width="76" height="52" rx="6" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+              <rect x="0" y="0" width="76" height="52" rx="6" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
               <text x="38" y="22" fontSize="9" fontWeight="900" textAnchor="middle" fill="#FFFFFF" letterSpacing="0.8">ROC / MCA</text>
-              <rect x="12" y="30" width="52" height="14" rx="3" fill="#38BDF8" stroke="#0F172A" strokeWidth="1" />
+              <rect x="12" y="30" width="52" height="14" rx="3" fill="#59bdfc" stroke="#0F172A" strokeWidth="1" />
               <text x="38" y="40" fontSize="7.5" fontWeight="bold" textAnchor="middle" fill="#0F172A">VERIFIED</text>
             </g>
             {/* Handshake Icon Badge */}
@@ -48,11 +49,11 @@ export default function BusinessFinancialCategoryView({ category }) {
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Ledger & Tax Document */}
             <rect x="70" y="52" width="118" height="102" rx="6" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-            <rect x="80" y="62" width="98" height="12" rx="2" fill="#1F4E7A" />
+            <rect x="80" y="62" width="98" height="12" rx="2" fill="#59bdfc" />
             <text x="129" y="71" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#FFFFFF" letterSpacing="0.8">TAX &amp; ITR</text>
             {/* Bar Charts inside Document */}
-            <rect x="84" y="112" width="14" height="28" rx="2" fill="#0284C7" stroke="#0F172A" strokeWidth="1.2" />
-            <rect x="103" y="98" width="14" height="42" rx="2" fill="#38BDF8" stroke="#0F172A" strokeWidth="1.2" />
+            <rect x="84" y="112" width="14" height="28" rx="2" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.2" />
+            <rect x="103" y="98" width="14" height="42" rx="2" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.2" />
             <rect x="122" y="86" width="14" height="54" rx="2" fill="#22C55E" stroke="#0F172A" strokeWidth="1.2" />
             <line x1="80" y1="142" x2="178" y2="142" stroke="#0F172A" strokeWidth="1.5" />
             {/* Calculator Device */}
@@ -66,7 +67,7 @@ export default function BusinessFinancialCategoryView({ category }) {
               <circle cx="54" cy="40" r="5" fill="#F59E0B" />
               <circle cx="16" cy="56" r="5" fill="#475569" />
               <circle cx="35" cy="56" r="5" fill="#475569" />
-              <circle cx="54" cy="56" r="5" fill="#0284C7" />
+              <circle cx="54" cy="56" r="5" fill="#59bdfc" />
               <circle cx="16" cy="72" r="5" fill="#475569" />
               <circle cx="35" cy="72" r="5" fill="#475569" />
               <circle cx="54" cy="72" r="5" fill="#22C55E" />
@@ -94,7 +95,7 @@ export default function BusinessFinancialCategoryView({ category }) {
               <circle cx="38" cy="38" r="22" fill="#FEF08A" stroke="#0F172A" strokeWidth="1.5" />
               <text x="38" y="35" fontSize="10" fontWeight="900" textAnchor="middle" fill="#0F172A">ISO</text>
               <text x="38" y="47" fontSize="7.5" fontWeight="bold" textAnchor="middle" fill="#0F172A">9001</text>
-              <polygon points="26,62 18,92 34,84 42,92 36,62" fill="#0284C7" stroke="#0F172A" strokeWidth="1.5" />
+              <polygon points="26,62 18,92 34,84 42,92 36,62" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.5" />
               <polygon points="48,62 42,92 50,84 66,92 58,62" fill="#0369A1" stroke="#0F172A" strokeWidth="1.5" />
             </g>
             {/* Trademark Symbol Badge */}
@@ -108,9 +109,9 @@ export default function BusinessFinancialCategoryView({ category }) {
           <svg className="ksfe-sig-visual-svg" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Detailed Project Report DPR Book */}
-            <rect x="68" y="58" width="112" height="96" rx="5" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+            <rect x="68" y="58" width="112" height="96" rx="5" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <rect x="78" y="66" width="92" height="80" rx="3" fill="#FFFFFF" stroke="#0F172A" strokeWidth="1.5" />
-            <text x="124" y="80" fontSize="8.5" fontWeight="900" textAnchor="middle" fill="#1F4E7A" letterSpacing="0.8">PROJECT DPR</text>
+            <text x="124" y="80" fontSize="8.5" fontWeight="900" textAnchor="middle" fill="#0369a1" letterSpacing="0.8">PROJECT DPR</text>
             <line x1="86" y1="92" x2="162" y2="92" stroke="#CBD5E1" strokeWidth="2" strokeLinecap="round" />
             <line x1="86" y1="102" x2="150" y2="102" stroke="#CBD5E1" strokeWidth="2" strokeLinecap="round" />
             <line x1="86" y1="112" x2="158" y2="112" stroke="#CBD5E1" strokeWidth="2" strokeLinecap="round" />
@@ -137,15 +138,15 @@ export default function BusinessFinancialCategoryView({ category }) {
             {/* Laptop Base */}
             <polygon points="60,150 240,150 225,160 75,160" fill="#94A3B8" stroke="#0F172A" strokeWidth="2" />
             {/* Screen UI: Dashboard charts & bars */}
-            <rect x="90" y="74" width="40" height="28" rx="2" fill="#1E3A8A" stroke="#38BDF8" strokeWidth="1" />
+            <rect x="90" y="74" width="40" height="28" rx="2" fill="#1E3A8A" stroke="#59bdfc" strokeWidth="1" />
             <rect x="136" y="74" width="74" height="28" rx="2" fill="#064E3B" stroke="#34D399" strokeWidth="1" />
             <rect x="90" y="108" width="70" height="26" rx="2" fill="#312E81" stroke="#818CF8" strokeWidth="1" />
             <circle cx="188" cy="121" r="10" fill="#F59E0B" />
             {/* Cloud Sync Icon */}
             <g transform="translate(225, 46)">
-              <ellipse cx="24" cy="24" rx="24" ry="16" fill="#38BDF8" stroke="#0F172A" strokeWidth="1.8" />
-              <circle cx="16" cy="18" r="12" fill="#38BDF8" stroke="#0F172A" strokeWidth="1.8" />
-              <circle cx="30" cy="14" r="14" fill="#38BDF8" stroke="#0F172A" strokeWidth="1.8" />
+              <ellipse cx="24" cy="24" rx="24" ry="16" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.8" />
+              <circle cx="16" cy="18" r="12" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.8" />
+              <circle cx="30" cy="14" r="14" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.8" />
               <ellipse cx="24" cy="24" rx="23" ry="14" fill="#BAE6FD" />
               <circle cx="16" cy="18" r="10" fill="#BAE6FD" />
               <circle cx="30" cy="14" r="12" fill="#BAE6FD" />
@@ -184,7 +185,7 @@ export default function BusinessFinancialCategoryView({ category }) {
             {/* Modern Streamlined Car Silhouette */}
             <g transform="translate(65, 78)">
               {/* Car Body */}
-              <path d="M 12 45 C 22 28 45 15 80 15 C 115 15 138 28 155 35 L 182 38 C 192 40 198 48 198 56 L 198 64 L 6 64 C 6 56 8 48 12 45 Z" fill="#0284C7" stroke="#0F172A" strokeWidth="2.2" />
+              <path d="M 12 45 C 22 28 45 15 80 15 C 115 15 138 28 155 35 L 182 38 C 192 40 198 48 198 56 L 198 64 L 6 64 C 6 56 8 48 12 45 Z" fill="#59bdfc" stroke="#0F172A" strokeWidth="2.2" />
               {/* Windows */}
               <path d="M 46 22 L 78 22 L 78 38 L 28 38 C 34 30 38 25 46 22 Z" fill="#BAE6FD" stroke="#0F172A" strokeWidth="1.5" />
               <path d="M 86 22 L 126 22 C 136 26 142 32 148 38 L 86 38 Z" fill="#BAE6FD" stroke="#0F172A" strokeWidth="1.5" />
@@ -210,9 +211,9 @@ export default function BusinessFinancialCategoryView({ category }) {
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Commercial Storefront / Warehouse Building */}
             <rect x="75" y="70" width="135" height="80" rx="5" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-            <polygon points="68,70 142,32 217,70" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2.2" />
+            <polygon points="68,70 142,32 217,70" fill="#59bdfc" stroke="#0F172A" strokeWidth="2.2" />
             {/* Shop Awning */}
-            <polygon points="70,70 215,70 208,86 77,86" fill="#0284C7" stroke="#0F172A" strokeWidth="1.8" />
+            <polygon points="70,70 215,70 208,86 77,86" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.8" />
             <polygon points="90,70 108,70 103,86 85,86" fill="#FFFFFF" />
             <polygon points="126,70 144,70 139,86 121,86" fill="#FFFFFF" />
             <polygon points="162,70 180,70 175,86 157,86" fill="#FFFFFF" />
@@ -244,15 +245,15 @@ export default function BusinessFinancialCategoryView({ category }) {
             {/* Flight Airplane */}
             <g transform="translate(145, 54) rotate(-18)">
               <path d="M 0 16 L 36 12 L 56 0 L 64 2 L 48 16 L 76 17 L 84 10 L 90 11 L 84 21 L 90 31 L 84 32 L 76 25 L 48 26 L 64 40 L 56 42 L 36 30 L 0 26 Z" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-              <polygon points="12,18 20,18 22,24 14,24" fill="#0284C7" />
+              <polygon points="12,18 20,18 22,24 14,24" fill="#59bdfc" />
             </g>
             {/* Group People Shield */}
             <g transform="translate(198, 92)">
-              <rect x="0" y="0" width="76" height="52" rx="8" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+              <rect x="0" y="0" width="76" height="52" rx="8" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
               <circle cx="24" cy="20" r="8" fill="#FDE047" stroke="#0F172A" strokeWidth="1.2" />
-              <path d="M 12 40 C 12 30 18 28 24 28 C 30 28 36 30 36 40" fill="#38BDF8" stroke="#0F172A" strokeWidth="1.2" />
+              <path d="M 12 40 C 12 30 18 28 24 28 C 30 28 36 30 36 40" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.2" />
               <circle cx="48" cy="20" r="8" fill="#FDE047" stroke="#0F172A" strokeWidth="1.2" />
-              <path d="M 36 40 C 36 30 42 28 48 28 C 54 28 60 30 60 40" fill="#38BDF8" stroke="#0F172A" strokeWidth="1.2" />
+              <path d="M 36 40 C 36 30 42 28 48 28 C 54 28 60 30 60 40" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.2" />
             </g>
           </svg>
         )
@@ -262,7 +263,7 @@ export default function BusinessFinancialCategoryView({ category }) {
           <svg className="ksfe-sig-visual-svg" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             <rect x="100" y="60" width="140" height="90" rx="8" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-            <circle cx="170" cy="105" r="24" fill="#38BDF8" stroke="#0F172A" strokeWidth="2" />
+            <circle cx="170" cy="105" r="24" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <text x="170" y="112" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#0F172A">★</text>
           </svg>
         )
@@ -292,11 +293,11 @@ export default function BusinessFinancialCategoryView({ category }) {
       <section style={{ backgroundColor: "#f8fafc", borderBottom: "1px solid #e2e8f0", padding: "14px 0" }}>
         <div className="tf-container w-1780">
           <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#64748b" }}>
-            <Link href="/" style={{ color: "#0366a2", textDecoration: "none", fontWeight: 500 }}>
+            <Link href="/" style={{ color: "#0369a1", textDecoration: "none", fontWeight: 500 }}>
               Home
             </Link>
             <span>/</span>
-            <Link href="/services" style={{ color: "#0366a2", textDecoration: "none", fontWeight: 500 }}>
+            <Link href="/services" style={{ color: "#0369a1", textDecoration: "none", fontWeight: 500 }}>
               Services
             </Link>
             <span>/</span>
@@ -324,8 +325,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                 {/* Main Heading */}
                 <h1 style={{
                   fontSize: "clamp(34px, 3.8vw, 54px)",
-                  fontWeight: 400,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.15",
                   letterSpacing: "0.2px",
                   marginBottom: "16px",
@@ -337,7 +338,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                 {/* Subheadline from User */}
                 <h2 style={{
                   fontSize: "clamp(18px, 1.8vw, 22px)",
-                  fontWeight: 400,
+                  fontWeight: 600,
                   color: "#475569",
                   lineHeight: "1.4",
                   marginBottom: "20px",
@@ -364,14 +365,14 @@ export default function BusinessFinancialCategoryView({ category }) {
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "10px",
-                      backgroundColor: "#0366a2",
-                      color: "#ffffff",
+                      backgroundColor: "#59bdfc",
+                      color: "#0f172a",
                       fontWeight: "700",
                       fontSize: "16px",
                       padding: "14px 32px",
                       borderRadius: "8px",
                       textDecoration: "none",
-                      boxShadow: "0 6px 20px rgba(3, 102, 162, 0.25)",
+                      boxShadow: "0 6px 20px rgba(89, 189, 252, 0.25)",
                       transition: "all 0.25s ease"
                     }}
                   >
@@ -416,15 +417,18 @@ export default function BusinessFinancialCategoryView({ category }) {
                   overflow: "hidden",
                   boxShadow: "0 20px 50px rgba(0, 0, 0, 0.08)",
                   position: "relative",
-                  height: "460px",
-                  width: "100%"
+                  height: "440px",
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}>
                   <Image
                     src="/images/services/2.png"
                     alt="Globon Business & Financial Solutions"
                     fill
                     sizes="(max-width: 991px) 100vw, 560px"
-                    style={{ objectFit: "cover", objectPosition: "center 20%" }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                     priority
                   />
                 </div>
@@ -451,8 +455,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                     width: "32px",
                     height: "32px",
                     borderRadius: "50%",
-                    background: "#0366a2",
-                    color: "#ffffff",
+                    background: "#59bdfc",
+                    color: "#0f172a",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -494,7 +498,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                     borderRadius: "12px",
                     background: "#f8fafc",
                     border: "1px solid #e2e8f0",
-                    color: "#0366a2",
+                    color: "#0369a1",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center"
@@ -540,9 +544,9 @@ export default function BusinessFinancialCategoryView({ category }) {
             </span>
             <h2 style={{
               fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 400,
+              fontWeight: 600,
               letterSpacing: "0.5px",
-              color: "#000000",
+              color: '#0369a1',
               lineHeight: 1.3,
               marginBottom: "18px",
               fontFamily: "'Poppins', sans-serif"
@@ -581,7 +585,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                   borderRadius: "50%",
                   background: "#f8fafc",
                   border: "1px solid #e2e8f0",
-                  color: "#0366a2",
+                  color: "#0369a1",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -592,8 +596,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -641,8 +645,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -679,7 +683,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                   borderRadius: "50%",
                   background: "#f8fafc",
                   border: "1px solid #e2e8f0",
-                  color: "#0284c7",
+                  color: "#0369a1",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -690,8 +694,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -739,8 +743,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -776,10 +780,10 @@ export default function BusinessFinancialCategoryView({ category }) {
           }}>
             <h2 style={{
               fontSize: "clamp(24px, 2.6vw, 36px)",
-              fontWeight: "400",
+              fontWeight: 600,
               letterSpacing: "0.5px",
               textTransform: "uppercase",
-              color: "#000000",
+              color: '#0369a1',
               margin: 0,
               fontFamily: "inherit"
             }}>
@@ -823,7 +827,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                 <div key={service.slug} className="col-12 col-sm-6 col-lg-4 col-xl-4">
                   <div className="loan-scheme-sig-card wow fadeInUp" data-wow-delay={`${(idx % 3) * 0.1}s`}>
                     <Link
-                      href={`/services/${category.slug}/${service.slug}`}
+                      href={service.href}
                       className="ksfe-sig-visual-wrap"
                       aria-label={service.title}
                     >
@@ -832,7 +836,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                           src={service.heroImage || service.image}
                           alt={service.title}
                           fill
-                          style={{ objectFit: 'cover' }}
+                          style={{ objectFit: 'cover', objectPosition: 'center' }}
                         />
                       ) : (
                         getServiceIllustration(service.slug)
@@ -842,8 +846,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                     <div className="ksfe-sig-content">
                       <h3 className="ksfe-sig-card-title">
                         <Link
-                          href={`/services/${category.slug}/${service.slug}`}
-                          style={{ color: "#000000" }}
+                          href={service.href}
+                          style={{ color: '#0369a1' }}
                         >
                           {service.title}
                         </Link>
@@ -852,7 +856,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                       <p style={{
                         fontSize: "15px",
                         fontWeight: 500,
-                        color: "#0366a2",
+                        color: "#0369a1",
                         lineHeight: "1.4",
                         marginBottom: "10px"
                       }}>
@@ -863,6 +867,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                         {service.shortDesc}
                       </p>
 
+                      <SubServiceLinks items={service.subServices} />
+
                       <div className="ksfe-sig-divider" />
 
                       {service.highlights && service.highlights.length > 0 && (
@@ -871,7 +877,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                             <li key={i} className="ksfe-sig-bullet-item">
                               <span className="bullet-asterisk">✻</span>
                               <Link
-                                href={`/services/${category.slug}/${service.slug}`}
+                                href={service.href}
                                 style={{ color: "inherit", textDecoration: "none" }}
                               >
                                 {hl}
@@ -918,9 +924,9 @@ export default function BusinessFinancialCategoryView({ category }) {
             </span>
             <h2 style={{
               fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 400,
+              fontWeight: 600,
               letterSpacing: "0.5px",
-              color: "#000000",
+              color: '#0369a1',
               marginBottom: "16px",
               fontFamily: "'Poppins', sans-serif"
             }}>
@@ -953,8 +959,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -963,8 +969,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -998,8 +1004,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -1008,8 +1014,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -1043,8 +1049,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -1053,8 +1059,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -1079,8 +1085,8 @@ export default function BusinessFinancialCategoryView({ category }) {
               <div style={{ maxWidth: "620px" }}>
                 <h2 style={{
                   fontSize: "clamp(24px, 2.6vw, 36px)",
-                  fontWeight: 400,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   textTransform: "uppercase",
                   letterSpacing: "0.5px",
                   lineHeight: 1.25,
@@ -1119,7 +1125,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                           <span style={{
                             fontSize: "clamp(18px, 1.4vw, 21px)",
                             fontWeight: 500,
-                            color: isOpen ? "#0366a2" : "#0f172a",
+                            color: isOpen ? "#0369a1" : "#0f172a",
                             lineHeight: 1.4,
                             fontFamily: "'Poppins', sans-serif"
                           }}>
@@ -1129,8 +1135,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                             width: "32px",
                             height: "32px",
                             borderRadius: "50%",
-                            background: isOpen ? "#0366a2" : "#f1f5f9",
-                            color: isOpen ? "#ffffff" : "#475569",
+                            background: isOpen ? "#59bdfc" : "#f1f5f9",
+                            color: isOpen ? "#0f172a" : "#475569",
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
@@ -1201,14 +1207,14 @@ export default function BusinessFinancialCategoryView({ category }) {
                     width: "48px",
                     height: "48px",
                     borderRadius: "14px",
-                    background: "#0284c7",
+                    background: "#59bdfc",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "#ffffff",
+                    color: "#0f172a",
                     fontSize: "22px",
                     fontWeight: "900",
-                    boxShadow: "0 10px 24px rgba(2, 132, 199, 0.35)",
+                    boxShadow: "0 10px 24px rgba(89, 189, 252, 0.35)",
                     zIndex: 3
                   }}
                 >
@@ -1246,7 +1252,7 @@ export default function BusinessFinancialCategoryView({ category }) {
         className="globon-navy-cta-section"
         style={{
           padding: "95px 0 100px 0",
-          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(3, 102, 162, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
+          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(89, 189, 252, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
           borderTop: "1px solid rgba(255, 255, 255, 0.08)",
           borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
           position: "relative",
@@ -1272,8 +1278,8 @@ export default function BusinessFinancialCategoryView({ category }) {
                 padding: "7px 18px",
                 borderRadius: "30px",
                 backgroundColor: "rgba(255, 255, 255, 0.08)",
-                border: "1px solid rgba(56, 189, 248, 0.3)",
-                color: "#38bdf8",
+                border: "1px solid rgba(89, 189, 252, 0.3)",
+                color: "#0369a1",
                 backdropFilter: "blur(8px)",
                 marginBottom: "20px"
               }}
@@ -1328,14 +1334,14 @@ export default function BusinessFinancialCategoryView({ category }) {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
-                  backgroundColor: "#0284c7",
-                  color: "#ffffff",
+                  backgroundColor: "#59bdfc",
+                  color: "#0f172a",
                   fontWeight: "700",
                   fontSize: "16px",
                   padding: "16px 36px",
                   borderRadius: "8px",
                   textDecoration: "none",
-                  boxShadow: "0 8px 24px rgba(2, 132, 199, 0.35)",
+                  boxShadow: "0 8px 24px rgba(89, 189, 252, 0.35)",
                   transition: "all 0.25s ease"
                 }}
               >

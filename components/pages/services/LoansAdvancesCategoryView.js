@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import SubServiceLinks from "./SubServiceLinks";
 
 export default function LoansAdvancesCategoryView({ category }) {
   const [activeFaq, setActiveFaq] = useState(null)
@@ -20,19 +21,19 @@ export default function LoansAdvancesCategoryView({ category }) {
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Person Silhouette Badge */}
             <circle cx="100" cy="96" r="38" fill="#E0F2FE" stroke="#0F172A" strokeWidth="2" />
-            <path d="M 76 130 C 76 114 86 110 100 110 C 114 110 124 114 124 130" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+            <path d="M 76 130 C 76 114 86 110 100 110 C 114 110 124 114 124 130" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <polygon points="96,110 104,110 100,120" fill="#F59E0B" />
             <circle cx="100" cy="88" r="14" fill="#93C5FD" stroke="#0F172A" strokeWidth="2" />
             <path d="M 96 91 Q 100 94 104 91" fill="none" stroke="#0F172A" strokeWidth="1.5" strokeLinecap="round" />
             {/* Wallet with Cash Notes */}
-            <rect x="142" y="86" width="105" height="66" rx="8" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+            <rect x="142" y="86" width="105" height="66" rx="8" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <g transform="translate(150, 52) rotate(-6)">
               <rect x="0" y="0" width="68" height="36" rx="4" fill="#34D399" stroke="#0F172A" strokeWidth="1.8" />
               <ellipse cx="34" cy="18" rx="10" ry="7" fill="#A7F3D0" stroke="#0F172A" strokeWidth="1" />
               <text x="34" y="22" fontSize="10" fontWeight="900" textAnchor="middle" fill="#0F172A">₹</text>
             </g>
             <g transform="translate(170, 48) rotate(5)">
-              <rect x="0" y="0" width="68" height="36" rx="4" fill="#38BDF8" stroke="#0F172A" strokeWidth="1.8" />
+              <rect x="0" y="0" width="68" height="36" rx="4" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.8" />
               <ellipse cx="34" cy="18" rx="10" ry="7" fill="#BAE6FD" stroke="#0F172A" strokeWidth="1" />
               <text x="34" y="22" fontSize="10" fontWeight="900" textAnchor="middle" fill="#0F172A">₹</text>
             </g>
@@ -58,14 +59,14 @@ export default function LoansAdvancesCategoryView({ category }) {
           <svg className="ksfe-sig-visual-svg" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Books Stack */}
-            <rect x="75" y="126" width="135" height="24" rx="4" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+            <rect x="75" y="126" width="135" height="24" rx="4" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <rect x="82" y="130" width="122" height="16" fill="#F8FAFC" stroke="#0F172A" strokeWidth="1.5" />
             <rect x="85" y="104" width="120" height="22" rx="4" fill="#3B82F6" stroke="#0F172A" strokeWidth="2" />
             <rect x="92" y="108" width="107" height="14" fill="#FFFFFF" stroke="#0F172A" strokeWidth="1.5" />
             <path d="M 195 108 L 204 136 L 199 132 L 194 136 Z" fill="#EF4444" stroke="#0F172A" strokeWidth="1" />
             {/* Mortarboard Graduation Cap */}
             <ellipse cx="145" cy="90" rx="36" ry="14" fill="#0F172A" />
-            <polygon points="145,50 205,68 145,86 85,68" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2.5" />
+            <polygon points="145,50 205,68 145,86 85,68" fill="#59bdfc" stroke="#0F172A" strokeWidth="2.5" />
             <ellipse cx="145" cy="68" rx="4.5" ry="2.5" fill="#F59E0B" />
             <path d="M 145 68 Q 185 72 195 92" fill="none" stroke="#F59E0B" strokeWidth="2.5" strokeLinecap="round" />
             <rect x="192" y="92" width="6" height="14" rx="2" fill="#FBBF24" stroke="#0F172A" strokeWidth="1.2" />
@@ -97,9 +98,9 @@ export default function LoansAdvancesCategoryView({ category }) {
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Retail Storefront */}
             <rect x="65" y="72" width="115" height="80" rx="4" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-            <rect x="80" y="52" width="85" height="20" rx="3" fill="#1F4E7A" stroke="#0F172A" strokeWidth="1.8" />
+            <rect x="80" y="52" width="85" height="20" rx="3" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.8" />
             <text x="122" y="66" fontSize="9.5" fontWeight="bold" textAnchor="middle" fill="#FFFFFF" letterSpacing="1">RETAIL</text>
-            <polygon points="58,72 188,72 182,90 64,90" fill="#0284C7" stroke="#0F172A" strokeWidth="2" />
+            <polygon points="58,72 188,72 182,90 64,90" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <polygon points="76,72 96,72 91,90 71,90" fill="#FFFFFF" />
             <polygon points="116,72 136,72 131,90 111,90" fill="#FFFFFF" />
             <polygon points="156,72 176,72 171,90 151,90" fill="#FFFFFF" />
@@ -133,13 +134,13 @@ export default function LoansAdvancesCategoryView({ category }) {
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Home House */}
             <rect x="85" y="86" width="130" height="66" rx="4" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2.2" />
-            <polygon points="75,88 150,38 225,88" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2.5" />
+            <polygon points="75,88 150,38 225,88" fill="#59bdfc" stroke="#0F172A" strokeWidth="2.5" />
             <rect x="180" y="44" width="18" height="26" fill="#EF4444" stroke="#0F172A" strokeWidth="1.8" />
             <rect x="177" y="42" width="24" height="5" rx="1.5" fill="#0F172A" />
             <circle cx="150" cy="66" r="9" fill="#FEF08A" stroke="#0F172A" strokeWidth="1.5" />
             <line x1="150" y1="57" x2="150" y2="75" stroke="#0F172A" strokeWidth="1.2" />
             <line x1="141" y1="66" x2="159" y2="66" stroke="#0F172A" strokeWidth="1.2" />
-            <rect x="135" y="108" width="30" height="44" rx="3" fill="#0284C7" stroke="#0F172A" strokeWidth="1.8" />
+            <rect x="135" y="108" width="30" height="44" rx="3" fill="#59bdfc" stroke="#0F172A" strokeWidth="1.8" />
             <circle cx="140" cy="130" r="2.5" fill="#F59E0B" />
             <rect x="94" y="102" width="28" height="26" rx="3" fill="#FEF08A" stroke="#0F172A" strokeWidth="1.5" />
             <rect x="176" y="102" width="30" height="26" rx="3" fill="#FEF08A" stroke="#0F172A" strokeWidth="1.5" />
@@ -169,7 +170,7 @@ export default function LoansAdvancesCategoryView({ category }) {
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* 3D Commercial High-Rise Building */}
             <polygon points="75,55 115,35 115,150 75,170" fill="#60A5FA" stroke="#0F172A" strokeWidth="2" />
-            <polygon points="115,35 165,55 165,170 115,150" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+            <polygon points="115,35 165,55 165,170 115,150" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <polygon points="75,55 115,35 165,55 125,75" fill="#93C5FD" stroke="#0F172A" strokeWidth="2" />
             <line x1="83" y1="70" x2="107" y2="58" stroke="#DBEAFE" strokeWidth="2" />
             <line x1="83" y1="88" x2="107" y2="76" stroke="#DBEAFE" strokeWidth="2" />
@@ -184,7 +185,7 @@ export default function LoansAdvancesCategoryView({ category }) {
             {/* Property Deed Document */}
             <g transform="translate(182, 60) rotate(5)">
               <rect x="0" y="0" width="70" height="92" rx="4" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
-              <rect x="6" y="8" width="58" height="10" rx="2" fill="#0284C7" />
+              <rect x="6" y="8" width="58" height="10" rx="2" fill="#59bdfc" />
               <line x1="6" y1="26" x2="64" y2="26" stroke="#CBD5E1" strokeWidth="2.5" strokeLinecap="round" />
               <line x1="6" y1="34" x2="52" y2="34" stroke="#CBD5E1" strokeWidth="2.5" strokeLinecap="round" />
               <line x1="6" y1="42" x2="58" y2="42" stroke="#CBD5E1" strokeWidth="2.5" strokeLinecap="round" />
@@ -211,13 +212,13 @@ export default function LoansAdvancesCategoryView({ category }) {
           <svg className="ksfe-sig-visual-svg" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Executive Briefcase */}
-            <rect x="75" y="90" width="125" height="70" rx="8" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2.2" />
+            <rect x="75" y="90" width="125" height="70" rx="8" fill="#59bdfc" stroke="#0F172A" strokeWidth="2.2" />
             <path d="M 122 90 C 122 74 153 74 153 90" fill="none" stroke="#0F172A" strokeWidth="3" strokeLinecap="round" />
             <rect x="105" y="104" width="14" height="16" rx="2" fill="#FBBF24" stroke="#0F172A" strokeWidth="1.2" />
             <rect x="156" y="104" width="14" height="16" rx="2" fill="#FBBF24" stroke="#0F172A" strokeWidth="1.2" />
             <line x1="75" y1="120" x2="200" y2="120" stroke="#0F172A" strokeWidth="1.5" />
             {/* Upward Growth Bar Chart */}
-            <rect x="210" y="102" width="22" height="52" rx="3" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+            <rect x="210" y="102" width="22" height="52" rx="3" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <rect x="238" y="74" width="22" height="80" rx="3" fill="#F59E0B" stroke="#0F172A" strokeWidth="2" />
             <rect x="266" y="44" width="22" height="110" rx="3" fill="#0EA5E9" stroke="#0F172A" strokeWidth="2" />
             <path d="M 221 96 L 249 68 L 277 38" fill="none" stroke="#F59E0B" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="3 3" />
@@ -243,7 +244,7 @@ export default function LoansAdvancesCategoryView({ category }) {
           <svg className="ksfe-sig-visual-svg" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Blueprint Scroll */}
-            <rect x="65" y="74" width="135" height="82" rx="5" fill="#0284C7" stroke="#0F172A" strokeWidth="2.2" />
+            <rect x="65" y="74" width="135" height="82" rx="5" fill="#59bdfc" stroke="#0F172A" strokeWidth="2.2" />
             <path d="M 65 74 C 54 74 54 156 65 156 Z" fill="#0369A1" stroke="#0F172A" strokeWidth="2" />
             <line x1="82" y1="94" x2="186" y2="94" stroke="#BAE6FD" strokeWidth="1.5" strokeDasharray="4 2" />
             <rect x="85" y="104" width="38" height="38" fill="none" stroke="#BAE6FD" strokeWidth="1.5" />
@@ -281,7 +282,7 @@ export default function LoansAdvancesCategoryView({ category }) {
             <path d="M 100 85 C 80 102 78 132 100 144 C 122 132 120 102 100 85 Z" fill="#EA580C" stroke="#0F172A" strokeWidth="2.2" />
             <ellipse cx="100" cy="85" rx="16" ry="5" fill="#F97316" stroke="#0F172A" strokeWidth="1.5" />
             {/* Manufacturing Gear */}
-            <circle cx="205" cy="78" r="32" fill="#38BDF8" stroke="#0F172A" strokeWidth="2" />
+            <circle cx="205" cy="78" r="32" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <circle cx="205" cy="78" r="12" fill="#F0F4F9" stroke="#0F172A" strokeWidth="2" />
             {/* Government Capital Subsidy Badge */}
             <rect x="180" y="112" width="112" height="34" rx="6" fill="#F59E0B" stroke="#0F172A" strokeWidth="2" />
@@ -309,7 +310,7 @@ export default function LoansAdvancesCategoryView({ category }) {
           <svg className="ksfe-sig-visual-svg" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Bank Vault Safe */}
-            <rect x="70" y="65" width="90" height="92" rx="8" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2.2" />
+            <rect x="70" y="65" width="90" height="92" rx="8" fill="#59bdfc" stroke="#0F172A" strokeWidth="2.2" />
             <circle cx="115" cy="111" r="32" fill="#93C5FD" stroke="#0F172A" strokeWidth="2" />
             <circle cx="115" cy="111" r="15" fill="#3B82F6" stroke="#0F172A" strokeWidth="1.8" />
             <text x="115" y="117" fontSize="16" fontWeight="900" textAnchor="middle" fill="#0F172A">₹</text>
@@ -326,7 +327,7 @@ export default function LoansAdvancesCategoryView({ category }) {
             <circle cx="260" cy="118" r="16" fill="#FBBF24" stroke="#0F172A" strokeWidth="2" />
             <text x="260" y="123" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#0F172A">★</text>
             <path d="M 252 132 L 246 150 L 256 145 Z" fill="#EC4899" stroke="#0F172A" strokeWidth="1" />
-            <path d="M 268 132 L 274 150 L 264 145 Z" fill="#0366A2" stroke="#0F172A" strokeWidth="1" />
+            <path d="M 268 132 L 274 150 L 264 145 Z" fill="#59bdfc" stroke="#0F172A" strokeWidth="1" />
             {/* Coin Stack */}
             <g transform="translate(95, 146)">
               <path d="M 0 5 C 0 9 24 9 24 5 L 24 11 C 24 15 0 15 0 11 Z" fill="#94A3B8" stroke="#0F172A" strokeWidth="1.5" />
@@ -343,8 +344,8 @@ export default function LoansAdvancesCategoryView({ category }) {
           <svg className="ksfe-sig-visual-svg" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
             {/* Modern Automobile */}
-            <path d="M 60 128 C 60 116 75 114 90 114 L 235 114 C 255 114 265 124 265 136 C 265 144 255 148 240 148 L 78 148 C 65 148 60 140 60 128 Z" fill="#0284C7" stroke="#0F172A" strokeWidth="2.2" />
-            <path d="M 100 114 L 130 78 L 195 78 L 225 114 Z" fill="#38BDF8" stroke="#0F172A" strokeWidth="2" />
+            <path d="M 60 128 C 60 116 75 114 90 114 L 235 114 C 255 114 265 124 265 136 C 265 144 255 148 240 148 L 78 148 C 65 148 60 140 60 128 Z" fill="#59bdfc" stroke="#0F172A" strokeWidth="2.2" />
+            <path d="M 100 114 L 130 78 L 195 78 L 225 114 Z" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <polygon points="192,82 218,110 172,110 172,82" fill="#BAE6FD" stroke="#0F172A" strokeWidth="1.5" />
             <polygon points="135,82 108,110 162,110 162,82" fill="#BAE6FD" stroke="#0F172A" strokeWidth="1.5" />
             <polygon points="260,124 285,118 285,136 260,130" fill="#FEF08A" opacity="0.85" />
@@ -356,7 +357,7 @@ export default function LoansAdvancesCategoryView({ category }) {
             <circle cx="218" cy="146" r="8" fill="#E2E8F0" stroke="#0F172A" strokeWidth="1.5" />
             {/* Key Fob with Remote Signals */}
             <rect x="236" y="42" width="26" height="40" rx="9" fill="#0F172A" stroke="#0F172A" strokeWidth="1.5" />
-            <circle cx="249" cy="54" r="3.5" fill="#38BDF8" />
+            <circle cx="249" cy="54" r="3.5" fill="#59bdfc" />
             <rect x="244" y="62" width="10" height="4" rx="1.5" fill="#F59E0B" />
             <rect x="244" y="70" width="10" height="4" rx="1.5" fill="#CBD5E1" />
             <circle cx="249" cy="38" r="5" fill="none" stroke="#FBBF24" strokeWidth="2" />
@@ -376,7 +377,7 @@ export default function LoansAdvancesCategoryView({ category }) {
         return (
           <svg className="ksfe-sig-visual-svg" viewBox="0 0 340 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="170" cy="165" rx="130" ry="22" fill="#DCE8F6" />
-            <rect x="52" y="98" width="22" height="60" rx="3" fill="#1F4E7A" stroke="#0F172A" strokeWidth="2" />
+            <rect x="52" y="98" width="22" height="60" rx="3" fill="#59bdfc" stroke="#0F172A" strokeWidth="2" />
             <rect x="78" y="68" width="22" height="90" rx="3" fill="#F59E0B" stroke="#0F172A" strokeWidth="2" />
             <rect x="104" y="42" width="22" height="116" rx="3" fill="#0EA5E9" stroke="#0F172A" strokeWidth="2" />
             <path d="M 228 112 C 228 82 202 62 168 62 C 130 62 120 88 120 114 C 120 142 142 158 178 158 C 214 158 228 140 228 112 Z" fill="#93C5FD" stroke="#0F172A" strokeWidth="2.5" />
@@ -447,12 +448,12 @@ export default function LoansAdvancesCategoryView({ category }) {
         }
         .loan-service-card:hover {
           transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(3, 102, 162, 0.12) !important;
-          border-color: #0366a2 !important;
+          box-shadow: 0 20px 40px rgba(89, 189, 252, 0.12) !important;
+          border-color: #59bdfc !important;
         }
         .loan-service-card:hover .service-icon-box {
-          background-color: #0366a2 !important;
-          color: #ffffff !important;
+          background-color: #59bdfc !important;
+          color: #0f172a !important;
           transform: scale(1.08);
         }
         .service-icon-box {
@@ -465,7 +466,7 @@ export default function LoansAdvancesCategoryView({ category }) {
         .help-pillar-card:hover {
           transform: translateY(-6px);
           box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
-          border-color: #0366a2;
+          border-color: #59bdfc;
         }
       `}</style>
 
@@ -499,20 +500,20 @@ export default function LoansAdvancesCategoryView({ category }) {
                 {/* Main Heading */}
                 <h1 style={{
                   fontSize: "clamp(34px, 3.8vw, 54px)",
-                  fontWeight: 400,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.15",
                   letterSpacing: "0.2px",
                   marginBottom: "16px",
                   fontFamily: "'Poppins', sans-serif"
                 }}>
-                  Loans &amp; Advances
+                  Loans
                 </h1>
 
                 {/* Subheadline from User */}
                 <h2 style={{
                   fontSize: "clamp(18px, 1.8vw, 22px)",
-                  fontWeight: 400,
+                  fontWeight: 600,
                   color: "#475569",
                   lineHeight: "1.4",
                   marginBottom: "20px",
@@ -539,14 +540,14 @@ export default function LoansAdvancesCategoryView({ category }) {
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "10px",
-                      backgroundColor: "#0366a2",
-                      color: "#ffffff",
+                      backgroundColor: "#59bdfc",
+                      color: "#0f172a",
                       fontWeight: "700",
                       fontSize: "16px",
                       padding: "14px 32px",
                       borderRadius: "8px",
                       textDecoration: "none",
-                      boxShadow: "0 6px 20px rgba(3, 102, 162, 0.25)",
+                      boxShadow: "0 6px 20px rgba(89, 189, 252, 0.25)",
                       transition: "all 0.25s ease"
                     }}
                   >
@@ -555,7 +556,7 @@ export default function LoansAdvancesCategoryView({ category }) {
                   </a>
 
                   <a
-                    href="https://wa.me/919846053539?text=Hello%20Globon,%20I%20would%20like%20assistance%20with%20Loans%20%26%20Advances."
+                    href="https://wa.me/919846053539?text=Hello%20Globon,%20I%20would%20like%20assistance%20with%20Loans."
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
@@ -591,15 +592,18 @@ export default function LoansAdvancesCategoryView({ category }) {
                   overflow: "hidden",
                   boxShadow: "0 20px 50px rgba(0, 0, 0, 0.08)",
                   position: "relative",
-                  height: "460px",
-                  width: "100%"
+                  height: "440px",
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}>
                   <Image
                     src="/images/services/1.png"
-                    alt="Globon Loans & Advances"
+                    alt="Globon Loans"
                     fill
                     sizes="(max-width: 991px) 100vw, 560px"
-                    style={{ objectFit: "cover", objectPosition: "center 20%" }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                     priority
                   />
                 </div>
@@ -626,8 +630,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                     width: "32px",
                     height: "32px",
                     borderRadius: "50%",
-                    background: "#0366a2",
-                    color: "#ffffff",
+                    background: "#59bdfc",
+                    color: "#0f172a",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -669,7 +673,7 @@ export default function LoansAdvancesCategoryView({ category }) {
                     borderRadius: "12px",
                     background: "#f8fafc",
                     border: "1px solid #e2e8f0",
-                    color: "#0366a2",
+                    color: "#0369a1",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center"
@@ -715,9 +719,9 @@ export default function LoansAdvancesCategoryView({ category }) {
             </span>
             <h2 style={{
               fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 400,
+              fontWeight: 600,
               letterSpacing: "0.5px",
-              color: "#000000",
+              color: '#0369a1',
               lineHeight: 1.3,
               marginBottom: "18px",
               fontFamily: "'Poppins', sans-serif"
@@ -756,7 +760,7 @@ export default function LoansAdvancesCategoryView({ category }) {
                   borderRadius: "50%",
                   background: "#f8fafc",
                   border: "1px solid #e2e8f0",
-                  color: "#0366a2",
+                  color: "#0369a1",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -767,8 +771,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -816,8 +820,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -865,8 +869,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -914,8 +918,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   marginBottom: "10px",
                   lineHeight: 1.3,
                   fontFamily: "'Poppins', sans-serif"
@@ -951,10 +955,10 @@ export default function LoansAdvancesCategoryView({ category }) {
           }}>
             <h2 style={{
               fontSize: "clamp(24px, 2.6vw, 36px)",
-              fontWeight: "400",
+              fontWeight: 600,
               letterSpacing: "0.5px",
               textTransform: "uppercase",
-              color: "#000000",
+              color: '#0369a1',
               margin: 0,
               fontFamily: "inherit"
             }}>
@@ -998,7 +1002,7 @@ export default function LoansAdvancesCategoryView({ category }) {
                 <div key={service.slug} className="col-12 col-md-6 col-lg-4">
                   <div className="loan-scheme-sig-card wow fadeInUp" data-wow-delay={`${(idx % 3) * 0.1}s`}>
                     <Link
-                      href={`/services/loans-advances/${service.slug}`}
+                      href={service.href}
                       className="ksfe-sig-visual-wrap"
                       aria-label={service.title}
                     >
@@ -1007,7 +1011,7 @@ export default function LoansAdvancesCategoryView({ category }) {
                           src={service.heroImage || service.image}
                           alt={service.title}
                           fill
-                          style={{ objectFit: 'cover' }}
+                          style={{ objectFit: 'cover', objectPosition: 'center' }}
                         />
                       ) : (
                         getServiceIllustration(service.slug)
@@ -1016,7 +1020,7 @@ export default function LoansAdvancesCategoryView({ category }) {
 
                     <div className="ksfe-sig-content">
                       <h3 className="ksfe-sig-card-title">
-                        <Link href={`/services/loans-advances/${service.slug}`}>
+                        <Link href={service.href}>
                           {service.title}
                         </Link>
                       </h3>
@@ -1025,6 +1029,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                         {service.shortDesc}
                       </p>
 
+                      <SubServiceLinks items={service.subServices} />
+
                       <div className="ksfe-sig-divider" />
 
                       {service.highlights && service.highlights.length > 0 && (
@@ -1032,7 +1038,7 @@ export default function LoansAdvancesCategoryView({ category }) {
                           {service.highlights.slice(0, 3).map((hl, i) => (
                             <li key={i} className="ksfe-sig-bullet-item">
                               <span className="bullet-asterisk">✻</span>
-                              <Link href={`/services/loans-advances/${service.slug}`}>
+                              <Link href={service.href}>
                                 {hl}
                               </Link>
                             </li>
@@ -1077,9 +1083,9 @@ export default function LoansAdvancesCategoryView({ category }) {
             </span>
             <h2 style={{
               fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 400,
+              fontWeight: 600,
               letterSpacing: "0.5px",
-              color: "#000000",
+              color: '#0369a1',
               marginBottom: "16px",
               fontFamily: "'Poppins', sans-serif"
             }}>
@@ -1112,8 +1118,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -1122,8 +1128,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -1157,8 +1163,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -1167,8 +1173,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -1202,8 +1208,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                   width: "50px",
                   height: "50px",
                   borderRadius: "14px",
-                  background: "#0366a2",
-                  color: "#ffffff",
+                  background: "#59bdfc",
+                  color: "#0f172a",
                   fontSize: "18px",
                   fontWeight: "800",
                   marginBottom: "24px"
@@ -1212,8 +1218,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                 </div>
                 <h3 style={{
                   fontSize: "19px",
-                  fontWeight: 500,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   lineHeight: "1.35",
                   marginBottom: "14px",
                   fontFamily: "'Poppins', sans-serif"
@@ -1238,8 +1244,8 @@ export default function LoansAdvancesCategoryView({ category }) {
               <div style={{ maxWidth: "620px" }}>
                 <h2 style={{
                   fontSize: "clamp(24px, 2.6vw, 36px)",
-                  fontWeight: 400,
-                  color: "#000000",
+                  fontWeight: 600,
+                  color: '#0369a1',
                   textTransform: "uppercase",
                   letterSpacing: "0.5px",
                   lineHeight: 1.25,
@@ -1286,7 +1292,7 @@ export default function LoansAdvancesCategoryView({ category }) {
                           </span>
                           <div style={{ display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 }}>
                             <span style={{
-                              color: "#0284c7",
+                              color: "#0369a1",
                               fontSize: "24px",
                               fontWeight: 600,
                               lineHeight: 1,
@@ -1371,11 +1377,11 @@ export default function LoansAdvancesCategoryView({ category }) {
                     width: "48px",
                     height: "48px",
                     borderRadius: "12px",
-                    background: "#0284c7",
+                    background: "#59bdfc",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 6px 18px rgba(2, 132, 199, 0.4)"
+                    boxShadow: "0 6px 18px rgba(89, 189, 252, 0.4)"
                   }}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12" />
@@ -1395,7 +1401,7 @@ export default function LoansAdvancesCategoryView({ category }) {
                 }}>
                   <Image
                     src="/images/section/faq1.png"
-                    alt="Frequently Asked Questions - Loans & Advances"
+                    alt="Frequently Asked Questions - Loans"
                     fill
                     sizes="(max-width: 768px) 100vw, 600px"
                     style={{ objectFit: "cover", objectPosition: "center" }}
@@ -1413,7 +1419,7 @@ export default function LoansAdvancesCategoryView({ category }) {
         className="globon-navy-cta-section"
         style={{
           padding: "95px 0 100px 0",
-          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(3, 102, 162, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
+          background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(89, 189, 252, 0.45) 0%, rgba(6, 25, 46, 0) 100%), linear-gradient(135deg, #06192e 0%, #0a2540 50%, #032d4e 100%)",
           borderTop: "1px solid rgba(255, 255, 255, 0.08)",
           borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
           position: "relative",
@@ -1439,8 +1445,8 @@ export default function LoansAdvancesCategoryView({ category }) {
                 padding: "7px 18px",
                 borderRadius: "30px",
                 backgroundColor: "rgba(255, 255, 255, 0.08)",
-                border: "1px solid rgba(56, 189, 248, 0.3)",
-                color: "#38bdf8",
+                border: "1px solid rgba(89, 189, 252, 0.3)",
+                color: "#0369a1",
                 backdropFilter: "blur(8px)",
                 marginBottom: "20px"
               }}
@@ -1495,14 +1501,14 @@ export default function LoansAdvancesCategoryView({ category }) {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
-                  backgroundColor: "#0284c7",
-                  color: "#ffffff",
+                  backgroundColor: "#59bdfc",
+                  color: "#0f172a",
                   fontWeight: "700",
                   fontSize: "16px",
                   padding: "16px 36px",
                   borderRadius: "8px",
                   textDecoration: "none",
-                  boxShadow: "0 8px 24px rgba(2, 132, 199, 0.35)",
+                  boxShadow: "0 8px 24px rgba(89, 189, 252, 0.35)",
                   transition: "all 0.25s ease"
                 }}
               >

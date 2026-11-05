@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 export const revalidate = 0;
 
 export const metadata = {
-  title: "Loans & Advances - Globon Business Solutions",
+  title: "Loans - Globon Business Solutions",
   description: "Financial Solutions for Personal, Property, Business & Vehicle Needs. Explore personal, education, home, property, business, project, government-scheme and vehicle finance assistance.",
 };
 

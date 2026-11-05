@@ -53,7 +53,7 @@ export default async function SingleBlogPage({ params }) {
                   <span
                     style={{
                       background: "#e0f2fe",
-                      color: "#0284c7",
+                      color: "#0369a1",
                       fontSize: "12px",
                       fontWeight: "700",
                       padding: "4px 12px",
@@ -83,7 +83,7 @@ export default async function SingleBlogPage({ params }) {
                     fontWeight: "500",
                     color: "#475569",
                     padding: "16px 20px",
-                    borderLeft: "4px solid #0284c7",
+                    borderLeft: "4px solid #59bdfc",
                     background: "#f8fafc",
                     borderRadius: "0 8px 8px 0",
                     marginBottom: "32px",
@@ -110,7 +110,7 @@ export default async function SingleBlogPage({ params }) {
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "8px",
-                      color: "#0284c7",
+                      color: "#0369a1",
                       fontWeight: "600",
                       textDecoration: "none",
                     }}
@@ -140,7 +140,7 @@ export default async function SingleBlogPage({ params }) {
                     <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                       {otherBlogs.map((item) => (
                         <div key={item.id} style={{ borderBottom: "1px solid #f1f5f9", paddingBottom: "14px" }}>
-                          <span style={{ fontSize: "11px", color: "#0284c7", fontWeight: "700", textTransform: "uppercase" }}>
+                          <span style={{ fontSize: "11px", color: "#0369a1", fontWeight: "700", textTransform: "uppercase" }}>
                             {item.category}
                           </span>
                           <h4 style={{ fontSize: "14px", fontWeight: "700", margin: "4px 0 0", lineHeight: "1.4" }}>

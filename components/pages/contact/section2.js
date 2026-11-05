@@ -70,7 +70,7 @@ export default function Section2() {
 							boxShadow: '0 12px 40px rgba(0, 0, 0, 0.04)'
 						}}>
 							<p style={{
-								color: '#0366a2',
+								color: '#0369a1',
 								fontWeight: 700,
 								fontSize: '13px',
 								letterSpacing: '1.5px',
@@ -113,8 +113,8 @@ export default function Section2() {
 										width: '60px',
 										height: '60px',
 										borderRadius: '50%',
-										background: '#0366a2',
-										color: '#ffffff',
+										background: '#59bdfc',
+										color: '#0f172a',
 										display: 'flex',
 										alignItems: 'center',
 										justifyContent: 'center',
@@ -124,7 +124,7 @@ export default function Section2() {
 									}}>
 										✓
 									</div>
-									<h4 style={{ color: '#0366a2', fontSize: '22px', fontWeight: 700, marginBottom: '10px' }}>
+									<h4 style={{ color: '#0369a1', fontSize: '22px', fontWeight: 700, marginBottom: '10px' }}>
 										Thank You! Your Request Has Been Received.
 									</h4>
 									<p style={{ color: '#1e3a8a', margin: 0, fontSize: '16px', lineHeight: '1.6' }}>
@@ -274,8 +274,8 @@ export default function Section2() {
 											type="submit"
 											disabled={submitting}
 											style={{
-												backgroundColor: '#0366a2',
-												color: '#ffffff',
+												backgroundColor: '#59bdfc',
+												color: '#0f172a',
 												border: 'none',
 												borderRadius: '8px',
 												padding: '16px 42px',
@@ -287,7 +287,7 @@ export default function Section2() {
 												display: 'inline-flex',
 												alignItems: 'center',
 												gap: '10px',
-												boxShadow: '0 4px 16px rgba(3, 102, 162, 0.25)',
+												boxShadow: '0 4px 16px rgba(89, 189, 252, 0.25)',
 												transition: 'all 0.25s ease'
 											}}
 										>
@@ -315,7 +315,7 @@ export default function Section2() {
 							<div>
 								<span style={{
 									background: '#ffffff',
-									color: '#0366a2',
+									color: '#0369a1',
 									fontWeight: 700,
 									fontSize: '12px',
 									letterSpacing: '1px',
@@ -371,7 +371,7 @@ export default function Section2() {
 							}}>
 								<div>
 									<div style={{ fontSize: '13px', color: '#64748b', fontWeight: 600 }}>Direct WhatsApp Helpdesk</div>
-									<div style={{ fontSize: '17px', color: '#0366a2', fontWeight: 800, marginTop: '2px' }}>+91 98460 53539</div>
+									<div style={{ fontSize: '17px', color: '#0369a1', fontWeight: 800, marginTop: '2px' }}>+91 98460 53539</div>
 								</div>
 								<a
 									href="https://wa.me/919846053539?text=Hello%20Globon,%20I%20have%20an%20inquiry"

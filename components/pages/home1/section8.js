@@ -57,18 +57,18 @@ export default function Section8() {
 				<div className="row align-items-end mb-50">
 					<div className="col-lg-8">
 						<div className="heading">
-							<p className="s-sub-title mb-15">
-								<i className="icon-angles-right moveLeftToRight" />
+							<p className="s-sub-title mb-15" style={{ color: '#0369a1' }}>
+								<i className="icon-angles-right moveLeftToRight" style={{ color: '#0369a1' }} />
 								Client Success Stories &amp; Reviews
 							</p>
 							<h2 className="s-title mb-15 testimonials-main-title" style={{
 								fontFamily: "'Public Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif",
 								fontSize: 'clamp(40px, 4.2vw, 52px)',
-								color: '#000000',
+								color: '#0369a1',
 								letterSpacing: '0.2px',
 								lineHeight: 1.2
 							}}>
-								<span style={{ fontWeight: 800 }}>What Our Clients Say</span> <span style={{ fontWeight: 400 }}>About Globon</span>
+								<span className="heading-bold" style={{ fontWeight: 800, color: '#0369a1' }}>What Our Clients Say</span> <span className="heading-normal" style={{ fontWeight: 400, color: '#0369a1' }}>About Globon</span>
 							</h2>
 							<p className="text font-main-2" style={{ maxWidth: '640px', fontSize: '16px', lineHeight: '1.6', color: '#64748b' }}>
 								Real experiences from entrepreneurs, retailers, and growing enterprises across Kerala who achieved fast funding and strategic support with Globon.
@@ -179,7 +179,7 @@ export default function Section8() {
 												style={{
 													fontSize: '12px',
 													fontWeight: '700',
-													color: '#1f4e7a',
+													color: '#0369a1',
 													background: '#f0f7ff',
 													border: '1px solid #d0e4f7',
 													padding: '4px 12px',
@@ -219,27 +219,27 @@ export default function Section8() {
 												width: '48px',
 												height: '48px',
 												borderRadius: '50%',
-												background: 'linear-gradient(135deg, #1f4e7a 0%, #0366a2 100%)',
-												color: '#ffffff',
+												background: 'linear-gradient(135deg, #59bdfc 0%, #59bdfc 100%)',
+												color: '#0f172a',
 												display: 'flex',
 												alignItems: 'center',
 												justifyContent: 'center',
 												fontSize: '16px',
 												fontWeight: '700',
 												flexShrink: 0,
-												boxShadow: '0 4px 12px rgba(31, 78, 122, 0.2)',
+												boxShadow: '0 4px 12px rgba(89, 189, 252, 0.2)',
 											}}
 										>
 											{item.initials}
 										</div>
 										<div style={{ flexGrow: 1 }}>
-											<h4 style={{ fontSize: '17px', fontWeight: '700', color: '#0f172a', margin: '0 0 2px 0' }}>
+											<h4 style={{ fontSize: '17px', fontWeight: 600, color: '#0369a1', margin: '0 0 2px 0' }}>
 												{item.name}
 											</h4>
 											<p style={{ fontSize: '13px', color: '#64748b', margin: '0 0 3px 0', fontWeight: '500' }}>
 												{item.role}
 											</p>
-											<span style={{ fontSize: '12px', color: '#0366a2', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '4px' }}>
+											<span style={{ fontSize: '12px', color: '#0369a1', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '4px' }}>
 												<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
 													<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
 												</svg>
@@ -282,7 +282,7 @@ export default function Section8() {
 						<div style={{ fontSize: '14px', color: '#64748b', fontWeight: '500', marginTop: '2px' }}>Touchpoints Across Kerala</div>
 					</div>
 					<div>
-						<div style={{ fontSize: '28px', fontWeight: '800', color: '#1f4e7a' }}>48 Hours</div>
+						<div style={{ fontSize: '28px', fontWeight: '800', color: '#0369a1' }}>48 Hours</div>
 						<div style={{ fontSize: '14px', color: '#64748b', fontWeight: '500', marginTop: '2px' }}>Rapid Sanction Guidance</div>
 					</div>
 				</div>
