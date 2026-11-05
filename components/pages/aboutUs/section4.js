@@ -125,7 +125,7 @@ export default function Section4() {
 					{/* 6 Vertical Cards Grid */}
 					<div style={{
 						display: "grid",
-						gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+						gridTemplateColumns: "repeat(auto-fit, minmax(min(340px, 100%), 1fr))",
 						gap: "28px"
 					}}>
 						{verticals.map((vert) => (

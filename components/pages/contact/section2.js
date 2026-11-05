@@ -133,7 +133,7 @@ export default function Section2() {
 								</div>
 							) : (
 								<form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
-									<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+									<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))', gap: '20px' }}>
 										<div>
 											<label style={{ display: 'block', fontSize: '15px', fontWeight: 600, color: '#000000', marginBottom: '8px', fontFamily: "'Public Sans', sans-serif" }}>
 												Full Name *
@@ -183,7 +183,7 @@ export default function Section2() {
 										</div>
 									</div>
 
-									<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+									<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(250px, 100%), 1fr))', gap: '20px' }}>
 										<div>
 											<label style={{ display: 'block', fontSize: '15px', fontWeight: 600, color: '#000000', marginBottom: '8px', fontFamily: "'Public Sans', sans-serif" }}>
 												Email Address *

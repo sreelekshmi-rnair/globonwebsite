@@ -76,7 +76,7 @@ export default function Section3() {
 						{/* Spacious Stat Bar */}
 						<div className="mt-5" style={{
 							display: "grid",
-							gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+							gridTemplateColumns: "repeat(auto-fit, minmax(min(220px, 100%), 1fr))",
 							gap: "20px",
 							background: "#f8fafc",
 							padding: "36px 32px",
@@ -109,7 +109,7 @@ export default function Section3() {
 					{/* 6 Core Reasons Grid */}
 					<div style={{
 						display: "grid",
-						gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+						gridTemplateColumns: "repeat(auto-fit, minmax(min(340px, 100%), 1fr))",
 						gap: "28px"
 					}}>
 						{reasons.map((reason) => (

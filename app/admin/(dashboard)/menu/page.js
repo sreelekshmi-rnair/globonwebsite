@@ -1177,6 +1177,7 @@ export default function AdminMenuPage() {
 
       {/* Main Grid: Left Links Form + Right Hierarchy Tree */}
       <div
+        className="admin-menu-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'minmax(300px, 340px) 1fr',

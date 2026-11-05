@@ -152,7 +152,7 @@ export default function Section1() {
 				{/* 2-Column Spacious Contact Cards Grid */}
 				<div style={{
 					display: 'grid',
-					gridTemplateColumns: 'repeat(auto-fit, minmax(460px, 1fr))',
+					gridTemplateColumns: 'repeat(auto-fit, minmax(min(460px, 100%), 1fr))',
 					gap: '28px'
 				}}>
 					{contactCards.map((card, idx) => (

@@ -91,7 +91,12 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
 	const renderMobileDrawer = () => (
 		<div className={isMobileMenu ? "mobile-nav-wrap active" : "mobile-nav-wrap"}>
 			<div className="overlay-mobile-nav" onClick={handleMobileMenu} />
-			<div className="inner-mobile-nav overflow-y-auto">
+			<div
+				className="inner-mobile-nav overflow-y-auto"
+				onClick={(e) => {
+					if (e.target.closest('a')) handleMobileMenu()
+				}}
+			>
 				<div className="top">
 					<div className="logo">
 						<Link href="/" rel="home" className="main-logo" style={{ display: 'inline-flex', alignItems: 'center' }}>

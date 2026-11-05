@@ -264,7 +264,7 @@ export default function Section8() {
 						border: '1px solid #e2e8f0',
 						boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
 						display: 'grid',
-						gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+						gridTemplateColumns: 'repeat(auto-fit, minmax(min(200px, 100%), 1fr))',
 						gap: '24px',
 						textAlign: 'center',
 					}}

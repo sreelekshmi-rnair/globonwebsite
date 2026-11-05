@@ -142,7 +142,7 @@ export default function Section1() {
 								{/* 4 Key Strengths in 2-Column Grid */}
 								<div style={{
 									display: "grid",
-									gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+									gridTemplateColumns: "repeat(auto-fit, minmax(min(260px, 100%), 1fr))",
 									gap: "14px",
 									marginBottom: "36px"
 								}}>

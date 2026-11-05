@@ -30,7 +30,6 @@ export default function MobileMenu() {
 				{ title: "Digital Services", path: "/services/digital-services" }
 			]
 		},
-		{ title: "Schemes & Offers", path: "/#signature-schemes" },
 		{ title: "Contact Us", path: "/contact" }
 	]
 

@@ -679,9 +679,9 @@ export default function AdminServicesPage() {
       {/* Streamlined Single-Row Toolbar */}
       <div className="admin-toolbar">
         {/* Left Side: Search + Category Dropdown */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: '1 1 auto', minWidth: '280px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px', flex: '1 1 auto', minWidth: '280px' }}>
           {/* Search Input */}
-          <div style={{ position: 'relative', flex: '1 1 260px', maxWidth: '360px' }}>
+          <div style={{ position: 'relative', flex: '1 1 240px', minWidth: 'min(240px, 100%)', maxWidth: '360px' }}>
             <span
               style={{
                 position: 'absolute',
@@ -750,7 +750,7 @@ export default function AdminServicesPage() {
           </div>
 
           {/* Category Dropdown Selector */}
-          <div style={{ position: 'relative', minWidth: '220px' }}>
+          <div style={{ position: 'relative', flex: '1 1 220px', minWidth: 'min(220px, 100%)' }}>
             <select
               value={selectedCategory}
               onChange={(e) => {

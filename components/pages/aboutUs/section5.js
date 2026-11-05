@@ -150,7 +150,7 @@ export default function Section5() {
 								border: "1px solid #e2e8f0",
 								boxShadow: "0 4px 15px rgba(0,0,0,0.02)"
 							}}>
-								<div className="row text-center" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "24px" }}>
+								<div className="row text-center" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(200px, 100%), 1fr))", gap: "24px" }}>
 									<div>
 										<div style={{ fontSize: "42px", fontWeight: 900, color: "#0369a1" }}>
 											<CounterUp count={500} />+

@@ -3029,3 +3029,29 @@ a.tf-btn.style-15:not(:hover),
 .experience h4.sub-exp {
   color: #0f172a !important;
 }
+
+/* Footer links: easier to tap on phones */
+@media (max-width: 767px) {
+  .tf-footer a {
+    display: inline-block;
+    min-height: 28px;
+    line-height: 28px;
+  }
+}
+
+/* Long email addresses wrap instead of pushing past the screen edge */
+a[href^="mailto:"] {
+  overflow-wrap: anywhere;
+}
+
+.globon-service-pill-btn {
+  max-width: 100%;
+}
+
+/* Floating image badges stay on screen on phones */
+@media (max-width: 767px) {
+  .ksfe-why-exact-section [style*="left:-"],
+  .ksfe-why-exact-section [style*="left: -"] {
+    left: 8px !important;
+  }
+}

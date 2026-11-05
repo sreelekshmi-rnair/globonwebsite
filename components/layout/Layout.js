@@ -55,6 +55,23 @@ export default function Layout({ headerStyle, footerStyle, breadcrumbTitle, brea
 		window.addEventListener("scroll", onScroll)
 		return () => window.removeEventListener("scroll", onScroll)
 	}, [])
+
+	// Coming from another page to a link like /#consultation: go to that section.
+	// Repeated because images above it keep changing the page height while loading.
+	useEffect(() => {
+		const id = window.location.hash.slice(1)
+		if (!id) return
+		const goToSection = () => document.getElementById(id)?.scrollIntoView({ behavior: "auto" })
+		const timers = [100, 700, 1500].map((ms) => setTimeout(goToSection, ms))
+		const stop = () => timers.forEach(clearTimeout)
+		window.addEventListener("wheel", stop, { once: true })
+		window.addEventListener("touchstart", stop, { once: true })
+		return () => {
+			stop()
+			window.removeEventListener("wheel", stop)
+			window.removeEventListener("touchstart", stop)
+		}
+	}, [])
 	animateImgItem()
 	animateBoxVideo()
 	animateText()
