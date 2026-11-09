@@ -108,14 +108,21 @@ export default function MobileMenu({ isOpen = true }) {
 				<ul id="menu-mobile-menu" className="menu gm-list">
 					{items.map((node) =>
 						node.children.length ? (
-							<li key={node.key}>
-								<button
-									type="button"
-									className={`gm-row ${isActive(node) ? "is-active" : ""}`}
-									onClick={() => openNode(node)}
-									aria-label={`${node.title}, open submenu`}
+							// Two tap targets: the name opens the page, the arrow opens the next level
+							<li key={node.key} className="gm-split">
+								<Link
+									href={node.url}
+									className={`gm-row gm-row-link ${isActive(node) ? "is-active" : ""}`}
+									aria-current={pathname === node.url ? "page" : undefined}
 								>
 									<span>{node.title}</span>
+								</Link>
+								<button
+									type="button"
+									className="gm-next"
+									onClick={() => openNode(node)}
+									aria-label={`Show ${node.title} submenu`}
+								>
 									<ChevronRight />
 								</button>
 							</li>
