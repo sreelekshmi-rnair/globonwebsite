@@ -72,6 +72,33 @@ export default function Layout({ headerStyle, footerStyle, breadcrumbTitle, brea
 			window.removeEventListener("touchstart", stop)
 		}
 	}, [])
+	// Same page, link like /#consultation (e.g. "Free Consultation" in the mobile menu):
+	// the browser scrolls there, but images and fade-in animations above the target
+	// keep changing the page height during the scroll, so it can stop short.
+	// Re-check the position a few times and correct it only if it is off.
+	useEffect(() => {
+		const onClick = (e) => {
+			const link = e.target.closest?.('a[href*="#"]')
+			if (!link) return
+			const url = new URL(link.href, window.location.href)
+			if (url.pathname !== window.location.pathname || !url.hash) return
+			const id = decodeURIComponent(url.hash.slice(1))
+			const align = () => {
+				const el = document.getElementById(id)
+				if (!el) return
+				const offset = parseFloat(getComputedStyle(el).scrollMarginTop) || 0
+				const off = el.getBoundingClientRect().top - offset
+				if (Math.abs(off) > 8) window.scrollBy({ top: off, behavior: "auto" })
+			}
+			const timers = [900, 1600].map((ms) => setTimeout(align, ms))
+			const stop = () => timers.forEach(clearTimeout)
+			window.addEventListener("wheel", stop, { once: true })
+			window.addEventListener("touchstart", stop, { once: true })
+		}
+		document.addEventListener("click", onClick)
+		return () => document.removeEventListener("click", onClick)
+	}, [])
+
 	animateImgItem()
 	animateBoxVideo()
 	animateText()

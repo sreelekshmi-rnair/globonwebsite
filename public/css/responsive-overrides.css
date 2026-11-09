@@ -3758,3 +3758,9 @@ button:focus-visible,
     color: #0369a1;
   }
 }
+
+/* In-page jumps stop below the sticky header instead of underneath it */
+#consultation,
+[id] {
+  scroll-margin-top: 96px;
+}

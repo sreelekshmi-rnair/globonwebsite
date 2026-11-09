@@ -329,7 +329,7 @@ export default function Section9() {
 	}
 
 	return (
-		<section className="ksfe-help-section" id="consultation">
+		<section className="ksfe-help-section" id="consultation-section">
 			<div className="tf-container w-1780">
 				<div className="row align-items-center g-5">
 					
@@ -390,7 +390,8 @@ export default function Section9() {
 					{/* Right Column: Request a Call Back Form with Underline Inputs matching KSFE style */}
 					<div className="col-lg-6">
 						<div style={{ maxWidth: '520px', marginLeft: 'auto' }}>
-							<div className="ksfe-callback-card">
+							{/* "/#consultation" links land on the form itself (on phones it sits below the scheme list) */}
+							<div className="ksfe-callback-card" id="consultation">
 								<h3 className="ksfe-callback-heading">
 									Request a Call Back
 								</h3>
