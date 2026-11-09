@@ -72,7 +72,7 @@ export default function Section3() {
 
 					{/* Right Column: KSFE Style Typography & Globon 6 Small Service Cards */}
 					<div className="col-lg-6 d-flex flex-column justify-content-center">
-						<div style={{ paddingLeft: '14px' }}>
+						<div className="gs-copy-gap">
 							<h2 style={{
 								fontSize: 'clamp(28px, 3.2vw, 42px)',
 								color: '#0369a1',
@@ -82,7 +82,7 @@ export default function Section3() {
 								marginBottom: '20px',
 								fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 							}}>
-								<span className="heading-bold" style={{ fontWeight: 800 }}>EXPLORE OUR PRODUCTS</span><br />
+								<span className="heading-bold" style={{ fontWeight: 800 }}>EXPLORE OUR PRODUCTS</span>{' '}<br />
 								<span className="heading-normal" style={{ fontWeight: 400 }}>&amp; SERVICES</span>
 							</h2>
 

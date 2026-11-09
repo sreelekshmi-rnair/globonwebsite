@@ -8,6 +8,16 @@ export default function Section7c() {
 	const [pinState, setPinState] = useState('unpinned') // 'unpinned' | 'pinned' | 'bottom'
 	const [scrollProgress, setScrollProgress] = useState(0)
 	const [viewportWidth, setViewportWidth] = useState(1280)
+	const pinnedRef = useRef(null)
+	const [pinnedHeight, setPinnedHeight] = useState(0)
+
+	// Measure the pinned block: on phones the text stacks above the cards, so it is much taller than the card deck
+	useEffect(() => {
+		if (!pinnedRef.current || typeof ResizeObserver === 'undefined') return
+		const ro = new ResizeObserver(([entry]) => setPinnedHeight(Math.ceil(entry.contentRect.height)))
+		ro.observe(pinnedRef.current)
+		return () => ro.disconnect()
+	}, [])
 
 	const scrollDistance = 900 // Total scroll distance (px) for smooth card stacking animation
 
@@ -111,7 +121,7 @@ export default function Section7c() {
 			style={{
 				backgroundColor: '#ffffff',
 				paddingTop: '60px',
-				height: `${cardHeight + compactOffset * 2 + scrollDistance + 120}px`,
+				height: `${Math.max(cardHeight + compactOffset * 2 + 60, pinnedHeight) + scrollDistance + 60}px`,
 				position: 'relative',
 				scrollMarginTop: '90px',
 				boxSizing: 'border-box'
@@ -166,6 +176,7 @@ export default function Section7c() {
 
 			{/* Pinned Viewport Container using fixed positioning (100% shake-free) */}
 			<div
+				ref={pinnedRef}
 				style={{
 					position: pinState === 'pinned' ? 'fixed' : pinState === 'bottom' ? 'absolute' : 'relative',
 					top: pinState === 'pinned' ? '90px' : pinState === 'bottom' ? `${scrollDistance}px` : '0px',

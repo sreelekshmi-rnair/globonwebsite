@@ -142,7 +142,7 @@ export default function Section7b() {
 
 					{/* Right Column: Heading, Description & Green CTA Button */}
 					<div className="col-lg-6 col-xl-6">
-						<div style={{ paddingLeft: '15px', maxWidth: '580px' }}>
+						<div className="gs-copy-gap" style={{ maxWidth: '580px' }}>
 							
 							<h2 className="takeover-heading" style={{
 								fontFamily: "'Public Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif",
@@ -153,7 +153,7 @@ export default function Section7b() {
 								letterSpacing: '0.3px',
 								marginBottom: '22px'
 							}}>
-								<span className="heading-bold" style={{ fontWeight: 800 }}>LOAN TAKEOVER &amp;</span><br />
+								<span className="heading-bold" style={{ fontWeight: 800 }}>LOAN TAKEOVER &amp;</span>{' '}<br />
 								<span className="heading-normal" style={{ fontWeight: 400 }}>REFINANCING</span>
 							</h2>
 

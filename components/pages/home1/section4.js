@@ -86,7 +86,7 @@ export default function Section4() {
 									maxWidth: '850px',
 									fontFamily: "'Public Sans', 'Manrope', 'Inter', -apple-system, sans-serif"
 								}}>
-									<span className="heading-bold" style={{ fontWeight: 800 }}>FROM STRATEGY TO DISBURSEMENT</span><br />
+									<span className="heading-bold" style={{ fontWeight: 800 }}>FROM STRATEGY TO DISBURSEMENT</span>{' '}<br />
 									<span className="heading-normal" style={{ fontWeight: 400 }}>OUR FINANCIAL PROCESS</span>
 								</h2>
 							</div>

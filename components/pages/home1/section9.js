@@ -343,7 +343,7 @@ export default function Section9() {
 								letterSpacing: '0.3px',
 								lineHeight: 1.2
 							}}>
-								<span className="heading-bold" style={{ fontWeight: 800 }}>WE ARE HAPPY TO</span><br />
+								<span className="heading-bold" style={{ fontWeight: 800 }}>WE ARE HAPPY TO</span>{' '}<br />
 								<span className="heading-normal" style={{ fontWeight: 400 }}>HELP YOU</span>
 							</h2>
 

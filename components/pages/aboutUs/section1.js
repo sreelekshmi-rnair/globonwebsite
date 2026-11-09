@@ -77,7 +77,7 @@ export default function Section1() {
 						
 						{/* Right Column: Narrative, Tagline & Strengths */}
 						<div className="col-lg-6">
-							<div style={{ paddingLeft: "clamp(0px, 2.5vw, 28px)" }}>
+							<div className="gs-copy-gap">
 								<p style={{
 									color: "#0369a1",
 									fontWeight: 700,

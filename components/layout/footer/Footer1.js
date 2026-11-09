@@ -189,7 +189,7 @@ export default function Footer1() {
 				</div>
 
 				{/* Bottom Copyright Bar */}
-				<div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.12)', padding: '24px 0' }}>
+				<div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.12)', padding: '24px 0 96px' }} className="footer-bottom-bar">
 					<div className="tf-container">
 						<div className="row" style={{ alignItems: 'center' }}>
 							<div className="col-md-6 text-center text-md-start mb-15 mb-md-0">

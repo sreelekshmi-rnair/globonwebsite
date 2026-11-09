@@ -2505,7 +2505,7 @@ export default function AdminServicesPage() {
                         </div>
 
                       {/* Heading & Subtitle Row */}
-                      <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1.8fr', gap: '14px' }}>
+                      <div className="admin-stack-sm" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1.8fr', gap: '14px' }}>
                         <div>
                           <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 'normal', color: '#334155', marginBottom: '4px' }}>
                             Card Heading / Title *

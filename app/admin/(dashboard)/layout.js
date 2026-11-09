@@ -20,6 +20,32 @@ export default function AdminDashboardLayout({ children }) {
     setIsSidebarOpen(false);
   }, [pathname]);
 
+  // Phone layout for tables: copy each column header into its cells as data-label,
+  // so admin.css can show every row as a card with "Label / value" lines.
+  // Rows load asynchronously, so re-label whenever the content changes.
+  useEffect(() => {
+    if (loading || typeof document === 'undefined') return;
+    const root = document.querySelector('.admin-content');
+    if (!root) return;
+    const labelTables = () => {
+      root.querySelectorAll('table.admin-table').forEach((table) => {
+        const heads = [...table.querySelectorAll('thead th')].map((th) => th.textContent.trim());
+        table.querySelectorAll('tbody tr').forEach((tr) => {
+          [...tr.children].forEach((cell, i) => {
+            if (cell.colSpan > 1) return; // empty-state rows span all columns
+            const label = heads[i] || '';
+            if (label && cell.getAttribute('data-label') !== label) cell.setAttribute('data-label', label);
+          });
+        });
+      });
+    };
+    labelTables();
+    // Only childList is observed, so setting attributes here cannot re-trigger the observer
+    const observer = new MutationObserver(labelTables);
+    observer.observe(root, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, [pathname, loading]);
+
   // Prevent background scroll when mobile sidebar drawer is open
   useEffect(() => {
     if (typeof document !== 'undefined') {

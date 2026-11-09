@@ -3466,3 +3466,253 @@ a[href^="mailto:"] {
 .gh-hero .gh-arrow {
   overflow: visible !important;
 }
+
+/* ==========================================================================
+   19. Mobile drawer menu (gm-*): KSFE-style drill-down.
+   Each level replaces the list; rows with children show a right chevron,
+   the level title is underlined and links to that page.
+   ========================================================================== */
+.mobile-nav-wrap .mobile-main-nav .gm-drill {
+  position: relative;
+  overflow: hidden;
+}
+.mobile-nav-wrap .mobile-main-nav .gm-panel-forward {
+  animation: gmSlideIn 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.mobile-nav-wrap .mobile-main-nav .gm-panel-back {
+  animation: gmSlideBack 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+@keyframes gmSlideIn {
+  from { transform: translateX(28px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes gmSlideBack {
+  from { transform: translateX(-28px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav-wrap .mobile-main-nav .gm-panel-forward,
+  .mobile-nav-wrap .mobile-main-nav .gm-panel-back { animation: none; }
+}
+
+/* Level header: back + underlined title */
+.mobile-nav-wrap .mobile-main-nav .gm-panel-head {
+  padding: 2px 0 6px;
+  border-bottom: 1px solid #e8ecf1;
+}
+.mobile-nav-wrap .mobile-main-nav .gm-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 6px -4px;
+  padding: 8px 6px;
+  overflow: visible !important;
+  border: 0;
+  background: none;
+  color: #64748b;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.mobile-nav-wrap .mobile-main-nav .gm-panel-title {
+  display: inline-block !important;
+  margin: 0 0 14px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 21px !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  color: #0f172a !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 1.5px !important;
+  text-underline-offset: 6px !important;
+}
+
+/* Rows */
+.mobile-nav-wrap .mobile-main-nav .gm-list {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+.mobile-nav-wrap .mobile-main-nav .gm-list > li {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-bottom: 1px solid #e8ecf1 !important;
+}
+.mobile-nav-wrap .mobile-main-nav .gm-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  width: 100% !important;
+  min-height: 60px !important;
+  margin: 0 !important;
+  padding: 16px 2px !important;
+  overflow: visible !important;
+  border: 0 !important;
+  background: none !important;
+  text-align: left !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: 1.35 !important;
+  color: #0f172a !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.mobile-nav-wrap .mobile-main-nav .gm-row::before,
+.mobile-nav-wrap .mobile-main-nav .gm-row::after {
+  content: none !important;
+  display: none !important;
+}
+.mobile-nav-wrap .mobile-main-nav .gm-row svg {
+  flex-shrink: 0;
+  color: #0f172a;
+}
+.mobile-nav-wrap .mobile-main-nav .gm-row.is-active {
+  color: #0369a1 !important;
+  font-weight: 500 !important;
+}
+.mobile-nav-wrap .mobile-main-nav .gm-row:active {
+  background: #f4f8fb !important;
+}
+.mobile-nav-wrap .mobile-main-nav .gm-row:focus-visible,
+.mobile-nav-wrap .mobile-main-nav .gm-back:focus-visible,
+.mobile-nav-wrap .mobile-main-nav .gm-panel-title:focus-visible {
+  outline: 2px solid #59bdfc !important;
+  outline-offset: 2px !important;
+  border-radius: 6px !important;
+}
+@media (hover: hover) {
+  .mobile-nav-wrap .mobile-main-nav .gm-row:hover,
+  .mobile-nav-wrap .mobile-main-nav .gm-back:hover {
+    color: #0369a1 !important;
+  }
+}
+
+/* Drill-down: back link above the title; drop the theme's dark rule under the menu */
+.mobile-nav-wrap .mobile-main-nav {
+  border-bottom: 0 !important;
+}
+.mobile-nav-wrap .mobile-main-nav .gm-panel-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ==========================================================================
+   20. Site-wide UI polish
+   ========================================================================== */
+
+/* styles.css gives button/input/select the body's overflow rules, which draws
+   stray mini scrollbars (up/down arrows) on FAQ toggles, tabs and fields */
+button,
+input,
+select {
+  overflow: visible !important;
+}
+
+/* Breathing room at the page edges on larger screens (was 20px at every width) */
+@media (min-width: 992px) {
+  .tf-container,
+  .tf-container.w-1780,
+  .container,
+  .about-page-container {
+    padding-left: clamp(32px, 4.5vw, 72px) !important;
+    padding-right: clamp(32px, 4.5vw, 72px) !important;
+  }
+}
+
+/* Hero content follows the page edge; only the slide tabs keep extra room
+   for the floating WhatsApp button */
+@media (min-width: 768px) {
+  .gh-hero .gh-content {
+    padding-left: clamp(32px, 4.5vw, 72px) !important;
+  }
+  .gh-hero .gh-controls-inner {
+    padding-left: max(110px, 4.5vw) !important;
+  }
+}
+
+/* Inner-page banners (About, Contact…): a clean full-width band instead of a
+   card that bleeds off the left edge with one rounded corner */
+.tf-page-title .content-wrap,
+.tf-page-title .content-wrap .bg-image {
+  border-radius: 0 !important;
+  max-width: none !important;
+}
+
+/* Keyboard focus that is visible on every link and button */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #59bdfc;
+  outline-offset: 2px;
+}
+
+/* Smooth in-page jumps (e.g. /#consultation), without forcing motion on people who opt out */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ==========================================================================
+   21. Spacing system: one vertical rhythm for every content section
+   (sections used 60-131px each, giving 59-221px gaps, and the same desktop
+   values on phones)
+   ========================================================================== */
+:root {
+  --gs-section: 88px;
+}
+@media (max-width: 991px) {
+  :root { --gs-section: 72px; }
+}
+@media (max-width: 767px) {
+  :root { --gs-section: 56px; }
+}
+
+/* Home, About, Contact: every section in the main content.
+   Service pages: everything after the breadcrumb + page hero. */
+.main-content > section:not(#govt-schemes),
+.main-content > div > section:nth-of-type(n+3) {
+  padding-top: var(--gs-section) !important;
+  padding-bottom: var(--gs-section) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Services overview: intro text and the category list read as one block */
+.main-content > div > section.ksfe-services-intro-section {
+  padding-bottom: 0 !important;
+}
+.main-content > div > section.ksfe-services-cards-container {
+  padding-top: 40px !important;
+}
+
+/* Grid rows: the theme pulls rows 15px left but columns only have 10px padding,
+   so content inside any row sat 5px left of the page edge */
+.tf-container .row {
+  margin-left: -10px !important;
+  margin-right: -10px !important;
+}
+
+/* Gap between an image column and its text column, only when they sit side by side */
+@media (min-width: 992px) {
+  .gs-copy-gap {
+    padding-left: clamp(14px, 2vw, 28px);
+  }
+}
+
+/* Kerala presence figures: 66px minimum broke "₹250 Cr+" onto two lines on phones */
+@media (max-width: 767px) {
+  .presence-giant-number,
+  .metric-info .metric-number {
+    font-size: clamp(40px, 12vw, 56px) !important;
+    white-space: nowrap;
+  }
+}

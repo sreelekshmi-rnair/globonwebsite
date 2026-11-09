@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
-import { signToken } from '@/lib/auth';
+import { signToken, isAuthConfigured } from '@/lib/auth';
 import { findAdminByEmail } from '@/lib/adminStore';
 
 export async function POST(request) {
@@ -52,19 +52,14 @@ export async function POST(request) {
       }
     }
 
-    // Default admin fallback when DB is offline or user not yet seeded
-    if (!adminData && (cleanLower === 'admin' || cleanLower === 'admin@globon.com') && (password === 'admin123' || password === (process.env.ADMIN_DEFAULT_PASSWORD || 'admin123'))) {
-      isValid = true;
-      adminData = {
-        id: 1,
-        email: cleanLower.includes('@') ? cleanLower : 'admin@globon.com',
-        username: 'admin',
-        name: 'Globon Administrator',
-      };
-    }
-
+    // No built-in default login: only real accounts with a hashed password can sign in.
     if (!isValid || !adminData) {
       return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 });
+    }
+
+    if (!isAuthConfigured()) {
+      console.error('Admin login refused: ADMIN_JWT_SECRET is not set in this environment.');
+      return NextResponse.json({ error: 'Admin login is not configured on this server. Please contact the site administrator.' }, { status: 503 });
     }
 
     const token = signToken(adminData);

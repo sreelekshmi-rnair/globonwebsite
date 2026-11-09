@@ -177,71 +177,34 @@ function collectMenuSlugs(nodes, slugs = new Set()) {
   return slugs
 }
 
-export default function ServicesMegaMenu({ onClose }) {
-  const [activeId, setActiveId] = useState("loans")
-  const [menuTree, setMenuTree] = useState(cachedMenuTree || DEFAULT_MENU_TREE)
-  const [dynamicServices, setDynamicServices] = useState(cachedDynamicServices || [])
-
-  useEffect(() => {
-    let isMounted = true
-
-    // Fetch hierarchical menu from /api/menu
-    fetch('/api/menu')
-      .then((res) => (res.ok ? res.json() : null))
-      .then((data) => {
-        if (isMounted && data?.menu && Array.isArray(data.menu)) {
-          cachedMenuTree = data.menu
-          setMenuTree(data.menu)
-        }
-      })
-      .catch((err) => console.error('Failed to load menu hierarchy for mega menu:', err))
-
-    // Fetch database services as supplementary fallback
-    fetch('/api/services')
-      .then((res) => (res.ok ? res.json() : null))
-      .then((data) => {
-        if (isMounted && data?.services && Array.isArray(data.services)) {
-          cachedDynamicServices = data.services
-          setDynamicServices(data.services)
-        }
-      })
-      .catch((err) => console.error('Failed to load services for mega menu:', err))
-
-    return () => {
-      isMounted = false
+// Top-level service categories, in Admin > Menu Hierarchy order
+export function getMenuCategories(menuTree, dynamicServices) {
+  return menuTree.map((root) => {
+    const category = servicesMegaMenuData.find((s) => root.url === `/services/${s.slug}`)
+    if (category) return category
+    const slug = (root.url || '').split('/').filter(Boolean).pop()
+    const service = dynamicServices.find((s) => s.slug === slug)
+    return {
+      id: root.id,
+      title: root.title,
+      shortTitle: root.title,
+      slug,
+      href: root.url || '#',
+      tagline: service?.subtitle || service?.shortDesc || '',
+      icon: servicesMegaMenuData[0].icon,
     }
-  }, [])
+  })
+}
 
-  // The left column is the top level of Admin > Menu Hierarchy, in the same order.
-  // Anything nested in the menu shows on the right, under its parent.
-  const menuTabs = menuTree
-    .map((root) => {
-      const category = servicesMegaMenuData.find((s) => root.url === `/services/${s.slug}`)
-      if (category) return category
-      const slug = (root.url || '').split('/').filter(Boolean).pop()
-      const service = dynamicServices.find((s) => s.slug === slug)
-      return {
-        id: root.id,
-        title: root.title,
-        shortTitle: root.title,
-        slug,
-        href: root.url || '#',
-        tagline: service?.subtitle || service?.shortDesc || '',
-        icon: servicesMegaMenuData[0].icon,
-      }
-    })
-  const orderedServices = menuTabs.length > 0 ? menuTabs : servicesMegaMenuData
+// Sub-services of one category: its children in the menu tree, plus services
+// added in admin for that category that aren't in the menu yet
+export function getCategorySubServices(menuTree, dynamicServices, category) {
+  const menuSubServices = findCategoryMenuItem(menuTree, category)?.children || []
 
-  const currentService = orderedServices.find((s) => s.id === activeId) || orderedServices[0]
-
-  // Level 2 Sub-Services from Menu Tree
-  const menuSubServices = findCategoryMenuItem(menuTree, currentService)?.children || []
-
-  // Services added in admin for this category that aren't in the menu yet
-  const activeCategoryAdminServices = dynamicServices.filter((s) => {
+  const adminServices = dynamicServices.filter((s) => {
     const sCat = (s.category || '').toLowerCase().trim()
-    const targetId = (currentService.id || '').toLowerCase().trim()
-    const targetSlug = (currentService.slug || '').toLowerCase().trim()
+    const targetId = (category.id || '').toLowerCase().trim()
+    const targetSlug = (category.slug || '').toLowerCase().trim()
 
     if (sCat === targetId || sCat === targetSlug) return true
     if (targetId === 'loans' && (sCat === 'loans-advances' || sCat.includes('loan'))) return true
@@ -254,14 +217,64 @@ export default function ServicesMegaMenu({ onClose }) {
   })
 
   const listedSlugs = collectMenuSlugs(menuSubServices)
-  const fallbackSubServices = activeCategoryAdminServices.filter((s) => !listedSlugs.has(s.slug)).map((s) => ({
+  const fallbackSubServices = adminServices.filter((s) => !listedSlugs.has(s.slug)).map((s) => ({
     id: s.id,
     title: s.title,
-    url: `/services/${s.category || currentService.slug}/${s.slug}`,
+    url: `/services/${s.category || category.slug}/${s.slug}`,
     children: []
   }))
 
-  const finalSubServices = [...menuSubServices, ...fallbackSubServices]
+  return [...menuSubServices, ...fallbackSubServices]
+}
+
+// Shared loader for the menu tree and admin services (used by desktop and mobile menus)
+export function useServicesMenuData() {
+  const [menuTree, setMenuTree] = useState(cachedMenuTree || DEFAULT_MENU_TREE)
+  const [dynamicServices, setDynamicServices] = useState(cachedDynamicServices || [])
+
+  useEffect(() => {
+    let isMounted = true
+
+    fetch('/api/menu')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (isMounted && data?.menu && Array.isArray(data.menu)) {
+          cachedMenuTree = data.menu
+          setMenuTree(data.menu)
+        }
+      })
+      .catch((err) => console.error('Failed to load menu hierarchy:', err))
+
+    fetch('/api/services')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (isMounted && data?.services && Array.isArray(data.services)) {
+          cachedDynamicServices = data.services
+          setDynamicServices(data.services)
+        }
+      })
+      .catch((err) => console.error('Failed to load services:', err))
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
+  return { menuTree, dynamicServices }
+}
+
+export default function ServicesMegaMenu({ onClose }) {
+  const [activeId, setActiveId] = useState("loans")
+  const { menuTree, dynamicServices } = useServicesMenuData()
+
+  // The left column is the top level of Admin > Menu Hierarchy, in the same order.
+  // Anything nested in the menu shows on the right, under its parent.
+  const menuTabs = getMenuCategories(menuTree, dynamicServices)
+  const orderedServices = menuTabs.length > 0 ? menuTabs : servicesMegaMenuData
+
+  const currentService = orderedServices.find((s) => s.id === activeId) || orderedServices[0]
+
+  const finalSubServices = getCategorySubServices(menuTree, dynamicServices, currentService)
 
   return (
     <div className="globon-mega-menu-panel" onClick={(e) => e.stopPropagation()}>
