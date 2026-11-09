@@ -229,7 +229,7 @@ export default function Footer1() {
 					style={{
 						position: 'fixed',
 						bottom: '30px',
-						right: '30px',
+						left: '30px',
 						width: '56px',
 						height: '56px',
 						borderRadius: '50%',

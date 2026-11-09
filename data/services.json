@@ -1,131 +1,133 @@
 [
   {
-    "id": "5",
-    "category": "business-financial-solutions",
-    "categoryTitle": "Business & Financial Solutions",
-    "title": "Education Loan Assistancee",
-    "slug": "education-loan-assistancee",
-    "subtitle": "Support Your Higher Education Plans With the Right Financing",
-    "shortDesc": "From professional courses in India to higher education abroad, education expenses can involve tuition fees,  accommodation, travel, books, equipment, and other study-related costs",
-    "heroImage": "/uploads/1792386885369_consult_crop_4_5.jpg",
-    "overviewTitle": "Education Loan Assistance",
-    "overviewDesc": "From professional courses in India to higher education abroad, education expenses can involve tuition fees,  accommodation, travel, books, equipment, and other study-related costs",
-    "overviewImage": "",
+    "id": "76",
+    "category": "loans",
+    "categoryTitle": "Loans",
+    "title": "s",
+    "slug": "s",
+    "subtitle": "s1",
+    "shortDesc": "s2",
+    "heroImage": "/uploads/1793875376223_consult_crop_4_5.jpg",
+    "overviewTitle": "s3",
+    "overviewDesc": "s4",
+    "overviewImage": "/uploads/1793875389973_globon-vision-team.jpg",
     "overviewBullets": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applican"
+      "s5"
     ],
     "features": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applican"
+      "s6"
     ],
     "highlights": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applican"
+      "s6"
     ],
-    "optionsBadge": "ELIGIBLE PURPOSES",
-    "optionsTitle": "OPTIONS / SERVICES",
+    "optionsBadge": "s7",
+    "optionsTitle": "s8",
+    "options": [],
+    "documentGroups": [
+      {
+        "title": "s9",
+        "subtitle": "s10",
+        "icon": "📋",
+        "docs": [
+          "s11"
+        ]
+      }
+    ],
+    "advisoryNote": "s12",
+    "eligibilityDesc": "s13",
+    "feesDesc": "s14",
+    "faqs": [
+      {
+        "q": "s15",
+        "a": "ss"
+      }
+    ],
+    "order": 1,
+    "createdAt": "2026-11-05T10:44:31.193Z",
+    "updatedAt": "2026-11-05T10:44:31.193Z"
+  },
+  {
+    "id": "77",
+    "category": "loans",
+    "categoryTitle": "Loans",
+    "title": "a",
+    "slug": "a",
+    "subtitle": "a1",
+    "shortDesc": "a2",
+    "heroImage": "/uploads/1793875630971_globon-vision-team.jpg",
+    "overviewTitle": "a3",
+    "overviewDesc": "a4",
+    "overviewImage": "/uploads/1793875643683_globon-vision-team.jpg",
+    "overviewBullets": [
+      "a5"
+    ],
+    "features": [
+      "a6"
+    ],
+    "highlights": [
+      "a6"
+    ],
+    "optionsBadge": "a7",
+    "optionsTitle": "a8",
     "options": [
       {
-        "title": "Tuition and course fees",
-        "desc": "",
-        "icon": "💰",
+        "title": "a9",
+        "desc": "a10",
+        "icon": "🌟",
         "bg": "#eff6ff",
         "border": "#bfdbfe",
         "iconBg": "#dbeafe",
-        "accent": "#0366a2"
-      },
-      {
-        "title": "Accommodation, books and study expenses",
-        "desc": "",
-        "icon": "🏠",
-        "bg": "#f0fdf4",
-        "border": "#bbf7d0",
-        "iconBg": "#dcfce7",
-        "accent": "#16a34a"
-      },
-      {
-        "title": "Study in India or abroad",
-        "desc": "",
-        "icon": "✈️",
-        "bg": "#fffbeb",
-        "border": "#fde68a",
-        "iconBg": "#fef3c7",
-        "accent": "#d97706"
+        "accent": "#59bdfc"
       }
     ],
     "documentGroups": [
       {
-        "title": "Student Documents",
-        "subtitle": "",
+        "title": "a11",
+        "subtitle": "a12",
         "icon": "📋",
         "docs": [
-          "Aadhaar / identity proof",
-          "PAN Card",
-          "Address proof",
-          "Passport, where applicable",
-          "Passport-size photographs",
-          "Academic certificates and mark sheets",
-          "Admission / offer letter",
-          "Course fee structure",
-          "Institution details",
-          "Entrance examination documents, where applicable"
-        ]
-      },
-      {
-        "title": "Parent / Co-Applicant Documents",
-        "subtitle": "Depending on the profile, lenders may request:",
-        "icon": "📋",
-        "docs": [
-          "Identity proof",
-          "Address proof",
-          "PAN Card",
-          "Income proof",
-          "Salary slips, where applicable",
-          "Bank statements",
-          "Income Tax Returns, where applicable",
-          "Employment or business proof"
-        ]
-      },
-      {
-        "title": "For Overseas Education (conditional, where applicable)",
-        "subtitle": "Additional documents may include:",
-        "icon": "📋",
-        "docs": [
-          "University offer / admission letter",
-          "Passport",
-          "Visa-related documents, where applicable",
-          "Estimated education and living expenses",
-          "Foreign institution fee schedule",
-          "Other documents requested by the lender"
+          "a13"
         ]
       }
     ],
-    "advisoryNote": "Collateral / Security Documents (conditional, where applicable) Where applicable, the lender may request property or other security-related documents based on the loan amount  and product.",
-    "eligibilityDesc": "Eligibility depends on the lender, applicant profile, income and repayment capacity, credit history, existing obligations and \nloan purpose. The lender confirms the final criteria.",
-    "feesDesc": "Interest rates, processing fees, loan terms and other charges vary by lender and applicant. Review the lender’s written \nterms before proceeding.",
+    "advisoryNote": "a14",
+    "eligibilityDesc": "a15",
+    "feesDesc": "a16",
     "faqs": [
       {
-        "q": "Who can apply for education loan assistance?",
-        "a": "It depends on the lender, income, credit profile and requested loan."
-      },
-      {
-        "q": "Which documents are required?",
-        "a": "The checklist above is indicative; your lender may request more."
-      },
-      {
-        "q": "Does Globon guarantee loan approval?",
-        "a": "No. The bank or financial institution makes the final decision."
+        "q": "a17",
+        "a": "a18"
       }
     ],
+    "order": 2,
+    "createdAt": "2026-11-05T10:52:36.900Z",
+    "updatedAt": "2026-11-05T10:52:58.860Z"
+  },
+  {
+    "id": "78",
+    "category": "general",
+    "categoryTitle": "Services",
+    "title": "1",
+    "slug": "1",
+    "subtitle": "1",
+    "shortDesc": "1",
+    "heroImage": "",
+    "overviewTitle": "",
+    "overviewDesc": "",
+    "overviewImage": "",
+    "overviewBullets": [],
+    "features": [],
+    "highlights": [],
+    "optionsBadge": "",
+    "optionsTitle": "",
+    "options": [],
+    "documentGroups": [],
+    "advisoryNote": "",
+    "eligibilityDesc": "",
+    "feesDesc": "",
+    "faqs": [],
     "order": 3,
-    "createdAt": "2026-10-19T05:24:43.309Z",
-    "updatedAt": "2026-10-19T08:11:28.931Z"
+    "createdAt": "2026-11-05T11:14:06.362Z",
+    "updatedAt": "2026-11-05T11:14:06.362Z"
   }
 ]

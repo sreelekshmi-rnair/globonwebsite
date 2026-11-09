@@ -809,7 +809,7 @@ img, svg, video, canvas, audio, iframe, embed, object {
 @media (max-width: 767px) {
   .globon-whatsapp-float {
     bottom: 20px !important;
-    right: 16px !important;
+    left: 16px !important;
     width: 48px !important;
     height: 48px !important;
   }
@@ -2486,7 +2486,7 @@ h1.globon-ksfe-heading span {
 }
 
 .ksfe-services-intro-text {
-  max-width: 780px;
+  max-width: 680px;
   font-size: clamp(18px, 1.8vw, 24px);
   line-height: 1.65;
   color: #1e1e1e;
@@ -3054,4 +3054,415 @@ a[href^="mailto:"] {
   .ksfe-why-exact-section [style*="left: -"] {
     left: 8px !important;
   }
+}
+
+/* ==========================================================================
+   18. Home Hero v2 (gh-*): clearer hierarchy, supporting copy, trust stats,
+   staggered entrance, labelled progress tabs and grouped controls.
+   Scoped to .gh-hero so it overrides the legacy hero rules above.
+   ========================================================================== */
+.gh-hero {
+  --gh-accent: #59bdfc;
+  --gh-accent-strong: #8fd3ff;
+  --gh-ink: #06192e;
+  height: clamp(680px, 100vh, 940px) !important;
+  background-color: var(--gh-ink) !important;
+  isolation: isolate;
+}
+
+.gh-hero .globon-ksfe-slide-bg {
+  transform: scale(1.08);
+  transition: transform 7s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.gh-hero .gh-slide.active .globon-ksfe-slide-bg {
+  transform: scale(1);
+}
+
+/* Overlay: strong on the text side, clear over the faces, darker at the bottom for the controls */
+.gh-hero .gh-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(90deg, rgba(6, 25, 46, 0.92) 0%, rgba(6, 25, 46, 0.78) 32%, rgba(6, 25, 46, 0.25) 62%, rgba(6, 25, 46, 0) 82%),
+    linear-gradient(0deg, rgba(6, 25, 46, 0.85) 0%, rgba(6, 25, 46, 0) 32%),
+    linear-gradient(180deg, rgba(6, 25, 46, 0.45) 0%, rgba(6, 25, 46, 0) 22%);
+}
+
+.gh-hero .gh-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 110px;
+  padding-bottom: 130px;
+}
+
+.gh-hero .gh-copy {
+  max-width: 780px;
+}
+
+/* Entrance animation: each element rises in, staggered by --d */
+.gh-hero .gh-anim {
+  opacity: 0;
+  transform: translateY(22px);
+}
+.gh-hero .gh-slide.active .gh-anim {
+  animation: ghRise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) var(--d, 0s) forwards;
+}
+@keyframes ghRise {
+  to { opacity: 1; transform: none; }
+}
+
+/* Eyebrow pill */
+.gh-hero .gh-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 16px 7px 12px;
+  margin-bottom: 22px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+.gh-hero .gh-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gh-accent);
+  box-shadow: 0 0 0 4px rgba(89, 189, 252, 0.25);
+}
+
+/* Title: light first line, bold accented second line */
+.gh-hero .gh-title,
+.gh-hero .gh-title span {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: clamp(36px, 3.7vw, 60px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+  text-shadow: none !important;
+}
+.gh-hero .gh-title {
+  margin: 0 0 22px !important;
+  color: #ffffff !important;
+}
+.gh-hero .gh-title .gh-title-light {
+  display: block;
+  color: #ffffff !important;
+  font-weight: 400 !important;
+}
+.gh-hero .gh-title .gh-title-strong {
+  display: block;
+  font-weight: 700 !important;
+  color: var(--gh-accent-strong) !important;
+}
+
+.gh-hero .gh-text {
+  max-width: 540px;
+  margin: 0 0 34px !important;
+  color: rgba(255, 255, 255, 0.86) !important;
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+  font-weight: 400 !important;
+}
+
+/* Buttons */
+.gh-hero .gh-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 44px;
+}
+.gh-hero .gh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font-size: 15.5px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.gh-hero .gh-btn-primary {
+  background: var(--gh-accent);
+  color: var(--gh-ink) !important;
+  box-shadow: 0 10px 30px -8px rgba(89, 189, 252, 0.65);
+}
+.gh-hero .gh-btn-primary svg {
+  transition: transform 0.25s ease;
+}
+.gh-hero .gh-btn-primary:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -8px rgba(255, 255, 255, 0.45);
+}
+.gh-hero .gh-btn-primary:hover svg {
+  transform: translateX(4px);
+}
+.gh-hero .gh-btn-ghost {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.gh-hero .gh-btn-ghost:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+.gh-hero .gh-btn:focus-visible,
+.gh-hero .gh-tab:focus-visible,
+.gh-hero .gh-arrow:focus-visible {
+  outline: 3px solid var(--gh-accent);
+  outline-offset: 3px;
+}
+
+/* Trust stats */
+.gh-hero .gh-stats {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.gh-hero .gh-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 28px;
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+}
+.gh-hero .gh-stat:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.gh-hero .gh-stat strong {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.gh-hero .gh-stat span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13.5px;
+  font-weight: 400;
+}
+
+/* Bottom control bar */
+.gh-hero .gh-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  padding-bottom: 34px;
+}
+.gh-hero .gh-controls-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+.gh-hero .gh-tabs {
+  display: flex;
+  gap: 18px;
+  flex: 1;
+  max-width: 760px;
+}
+.gh-hero .gh-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.25s ease;
+}
+.gh-hero .gh-tab:hover,
+.gh-hero .gh-tab.active {
+  color: #ffffff;
+}
+.gh-hero .gh-tab-track {
+  position: relative;
+  display: block;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.22);
+  overflow: hidden;
+}
+.gh-hero .gh-tab-fill {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: var(--gh-accent);
+  border-radius: inherit;
+}
+.gh-hero .gh-tab.done .gh-tab-fill {
+  transform: scaleX(1);
+  background: rgba(255, 255, 255, 0.55);
+}
+.gh-hero .gh-tab.active .gh-tab-fill {
+  animation: ghFill var(--gh-duration, 6500ms) linear forwards;
+}
+.gh-hero.is-paused .gh-tab.active .gh-tab-fill {
+  animation-play-state: paused;
+}
+@keyframes ghFill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.gh-hero .gh-tab-label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.gh-hero .gh-tab-num {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.gh-hero .gh-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.gh-hero .gh-counter {
+  margin-right: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.gh-hero .gh-counter strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+.gh-hero .gh-arrow {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.gh-hero .gh-arrow:hover {
+  background: var(--gh-accent);
+  border-color: var(--gh-accent);
+  color: var(--gh-ink);
+  transform: scale(1.06);
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .gh-hero .gh-copy { max-width: 600px; }
+  .gh-hero .gh-tab-name { display: none; }
+  .gh-hero .gh-tabs { max-width: 360px; }
+}
+
+/* Phones: text sits low so faces stay visible; swipe replaces arrows */
+@media (max-width: 767px) {
+  .gh-hero {
+    height: clamp(640px, 100svh, 780px) !important;
+  }
+  .gh-hero .gh-overlay {
+    background: linear-gradient(180deg, rgba(6, 25, 46, 0.5) 0%, rgba(6, 25, 46, 0.15) 25%, rgba(6, 25, 46, 0.7) 52%, rgba(6, 25, 46, 0.96) 100%);
+  }
+  .gh-hero .gh-content {
+    align-items: flex-end;
+    padding-top: 100px;
+    padding-bottom: 76px;
+  }
+  .gh-hero .gh-eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    padding: 6px 12px 6px 10px;
+    margin-bottom: 14px;
+  }
+  .gh-hero .gh-title,
+  .gh-hero .gh-title span {
+    font-size: clamp(28px, 8vw, 36px) !important;
+    line-height: 1.15 !important;
+  }
+  .gh-hero .gh-title { margin-bottom: 14px !important; }
+  .gh-hero .gh-text {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 22px !important;
+  }
+  .gh-hero .gh-actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .gh-hero .gh-btn {
+    width: 100%;
+    min-height: 50px;
+    font-size: 15px;
+  }
+  .gh-hero .gh-stat { padding: 0 14px; }
+  .gh-hero .gh-stat strong { font-size: 18px; }
+  .gh-hero .gh-stat span { font-size: 11.5px; }
+  .gh-hero .gh-controls { padding-bottom: 26px; }
+  .gh-hero .gh-nav { display: none; }
+  .gh-hero .gh-tabs { max-width: none; gap: 8px; }
+  .gh-hero .gh-tab-label { display: none; }
+}
+
+@media (max-width: 380px) {
+  .gh-hero .gh-text { display: none; }
+  .gh-hero .gh-stat { padding: 0 10px; }
+}
+
+/* Respect reduced-motion: no zoom, no entrance, no autoplay */
+@media (prefers-reduced-motion: reduce) {
+  .gh-hero .globon-ksfe-slide-bg { transform: none !important; transition: none !important; }
+  .gh-hero .gh-anim { opacity: 1; transform: none; animation: none !important; }
+  .gh-hero .gh-tab.active .gh-tab-fill { animation: none; transform: scaleX(1); }
+}
+/* Hero v2: align content with the navbar; keep the slide tabs clear of the
+   floating WhatsApp button, which sits at the bottom-left */
+@media (min-width: 768px) {
+  .gh-hero .gh-content,
+  .gh-hero .gh-controls-inner {
+    padding-left: 110px !important;
+  }
+}
+@media (max-width: 767px) {
+  .gh-hero .gh-controls-inner {
+    padding-left: 78px !important;
+  }
+}
+
+/* Global CSS gives buttons overflow-y:auto, which draws a stray scrollbar on the hero tabs */
+.gh-hero .gh-tab,
+.gh-hero .gh-arrow {
+  overflow: visible !important;
 }

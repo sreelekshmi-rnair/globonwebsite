@@ -22,5 +22,13 @@
     "phone": "",
     "address": "",
     "avatar": ""
+  },
+  {
+    "id": 1793592492015,
+    "name": "Admin",
+    "email": "admin@globon.com",
+    "username": "admin@globon.com",
+    "password": "$2b$10$/0c3hD/Ra1mbirzXt/WAf.8NyODJlzY6UTKIHL.VCbaNKRoIvOLxe",
+    "createdAt": "2026-11-02T04:08:12.015Z"
   }
 ]

@@ -1,8 +1,50 @@
 [
-  { "id": "menu-loans", "title": "Loans", "url": "/services/loans", "parentId": null, "order": 1, "children": [] },
-  { "id": "menu-business-services", "title": "Business Services", "url": "/services/business-services", "parentId": null, "order": 2, "children": [] },
-  { "id": "menu-study-abroad", "title": "Study Abroad", "url": "/services/study-abroad", "parentId": null, "order": 3, "children": [] },
-  { "id": "menu-insurance", "title": "Insurance", "url": "/services/insurance", "parentId": null, "order": 4, "children": [] },
-  { "id": "menu-real-estate", "title": "Real Estate", "url": "/services/real-estate", "parentId": null, "order": 5, "children": [] },
-  { "id": "menu-digital-services", "title": "Digital Services", "url": "/services/digital-services", "parentId": null, "order": 6, "children": [] }
+  {
+    "id": "menu-loans",
+    "title": "Loans",
+    "url": "/services/loans",
+    "parentId": null,
+    "order": 1,
+    "children": []
+  },
+  {
+    "id": "menu-business-services",
+    "title": "Business Services",
+    "url": "/services/business-services",
+    "parentId": null,
+    "order": 2,
+    "children": []
+  },
+  {
+    "id": "menu-study-abroad",
+    "title": "Study Abroad",
+    "url": "/services/study-abroad",
+    "parentId": null,
+    "order": 3,
+    "children": []
+  },
+  {
+    "id": "menu-insurance",
+    "title": "Insurance",
+    "url": "/services/insurance",
+    "parentId": null,
+    "order": 4,
+    "children": []
+  },
+  {
+    "id": "menu-real-estate",
+    "title": "Real Estate",
+    "url": "/services/real-estate",
+    "parentId": null,
+    "order": 5,
+    "children": []
+  },
+  {
+    "id": "menu-digital-services",
+    "title": "Digital Services",
+    "url": "/services/digital-services",
+    "parentId": null,
+    "order": 6,
+    "children": []
+  }
 ]
