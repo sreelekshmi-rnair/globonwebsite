@@ -240,7 +240,7 @@ export default function DigitalMarketingCategoryView({ category }) {
             </Link>
             <span>/</span>
             <span style={{ color: "#0f172a", fontWeight: 600 }}>
-              Digital &amp; Marketing Services
+              Digital Services
             </span>
           </div>
         </div>
@@ -270,7 +270,7 @@ export default function DigitalMarketingCategoryView({ category }) {
                   marginBottom: "16px",
                   fontFamily: "'Poppins', sans-serif"
                 }}>
-                  Digital &amp; Marketing Services
+                  Digital Services
                 </h1>
 
                 {/* Subheadline from User */}
@@ -363,96 +363,12 @@ export default function DigitalMarketingCategoryView({ category }) {
                 }}>
                   <Image
                     src="/images/services/9.png"
-                    alt="Globon Digital & Marketing Services"
+                    alt="Globon Digital Services"
                     fill
                     sizes="(max-width: 991px) 100vw, 560px"
                     style={{ objectFit: "cover", objectPosition: "center" }}
                     priority
                   />
-                </div>
-
-                {/* Top-Right Floating Verified Badge */}
-                <div
-                  className="animate-float"
-                  style={{
-                    position: "absolute",
-                    top: "24px",
-                    right: "-12px",
-                    background: "#ffffff",
-                    borderRadius: "14px",
-                    padding: "10px 18px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    boxShadow: "0 12px 30px rgba(0,0,0,0.1)",
-                    border: "1px solid #e2e8f0",
-                    zIndex: 2
-                  }}
-                >
-                  <div style={{
-                    width: "32px",
-                    height: "32px",
-                    borderRadius: "50%",
-                    background: "#59bdfc",
-                    color: "#0f172a",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "16px",
-                    fontWeight: "800"
-                  }}>
-                    ✓
-                  </div>
-                  <div>
-                    <div style={{ fontSize: "12px", fontWeight: "800", color: "#0f172a", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                      VERIFIED
-                    </div>
-                    <div style={{ fontSize: "11px", color: "#64748b", fontWeight: "600" }}>
-                      Digital Growth Strategy
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom-Left Floating Metric Badge */}
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "-20px",
-                    left: "-12px",
-                    background: "#ffffff",
-                    borderRadius: "16px",
-                    padding: "14px 22px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "14px",
-                    boxShadow: "0 16px 36px rgba(0,0,0,0.1)",
-                    border: "1px solid #e2e8f0",
-                    zIndex: 2
-                  }}
-                >
-                  <div style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "12px",
-                    background: "#f8fafc",
-                    border: "1px solid #e2e8f0",
-                    color: "#0369a1",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center"
-                  }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: "20px", fontWeight: "800", color: "#0f172a", lineHeight: 1.1 }}>
-                      5x Inquiries
-                    </div>
-                    <div style={{ fontSize: "12px", color: "#64748b", fontWeight: "600" }}>
-                      Performance Marketing ROI
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -479,17 +395,6 @@ export default function DigitalMarketingCategoryView({ category }) {
             }}>
               OVERVIEW
             </span>
-            <h2 style={{
-              fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 600,
-              letterSpacing: "0.5px",
-              color: '#0369a1',
-              lineHeight: 1.3,
-              marginBottom: "18px",
-              fontFamily: "'Poppins', sans-serif"
-            }}>
-              Comprehensive Web, Branding &amp; Growth Marketing Solutions
-            </h2>
             <p style={{
               fontSize: "17px",
               color: "#4b5563",
@@ -498,207 +403,8 @@ export default function DigitalMarketingCategoryView({ category }) {
               maxWidth: "780px",
               margin: "0 auto"
             }}>
-              Website, branding, digital marketing, advertising, social media and content services in one place. Globon helps organise the next steps and documentation relevant to your requirement.
+              ERP, CRM, website, branding, digital marketing, advertising, social media and content services in one place. Globon helps organise the next steps and documentation relevant to your requirement.
             </p>
-          </div>
-
-          {/* 4 Feature Pillars Grid on Pure White */}
-          <div className="row g-4">
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#0369a1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  💻
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Website &amp; Tech Solutions
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Ultra-fast, mobile-optimized modern websites and web applications built for business conversion.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#16a34a",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  🎨
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Creative Brand Identity
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Distinctive logo design, corporate color palettes, brochures, and complete brand asset kits.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#0369a1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  🎯
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Performance Advertising
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Laser-targeted Google Search Ads and Meta campaigns generating qualified daily business leads.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#9333ea",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  📱
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Social Media &amp; Content
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Engaging monthly content calendars, Instagram reels, carousel graphic design, and organic reach.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -724,7 +430,7 @@ export default function DigitalMarketingCategoryView({ category }) {
               margin: 0,
               fontFamily: "inherit"
             }}>
-              DIGITAL &amp; MARKETING SERVICES
+              DIGITAL SERVICES
             </h2>
 
             <Link
@@ -808,9 +514,9 @@ export default function DigitalMarketingCategoryView({ category }) {
 
                       <div className="ksfe-sig-divider" />
 
-                      {service.highlights && service.highlights.length > 0 && (
+                      {service.cardPoints && service.cardPoints.length > 0 && (
                         <ul className="ksfe-sig-bullets">
-                          {service.highlights.slice(0, 3).map((hl, i) => (
+                          {service.cardPoints.slice(0, 3).map((hl, i) => (
                             <li key={i} className="ksfe-sig-bullet-item">
                               <span className="bullet-asterisk">✻</span>
                               <Link
@@ -831,7 +537,7 @@ export default function DigitalMarketingCategoryView({ category }) {
               <div className="col-12 text-center py-5">
                 <div style={{ backgroundColor: '#f8fafc', borderRadius: '16px', padding: '40px 20px', border: '1px dashed #cbd5e1' }}>
                   <p style={{ color: '#64748b', fontSize: '16px', margin: 0 }}>
-                    No services currently published in Digital &amp; Marketing Services. Added services from the Admin Studio will appear here automatically.
+                    No services currently published in Digital Services. Added services from the Admin Studio will appear here automatically.
                   </p>
                 </div>
               </div>
@@ -869,9 +575,6 @@ export default function DigitalMarketingCategoryView({ category }) {
             }}>
               Our 3-Step Guided Process
             </h2>
-            <p style={{ fontSize: "17px", fontWeight: 400, lineHeight: "1.6", color: "#4b5563" }}>
-              We turn your digital goals into structured, measurable outcomes with dedicated creative support.
-            </p>
           </div>
 
           <div className="row g-4">
@@ -914,9 +617,6 @@ export default function DigitalMarketingCategoryView({ category }) {
                 }}>
                   Understand your requirement and the relevant options
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  We assess your current digital footprint, competitor landscape, target customer personas, and growth milestones to chart the optimal marketing roadmap.
-                </p>
               </div>
             </div>
 
@@ -959,9 +659,6 @@ export default function DigitalMarketingCategoryView({ category }) {
                 }}>
                   Help organise the information and documents
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  Our team compiles brand vector assets, product catalogs, copywriting briefs, and advertising parameters to ensure seamless creative alignment.
-                </p>
               </div>
             </div>
 
@@ -1004,9 +701,6 @@ export default function DigitalMarketingCategoryView({ category }) {
                 }}>
                   Coordinate the applicable process with the relevant provider or authority
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  We coordinate website hosting deployment, Google &amp; Meta ad network setups, domain DNS verification, and scheduled publishing for continuous conversion.
-                </p>
               </div>
             </div>
           </div>
@@ -1170,7 +864,7 @@ export default function DigitalMarketingCategoryView({ category }) {
                 }}>
                   <Image
                     src="/images/section/faq1.png"
-                    alt="Frequently Asked Questions - Digital & Marketing Services"
+                    alt="Frequently Asked Questions - Digital Services"
                     fill
                     sizes="(max-width: 768px) 100vw, 600px"
                     style={{ objectFit: "cover", objectPosition: "center" }}
@@ -1236,7 +930,7 @@ export default function DigitalMarketingCategoryView({ category }) {
                 letterSpacing: "-0.5px"
               }}
             >
-              Ready to explore digital &amp; marketing services?
+              Ready to explore digital services?
             </h2>
 
             <p

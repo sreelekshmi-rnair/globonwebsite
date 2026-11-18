@@ -478,7 +478,7 @@ export default function LoansAdvancesCategoryView({ category }) {
             <span className="separator">/</span>
             <Link href="/services">Services</Link>
             <span className="separator">/</span>
-            <span className="current">Loans &amp; Advances</span>
+            <span className="current">Loans</span>
           </div>
         </div>
       </section>
@@ -607,91 +607,6 @@ export default function LoansAdvancesCategoryView({ category }) {
                     priority
                   />
                 </div>
-
-                {/* Top-Right Floating Verified Badge */}
-                <div
-                  className="animate-float"
-                  style={{
-                    position: "absolute",
-                    top: "24px",
-                    right: "-12px",
-                    background: "#ffffff",
-                    borderRadius: "14px",
-                    padding: "10px 18px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    boxShadow: "0 12px 30px rgba(0,0,0,0.1)",
-                    border: "1px solid #e2e8f0",
-                    zIndex: 2
-                  }}
-                >
-                  <div style={{
-                    width: "32px",
-                    height: "32px",
-                    borderRadius: "50%",
-                    background: "#59bdfc",
-                    color: "#0f172a",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "16px",
-                    fontWeight: "800"
-                  }}>
-                    ✓
-                  </div>
-                  <div>
-                    <div style={{ fontSize: "12px", fontWeight: "800", color: "#0f172a", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                      VERIFIED
-                    </div>
-                    <div style={{ fontSize: "11px", color: "#64748b", fontWeight: "600" }}>
-                      Financial Partner
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom-Left Floating Metric Badge */}
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "-20px",
-                    left: "-12px",
-                    background: "#ffffff",
-                    borderRadius: "16px",
-                    padding: "14px 22px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "14px",
-                    boxShadow: "0 16px 36px rgba(0,0,0,0.1)",
-                    border: "1px solid #e2e8f0",
-                    zIndex: 2
-                  }}
-                >
-                  <div style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "12px",
-                    background: "#f8fafc",
-                    border: "1px solid #e2e8f0",
-                    color: "#0369a1",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center"
-                  }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="12" y1="1" x2="12" y2="23" />
-                      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: "20px", fontWeight: "800", color: "#0f172a", lineHeight: 1.1 }}>
-                      ₹250 Cr+
-                    </div>
-                    <div style={{ fontSize: "12px", color: "#64748b", fontWeight: "600" }}>
-                      Loans &amp; Funding Facilitated
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -717,17 +632,6 @@ export default function LoansAdvancesCategoryView({ category }) {
             }}>
               OVERVIEW
             </span>
-            <h2 style={{
-              fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 600,
-              letterSpacing: "0.5px",
-              color: '#0369a1',
-              lineHeight: 1.3,
-              marginBottom: "18px",
-              fontFamily: "'Poppins', sans-serif"
-            }}>
-              Comprehensive Financing Assistance Under One Roof
-            </h2>
             <p style={{
               fontSize: "17px",
               color: "#4b5563",
@@ -738,205 +642,6 @@ export default function LoansAdvancesCategoryView({ category }) {
             }}>
               Explore personal, education, home, property, business, project, government-scheme and vehicle finance assistance. Globon helps organise the next steps and documentation relevant to your requirement.
             </p>
-          </div>
-
-          {/* 4 Feature Pillars Grid on Pure White */}
-          <div className="row g-4">
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#0369a1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  👤
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Personal &amp; Study
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Personal, education, and retailer credit options tailored for your lifestyle needs.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#16a34a",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  🏡
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Home &amp; Property
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Affordable home loans and high-limit loans against residential or commercial property.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#d97706",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  📈
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Business &amp; Project
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Working capital, machinery loans, and multi-crore infrastructure project finance.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#9333ea",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  🏛️
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Govt Subsidies &amp; Auto
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Government capital subsidies, Stand-Up India, and commercial vehicle loans.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -962,7 +667,7 @@ export default function LoansAdvancesCategoryView({ category }) {
               margin: 0,
               fontFamily: "inherit"
             }}>
-              OTHER LOAN SCHEMES
+              LOAN SERVICES
             </h2>
 
             <Link
@@ -1033,9 +738,9 @@ export default function LoansAdvancesCategoryView({ category }) {
 
                       <div className="ksfe-sig-divider" />
 
-                      {service.highlights && service.highlights.length > 0 && (
+                      {service.cardPoints && service.cardPoints.length > 0 && (
                         <ul className="ksfe-sig-bullets">
-                          {service.highlights.slice(0, 3).map((hl, i) => (
+                          {service.cardPoints.slice(0, 3).map((hl, i) => (
                             <li key={i} className="ksfe-sig-bullet-item">
                               <span className="bullet-asterisk">✻</span>
                               <Link href={service.href}>
@@ -1053,7 +758,7 @@ export default function LoansAdvancesCategoryView({ category }) {
               <div className="col-12 text-center py-5">
                 <div style={{ backgroundColor: '#f8fafc', borderRadius: '16px', padding: '40px 20px', border: '1px dashed #cbd5e1' }}>
                   <p style={{ color: '#64748b', fontSize: '16px', margin: 0 }}>
-                    No services currently published in Loans &amp; Advances. Added services from the Admin Studio will appear here automatically.
+                    No services currently published in Loans. Added services from the Admin Studio will appear here automatically.
                   </p>
                 </div>
               </div>
@@ -1091,9 +796,6 @@ export default function LoansAdvancesCategoryView({ category }) {
             }}>
               Our 3-Step Guided Process
             </h2>
-            <p style={{ fontSize: "17px", fontWeight: 400, lineHeight: "1.6", color: "#4b5563" }}>
-              We eliminate confusion and friction by coordinating your file from initial inquiry to final sanction.
-            </p>
           </div>
 
           <div className="row g-4">
@@ -1136,9 +838,6 @@ export default function LoansAdvancesCategoryView({ category }) {
                 }}>
                   Understand your requirement and the relevant options
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  We assess your exact financial needs, review your profile and credit history, and map out the most suitable loan schemes across 30+ partner banks with the lowest interest rates.
-                </p>
               </div>
             </div>
 
@@ -1181,9 +880,6 @@ export default function LoansAdvancesCategoryView({ category }) {
                 }}>
                   Help organise the information and documents
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  Our team provides a precise checklist, assists with doorstep verification in Kerala, prepares bankable financial reports (CMA/DPR), and structures paperwork to avoid file rejections.
-                </p>
               </div>
             </div>
 
@@ -1226,9 +922,6 @@ export default function LoansAdvancesCategoryView({ category }) {
                 }}>
                   Coordinate the applicable process with the relevant provider or authority
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  We follow up directly with credit managers, government portal officials (such as KVIC for PMEGP), and legal valuers to accelerate sanction and ensure smooth disbursement to your account.
-                </p>
               </div>
             </div>
           </div>

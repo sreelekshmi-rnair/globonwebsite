@@ -227,7 +227,7 @@ export default function AdminServicesPage() {
       overviewTitle: service.overviewTitle || '',
       overviewDesc: service.overviewDesc || '',
       overviewImage: service.overviewImage || '',
-      overviewBulletsText: (overviewBulletsArr.length > 0 ? overviewBulletsArr : highlightsArr).join('\n'),
+      overviewBulletsText: overviewBulletsArr.join('\n'),
       highlightsText: highlightsArr.join('\n'),
       optionsBadge: service.optionsBadge || '',
       optionsTitle: service.optionsTitle || '',

@@ -12,7 +12,7 @@ export const servicesMegaMenuData = [
     title: "Loans",
     shortTitle: "Loans",
     slug: "loans",
-    tagline: "Comprehensive personal, home, business, and vehicle financing tailored to your needs with fast-track bank approval.",
+    tagline: "Financial Solutions for Personal, Property, Business & Vehicle Needs",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
@@ -33,7 +33,7 @@ export const servicesMegaMenuData = [
     title: "Business Services",
     shortTitle: "Business Services",
     slug: "business-services",
-    tagline: "End-to-end company formation, statutory filings, bankable project reports (CMA), and modern enterprise technology.",
+    tagline: "Everything You Need to Start, Manage and Grow Your Business",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
@@ -46,7 +46,7 @@ export const servicesMegaMenuData = [
     title: "Study Abroad",
     shortTitle: "Study Abroad",
     slug: "study-abroad",
-    tagline: "Global university admissions, fast-track education loans, and visa filing guidance across premier global destinations.",
+    tagline: "Plan Your International Education Journey With the Right Guidance",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
@@ -59,7 +59,7 @@ export const servicesMegaMenuData = [
     title: "Insurance",
     shortTitle: "Insurance",
     slug: "insurance",
-    tagline: "Protect your family, health, business assets, and journeys with tailored coverage from leading carriers.",
+    tagline: "Explore life and health policies, vehicle insurance support, protection options for residential property, shops and business assets, and travel protection and group insurance options.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -72,7 +72,7 @@ export const servicesMegaMenuData = [
     title: "Real Estate",
     shortTitle: "Real Estate",
     slug: "real-estate",
-    tagline: "Buy, sell, lease, verify legal title & secure structured land financing with expert valuation across Kerala.",
+    tagline: "Buy, Sell, Plan, Document & Finance Your Property With Practical Support",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -85,7 +85,7 @@ export const servicesMegaMenuData = [
     title: "Digital Services",
     shortTitle: "Digital Services",
     slug: "digital-services",
-    tagline: "Modern responsive web applications, brand identity, local SEO, social media marketing, and custom business software.",
+    tagline: "Build Your Digital Presence, Strengthen Your Brand & Reach Your Audience",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>

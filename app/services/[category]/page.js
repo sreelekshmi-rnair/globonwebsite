@@ -14,6 +14,7 @@ import LifeHealthCategoryView from "@/components/pages/services/LifeHealthCatego
 import TravelGroupCategoryView from "@/components/pages/services/TravelGroupCategoryView";
 import RealEstateCategoryView from "@/components/pages/services/RealEstateCategoryView";
 import DigitalMarketingCategoryView from "@/components/pages/services/DigitalMarketingCategoryView";
+import StudyAbroadCategoryView from "@/components/pages/services/StudyAbroadCategoryView";
 
 export const revalidate = 0;
 
@@ -85,6 +86,15 @@ export default function CategoryPage({ params }) {
     return (
       <Layout mainCls="padding-0">
         <LifeHealthCategoryView category={category} />
+      </Layout>
+    );
+  }
+
+  // Dedicated Rich Custom View for Study Abroad (same design as the other categories)
+  if (category.slug === "study-abroad") {
+    return (
+      <Layout mainCls="padding-0">
+        <StudyAbroadCategoryView category={category} />
       </Layout>
     );
   }
@@ -274,7 +284,7 @@ export default function CategoryPage({ params }) {
 
                       <SubServiceLinks items={service.subServices} />
 
-                      {service.highlights && service.highlights.length > 0 && (
+                      {service.cardPoints && service.cardPoints.length > 0 && (
                         <ul
                           style={{
                             listStyle: "none",
@@ -284,7 +294,7 @@ export default function CategoryPage({ params }) {
                             color: "#334155",
                           }}
                         >
-                          {service.highlights.slice(0, 3).map((h, i) => (
+                          {service.cardPoints.slice(0, 3).map((h, i) => (
                             <li
                               key={i}
                               style={{

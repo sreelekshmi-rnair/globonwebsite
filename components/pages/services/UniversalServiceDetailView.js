@@ -19,8 +19,9 @@ export default function UniversalServiceDetailView({ service, category }) {
   const catTitle = hasCategoryPage ? (category?.title || service.categoryTitle || service.category || 'Services') : 'Services';
   const catSlug = category?.slug || service.category || 'services';
   const title = service.title || 'Service Details';
-  const subtitle = service.subtitle || service.tagline || service.shortDesc || `Professional Solutions for ${title}`;
-  const shortDesc = service.shortDesc || service.description || `Explore comprehensive, tailored assistance for ${title} with Globon Business Solutions.`;
+  // Only content entered for the service is shown (no made-up fallback text)
+  const subtitle = service.subtitle || service.tagline || '';
+  const shortDesc = service.shortDesc || service.description || '';
   const heroImage = service.heroImage || service.image || '/images/services/deposit-schemes.png';
   const overviewTitle = service.overviewTitle || title;
   const overviewDesc = service.overviewDesc || shortDesc;
@@ -31,11 +32,9 @@ export default function UniversalServiceDetailView({ service, category }) {
   const whatsappMessage = encodeURIComponent(`Hello Globon, I would like assistance with ${title}.`);
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
-  // Overview Bullets - only what was provided in service
-  const overviewBullets = Array.isArray(service.overviewBullets) && service.overviewBullets.length > 0
+  // Overview Bullets - only what was provided in service (empty = no bullets shown)
+  const overviewBullets = Array.isArray(service.overviewBullets)
     ? service.overviewBullets.filter((b) => typeof b === 'string' && b.trim())
-    : Array.isArray(service.highlights) && service.highlights.length > 0
-    ? service.highlights.filter((b) => typeof b === 'string' && b.trim())
     : [];
 
   // Options / Services cards - only what was provided in service

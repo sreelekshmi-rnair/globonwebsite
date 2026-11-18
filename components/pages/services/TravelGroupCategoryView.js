@@ -660,11 +660,11 @@ export default function TravelGroupCategoryView({ category }) {
           </div>
 
           {/* 2 Cards Centered Grid matching Loans & Advances design */}
-          <div className="row g-4 justify-content-center">
+          <div className="row g-4">
             {category.services && category.services.length > 0 ? (
               category.services.map((service, idx) => (
-                <div key={service.slug} className="col-12 col-md-6 col-lg-5">
-                  <div className="loan-scheme-sig-card wow fadeInUp" data-wow-delay={`${(idx % 2) * 0.1}s`}>
+                <div key={service.slug} className="col-12 col-md-6 col-lg-4">
+                  <div className="loan-scheme-sig-card wow fadeInUp" data-wow-delay={`${(idx % 3) * 0.1}s`}>
                     <Link
                       href={service.href}
                       className="ksfe-sig-visual-wrap"
@@ -710,9 +710,9 @@ export default function TravelGroupCategoryView({ category }) {
 
                       <div className="ksfe-sig-divider" />
 
-                      {service.highlights && service.highlights.length > 0 && (
+                      {service.cardPoints && service.cardPoints.length > 0 && (
                         <ul className="ksfe-sig-bullets">
-                          {service.highlights.slice(0, 3).map((hl, i) => (
+                          {service.cardPoints.slice(0, 3).map((hl, i) => (
                             <li key={i} className="ksfe-sig-bullet-item">
                               <span className="bullet-asterisk">✻</span>
                               <Link

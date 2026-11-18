@@ -1561,6 +1561,10 @@ h1.globon-ksfe-heading span {
   padding: 36px 40px;
   z-index: 1050;
   box-sizing: border-box;
+  /* Keep the panel inside the window; the centre column scrolls instead */
+  max-height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
   animation: megaMenuFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -1591,6 +1595,8 @@ h1.globon-ksfe-heading span {
   align-items: stretch;
   gap: 48px;
   width: 100%;
+  flex: 1;
+  min-height: 0;
 }
 
 /* LEFT COLUMN: 6 SERVICES TABS */
@@ -1635,7 +1641,7 @@ h1.globon-ksfe-heading span {
   color: #0f172a;
   font-weight: 700;
   border: 1px solid #eef2f6;
-  border-bottom: 2.5px solid #22c55e;
+  border-bottom: 2.5px solid #0369a1;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
 }
 
@@ -1668,7 +1674,7 @@ h1.globon-ksfe-heading span {
 .tab-active-arrow {
   display: flex;
   align-items: center;
-  color: #22c55e;
+  color: #0369a1;
   animation: arrowBounce 1.5s ease infinite alternate;
 }
 
@@ -1683,6 +1689,20 @@ h1.globon-ksfe-heading span {
   padding: 4px 20px 4px 10px;
   display: flex;
   flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.mega-menu-content-column::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mega-menu-content-column::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 6px;
 }
 
 .content-header {

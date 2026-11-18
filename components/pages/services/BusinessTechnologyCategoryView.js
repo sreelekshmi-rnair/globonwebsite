@@ -770,9 +770,9 @@ export default function BusinessTechnologyCategoryView({ category }) {
 
                       <div className="ksfe-sig-divider" />
 
-                      {service.highlights && service.highlights.length > 0 && (
+                      {service.cardPoints && service.cardPoints.length > 0 && (
                         <ul className="ksfe-sig-bullets">
-                          {service.highlights.slice(0, 3).map((hl, i) => (
+                          {service.cardPoints.slice(0, 3).map((hl, i) => (
                             <li key={i} className="ksfe-sig-bullet-item">
                               <span className="bullet-asterisk">✻</span>
                               <Link

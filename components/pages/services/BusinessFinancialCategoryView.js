@@ -302,7 +302,7 @@ export default function BusinessFinancialCategoryView({ category }) {
             </Link>
             <span>/</span>
             <span style={{ color: "#0f172a", fontWeight: 600 }}>
-              Business &amp; Financial Solutions
+              Business Services
             </span>
           </div>
         </div>
@@ -332,7 +332,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                   marginBottom: "16px",
                   fontFamily: "'Poppins', sans-serif"
                 }}>
-                  Business &amp; Financial Solutions
+                  Business Services
                 </h1>
 
                 {/* Subheadline from User */}
@@ -354,7 +354,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                   lineHeight: "1.7",
                   marginBottom: "32px"
                 }}>
-                  From setting up your business and managing compliance to obtaining certifications, preparing project plans, and implementing business technology, Globon Business Solutions brings essential business services together in one place.
+                  From setting up your business and managing compliance to obtaining certifications and preparing project plans, Globon Business Solutions brings essential business services together in one place.
                 </p>
 
                 {/* Buttons requested by user */}
@@ -425,97 +425,12 @@ export default function BusinessFinancialCategoryView({ category }) {
                 }}>
                   <Image
                     src="/images/services/2.png"
-                    alt="Globon Business & Financial Solutions"
+                    alt="Globon Business Services"
                     fill
                     sizes="(max-width: 991px) 100vw, 560px"
                     style={{ objectFit: "cover", objectPosition: "center" }}
                     priority
                   />
-                </div>
-
-                {/* Top-Right Floating Verified Badge */}
-                <div
-                  className="animate-float"
-                  style={{
-                    position: "absolute",
-                    top: "24px",
-                    right: "-12px",
-                    background: "#ffffff",
-                    borderRadius: "14px",
-                    padding: "10px 18px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    boxShadow: "0 12px 30px rgba(0,0,0,0.1)",
-                    border: "1px solid #e2e8f0",
-                    zIndex: 2
-                  }}
-                >
-                  <div style={{
-                    width: "32px",
-                    height: "32px",
-                    borderRadius: "50%",
-                    background: "#59bdfc",
-                    color: "#0f172a",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "16px",
-                    fontWeight: "800"
-                  }}>
-                    ✓
-                  </div>
-                  <div>
-                    <div style={{ fontSize: "12px", fontWeight: "800", color: "#0f172a", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                      VERIFIED
-                    </div>
-                    <div style={{ fontSize: "11px", color: "#64748b", fontWeight: "600" }}>
-                      Business Advisory
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom-Left Floating Metric Badge */}
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "-20px",
-                    left: "-12px",
-                    background: "#ffffff",
-                    borderRadius: "16px",
-                    padding: "14px 22px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "14px",
-                    boxShadow: "0 16px 36px rgba(0,0,0,0.1)",
-                    border: "1px solid #e2e8f0",
-                    zIndex: 2
-                  }}
-                >
-                  <div style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "12px",
-                    background: "#f8fafc",
-                    border: "1px solid #e2e8f0",
-                    color: "#0369a1",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center"
-                  }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: "20px", fontWeight: "800", color: "#0f172a", lineHeight: 1.1 }}>
-                      500+
-                    </div>
-                    <div style={{ fontSize: "12px", color: "#64748b", fontWeight: "600" }}>
-                      Businesses Supported
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -542,17 +457,6 @@ export default function BusinessFinancialCategoryView({ category }) {
             }}>
               OVERVIEW
             </span>
-            <h2 style={{
-              fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 600,
-              letterSpacing: "0.5px",
-              color: '#0369a1',
-              lineHeight: 1.3,
-              marginBottom: "18px",
-              fontFamily: "'Poppins', sans-serif"
-            }}>
-              Everything You Need Under One Roof
-            </h2>
             <p style={{
               fontSize: "17px",
               color: "#4b5563",
@@ -561,207 +465,8 @@ export default function BusinessFinancialCategoryView({ category }) {
               maxWidth: "780px",
               margin: "0 auto"
             }}>
-              Business setup, tax and accounting, licences, consultancy, insurance and technology support for growing organisations. Globon helps organise the next steps and documentation relevant to your requirement.
+              Business setup, tax and accounting, licences, certifications, consultancy and legal support for growing organisations. Globon helps organise the next steps and documentation relevant to your requirement.
             </p>
-          </div>
-
-          {/* 4 Feature Pillars Grid on Pure White */}
-          <div className="row g-4">
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#0369a1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  🏢
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Setup &amp; Compliance
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Pvt Ltd, LLP, Partnership incorporation, Udyam MSME, and local commercial licensing.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#16a34a",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  📊
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Tax &amp; Accounting
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Error-free GST returns, annual ITR filings, statutory audits, and professional bookkeeping.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#0369a1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  💻
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Strategy &amp; Tech
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Detailed Project Reports (DPR), corporate legal contracts, and modern cloud ERP &amp; CRM.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#9333ea",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  🛡️
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Insurance Solutions
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Comprehensive life, medical, commercial vehicle, property, and group employee protection.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -787,7 +492,7 @@ export default function BusinessFinancialCategoryView({ category }) {
               margin: 0,
               fontFamily: "inherit"
             }}>
-              BUSINESS &amp; FINANCIAL SERVICES
+              BUSINESS SERVICES
             </h2>
 
             <Link
@@ -871,9 +576,9 @@ export default function BusinessFinancialCategoryView({ category }) {
 
                       <div className="ksfe-sig-divider" />
 
-                      {service.highlights && service.highlights.length > 0 && (
+                      {service.cardPoints && service.cardPoints.length > 0 && (
                         <ul className="ksfe-sig-bullets">
-                          {service.highlights.slice(0, 3).map((hl, i) => (
+                          {service.cardPoints.slice(0, 3).map((hl, i) => (
                             <li key={i} className="ksfe-sig-bullet-item">
                               <span className="bullet-asterisk">✻</span>
                               <Link
@@ -894,7 +599,7 @@ export default function BusinessFinancialCategoryView({ category }) {
               <div className="col-12 text-center py-5">
                 <div style={{ backgroundColor: '#f8fafc', borderRadius: '16px', padding: '40px 20px', border: '1px dashed #cbd5e1' }}>
                   <p style={{ color: '#64748b', fontSize: '16px', margin: 0 }}>
-                    No services currently published in Business &amp; Financial Solutions. Added services from the Admin Studio will appear here automatically.
+                    No services currently published in Business Services. Added services from the Admin Studio will appear here automatically.
                   </p>
                 </div>
               </div>
@@ -932,9 +637,6 @@ export default function BusinessFinancialCategoryView({ category }) {
             }}>
               Our 3-Step Guided Process
             </h2>
-            <p style={{ fontSize: "17px", fontWeight: 400, lineHeight: "1.6", color: "#4b5563" }}>
-              We eliminate confusion and friction by coordinating your business and financial requirements from initial inquiry to execution.
-            </p>
           </div>
 
           <div className="row g-4">
@@ -977,9 +679,6 @@ export default function BusinessFinancialCategoryView({ category }) {
                 }}>
                   Understand your requirement and the relevant options
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  We assess your exact business needs, review your profile and operational stage, and map out the most suitable statutory frameworks, registration types, and solution providers.
-                </p>
               </div>
             </div>
 
@@ -1022,9 +721,6 @@ export default function BusinessFinancialCategoryView({ category }) {
                 }}>
                   Help organise the information and documents
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  Our team provides a precise checklist, assists with document structuring, prepares bankable financial reports (CMA/DPR), and arranges statutory filings to ensure compliance.
-                </p>
               </div>
             </div>
 
@@ -1067,9 +763,6 @@ export default function BusinessFinancialCategoryView({ category }) {
                 }}>
                   Coordinate the applicable process with the relevant provider or authority
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  We coordinate directly with government portals (MCA, GST, FSSAI, DGFT), authorized registrars, insurers, and technical teams to ensure seamless execution and timely delivery.
-                </p>
               </div>
             </div>
           </div>
@@ -1233,7 +926,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                 }}>
                   <Image
                     src="/images/section/faq1.png"
-                    alt="Frequently Asked Questions - Business & Financial Solutions"
+                    alt="Frequently Asked Questions - Business Services"
                     fill
                     sizes="(max-width: 768px) 100vw, 600px"
                     style={{ objectFit: "cover", objectPosition: "center" }}
@@ -1299,7 +992,7 @@ export default function BusinessFinancialCategoryView({ category }) {
                 letterSpacing: "-0.5px"
               }}
             >
-              Ready to explore business &amp; financial solutions?
+              Ready to explore business services?
             </h2>
 
             <p

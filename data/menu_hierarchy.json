@@ -5,7 +5,88 @@
     "url": "/services/loans",
     "parentId": null,
     "order": 1,
-    "children": []
+    "children": [
+      {
+        "id": "menu-personal-loans",
+        "title": "Personal Loans",
+        "url": "/services/loans/personal-loans",
+        "parentId": "menu-loans",
+        "order": 1,
+        "children": []
+      },
+      {
+        "id": "menu-education-loans",
+        "title": "Education Loans",
+        "url": "/services/loans/education-loans",
+        "parentId": "menu-loans",
+        "order": 2,
+        "children": []
+      },
+      {
+        "id": "menu-retailer-loans",
+        "title": "Retailer Loans",
+        "url": "/services/loans/retailer-loans",
+        "parentId": "menu-loans",
+        "order": 3,
+        "children": []
+      },
+      {
+        "id": "menu-home-loans",
+        "title": "Home Loans",
+        "url": "/services/loans/home-loans",
+        "parentId": "menu-loans",
+        "order": 4,
+        "children": []
+      },
+      {
+        "id": "menu-property-loans",
+        "title": "Property Loans",
+        "url": "/services/loans/property-loans",
+        "parentId": "menu-loans",
+        "order": 5,
+        "children": []
+      },
+      {
+        "id": "menu-business-loans",
+        "title": "Business Loans",
+        "url": "/services/loans/business-loans",
+        "parentId": "menu-loans",
+        "order": 6,
+        "children": []
+      },
+      {
+        "id": "menu-project-loans",
+        "title": "Project Loans",
+        "url": "/services/loans/project-loans",
+        "parentId": "menu-loans",
+        "order": 7,
+        "children": []
+      },
+      {
+        "id": "menu-pmegp-loans",
+        "title": "PMEGP Loans",
+        "url": "/services/loans/pmegp-loans",
+        "parentId": "menu-loans",
+        "order": 8,
+        "children": []
+      },
+      {
+        "id": "menu-stand-up-india-loans",
+        "title": "Stand-Up India Loans",
+        "url": "/services/loans/stand-up-india-loans",
+        "parentId": "menu-loans",
+        "order": 9,
+        "children": []
+      },
+      {
+        "id": "menu-vehicle-loans",
+        "title": "Vehicle Loans",
+        "url": "/services/loans/vehicle-loans",
+        "parentId": "menu-loans",
+        "order": 10,
+        "children": []
+      }
+    ]
   },
   {
     "id": "menu-business-services",
@@ -13,7 +94,204 @@
     "url": "/services/business-services",
     "parentId": null,
     "order": 2,
-    "children": []
+    "children": [
+      {
+        "id": "menu-business-registration",
+        "title": "Business Registration",
+        "url": "/services/business-services/business-registration",
+        "parentId": "menu-business-services",
+        "order": 1,
+        "children": [
+          {
+            "id": "menu-private-limited-company-registration",
+            "title": "Private Limited Company Registration",
+            "url": "/services/business-services/private-limited-company-registration",
+            "parentId": "menu-business-registration",
+            "order": 1,
+            "children": []
+          },
+          {
+            "id": "menu-llp-registration",
+            "title": "LLP Registration",
+            "url": "/services/business-services/llp-registration",
+            "parentId": "menu-business-registration",
+            "order": 2,
+            "children": []
+          },
+          {
+            "id": "menu-partnership-deed-registration",
+            "title": "Partnership Deed Preparation / Registration",
+            "url": "/services/business-services/partnership-deed-registration",
+            "parentId": "menu-business-registration",
+            "order": 3,
+            "children": []
+          },
+          {
+            "id": "menu-society-club-registration",
+            "title": "Society / Club Registration",
+            "url": "/services/business-services/society-club-registration",
+            "parentId": "menu-business-registration",
+            "order": 4,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "menu-trade-licences",
+        "title": "Trade & Licences",
+        "url": "/services/business-services/trade-licences",
+        "parentId": "menu-business-services",
+        "order": 2,
+        "children": [
+          {
+            "id": "menu-export-import-licence-iec",
+            "title": "Export-Import Licence / IEC Assistance",
+            "url": "/services/business-services/export-import-licence-iec",
+            "parentId": "menu-trade-licences",
+            "order": 1,
+            "children": []
+          },
+          {
+            "id": "menu-apeda-registration",
+            "title": "APEDA Registration",
+            "url": "/services/business-services/apeda-registration",
+            "parentId": "menu-trade-licences",
+            "order": 2,
+            "children": []
+          },
+          {
+            "id": "menu-ad-code-registration",
+            "title": "AD Code Registration",
+            "url": "/services/business-services/ad-code-registration",
+            "parentId": "menu-trade-licences",
+            "order": 3,
+            "children": []
+          },
+          {
+            "id": "menu-icegate-registration",
+            "title": "ICEGATE Registration",
+            "url": "/services/business-services/icegate-registration",
+            "parentId": "menu-trade-licences",
+            "order": 4,
+            "children": []
+          },
+          {
+            "id": "menu-fssai-registration-licensing",
+            "title": "FSSAI Registration & Licensing",
+            "url": "/services/business-services/fssai-registration-licensing",
+            "parentId": "menu-trade-licences",
+            "order": 5,
+            "children": []
+          },
+          {
+            "id": "menu-gem-registration",
+            "title": "GeM Registration",
+            "url": "/services/business-services/gem-registration",
+            "parentId": "menu-trade-licences",
+            "order": 6,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "menu-ip-certifications",
+        "title": "IP & Certifications",
+        "url": "/services/business-services/ip-certifications",
+        "parentId": "menu-business-services",
+        "order": 3,
+        "children": [
+          {
+            "id": "menu-trademark-registration",
+            "title": "Trademark Registration",
+            "url": "/services/business-services/trademark-registration",
+            "parentId": "menu-ip-certifications",
+            "order": 1,
+            "children": []
+          },
+          {
+            "id": "menu-patent-registration",
+            "title": "Patent Registration",
+            "url": "/services/business-services/patent-registration",
+            "parentId": "menu-ip-certifications",
+            "order": 2,
+            "children": []
+          },
+          {
+            "id": "menu-iso-certification",
+            "title": "ISO Certification",
+            "url": "/services/business-services/iso-certification",
+            "parentId": "menu-ip-certifications",
+            "order": 3,
+            "children": []
+          },
+          {
+            "id": "menu-halal-certification",
+            "title": "Halal Certification",
+            "url": "/services/business-services/halal-certification",
+            "parentId": "menu-ip-certifications",
+            "order": 4,
+            "children": []
+          },
+          {
+            "id": "menu-barcode-registration",
+            "title": "Barcode Registration",
+            "url": "/services/business-services/barcode-registration",
+            "parentId": "menu-ip-certifications",
+            "order": 5,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "menu-tax-accounting",
+        "title": "Tax & Accounting",
+        "url": "/services/business-services/tax-accounting",
+        "parentId": "menu-business-services",
+        "order": 4,
+        "children": [
+          {
+            "id": "menu-gst-registration-filing",
+            "title": "GST Registration & Filing",
+            "url": "/services/business-services/gst-registration-filing",
+            "parentId": "menu-tax-accounting",
+            "order": 1,
+            "children": []
+          },
+          {
+            "id": "menu-income-tax-return-filing",
+            "title": "Income Tax Return (ITR) Filing",
+            "url": "/services/business-services/income-tax-return-filing",
+            "parentId": "menu-tax-accounting",
+            "order": 2,
+            "children": []
+          },
+          {
+            "id": "menu-auditing-services",
+            "title": "Auditing Services",
+            "url": "/services/business-services/auditing-services",
+            "parentId": "menu-tax-accounting",
+            "order": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "menu-business-planning",
+        "title": "Business Planning",
+        "url": "/services/business-services/business-planning",
+        "parentId": "menu-business-services",
+        "order": 5,
+        "children": []
+      },
+      {
+        "id": "menu-legal-support",
+        "title": "Legal Support",
+        "url": "/services/business-services/legal-support",
+        "parentId": "menu-business-services",
+        "order": 6,
+        "children": []
+      }
+    ]
   },
   {
     "id": "menu-study-abroad",
@@ -21,7 +299,40 @@
     "url": "/services/study-abroad",
     "parentId": null,
     "order": 3,
-    "children": []
+    "children": [
+      {
+        "id": "menu-study-planning",
+        "title": "Study Planning",
+        "url": "/services/study-abroad/study-planning",
+        "parentId": "menu-study-abroad",
+        "order": 1,
+        "children": []
+      },
+      {
+        "id": "menu-applications-documents",
+        "title": "Applications & Documents",
+        "url": "/services/study-abroad/applications-documents",
+        "parentId": "menu-study-abroad",
+        "order": 2,
+        "children": []
+      },
+      {
+        "id": "menu-admission-support",
+        "title": "Admission Support",
+        "url": "/services/study-abroad/admission-support",
+        "parentId": "menu-study-abroad",
+        "order": 3,
+        "children": []
+      },
+      {
+        "id": "menu-education-loan-support",
+        "title": "Education Loan Support",
+        "url": "/services/study-abroad/education-loan-support",
+        "parentId": "menu-study-abroad",
+        "order": 4,
+        "children": []
+      }
+    ]
   },
   {
     "id": "menu-insurance",
@@ -29,7 +340,64 @@
     "url": "/services/insurance",
     "parentId": null,
     "order": 4,
-    "children": []
+    "children": [
+      {
+        "id": "menu-life-insurance",
+        "title": "Life Insurance",
+        "url": "/services/insurance/life-insurance",
+        "parentId": "menu-insurance",
+        "order": 1,
+        "children": []
+      },
+      {
+        "id": "menu-health-insurance",
+        "title": "Health Insurance",
+        "url": "/services/insurance/health-insurance",
+        "parentId": "menu-insurance",
+        "order": 2,
+        "children": []
+      },
+      {
+        "id": "menu-vehicle-insurance",
+        "title": "Vehicle Insurance",
+        "url": "/services/insurance/vehicle-insurance",
+        "parentId": "menu-insurance",
+        "order": 3,
+        "children": []
+      },
+      {
+        "id": "menu-property-insurance",
+        "title": "Property Insurance",
+        "url": "/services/insurance/property-insurance",
+        "parentId": "menu-insurance",
+        "order": 4,
+        "children": []
+      },
+      {
+        "id": "menu-business-insurance",
+        "title": "Business Insurance",
+        "url": "/services/insurance/business-insurance",
+        "parentId": "menu-insurance",
+        "order": 5,
+        "children": []
+      },
+      {
+        "id": "menu-travel-insurance",
+        "title": "Travel Insurance",
+        "url": "/services/insurance/travel-insurance",
+        "parentId": "menu-insurance",
+        "order": 6,
+        "children": []
+      },
+      {
+        "id": "menu-group-insurance",
+        "title": "Group Insurance",
+        "url": "/services/insurance/group-insurance",
+        "parentId": "menu-insurance",
+        "order": 7,
+        "children": []
+      }
+    ]
   },
   {
     "id": "menu-real-estate",
@@ -37,7 +405,48 @@
     "url": "/services/real-estate",
     "parentId": null,
     "order": 5,
-    "children": []
+    "children": [
+      {
+        "id": "menu-property-buying-selling",
+        "title": "Property Buying & Selling",
+        "url": "/services/real-estate/property-buying-selling",
+        "parentId": "menu-real-estate",
+        "order": 1,
+        "children": []
+      },
+      {
+        "id": "menu-property-advisory",
+        "title": "Property Advisory",
+        "url": "/services/real-estate/property-advisory",
+        "parentId": "menu-real-estate",
+        "order": 2,
+        "children": []
+      },
+      {
+        "id": "menu-property-documentation",
+        "title": "Property Documentation",
+        "url": "/services/real-estate/property-documentation",
+        "parentId": "menu-real-estate",
+        "order": 3,
+        "children": []
+      },
+      {
+        "id": "menu-construction-planning",
+        "title": "Construction & Planning",
+        "url": "/services/real-estate/construction-planning",
+        "parentId": "menu-real-estate",
+        "order": 4,
+        "children": []
+      },
+      {
+        "id": "menu-property-finance",
+        "title": "Property Finance",
+        "url": "/services/real-estate/property-finance",
+        "parentId": "menu-real-estate",
+        "order": 5,
+        "children": []
+      }
+    ]
   },
   {
     "id": "menu-digital-services",
@@ -45,6 +454,72 @@
     "url": "/services/digital-services",
     "parentId": null,
     "order": 6,
-    "children": []
+    "children": [
+      {
+        "id": "menu-software-automation",
+        "title": "Software & Automation",
+        "url": "/services/digital-services/software-automation",
+        "parentId": "menu-digital-services",
+        "order": 1,
+        "children": [
+          {
+            "id": "menu-erp-software-solutions",
+            "title": "ERP Software Solutions",
+            "url": "/services/digital-services/erp-software-solutions",
+            "parentId": "menu-software-automation",
+            "order": 1,
+            "children": []
+          },
+          {
+            "id": "menu-crm-software-solutions",
+            "title": "CRM Software Solutions",
+            "url": "/services/digital-services/crm-software-solutions",
+            "parentId": "menu-software-automation",
+            "order": 2,
+            "children": []
+          },
+          {
+            "id": "menu-ai-automation",
+            "title": "AI Automation",
+            "url": "/services/digital-services/ai-automation",
+            "parentId": "menu-software-automation",
+            "order": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "menu-web-development",
+        "title": "Web Development",
+        "url": "/services/digital-services/web-development",
+        "parentId": "menu-digital-services",
+        "order": 2,
+        "children": []
+      },
+      {
+        "id": "menu-branding-design",
+        "title": "Branding & Design",
+        "url": "/services/digital-services/branding-design",
+        "parentId": "menu-digital-services",
+        "order": 3,
+        "children": []
+      },
+      {
+        "id": "menu-digital-marketing",
+        "title": "Digital Marketing",
+        "url": "/services/digital-services/digital-marketing",
+        "parentId": "menu-digital-services",
+        "order": 4,
+        "children": []
+      },
+      {
+        "id": "menu-social-media-content",
+        "title": "Social Media & Content",
+        "url": "/services/digital-services/social-media-content",
+        "parentId": "menu-digital-services",
+        "order": 5,
+        "children": []
+      }
+    ]
   }
 ]

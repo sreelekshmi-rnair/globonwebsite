@@ -147,7 +147,7 @@ export default function LifeHealthCategoryView({ category }) {
             </Link>
             <span>/</span>
             <span style={{ color: "#0f172a", fontWeight: 600 }}>
-              Life &amp; Health Insurance
+              Insurance
             </span>
           </div>
         </div>
@@ -177,20 +177,10 @@ export default function LifeHealthCategoryView({ category }) {
                   marginBottom: "16px",
                   fontFamily: "'Poppins', sans-serif"
                 }}>
-                  Life &amp; Health Insurance
+                  Insurance
                 </h1>
 
                 {/* Subheadline from User */}
-                <h2 style={{
-                  fontSize: "clamp(18px, 1.8vw, 22px)",
-                  fontWeight: 600,
-                  color: "#475569",
-                  lineHeight: "1.4",
-                  marginBottom: "20px",
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Protect Your Family, Health &amp; Financial Future With the Right Insurance
-                </h2>
 
                 {/* Lead Narrative from User */}
                 <p style={{
@@ -199,7 +189,7 @@ export default function LifeHealthCategoryView({ category }) {
                   lineHeight: "1.7",
                   marginBottom: "32px"
                 }}>
-                  Life and health risks can create significant financial pressure for individuals and families.
+                  Life and health risks can create significant financial pressure for individuals and families. Your home, shop, premises, equipment, stock and other physical assets can represent a significant financial investment. Travel often involves unexpected risks, while organisations may need insurance protection for employees, members or other eligible groups.
                 </p>
 
                 {/* Buttons requested by user */}
@@ -270,96 +260,12 @@ export default function LifeHealthCategoryView({ category }) {
                 }}>
                   <Image
                     src="/images/services/6.png"
-                    alt="Globon Life & Health Insurance"
+                    alt="Globon Insurance"
                     fill
                     sizes="(max-width: 991px) 100vw, 560px"
                     style={{ objectFit: "cover", objectPosition: "center" }}
                     priority
                   />
-                </div>
-
-                {/* Top-Right Floating Verified Badge */}
-                <div
-                  className="animate-float"
-                  style={{
-                    position: "absolute",
-                    top: "24px",
-                    right: "-12px",
-                    background: "#ffffff",
-                    borderRadius: "14px",
-                    padding: "10px 18px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    boxShadow: "0 12px 30px rgba(0,0,0,0.1)",
-                    border: "1px solid #e2e8f0",
-                    zIndex: 2
-                  }}
-                >
-                  <div style={{
-                    width: "32px",
-                    height: "32px",
-                    borderRadius: "50%",
-                    background: "#59bdfc",
-                    color: "#0f172a",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "16px",
-                    fontWeight: "800"
-                  }}>
-                    ✓
-                  </div>
-                  <div>
-                    <div style={{ fontSize: "12px", fontWeight: "800", color: "#0f172a", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                      VERIFIED
-                    </div>
-                    <div style={{ fontSize: "11px", color: "#64748b", fontWeight: "600" }}>
-                      IRDAI Compliant Policies
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom-Left Floating Metric Badge */}
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "-20px",
-                    left: "-12px",
-                    background: "#ffffff",
-                    borderRadius: "16px",
-                    padding: "14px 22px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "14px",
-                    boxShadow: "0 16px 36px rgba(0,0,0,0.1)",
-                    border: "1px solid #e2e8f0",
-                    zIndex: 2
-                  }}
-                >
-                  <div style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "12px",
-                    background: "#f8fafc",
-                    border: "1px solid #e2e8f0",
-                    color: "#0369a1",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center"
-                  }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: "20px", fontWeight: "800", color: "#0f172a", lineHeight: 1.1 }}>
-                      10,000+
-                    </div>
-                    <div style={{ fontSize: "12px", color: "#64748b", fontWeight: "600" }}>
-                      Cashless Hospitals
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -386,17 +292,6 @@ export default function LifeHealthCategoryView({ category }) {
             }}>
               OVERVIEW
             </span>
-            <h2 style={{
-              fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 600,
-              letterSpacing: "0.5px",
-              color: '#0369a1',
-              lineHeight: 1.3,
-              marginBottom: "18px",
-              fontFamily: "'Poppins', sans-serif"
-            }}>
-              Comprehensive Protection For You &amp; Your Loved Ones
-            </h2>
             <p style={{
               fontSize: "17px",
               color: "#4b5563",
@@ -405,207 +300,8 @@ export default function LifeHealthCategoryView({ category }) {
               maxWidth: "780px",
               margin: "0 auto"
             }}>
-              Explore life and health policies and organise the information needed to review options. Globon helps organise the next steps and documentation relevant to your requirement.
+              Explore life and health policies, vehicle insurance support, protection options for residential property, shops and business assets, and travel protection and group insurance options. Globon helps organise the next steps and documentation relevant to your requirement.
             </p>
-          </div>
-
-          {/* 4 Feature Pillars Grid on Pure White */}
-          <div className="row g-4">
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#0369a1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  🛡️
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Family Life Protection
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  High sum assured pure term plans and guaranteed financial security for dependents.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#16a34a",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  🏥
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Cashless Hospitalization
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Immediate cashless medical claim clearance across 10,000+ networked premier hospitals.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#0369a1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  ❤️
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Critical Illness Riders
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Enhanced coverage riders against major critical illnesses, heart ailments, and accidental disability.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#9333ea",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  💰
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Tax Saving Benefits
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Statutory tax deductions under Section 80D (Health) and Section 80C &amp; 10(10D) (Life).
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -631,7 +327,7 @@ export default function LifeHealthCategoryView({ category }) {
               margin: 0,
               fontFamily: "inherit"
             }}>
-              LIFE &amp; HEALTH INSURANCE SERVICES
+              INSURANCE SERVICES
             </h2>
 
             <Link
@@ -665,11 +361,11 @@ export default function LifeHealthCategoryView({ category }) {
           </div>
 
           {/* 2 Cards Centered Grid matching Loans & Advances design */}
-          <div className="row g-4 justify-content-center">
+          <div className="row g-4">
             {category.services && category.services.length > 0 ? (
               category.services.map((service, idx) => (
-                <div key={service.slug} className="col-12 col-md-6 col-lg-5">
-                  <div className="loan-scheme-sig-card wow fadeInUp" data-wow-delay={`${(idx % 2) * 0.1}s`}>
+                <div key={service.slug} className="col-12 col-md-6 col-lg-4">
+                  <div className="loan-scheme-sig-card wow fadeInUp" data-wow-delay={`${(idx % 3) * 0.1}s`}>
                     <Link
                       href={service.href}
                       className="ksfe-sig-visual-wrap"
@@ -715,9 +411,9 @@ export default function LifeHealthCategoryView({ category }) {
 
                       <div className="ksfe-sig-divider" />
 
-                      {service.highlights && service.highlights.length > 0 && (
+                      {service.cardPoints && service.cardPoints.length > 0 && (
                         <ul className="ksfe-sig-bullets">
-                          {service.highlights.slice(0, 3).map((hl, i) => (
+                          {service.cardPoints.slice(0, 3).map((hl, i) => (
                             <li key={i} className="ksfe-sig-bullet-item">
                               <span className="bullet-asterisk">✻</span>
                               <Link
@@ -738,7 +434,7 @@ export default function LifeHealthCategoryView({ category }) {
               <div className="col-12 text-center py-5">
                 <div style={{ backgroundColor: '#f8fafc', borderRadius: '16px', padding: '40px 20px', border: '1px dashed #cbd5e1' }}>
                   <p style={{ color: '#64748b', fontSize: '16px', margin: 0 }}>
-                    No services currently published in Life &amp; Health Insurance. Added services from the Admin Studio will appear here automatically.
+                    No services currently published in Insurance. Added services from the Admin Studio will appear here automatically.
                   </p>
                 </div>
               </div>
@@ -776,9 +472,6 @@ export default function LifeHealthCategoryView({ category }) {
             }}>
               Our 3-Step Guided Process
             </h2>
-            <p style={{ fontSize: "17px", fontWeight: 400, lineHeight: "1.6", color: "#4b5563" }}>
-              We simplify policy comparison, paperwork verification, and claim onboarding with dedicated guidance.
-            </p>
           </div>
 
           <div className="row g-4">
@@ -821,9 +514,6 @@ export default function LifeHealthCategoryView({ category }) {
                 }}>
                   Understand your requirement and the relevant options
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  We assess your family financial dependencies, current medical histories, age factors, and existing liabilities to recommend the most suitable coverage limits and riders.
-                </p>
               </div>
             </div>
 
@@ -866,9 +556,6 @@ export default function LifeHealthCategoryView({ category }) {
                 }}>
                   Help organise the information and documents
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  Our team helps assemble KYC proofs, salary or income declarations, and prior health diagnostic records to ensure transparent disclosure and avoid future claim rejections.
-                </p>
               </div>
             </div>
 
@@ -911,9 +598,6 @@ export default function LifeHealthCategoryView({ category }) {
                 }}>
                   Coordinate the applicable process with the relevant provider or authority
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  We coordinate directly with top-tier insurance underwriters for smooth tele-medical verification, instant policy issuance, and lifelong cashless claim support.
-                </p>
               </div>
             </div>
           </div>
@@ -1077,7 +761,7 @@ export default function LifeHealthCategoryView({ category }) {
                 }}>
                   <Image
                     src="/images/section/faq1.png"
-                    alt="Frequently Asked Questions - Life & Health Insurance"
+                    alt="Frequently Asked Questions - Insurance"
                     fill
                     sizes="(max-width: 768px) 100vw, 600px"
                     style={{ objectFit: "cover", objectPosition: "center" }}
@@ -1143,7 +827,7 @@ export default function LifeHealthCategoryView({ category }) {
                 letterSpacing: "-0.5px"
               }}
             >
-              Ready to explore life &amp; health insurance?
+              Ready to explore insurance?
             </h2>
 
             <p

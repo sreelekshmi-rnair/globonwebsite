@@ -273,7 +273,7 @@ export default function RealEstateCategoryView({ category }) {
             </Link>
             <span>/</span>
             <span style={{ color: "#0f172a", fontWeight: 600 }}>
-              Real Estate Services
+              Real Estate
             </span>
           </div>
         </div>
@@ -303,7 +303,7 @@ export default function RealEstateCategoryView({ category }) {
                   marginBottom: "16px",
                   fontFamily: "'Poppins', sans-serif"
                 }}>
-                  Real Estate Services
+                  Real Estate
                 </h1>
 
                 {/* Subheadline from User */}
@@ -396,97 +396,12 @@ export default function RealEstateCategoryView({ category }) {
                 }}>
                   <Image
                     src="/images/services/8.png"
-                    alt="Globon Real Estate Services"
+                    alt="Globon Real Estate"
                     fill
                     sizes="(max-width: 991px) 100vw, 560px"
                     style={{ objectFit: "cover", objectPosition: "center" }}
                     priority
                   />
-                </div>
-
-                {/* Top-Right Floating Verified Badge */}
-                <div
-                  className="animate-float"
-                  style={{
-                    position: "absolute",
-                    top: "24px",
-                    right: "-12px",
-                    background: "#ffffff",
-                    borderRadius: "14px",
-                    padding: "10px 18px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    boxShadow: "0 12px 30px rgba(0,0,0,0.1)",
-                    border: "1px solid #e2e8f0",
-                    zIndex: 2
-                  }}
-                >
-                  <div style={{
-                    width: "32px",
-                    height: "32px",
-                    borderRadius: "50%",
-                    background: "#59bdfc",
-                    color: "#0f172a",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "16px",
-                    fontWeight: "800"
-                  }}>
-                    ✓
-                  </div>
-                  <div>
-                    <div style={{ fontSize: "12px", fontWeight: "800", color: "#0f172a", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                      VERIFIED
-                    </div>
-                    <div style={{ fontSize: "11px", color: "#64748b", fontWeight: "600" }}>
-                      Clear Title Properties
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom-Left Floating Metric Badge */}
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "-20px",
-                    left: "-12px",
-                    background: "#ffffff",
-                    borderRadius: "16px",
-                    padding: "14px 22px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "14px",
-                    boxShadow: "0 16px 36px rgba(0,0,0,0.1)",
-                    border: "1px solid #e2e8f0",
-                    zIndex: 2
-                  }}
-                >
-                  <div style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "12px",
-                    background: "#f8fafc",
-                    border: "1px solid #e2e8f0",
-                    color: "#0369a1",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center"
-                  }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                      <polyline points="9 22 9 12 15 12 15 22" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: "20px", fontWeight: "800", color: "#0f172a", lineHeight: 1.1 }}>
-                      ₹250 Cr+
-                    </div>
-                    <div style={{ fontSize: "12px", color: "#64748b", fontWeight: "600" }}>
-                      Property Value Coordinated
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -513,17 +428,6 @@ export default function RealEstateCategoryView({ category }) {
             }}>
               OVERVIEW
             </span>
-            <h2 style={{
-              fontSize: "clamp(26px, 2.8vw, 36px)",
-              fontWeight: 600,
-              letterSpacing: "0.5px",
-              color: '#0369a1',
-              lineHeight: 1.3,
-              marginBottom: "18px",
-              fontFamily: "'Poppins', sans-serif"
-            }}>
-              End-to-End Real Estate, Documentation &amp; Construction Support
-            </h2>
             <p style={{
               fontSize: "17px",
               color: "#4b5563",
@@ -534,205 +438,6 @@ export default function RealEstateCategoryView({ category }) {
             }}>
               Support for buying, selling, investing in, documenting, planning and financing property. Globon helps organise the next steps and documentation relevant to your requirement.
             </p>
-          </div>
-
-          {/* 4 Feature Pillars Grid on Pure White */}
-          <div className="row g-4">
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#0369a1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  🏡
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Verified Buying &amp; Selling
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Transparent matchmaking for residential plots, commercial properties, and luxury villas with zero dispute.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#16a34a",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  📜
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Legal Documentation
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  30-year title deed search, encumbrance verification, sale deed drafting, and village mutation assistance.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#0369a1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  📐
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Construction &amp; Planning
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Sanctioned municipal building permits, modern structural blueprints, and bank-compliant cost estimations.
-                </p>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-3">
-              <div style={{
-                background: "#ffffff",
-                borderRadius: "16px",
-                padding: "32px 22px",
-                border: "1px solid #e2e8f0",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                textAlign: "center",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
-              }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "#f8fafc",
-                  border: "1px solid #e2e8f0",
-                  color: "#9333ea",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px auto",
-                  fontSize: "24px"
-                }}>
-                  🏦
-                </div>
-                <h3 style={{
-                  fontSize: "19px",
-                  fontWeight: 600,
-                  color: '#0369a1',
-                  marginBottom: "10px",
-                  lineHeight: 1.3,
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                  Real Estate Finance
-                </h3>
-                <p style={{
-                  fontSize: "17px",
-                  fontWeight: 400,
-                  color: "#4b5563",
-                  lineHeight: "1.6",
-                  margin: 0
-                }}>
-                  Builder finance, project loan syndication, and high-ticket mortgage tie-ups through leading banks.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -842,9 +547,9 @@ export default function RealEstateCategoryView({ category }) {
 
                       <div className="ksfe-sig-divider" />
 
-                      {service.highlights && service.highlights.length > 0 && (
+                      {service.cardPoints && service.cardPoints.length > 0 && (
                         <ul className="ksfe-sig-bullets">
-                          {service.highlights.slice(0, 3).map((hl, i) => (
+                          {service.cardPoints.slice(0, 3).map((hl, i) => (
                             <li key={i} className="ksfe-sig-bullet-item">
                               <span className="bullet-asterisk">✻</span>
                               <Link
@@ -865,7 +570,7 @@ export default function RealEstateCategoryView({ category }) {
               <div className="col-12 text-center py-5">
                 <div style={{ backgroundColor: '#f8fafc', borderRadius: '16px', padding: '40px 20px', border: '1px dashed #cbd5e1' }}>
                   <p style={{ color: '#64748b', fontSize: '16px', margin: 0 }}>
-                    No services currently published in Real Estate Services. Added services from the Admin Studio will appear here automatically.
+                    No services currently published in Real Estate. Added services from the Admin Studio will appear here automatically.
                   </p>
                 </div>
               </div>
@@ -903,9 +608,6 @@ export default function RealEstateCategoryView({ category }) {
             }}>
               Our 3-Step Guided Process
             </h2>
-            <p style={{ fontSize: "17px", fontWeight: 400, lineHeight: "1.6", color: "#4b5563" }}>
-              We eliminate uncertainty and legal friction with hands-on coordination at every step.
-            </p>
           </div>
 
           <div className="row g-4">
@@ -948,9 +650,6 @@ export default function RealEstateCategoryView({ category }) {
                 }}>
                   Understand your requirement and the relevant options
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  We assess your property goals, whether you are buying, selling, developing a plot, seeking legal title verification, or financing a construction venture.
-                </p>
               </div>
             </div>
 
@@ -993,9 +692,6 @@ export default function RealEstateCategoryView({ category }) {
                 }}>
                   Help organise the information and documents
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  Our team helps assemble prior title deeds, encumbrance certificates (EC), building sketches, revenue tax receipts, and bank loan documentation portfolios.
-                </p>
               </div>
             </div>
 
@@ -1038,9 +734,6 @@ export default function RealEstateCategoryView({ category }) {
                 }}>
                   Coordinate the applicable process with the relevant provider or authority
                 </h3>
-                <p style={{ fontSize: "17px", fontWeight: 400, color: "#4b5563", lineHeight: "1.6", margin: 0 }}>
-                  We coordinate directly with Sub-Registrar offices, licensed advocates, village mutation officers, municipal engineers, and bank lending officers for smooth execution.
-                </p>
               </div>
             </div>
           </div>
@@ -1204,7 +897,7 @@ export default function RealEstateCategoryView({ category }) {
                 }}>
                   <Image
                     src="/images/section/faq1.png"
-                    alt="Frequently Asked Questions - Real Estate Services"
+                    alt="Frequently Asked Questions - Real Estate"
                     fill
                     sizes="(max-width: 768px) 100vw, 600px"
                     style={{ objectFit: "cover", objectPosition: "center" }}
