@@ -44,7 +44,7 @@ export default function UniversalServiceDetailView({ service, category }) {
 
   // Features Card - only what was provided in service
   const featuresTitle = service.featuresTitle || 'Features';
-  const featuresBadge = service.featuresBadge || 'Highlights';
+  const featuresBadge = service.featuresBadge || '';
   const features = Array.isArray(service.features) && service.features.length > 0
     ? service.features.filter((f) => typeof f === 'string' && f.trim())
     : Array.isArray(service.highlights) && service.highlights.length > 0
@@ -383,19 +383,21 @@ export default function UniversalServiceDetailView({ service, category }) {
         <section id="options" style={{ padding: '70px 0', background: '#ffffff', borderBottom: '1px solid #f1f5f9' }}>
           <div className="tf-container w-1780">
             <div style={{ marginBottom: '36px' }}>
-              <span
-                style={{
-                  fontSize: '13px',
-                  fontWeight: '700',
-                  letterSpacing: '1px',
-                  textTransform: 'uppercase',
-                  color: '#0369a1',
-                  display: 'inline-block',
-                  marginBottom: '6px',
-                }}
-              >
-                {service.optionsBadge || 'ELIGIBLE PURPOSES'}
-              </span>
+              {service.optionsBadge && (
+                <span
+                  style={{
+                    fontSize: '13px',
+                    fontWeight: '700',
+                    letterSpacing: '1px',
+                    textTransform: 'uppercase',
+                    color: '#0369a1',
+                    display: 'inline-block',
+                    marginBottom: '6px',
+                  }}
+                >
+                  {service.optionsBadge}
+                </span>
+              )}
               <h2
                 style={{
                   fontSize: 'clamp(24px, 2.5vw, 34px)',
@@ -523,17 +525,19 @@ export default function UniversalServiceDetailView({ service, category }) {
               >
                 {featuresTitle}
               </h2>
-              <span
-                style={{
-                  fontSize: '15px',
-                  fontWeight: 600,
-                  color: '#59bdfc',
-                  textTransform: 'capitalize',
-                  display: 'inline-block',
-                }}
-              >
-                {featuresBadge}
-              </span>
+              {featuresBadge && (
+                <span
+                  style={{
+                    fontSize: '15px',
+                    fontWeight: 600,
+                    color: '#59bdfc',
+                    textTransform: 'capitalize',
+                    display: 'inline-block',
+                  }}
+                >
+                  {featuresBadge}
+                </span>
+              )}
             </div>
 
             {/* Subtle Divider Line */}

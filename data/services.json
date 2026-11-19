@@ -11,11 +11,7 @@
     "overviewTitle": "Personal Loan Assistance",
     "overviewDesc": "Globon helps you explore applicable personal loan options, prepare documents and coordinate the application process.",
     "overviewImage": "/images/services/1.png",
-    "overviewBullets": [
-      "Tell us: Share the service you need.",
-      "Review: We help identify the relevant requirements and next steps.",
-      "Proceed: Prepare information and coordinate the applicable process."
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement-based option guidance",
       "Document checklist and preparation support",
@@ -91,7 +87,7 @@
     ],
     "order": 101,
     "createdAt": "2026-11-18T06:30:19.253Z",
-    "updatedAt": "2026-11-18T09:07:11.750Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "2",
@@ -105,12 +101,7 @@
     "overviewTitle": "Education Loan Assistance",
     "overviewDesc": "Globon helps you explore applicable education loan options, prepare documents and coordinate the application process.",
     "overviewImage": "/images/services/1.png",
-    "overviewBullets": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applicant"
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement-based option guidance",
       "Document checklist and preparation support",
@@ -186,7 +177,7 @@
     ],
     "order": 102,
     "createdAt": "2026-11-18T06:30:19.285Z",
-    "updatedAt": "2026-11-18T09:07:41.378Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "3",
@@ -200,12 +191,7 @@
     "overviewTitle": "Retailer Loan Assistance",
     "overviewDesc": "Globon helps you explore applicable retailer loan options, prepare documents and coordinate the application process.",
     "overviewImage": "/images/services/1.png",
-    "overviewBullets": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applicant"
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement-based option guidance",
       "Document checklist and preparation support",
@@ -281,7 +267,7 @@
     ],
     "order": 103,
     "createdAt": "2026-11-18T06:30:19.292Z",
-    "updatedAt": "2026-11-18T09:07:59.729Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "4",
@@ -295,12 +281,7 @@
     "overviewTitle": "Home Loan Assistance",
     "overviewDesc": "Globon helps you explore applicable home loan options, prepare documents and coordinate the application process.",
     "overviewImage": "/images/services/1.png",
-    "overviewBullets": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applicant"
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement-based option guidance",
       "Document checklist and preparation support",
@@ -376,7 +357,7 @@
     ],
     "order": 104,
     "createdAt": "2026-11-18T06:30:19.297Z",
-    "updatedAt": "2026-11-18T09:08:13.010Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "5",
@@ -390,12 +371,7 @@
     "overviewTitle": "Property Loan Assistance",
     "overviewDesc": "Globon helps you explore applicable property loan options, prepare documents and coordinate the application process.",
     "overviewImage": "/images/services/1.png",
-    "overviewBullets": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applicant"
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement-based option guidance",
       "Document checklist and preparation support",
@@ -471,7 +447,7 @@
     ],
     "order": 105,
     "createdAt": "2026-11-18T06:30:19.304Z",
-    "updatedAt": "2026-11-18T09:08:28.525Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "6",
@@ -485,12 +461,7 @@
     "overviewTitle": "Business Loan Assistance",
     "overviewDesc": "Globon helps you explore applicable business loan options, prepare documents and coordinate the application process.",
     "overviewImage": "/images/services/1.png",
-    "overviewBullets": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applicant"
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement-based option guidance",
       "Document checklist and preparation support",
@@ -566,7 +537,7 @@
     ],
     "order": 106,
     "createdAt": "2026-11-18T06:30:19.309Z",
-    "updatedAt": "2026-11-18T09:08:42.828Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "7",
@@ -580,12 +551,7 @@
     "overviewTitle": "Project Loan Assistance",
     "overviewDesc": "Globon helps you explore applicable project loan options, prepare documents and coordinate the application process.",
     "overviewImage": "/images/services/1.png",
-    "overviewBullets": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applicant"
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement-based option guidance",
       "Document checklist and preparation support",
@@ -661,7 +627,7 @@
     ],
     "order": 107,
     "createdAt": "2026-11-18T06:30:19.314Z",
-    "updatedAt": "2026-11-18T09:09:02.958Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "8",
@@ -675,12 +641,7 @@
     "overviewTitle": "PMEGP Loan Assistance",
     "overviewDesc": "Globon helps you explore applicable PMEGP loan options, prepare documents and coordinate the application process.",
     "overviewImage": "/images/services/1.png",
-    "overviewBullets": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applicant"
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement-based option guidance",
       "Document checklist and preparation support",
@@ -756,7 +717,7 @@
     ],
     "order": 108,
     "createdAt": "2026-11-18T06:30:19.320Z",
-    "updatedAt": "2026-11-18T09:09:15.298Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "9",
@@ -770,12 +731,7 @@
     "overviewTitle": "Stand-Up India Loan Assistance",
     "overviewDesc": "Globon helps you explore applicable Stand-Up India loan options, prepare documents and coordinate the application process.",
     "overviewImage": "/images/services/1.png",
-    "overviewBullets": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applicant"
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement-based option guidance",
       "Document checklist and preparation support",
@@ -851,7 +807,7 @@
     ],
     "order": 109,
     "createdAt": "2026-11-18T06:30:19.324Z",
-    "updatedAt": "2026-11-18T09:24:26.605Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "10",
@@ -865,12 +821,7 @@
     "overviewTitle": "Vehicle Loan Assistance",
     "overviewDesc": "Globon helps you explore applicable vehicle loan options, prepare documents and coordinate the application process.",
     "overviewImage": "/images/services/1.png",
-    "overviewBullets": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applicant"
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement-based option guidance",
       "Document checklist and preparation support",
@@ -946,7 +897,7 @@
     ],
     "order": 110,
     "createdAt": "2026-11-18T06:30:19.328Z",
-    "updatedAt": "2026-11-18T09:21:17.457Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "11",
@@ -956,11 +907,15 @@
     "slug": "business-registration",
     "subtitle": "Start Your Business on the Right Foundation",
     "shortDesc": "Setting up a business involves more than choosing a name.",
-    "heroImage": "/images/section/business.jpg",
+    "heroImage": "/images/services/business/business-registration.jpg",
     "overviewTitle": "Business Registration",
     "overviewDesc": "Choose support for company, LLP, partnership, startup, MSME or establishment registration. Globon helps organise the next steps and documentation relevant to your requirement.",
     "overviewImage": "/images/services/2.png",
-    "overviewBullets": [],
+    "overviewBullets": [
+      "Understand your requirement and the relevant options",
+      "Help organise the information and documents",
+      "Coordinate the applicable process with the relevant provider or authority"
+    ],
     "features": [],
     "highlights": [],
     "optionsBadge": "Business Registration",
@@ -1007,7 +962,7 @@
     ],
     "order": 111,
     "createdAt": "2026-11-18T06:30:19.334Z",
-    "updatedAt": "2026-11-18T08:12:51.073Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "12",
@@ -1017,7 +972,7 @@
     "slug": "private-limited-company-registration",
     "subtitle": "Build Your Business With a Formal Corporate Structure",
     "shortDesc": "Starting a company is an important step for entrepreneurs who want to establish a separate legal business entity, define ownership, and create a structured foundation for future growth.",
-    "heroImage": "/images/section/business.jpg",
+    "heroImage": "/images/services/business/private-limited-company-registration.jpg",
     "overviewTitle": "Private Limited Company Registration",
     "overviewDesc": "Globon helps you understand the requirements for private limited company registration, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -1085,7 +1040,7 @@
     ],
     "order": 112,
     "createdAt": "2026-11-18T06:30:19.338Z",
-    "updatedAt": "2026-11-18T08:12:51.082Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "13",
@@ -1095,7 +1050,7 @@
     "slug": "llp-registration",
     "subtitle": "Build Your Partnership on a Formal Business Structure",
     "shortDesc": "A Limited Liability Partnership (LLP) can be a suitable structure for entrepreneurs, professionals, consultants, family businesses, and other ventures where two or more partners want to operate through a formal legal entity with a partnership-style management structure.",
-    "heroImage": "/images/section/business.jpg",
+    "heroImage": "/images/services/business/llp-registration.jpg",
     "overviewTitle": "LLP Registration",
     "overviewDesc": "Globon helps you understand the requirements for LLP registration, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -1163,7 +1118,7 @@
     ],
     "order": 113,
     "createdAt": "2026-11-18T06:30:19.343Z",
-    "updatedAt": "2026-11-18T08:12:51.091Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "14",
@@ -1173,7 +1128,7 @@
     "slug": "partnership-deed-registration",
     "subtitle": "Create a Clear and Structured Partnership for Your Business",
     "shortDesc": "Starting a business with one or more partners requires more than a shared business idea.",
-    "heroImage": "/images/section/business.jpg",
+    "heroImage": "/images/services/business/partnership-deed-registration.jpg",
     "overviewTitle": "Partnership Deed Preparation / Registration",
     "overviewDesc": "Globon helps you understand the requirements for partnership deed registration, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -1241,7 +1196,7 @@
     ],
     "order": 114,
     "createdAt": "2026-11-18T06:30:19.348Z",
-    "updatedAt": "2026-11-18T08:12:51.099Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "15",
@@ -1251,7 +1206,7 @@
     "slug": "society-club-registration",
     "subtitle": "Register Your Society or Club With the Right Structure & Documentation",
     "shortDesc": "A society or club can provide a formal structure for organisations established for social, charitable, educational, cultural, literary, scientific, sports or other eligible non-profit objectives, subject to the applicable law and registration requirements.",
-    "heroImage": "/images/section/business.jpg",
+    "heroImage": "/images/services/business/society-club-registration.jpg",
     "overviewTitle": "Society / Club Registration",
     "overviewDesc": "Globon helps you understand the requirements for society / club registration, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -1319,7 +1274,7 @@
     ],
     "order": 115,
     "createdAt": "2026-11-18T06:30:19.354Z",
-    "updatedAt": "2026-11-18T08:12:51.107Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "16",
@@ -1329,11 +1284,15 @@
     "slug": "trade-licences",
     "subtitle": "Get the Right Registrations, Licenses & Certifications for Your Business",
     "shortDesc": "Businesses may need different licenses, registrations, intellectual property protection and certifications depending on their industry, products, business activity and target market.",
-    "heroImage": "/images/section/globon-multibank-trust-banner.jpg",
+    "heroImage": "/images/services/business/trade-licences.jpg",
     "overviewTitle": "Trade & Licences",
     "overviewDesc": "Registration and certification assistance for brand protection, trade, food businesses and market access. Globon helps organise the next steps and documentation relevant to your requirement.",
     "overviewImage": "/images/services/2.png",
-    "overviewBullets": [],
+    "overviewBullets": [
+      "Understand your requirement and the relevant options",
+      "Help organise the information and documents",
+      "Coordinate the applicable process with the relevant provider or authority"
+    ],
     "features": [],
     "highlights": [],
     "optionsBadge": "Trade & Licences",
@@ -1390,7 +1349,7 @@
     ],
     "order": 116,
     "createdAt": "2026-11-18T06:30:19.359Z",
-    "updatedAt": "2026-11-18T08:12:51.115Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "17",
@@ -1400,7 +1359,7 @@
     "slug": "export-import-licence-iec",
     "subtitle": "Start Your Import & Export Business With the Right Trade Registration",
     "shortDesc": "Planning to import goods into India or export products to international markets?",
-    "heroImage": "/images/section/globon-multibank-trust-banner.jpg",
+    "heroImage": "/images/services/business/export-import-licence-iec.jpg",
     "overviewTitle": "Export-Import Licence / IEC Assistance",
     "overviewDesc": "Globon helps you understand the requirements for export-import license / IEC, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -1468,7 +1427,7 @@
     ],
     "order": 117,
     "createdAt": "2026-11-18T06:30:19.365Z",
-    "updatedAt": "2026-11-18T08:12:51.124Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "18",
@@ -1478,7 +1437,7 @@
     "slug": "apeda-registration",
     "subtitle": "Get Your APEDA Registration Ready for Agricultural & Processed Food Exports",
     "shortDesc": "Planning to export agricultural, processed food or other APEDA-scheduled products from India?",
-    "heroImage": "/images/section/globon-multibank-trust-banner.jpg",
+    "heroImage": "/images/services/business/apeda-registration.jpg",
     "overviewTitle": "APEDA Registration",
     "overviewDesc": "Globon helps you understand the requirements for APEDA registration, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -1546,7 +1505,7 @@
     ],
     "order": 118,
     "createdAt": "2026-11-18T06:30:19.371Z",
-    "updatedAt": "2026-11-18T08:12:51.133Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "19",
@@ -1556,7 +1515,7 @@
     "slug": "ad-code-registration",
     "subtitle": "Register Your Export Bank Account for Customs & International Trade",
     "shortDesc": "For exporters, the correct bank and Authorized Dealer (AD) details are an important part of the export setup.",
-    "heroImage": "/images/section/globon-multibank-trust-banner.jpg",
+    "heroImage": "/images/services/business/ad-code-registration.jpg",
     "overviewTitle": "AD Code Registration",
     "overviewDesc": "Globon helps you understand the requirements for AD Code registration, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -1624,7 +1583,7 @@
     ],
     "order": 119,
     "createdAt": "2026-11-18T06:30:19.377Z",
-    "updatedAt": "2026-11-18T08:12:51.141Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "20",
@@ -1634,7 +1593,7 @@
     "slug": "icegate-registration",
     "subtitle": "Set Up Your Customs Account for Import & Export Activities",
     "shortDesc": "ICEGATE (Indian Customs Electronic Gateway) is the electronic platform used by Indian Customs for a wide range of customs and import-export related services.",
-    "heroImage": "/images/section/globon-multibank-trust-banner.jpg",
+    "heroImage": "/images/services/business/icegate-registration.jpg",
     "overviewTitle": "ICEGATE Registration",
     "overviewDesc": "Globon helps you understand the requirements for ICEGATE registration, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -1702,7 +1661,7 @@
     ],
     "order": 120,
     "createdAt": "2026-11-18T06:30:19.384Z",
-    "updatedAt": "2026-11-18T08:12:51.149Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "21",
@@ -1712,7 +1671,7 @@
     "slug": "fssai-registration-licensing",
     "subtitle": "Get Your Food Business Registered With the Right FSSAI Approval",
     "shortDesc": "Every food business in India is required to obtain the applicable FSSAI Registration or License before carrying on food business activities.",
-    "heroImage": "/images/section/globon-multibank-trust-banner.jpg",
+    "heroImage": "/images/services/business/fssai-registration-licensing.jpg",
     "overviewTitle": "FSSAI Registration & Licensing",
     "overviewDesc": "Globon helps you understand the requirements for FSSAI registration & licensing, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -1780,7 +1739,7 @@
     ],
     "order": 121,
     "createdAt": "2026-11-18T06:30:19.390Z",
-    "updatedAt": "2026-11-18T08:12:51.157Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "22",
@@ -1790,7 +1749,7 @@
     "slug": "gem-registration",
     "subtitle": "Register Your Business on Government e-Marketplace & Start Selling to Government Buyers",
     "shortDesc": "The Government e-Marketplace (GeM) is India's public procurement marketplace for government buyers and eligible sellers and service providers.",
-    "heroImage": "/images/section/globon-multibank-trust-banner.jpg",
+    "heroImage": "/images/services/business/gem-registration.jpg",
     "overviewTitle": "GeM Registration",
     "overviewDesc": "Globon helps you understand the requirements for GeM registration, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -1858,7 +1817,7 @@
     ],
     "order": 122,
     "createdAt": "2026-11-18T06:30:19.396Z",
-    "updatedAt": "2026-11-18T08:12:51.164Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "23",
@@ -1868,11 +1827,15 @@
     "slug": "ip-certifications",
     "subtitle": "Get the Right Registrations, Licenses & Certifications for Your Business",
     "shortDesc": "Businesses may need different licenses, registrations, intellectual property protection and certifications depending on their industry, products, business activity and target market.",
-    "heroImage": "/images/section/service-detail.jpg",
+    "heroImage": "/images/services/business/ip-certifications.jpg",
     "overviewTitle": "IP & Certifications",
     "overviewDesc": "Registration and certification assistance for brand protection, trade, food businesses and market access. Globon helps organise the next steps and documentation relevant to your requirement.",
     "overviewImage": "/images/services/2.png",
-    "overviewBullets": [],
+    "overviewBullets": [
+      "Understand your requirement and the relevant options",
+      "Help organise the information and documents",
+      "Coordinate the applicable process with the relevant provider or authority"
+    ],
     "features": [],
     "highlights": [],
     "optionsBadge": "IP & Certifications",
@@ -1924,7 +1887,7 @@
     ],
     "order": 123,
     "createdAt": "2026-11-18T06:30:19.403Z",
-    "updatedAt": "2026-11-18T08:12:51.172Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "24",
@@ -1934,7 +1897,7 @@
     "slug": "trademark-registration",
     "subtitle": "Protect Your Brand Name, Logo & Business Identity",
     "shortDesc": "Your brand is one of your most valuable business assets.",
-    "heroImage": "/images/section/service-detail.jpg",
+    "heroImage": "/images/services/business/trademark-registration.jpg",
     "overviewTitle": "Trademark Registration",
     "overviewDesc": "Globon helps you understand the requirements for trademark registration, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -2002,7 +1965,7 @@
     ],
     "order": 124,
     "createdAt": "2026-11-18T06:30:19.410Z",
-    "updatedAt": "2026-11-18T08:12:51.180Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "25",
@@ -2012,7 +1975,7 @@
     "slug": "patent-registration",
     "subtitle": "Protect Your Invention & Secure Your Intellectual Property",
     "shortDesc": "An innovative product, technical solution or process can become a valuable business asset.",
-    "heroImage": "/images/section/service-detail.jpg",
+    "heroImage": "/images/services/business/patent-registration.jpg",
     "overviewTitle": "Patent Registration",
     "overviewDesc": "Globon helps you understand the requirements for patent registration, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -2080,7 +2043,7 @@
     ],
     "order": 125,
     "createdAt": "2026-11-18T06:30:19.416Z",
-    "updatedAt": "2026-11-18T08:12:51.188Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "26",
@@ -2090,7 +2053,7 @@
     "slug": "iso-certification",
     "subtitle": "Build Business Credibility With the Right ISO Certification",
     "shortDesc": "An ISO certification can help demonstrate that your organisation follows a structured management system that meets the requirements of a specified ISO standard.",
-    "heroImage": "/images/section/service-detail.jpg",
+    "heroImage": "/images/services/business/iso-certification.jpg",
     "overviewTitle": "ISO Certification",
     "overviewDesc": "Globon helps you understand the requirements for ISO certification, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -2158,7 +2121,7 @@
     ],
     "order": 126,
     "createdAt": "2026-11-18T06:30:19.423Z",
-    "updatedAt": "2026-11-18T08:12:51.197Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "27",
@@ -2168,7 +2131,7 @@
     "slug": "halal-certification",
     "subtitle": "Build Halal-Compliant Products & Prepare Your Business for Halal Markets",
     "shortDesc": "Halal certification can help eligible businesses demonstrate that their products, processes and facilities meet the requirements of a recognised Halal certification system.",
-    "heroImage": "/images/section/service-detail.jpg",
+    "heroImage": "/images/services/business/halal-certification.jpg",
     "overviewTitle": "Halal Certification",
     "overviewDesc": "Globon helps you understand the requirements for Halal certification, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -2236,7 +2199,7 @@
     ],
     "order": 127,
     "createdAt": "2026-11-18T06:30:19.429Z",
-    "updatedAt": "2026-11-18T08:12:51.204Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "28",
@@ -2246,7 +2209,7 @@
     "slug": "barcode-registration",
     "subtitle": "Get Authorised GS1 Barcodes for Your Products",
     "shortDesc": "Selling products through retail stores, e-commerce marketplaces or distribution networks often requires a reliable product identification system.",
-    "heroImage": "/images/section/service-detail.jpg",
+    "heroImage": "/images/services/business/barcode-registration.jpg",
     "overviewTitle": "Barcode Registration",
     "overviewDesc": "Globon helps you understand the requirements for barcode registration, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -2314,7 +2277,7 @@
     ],
     "order": 128,
     "createdAt": "2026-11-18T06:30:19.435Z",
-    "updatedAt": "2026-11-18T08:12:51.212Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "29",
@@ -2324,11 +2287,15 @@
     "slug": "tax-accounting",
     "subtitle": "Keep Your Business Finances Organized and Your Tax Requirements on Track",
     "shortDesc": "Managing taxes, financial records, returns, and compliance can take valuable time away from running your business.",
-    "heroImage": "/images/item/graph.jpg",
+    "heroImage": "/images/services/business/tax-accounting.jpg",
     "overviewTitle": "Tax & Accounting",
     "overviewDesc": "Get help organising applicable GST, income-tax return and audit requirements. Globon helps organise the next steps and documentation relevant to your requirement.",
     "overviewImage": "/images/services/2.png",
-    "overviewBullets": [],
+    "overviewBullets": [
+      "Understand your requirement and the relevant options",
+      "Help organise the information and documents",
+      "Coordinate the applicable process with the relevant provider or authority"
+    ],
     "features": [],
     "highlights": [],
     "optionsBadge": "Tax & Accounting",
@@ -2370,7 +2337,7 @@
     ],
     "order": 129,
     "createdAt": "2026-11-18T06:30:19.442Z",
-    "updatedAt": "2026-11-18T08:12:51.220Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "30",
@@ -2380,7 +2347,7 @@
     "slug": "gst-registration-filing",
     "subtitle": "Stay GST-Ready With the Right Registration and Filing Support",
     "shortDesc": "GST compliance is an important part of running many businesses in India.",
-    "heroImage": "/images/item/graph.jpg",
+    "heroImage": "/images/services/business/gst-registration-filing.jpg",
     "overviewTitle": "GST Registration & Filing",
     "overviewDesc": "Globon helps you understand the requirements for GST registration & filing, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -2448,7 +2415,7 @@
     ],
     "order": 130,
     "createdAt": "2026-11-18T06:30:19.449Z",
-    "updatedAt": "2026-11-18T08:12:51.228Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "31",
@@ -2458,7 +2425,7 @@
     "slug": "income-tax-return-filing",
     "subtitle": "File Your Income Tax Return With the Right Guidance",
     "shortDesc": "Filing an Income Tax Return involves reporting your income, applicable deductions, taxes paid, and other required financial information to the Income Tax Department.",
-    "heroImage": "/images/item/graph.jpg",
+    "heroImage": "/images/services/business/income-tax-return-filing.jpg",
     "overviewTitle": "Income Tax Return (ITR) Filing",
     "overviewDesc": "Globon helps you understand the requirements for income tax return (ITR) filing, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -2526,7 +2493,7 @@
     ],
     "order": 131,
     "createdAt": "2026-11-18T06:30:19.456Z",
-    "updatedAt": "2026-11-18T08:12:51.237Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "32",
@@ -2536,7 +2503,7 @@
     "slug": "auditing-services",
     "subtitle": "Accurate Records. Clear Financial Reporting. Professional Audit Support.",
     "shortDesc": "An audit provides an independent examination of financial information and records in accordance with the applicable legal, regulatory, and professional requirements.",
-    "heroImage": "/images/item/graph.jpg",
+    "heroImage": "/images/services/business/auditing-services.jpg",
     "overviewTitle": "Auditing Services",
     "overviewDesc": "Globon helps you understand the requirements for auditing services, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -2604,7 +2571,7 @@
     ],
     "order": 132,
     "createdAt": "2026-11-18T06:30:19.462Z",
-    "updatedAt": "2026-11-18T08:12:51.246Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "33",
@@ -2614,7 +2581,7 @@
     "slug": "business-planning",
     "subtitle": "Build a Clear Business Plan for Funding, Investment & Growth",
     "shortDesc": "A well-structured project report can help present your business idea, investment requirements, operating plan and financial projections in a clear format.",
-    "heroImage": "/images/section/hero-slide3-msme-workshop.jpg",
+    "heroImage": "/images/services/business/business-planning.jpg",
     "overviewTitle": "Business Planning",
     "overviewDesc": "Globon helps you understand the requirements for project report / investment plan, prepare relevant information and coordinate the process.",
     "overviewImage": "/images/services/2.png",
@@ -2682,7 +2649,7 @@
     ],
     "order": 133,
     "createdAt": "2026-11-18T06:30:19.470Z",
-    "updatedAt": "2026-11-18T08:12:51.257Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "34",
@@ -2692,7 +2659,7 @@
     "slug": "legal-support",
     "subtitle": "Practical Legal Support for Businesses, Property Matters & Everyday Requirements",
     "shortDesc": "Legal requirements can arise at every stage of a business—from contracts and agreements to employment matters, property transactions, disputes and compliance.",
-    "heroImage": "/images/section/globon-takeover-handshake.jpg",
+    "heroImage": "/images/services/business/legal-support.jpg",
     "overviewTitle": "Legal Support",
     "overviewDesc": "Globon helps organise relevant legal and business documents and coordinate the next steps with the appropriate professional where required.",
     "overviewImage": "/images/services/2.png",
@@ -2760,7 +2727,7 @@
     ],
     "order": 134,
     "createdAt": "2026-11-18T06:30:19.476Z",
-    "updatedAt": "2026-11-18T08:12:51.265Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "35",
@@ -2774,12 +2741,7 @@
     "overviewTitle": "Study Planning",
     "overviewDesc": "Globon helps you organise your study preferences, application information and the next steps for overseas education.",
     "overviewImage": "/images/services/4.png",
-    "overviewBullets": [
-      "Requirement and scope review",
-      "Information and documentation support",
-      "Coordination of relevant application or service steps",
-      "Final decisions and formal advice remain with the relevant professional/institution"
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement and scope review",
       "Information and documentation support",
@@ -2855,7 +2817,7 @@
     ],
     "order": 135,
     "createdAt": "2026-11-18T06:30:19.484Z",
-    "updatedAt": "2026-11-18T09:17:42.755Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "36",
@@ -3025,12 +2987,7 @@
     "overviewTitle": "Education Loan Support",
     "overviewDesc": "Globon helps you explore applicable education loan options, prepare documents and coordinate the application process.",
     "overviewImage": "/images/services/4.png",
-    "overviewBullets": [
-      "Requirement-based option guidance",
-      "Document checklist and preparation support",
-      "Application coordination with the relevant lender",
-      "Terms and approval depend on the lender and applicant"
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement-based option guidance",
       "Document checklist and preparation support",
@@ -3106,7 +3063,7 @@
     ],
     "order": 138,
     "createdAt": "2026-11-18T06:30:19.504Z",
-    "updatedAt": "2026-11-18T09:18:04.491Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "39",
@@ -3120,12 +3077,7 @@
     "overviewTitle": "Life Insurance",
     "overviewDesc": "Globon helps you understand available life insurance options and coordinate the policy process with the insurer.",
     "overviewImage": "/images/services/6.png",
-    "overviewBullets": [
-      "Guidance on available policy options",
-      "Support reviewing coverage, limits and exclusions",
-      "Proposal/documentation coordination",
-      "Acceptance, premium and claims depend on insurer and policy terms"
-    ],
+    "overviewBullets": [],
     "features": [
       "Guidance on available policy options",
       "Support reviewing coverage, limits and exclusions",
@@ -3201,7 +3153,7 @@
     ],
     "order": 139,
     "createdAt": "2026-11-18T06:30:19.510Z",
-    "updatedAt": "2026-11-18T10:21:09.723Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "40",
@@ -3215,12 +3167,7 @@
     "overviewTitle": "Health Insurance",
     "overviewDesc": "Globon helps you understand available health insurance options and coordinate the policy process with the insurer.",
     "overviewImage": "/images/services/6.png",
-    "overviewBullets": [
-      "Guidance on available policy options",
-      "Support reviewing coverage, limits and exclusions",
-      "Proposal/documentation coordination",
-      "Acceptance, premium and claims depend on insurer and policy terms"
-    ],
+    "overviewBullets": [],
     "features": [
       "Guidance on available policy options",
       "Support reviewing coverage, limits and exclusions",
@@ -3296,7 +3243,7 @@
     ],
     "order": 140,
     "createdAt": "2026-11-18T06:30:19.518Z",
-    "updatedAt": "2026-11-18T10:24:40.927Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "41",
@@ -3366,12 +3313,7 @@
     "overviewTitle": "Property Insurance",
     "overviewDesc": "Globon helps you understand available home insurance options and coordinate the policy process with the insurer.",
     "overviewImage": "/images/services/6.png",
-    "overviewBullets": [
-      "Guidance on available policy options",
-      "Support reviewing coverage, limits and exclusions",
-      "Proposal/documentation coordination",
-      "Acceptance, premium and claims depend on insurer and policy terms"
-    ],
+    "overviewBullets": [],
     "features": [
       "Guidance on available policy options",
       "Support reviewing coverage, limits and exclusions",
@@ -3447,7 +3389,7 @@
     ],
     "order": 142,
     "createdAt": "2026-11-18T06:30:19.533Z",
-    "updatedAt": "2026-11-18T10:27:50.120Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "43",
@@ -3617,12 +3559,7 @@
     "overviewTitle": "Group Insurance",
     "overviewDesc": "Globon helps you understand available group insurance options and coordinate the policy process with the insurer.",
     "overviewImage": "/images/services/6.png",
-    "overviewBullets": [
-      "Guidance on available policy options",
-      "Support reviewing coverage, limits and exclusions",
-      "Proposal/documentation coordination",
-      "Acceptance, premium and claims depend on insurer and policy terms"
-    ],
+    "overviewBullets": [],
     "features": [
       "Guidance on available policy options",
       "Support reviewing coverage, limits and exclusions",
@@ -3698,7 +3635,7 @@
     ],
     "order": 145,
     "createdAt": "2026-11-18T06:30:19.553Z",
-    "updatedAt": "2026-11-18T10:23:21.785Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "46",
@@ -3712,12 +3649,7 @@
     "overviewTitle": "Property Buying & Selling",
     "overviewDesc": "Globon helps organise information and coordinate the relevant steps for property buying & selling.",
     "overviewImage": "/images/services/8.png",
-    "overviewBullets": [
-      "Requirement and document checklist",
-      "Coordination of relevant process steps",
-      "Practical information support for the transaction",
-      "Legal, valuation and approval requirements vary by property/location"
-    ],
+    "overviewBullets": [],
     "features": [
       "Requirement and document checklist",
       "Coordination of relevant process steps",
@@ -3793,7 +3725,7 @@
     ],
     "order": 146,
     "createdAt": "2026-11-18T06:30:19.560Z",
-    "updatedAt": "2026-11-18T10:34:54.942Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "47",
@@ -4119,7 +4051,11 @@
     "overviewTitle": "Software & Automation",
     "overviewDesc": "Explore ERP, CRM and organisation-registration support according to your needs. Globon helps organise the next steps and documentation relevant to your requirement.",
     "overviewImage": "/images/services/9.png",
-    "overviewBullets": [],
+    "overviewBullets": [
+      "Understand your requirement and the relevant options",
+      "Help organise the information and documents",
+      "Coordinate the applicable process with the relevant provider or authority"
+    ],
     "features": [],
     "highlights": [],
     "optionsBadge": "Software & Automation",
@@ -4145,8 +4081,8 @@
       },
       {
         "title": "AI Automation",
-        "desc": "",
-        "icon": "📌",
+        "desc": "Automate Repetitive Tasks, Streamline Operations & Scale Smarter With AI",
+        "icon": "💻",
         "bg": "#fffbeb",
         "border": "#fde68a",
         "iconBg": "#fef3c7",
@@ -4173,7 +4109,7 @@
     ],
     "order": 151,
     "createdAt": "2026-11-18T06:30:19.599Z",
-    "updatedAt": "2026-11-18T11:21:39.527Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "52",
@@ -4187,12 +4123,7 @@
     "overviewTitle": "ERP Software Solutions",
     "overviewDesc": "Globon helps plan and coordinate ERP software solutions around your business goals, audience and agreed scope.",
     "overviewImage": "/images/services/9.png",
-    "overviewBullets": [
-      "Scope and deliverable planning",
-      "Service coordination based on business goals",
-      "Content/design/implementation support as agreed",
-      "Traffic, rankings, leads and commercial results are not guaranteed"
-    ],
+    "overviewBullets": [],
     "features": [
       "Scope and deliverable planning",
       "Service coordination based on business goals",
@@ -4268,7 +4199,7 @@
     ],
     "order": 152,
     "createdAt": "2026-11-18T06:30:19.608Z",
-    "updatedAt": "2026-11-18T11:22:05.058Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "53",
@@ -4282,12 +4213,7 @@
     "overviewTitle": "CRM Software Solutions",
     "overviewDesc": "Globon helps plan and coordinate CRM software solutions around your business goals, audience and agreed scope.",
     "overviewImage": "/images/services/9.png",
-    "overviewBullets": [
-      "Scope and deliverable planning",
-      "Service coordination based on business goals",
-      "Content/design/implementation support as agreed",
-      "Traffic, rankings, leads and commercial results are not guaranteed"
-    ],
+    "overviewBullets": [],
     "features": [
       "Scope and deliverable planning",
       "Service coordination based on business goals",
@@ -4363,7 +4289,7 @@
     ],
     "order": 153,
     "createdAt": "2026-11-18T06:30:19.617Z",
-    "updatedAt": "2026-11-18T11:22:25.081Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "54",
@@ -4371,26 +4297,89 @@
     "categoryTitle": "Digital Services",
     "title": "AI Automation",
     "slug": "ai-automation",
-    "subtitle": "",
-    "shortDesc": "ai",
+    "subtitle": "Automate Repetitive Tasks, Streamline Operations & Scale Smarter With AI",
+    "shortDesc": "AI automation helps businesses reduce manual effort, improve accuracy and free up time for higher-value activities. From workflow automation to intelligent data processing, Globon helps you identify the right automation approach for your operations.",
     "heroImage": "/uploads/1795000963936_ai.png",
-    "overviewTitle": "",
-    "overviewDesc": "",
+    "overviewTitle": "Overview",
+    "overviewDesc": "Globon helps you assess your automation needs, identify suitable AI tools and coordinate implementation around your business processes and goals.",
     "overviewImage": "/images/services/9.png",
     "overviewBullets": [],
-    "features": [],
-    "highlights": [],
+    "features": [
+      "Process and workflow assessment",
+      "AI tool identification and recommendation",
+      "Implementation coordination and support",
+      "Outcomes depend on business processes, tools and scope agreed"
+    ],
+    "highlights": [
+      "Process and workflow assessment",
+      "AI tool identification and recommendation",
+      "Implementation coordination and support",
+      "Outcomes depend on business processes, tools and scope agreed"
+    ],
     "optionsBadge": "",
-    "optionsTitle": "",
-    "options": [],
-    "documentGroups": [],
-    "advisoryNote": "",
-    "eligibilityDesc": "",
-    "feesDesc": "",
-    "faqs": [],
+    "optionsTitle": "Options / Services",
+    "options": [
+      {
+        "title": "Business process automation",
+        "desc": "Automate repetitive workflows to save time and reduce errors.",
+        "icon": "🤖",
+        "bg": "#eff6ff",
+        "border": "#bfdbfe",
+        "iconBg": "#dbeafe",
+        "accent": "#59bdfc"
+      },
+      {
+        "title": "Intelligent data processing",
+        "desc": "Extract, classify and act on data using AI-powered tools.",
+        "icon": "📊",
+        "bg": "#f0fdf4",
+        "border": "#bbf7d0",
+        "iconBg": "#dcfce7",
+        "accent": "#16a34a"
+      },
+      {
+        "title": "AI chatbots & customer support automation",
+        "desc": "Deploy conversational AI to handle queries and improve response times.",
+        "icon": "💬",
+        "bg": "#fffbeb",
+        "border": "#fde68a",
+        "iconBg": "#fef3c7",
+        "accent": "#d97706"
+      }
+    ],
+    "documentGroups": [
+      {
+        "title": "Information Required",
+        "subtitle": "",
+        "icon": "📋",
+        "docs": [
+          "Business process description and pain points",
+          "Current tools, software and systems in use",
+          "Volume and frequency of tasks to be automated",
+          "Integration requirements and access credentials as applicable"
+        ]
+      }
+    ],
+    "advisoryNote": "Indicative list only; final requirements vary by profile, scope and provider.",
+    "eligibilityDesc": "The scope depends on your business processes, existing systems, automation objectives, timeline and agreed deliverables.",
+    "feesDesc": "Pricing depends on the scope, tools, integrations and ongoing support required. Confirm the project scope and fee before work begins.",
+    "faqs": [
+      {
+        "q": "What types of tasks can be automated?",
+        "a": "Common candidates include data entry, report generation, customer communications, invoice processing and repetitive operational workflows."
+      },
+      {
+        "q": "Do I need technical expertise to get started?",
+        "a": "No. Globon helps assess your needs and coordinates with the relevant technical partners or tools."
+      },
+      {
+        "q": "Are results guaranteed?",
+        "a": "No. Automation outcomes depend on your existing processes, data quality, tools selected and implementation scope."
+      }
+    ],
     "order": 154,
     "createdAt": "2026-11-18T06:30:19.626Z",
-    "updatedAt": "2026-11-18T11:23:00.953Z"
+    "updatedAt": "2026-11-19T06:33:03.177Z"
   },
   {
     "id": "55",
@@ -4404,12 +4393,7 @@
     "overviewTitle": "Web Development",
     "overviewDesc": "Globon helps plan and coordinate website & technology services around your business goals, audience and agreed scope.",
     "overviewImage": "/images/services/9.png",
-    "overviewBullets": [
-      "Scope and deliverable planning",
-      "Service coordination based on business goals",
-      "Content/design/implementation support as agreed",
-      "Traffic, rankings, leads and commercial results are not guaranteed"
-    ],
+    "overviewBullets": [],
     "features": [
       "Scope and deliverable planning",
       "Service coordination based on business goals",
@@ -4485,7 +4469,7 @@
     ],
     "order": 155,
     "createdAt": "2026-11-18T06:30:19.635Z",
-    "updatedAt": "2026-11-18T11:23:20.547Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "56",
@@ -4499,12 +4483,7 @@
     "overviewTitle": "Branding & Design",
     "overviewDesc": "Globon helps plan and coordinate branding & creative services around your business goals, audience and agreed scope.",
     "overviewImage": "/images/services/9.png",
-    "overviewBullets": [
-      "Scope and deliverable planning",
-      "Service coordination based on business goals",
-      "Content/design/implementation support as agreed",
-      "Traffic, rankings, leads and commercial results are not guaranteed"
-    ],
+    "overviewBullets": [],
     "features": [
       "Scope and deliverable planning",
       "Service coordination based on business goals",
@@ -4580,7 +4559,7 @@
     ],
     "order": 156,
     "createdAt": "2026-11-18T06:30:19.643Z",
-    "updatedAt": "2026-11-18T11:23:35.131Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "57",
@@ -4594,12 +4573,7 @@
     "overviewTitle": "Digital Marketing",
     "overviewDesc": "Globon helps plan and coordinate digital marketing & advertising around your business goals, audience and agreed scope.",
     "overviewImage": "/images/services/9.png",
-    "overviewBullets": [
-      "Scope and deliverable planning",
-      "Service coordination based on business goals",
-      "Content/design/implementation support as agreed",
-      "Traffic, rankings, leads and commercial results are not guaranteed"
-    ],
+    "overviewBullets": [],
     "features": [
       "Scope and deliverable planning",
       "Service coordination based on business goals",
@@ -4675,7 +4649,7 @@
     ],
     "order": 157,
     "createdAt": "2026-11-18T06:30:19.658Z",
-    "updatedAt": "2026-11-18T11:24:13.164Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   },
   {
     "id": "58",
@@ -4689,12 +4663,7 @@
     "overviewTitle": "Social Media & Content",
     "overviewDesc": "Globon helps plan and coordinate social media & content around your business goals, audience and agreed scope.",
     "overviewImage": "/images/services/9.png",
-    "overviewBullets": [
-      "Scope and deliverable planning",
-      "Service coordination based on business goals",
-      "Content/design/implementation support as agreed",
-      "Traffic, rankings, leads and commercial results are not guaranteed"
-    ],
+    "overviewBullets": [],
     "features": [
       "Scope and deliverable planning",
       "Service coordination based on business goals",
@@ -4770,6 +4739,6 @@
     ],
     "order": 158,
     "createdAt": "2026-11-18T06:30:19.668Z",
-    "updatedAt": "2026-11-18T11:24:37.468Z"
+    "updatedAt": "2026-11-19T06:42:40.753Z"
   }
 ]
