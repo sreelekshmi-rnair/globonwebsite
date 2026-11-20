@@ -588,9 +588,12 @@ export default function UniversalServiceDetailView({ service, category }) {
                           lineHeight: '1.55',
                           margin: 0,
                           fontFamily: "'Poppins', sans-serif",
+                          maxWidth: '100%',
+                          overflowWrap: 'anywhere',
                         }}
                       >
-                        {feature}
+                        {/* allow wrapping after "/" so long slash-joined words don't overflow into the next column */}
+                        {feature.replace(/\//g, '/​')}
                       </p>
                     </div>
                   </div>

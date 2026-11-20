@@ -33,7 +33,8 @@ model Service {
   overviewImage    String?  @default("")
   overviewBullets  String?  @db.LongText
   features         String?  @db.LongText
-  optionsBadge     String?  @default("")
+  featuresTitle    String?  @default("")
+  optionsBadge    String?  @default("")
   optionsTitle     String?  @default("")
   options          String?  @db.LongText
   documentGroups   String?  @db.LongText

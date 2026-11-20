@@ -103,6 +103,7 @@ export default function AdminServicesPage() {
     overviewImage: '',
     overviewBulletsText: '',
     highlightsText: '',
+    featuresTitle: '',
     optionsBadge: '',
     optionsTitle: '',
     options: [],
@@ -229,6 +230,7 @@ export default function AdminServicesPage() {
       overviewImage: service.overviewImage || '',
       overviewBulletsText: overviewBulletsArr.join('\n'),
       highlightsText: highlightsArr.join('\n'),
+      featuresTitle: service.featuresTitle || '',
       optionsBadge: service.optionsBadge || '',
       optionsTitle: service.optionsTitle || '',
       options,
@@ -405,6 +407,7 @@ export default function AdminServicesPage() {
         options: parsedOptions,
         features: parsedHighlights,
         highlights: parsedHighlights,
+        featuresTitle: form.featuresTitle?.trim() || '',
         eligibilityDesc: form.eligibilityDesc?.trim() || '',
         feesDesc: form.feesDesc?.trim() || '',
         documentGroups: parsedDocGroups,
@@ -2183,6 +2186,19 @@ export default function AdminServicesPage() {
                   <span style={{ fontSize: '12px', color: '#64748b' }}>
                     Displays in the Features section on the service page
                   </span>
+                </div>
+
+                <div>
+                  <label style={{ display: 'block', fontSize: '12px', fontWeight: 'normal', color: '#475569', marginBottom: '4px' }}>
+                    Section Title (leave blank for &quot;Features&quot;)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Features"
+                    value={form.featuresTitle}
+                    onChange={(e) => setForm({ ...form, featuresTitle: e.target.value })}
+                    style={{ width: '100%', padding: '8px 12px', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '13px', color: '#0f172a' }}
+                  />
                 </div>
 
                 <textarea
