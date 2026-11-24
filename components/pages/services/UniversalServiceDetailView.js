@@ -5,6 +5,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SubServiceLinks from './SubServiceLinks';
 
+// Headings use text-transform: uppercase. Mixed-case names such as "GeM" (a lowercase
+// letter followed by a capital) are kept exactly as written instead of becoming "GEM".
+function keepMixedCase(text) {
+  if (typeof text !== 'string') return text;
+  return text.split(/(\s+)/).map((word, i) =>
+    /[a-z][A-Z]/.test(word)
+      ? <span key={i} style={{ textTransform: 'none' }}>{word}</span>
+      : word
+  );
+}
+
 export default function UniversalServiceDetailView({ service, category }) {
   const [activeFaq, setActiveFaq] = useState(null);
 
@@ -205,7 +216,7 @@ export default function UniversalServiceDetailView({ service, category }) {
                   letterSpacing: '0.2px',
                 }}
               >
-                {title}
+                {keepMixedCase(title)}
               </h1>
 
               {/* Subtitle */}
@@ -336,7 +347,7 @@ export default function UniversalServiceDetailView({ service, category }) {
                   marginBottom: '18px',
                 }}
               >
-                {overviewTitle}
+                {keepMixedCase(overviewTitle)}
               </h2>
 
               <p
@@ -395,7 +406,7 @@ export default function UniversalServiceDetailView({ service, category }) {
                     marginBottom: '6px',
                   }}
                 >
-                  {service.optionsBadge}
+                  {keepMixedCase(service.optionsBadge)}
                 </span>
               )}
               <h2
